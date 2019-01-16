@@ -1,6 +1,6 @@
 <template>
 <div>
-  Hello, world!
+  <el-header>Header</el-header>
 </div>
 </template>
 
