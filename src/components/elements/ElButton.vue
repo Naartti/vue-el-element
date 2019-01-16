@@ -120,12 +120,4 @@ export default {
   .right {
     align-self: flex-end;
   }
-
-  .marginRight {
-    margin-right: @side-margin;
-  }
-
-  .marginTop {
-    margin-top: @top-margin-element;
-  }
 </style>

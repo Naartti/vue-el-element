@@ -20,6 +20,7 @@ import ElHeader from '@/components/elements/ElHeader.vue'
 import ElButton from '@/components/elements/ElButton.vue'
 import ElInline from '@/components/elements/ElInline.vue'
 import ElSelect from '@/components/elements/ElSelect.vue'
+import ElSwitch from '@/components/elements/ElSwitch.vue'
 import ElPopup from '@/components/elements/ElPopup.vue'
 import ElInput from '@/components/elements/ElInput.vue'
 import ElInfo from '@/components/elements/ElInfo.vue'
@@ -49,6 +50,7 @@ export default (Vue) => {
   Vue.component('elButton', ElButton)
   Vue.component('ElSelect', ElSelect)
   Vue.component('elInline', ElInline)
+  Vue.component('ElSwitch', ElSwitch)
   Vue.component('elInput', ElInput)
   Vue.component('ElPopup', ElPopup)
   Vue.component('elInfo', ElInfo)

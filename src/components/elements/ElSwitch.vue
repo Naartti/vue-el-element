@@ -1,0 +1,120 @@
+<template>
+<div class="wrapper"
+  :class="{
+    marginRight,
+    marginTop
+  }"
+  >
+    <div
+      class="marker animation"
+      v-bind:class="{
+        markerRight : !value
+      }"
+      />
+
+    <div
+      class="toggleLabel"
+      v-bind:class="{
+        labelSelected : value
+      }"
+      @click="toggle(true)"
+      >
+      {{left}}
+    </div>
+    <div
+      class="toggleLabel"
+      v-bind:class="{
+        labelSelected : !value
+      }"
+      @click="toggle(false)"
+      >
+      {{right}}
+    </div>
+  </div>
+</template>
+<script>
+
+// v-model = isLeft
+
+export default {
+  props: {
+    value: {
+      type: Boolean,
+      default: true
+    },
+    left: {
+      default: 'LEFT',
+      type: String
+    },
+    right: {
+      default: 'RIGHT',
+      type: String
+    },
+    marginRight: {
+      type: Boolean,
+      default: false
+    },
+    marginTop: {
+      type: Boolean,
+      default: false
+    }
+  },
+  methods: {
+    toggle (isLeft) {
+      this.$emit('change', isLeft)
+    }
+  }
+}
+</script>
+<style lang="less" scoped>
+  @import '~style/variables.less';
+
+  .wrapper {
+    display: flex;
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: inset @shadow;
+    box-sizing: border-box;
+    position: relative;
+    width: 240px;
+    height: 30px;
+    left: 0px;
+    align-content: space-between;
+  }
+
+  .marker {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+    height: 100%;
+    background-color: @blue-main;
+    box-shadow: @shadow;
+    z-index: 1;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+
+  .markerRight {
+    left: 50%;
+  }
+
+  .toggleLabel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 100%;
+    text-align: center;
+    color: #757575;
+    z-index: 2;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+  .labelSelected {
+    color: #ffffff;
+  }
+
+</style>

@@ -1,28 +1,6 @@
 <template>
 <div>
   <el-menu>
-    <!-- Text -->
-    <el-menu-item title="Text">
-      <el-header>Header</el-header>
-      <el-text>Just some regular text.</el-text>
-      <el-caption>Caption</el-caption>
-
-      <el-header :marginTop="true">Information wrappers</el-header>
-      <el-info>Information</el-info>
-
-      <el-message
-        :warning="true"
-        >
-        Warning message
-      </el-message>
-      <el-message
-        :warning="true"
-        @click="() => {}"
-        >
-        Clickable message
-      </el-message>
-    </el-menu-item>
-
     <!-- Button -->
     <el-menu-item title="Button">
       <el-header>Text button</el-header>
@@ -78,6 +56,37 @@
       <el-toggle-button
         v-model="toggleButton"
         />
+
+      <el-header :marginTop="true">Switcher</el-header>
+      <el-switch
+        left="Left"
+        right="Right"
+        :marginTop="true"
+        v-model="switchModel"
+        @change="switchModel = !switchModel"
+        />
+    </el-menu-item>
+
+    <!-- Text -->
+    <el-menu-item title="Text">
+      <el-header>Header</el-header>
+      <el-text>Just some regular text.</el-text>
+      <el-caption>Caption</el-caption>
+
+      <el-header :marginTop="true">Information wrappers</el-header>
+      <el-info>Information</el-info>
+
+      <el-message
+        :warning="true"
+        >
+        Warning message
+      </el-message>
+      <el-message
+        :warning="true"
+        @click="() => {}"
+        >
+        Clickable message
+      </el-message>
     </el-menu-item>
 
     <!-- Input -->
@@ -191,7 +200,8 @@ export default {
         model: 'firstName'
       },
       showPopup: false,
-      toggleButton: true
+      toggleButton: true,
+      switchModel: true
     }
   }
 }
