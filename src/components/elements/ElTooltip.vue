@@ -71,7 +71,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
-  @import '../style/variables';
+  @import '~style/variables';
 
   .tooltip {
     display: block;

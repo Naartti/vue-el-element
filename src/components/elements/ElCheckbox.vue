@@ -82,7 +82,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import '../style/variables';
+  @import '~style/variables';
 
   .mainContainer {
     margin-top: @top-margin-element;

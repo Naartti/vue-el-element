@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import '../style/variables.less';
+  @import '~style/variables';
 
   .inlineContainer {
     position: relative;
