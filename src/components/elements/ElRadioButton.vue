@@ -62,7 +62,16 @@ export default {
       checked: null
     }
   },
-  props: ['value', 'options'],
+  props: {
+    value: {
+      type: String,
+      default: ''
+    },
+    options: {
+      type: Array,
+      default: () => []
+    }
+  },
   mounted () {
     this.checked = this.value
   },

@@ -32,7 +32,8 @@ checkboxOptions: [{
   <label v-for="(item, index) in options"
     class="checkboxContainer"
     :key="index"
-    :value="value">
+    :value="value"
+    >
 
     {{item.label}}
 
@@ -46,7 +47,7 @@ checkboxOptions: [{
       @click="onChange()"
       >
 
-    <span class="checkmark" :value="value"></span>
+    <span class="checkmark" :value="value" />
   </label>
 </div>
 </template>
@@ -60,7 +61,16 @@ export default {
       checked: []
     }
   },
-  props: ['value', 'options'],
+  props: {
+    value: {
+      type: Array,
+      default: () => []
+    },
+    options: {
+      type: Array,
+      default: () => []
+    }
+  },
   mounted () {
     this.checked = this.value
   },

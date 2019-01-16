@@ -31,7 +31,8 @@ dropdownOptions: [{
 <div class="selectContainer"
   v-bind:class="{
     marginRight,
-    marginTop
+    marginTop,
+    wide
   }"
   >
   <select @change="onChange"
@@ -69,6 +70,10 @@ export default {
     marginTop: {
       type: Boolean,
       default: true
+    },
+    wide: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -115,5 +120,10 @@ export default {
 
   .marginTop {
     margin-top: @top-margin-element;
+  }
+
+  .wide {
+    max-width: 300px;
+    width: 300px;
   }
 </style>
