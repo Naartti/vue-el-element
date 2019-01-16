@@ -1,14 +1,20 @@
 <template>
-<div class='main'
+<div
+  class='main'
+  :class="{ marginTop }"
   @click="$listeners.click ? $emit('click') : null"
   >
+
+  <!-- Icon -->
   <div v-if="hasNotification"
     v-html="icon"
     class="icon animation"
-    v-bind:class="{ pointer : clickableIcon}"
+    :class="{ pointer : clickableIcon }"
     @click="$emit('click')"
     />
-  {{title}}
+
+  <!-- Header -->
+  <span v-if="title !== ''">{{title}}</span>
   <slot></slot>
 </div>
 </template>
@@ -19,7 +25,28 @@ import svgIcons from '@/components/script/svg'
 
 export default {
   name: 'ElHeader',
-  props: ['title', 'warning', 'danger', 'success'],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    warning: {
+      type: Boolean,
+      default: false
+    },
+    danger: {
+      type: Boolean,
+      default: false
+    },
+    success: {
+      type: Boolean,
+      default: false
+    },
+    marginTop: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       clickableIcon: false
@@ -77,5 +104,9 @@ export default {
     &:hover {
       transform: scale(1.1)
     }
+  }
+
+  .marginTop {
+    margin-top: @top-margin-header-large;
   }
 </style>
