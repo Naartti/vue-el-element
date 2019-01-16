@@ -31,6 +31,7 @@ checkboxOptions: [{
 <div class="mainContainer">
   <label v-for="(item, index) in options"
     class="checkboxContainer"
+    :class="{ marginTop, marginRight }"
     :key="index"
     :value="value"
     >
@@ -69,6 +70,14 @@ export default {
     options: {
       type: Array,
       default: () => []
+    },
+    marginTop: {
+      type: Boolean,
+      default: false
+    },
+    marginRight: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
@@ -94,9 +103,7 @@ export default {
 <style scoped lang="less">
   @import '~style/variables';
 
-  .mainContainer {
-    margin-top: @top-margin-element;
-  }
+  .mainContainer {}
 
   /* The container */
   .checkboxContainer {

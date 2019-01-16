@@ -108,21 +108,27 @@
 
     <!-- Select -->
     <el-menu-item title="Select">
+      <el-header>Checkbox</el-header>
       <el-checkbox
         v-model="checkbox.model"
         :options="checkbox.options"
+        :marginTop="true"
         />
 
+      <el-header :marginTop="true">Dropdown</el-header>
       <el-dropdown
         :options="dropdown.options"
         v-model="dropdown.model"
         />
 
+      <el-header :marginTop="true">Radio button</el-header>
       <el-radio-button
         :options="dropdown.options"
         v-model="dropdown.model"
+        :marginTop="true"
         />
 
+      <el-header :marginTop="true">Input select</el-header>
       <el-select
         placeholder="Select"
         v-model="checkbox.model"
@@ -132,19 +138,36 @@
 
     <!-- Hierarcy -->
     <el-menu-item title="Hierarcy">
+      <el-collapse-header title="Collapse header">
+        <el-collapse-header title="Collapse header">
+          <el-collapse-header title="Collapse header">
+            Taa daa!
+          </el-collapse-header>
+          </el-collapse-header>
+      </el-collapse-header>
+
+      <el-header :marginTop="true">Card</el-header>
       <el-card>
         This is a card
+      </el-card>
+      <el-card>
+        And this is a card that can expand
 
-        <el-extend-button :isExpanded="false" />
+        <div v-if="expandCard">
+          Show more content when expanding
+        </div>
+
+        <el-extend-button :isExpanded="expandCard" @click="expandCard = !expandCard"/>
       </el-card>
 
-      <el-collapse-header title="Collapse header">Hidden content</el-collapse-header>
-
-      <el-delimiter />
-
+      <el-header :marginTop="true">Page/section</el-header>
       <el-section>This is a section</el-section>
 
+      <el-header :marginTop="true">Popup</el-header>
       <el-button @click="showPopup = true">Show popup</el-button>
+
+      <el-header :marginTop="true">Delimiter</el-header>
+      <el-delimiter />
     </el-menu-item>
   </el-menu>
 
@@ -201,7 +224,8 @@ export default {
       },
       showPopup: false,
       toggleButton: true,
-      switchModel: true
+      switchModel: true,
+      expandCard: false
     }
   }
 }

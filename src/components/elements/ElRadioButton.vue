@@ -32,6 +32,7 @@ radioOptions: [{
   <label
     v-for="(item, index) in options"
     class="radioContainer"
+    :class="{ marginTop, marginRight }"
     :key="index"
     :value="value"
     >
@@ -70,6 +71,14 @@ export default {
     options: {
       type: Array,
       default: () => []
+    },
+    marginTop: {
+      type: Boolean,
+      default: false
+    },
+    marginRight: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {

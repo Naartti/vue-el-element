@@ -1,5 +1,5 @@
 <template>
-<div class='main'>
+<div class='main' :class="{ marginTop, marginRight }">
   <div class='mainHeader' @click="isExpanded = !isExpanded">
     <div class="more">
       <span class="more-circle">
@@ -31,7 +31,25 @@ import CollapseToggle from '@/components/elements/ElCollapseToggle.vue'
 
 export default {
   name: 'ElCollapseHeader',
-  props: ['title', 'open'],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    open: {
+      type: Boolean,
+      default: false
+    },
+    marginRight: {
+      type: Boolean,
+      default: false
+    },
+    marginTop: {
+      type: Boolean,
+      default: false
+    }
+
+  },
   components: { CollapseToggle },
   data () {
     return {
@@ -146,5 +164,9 @@ export default {
   .slide-fade-enter {
     transform: translateY(-10px);
     opacity: 0;
+  }
+
+  .marginTop {
+    margin-top: @top-margin-header-large;
   }
 </style>
