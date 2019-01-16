@@ -82,6 +82,20 @@ Note that the model is an array
   />
 ```
 
+## el-tooltip
+Place the tooltip within the item you want to describe. It will place itself at the center of that element. Note that you need the parent element not to have static positioning.
+```xml
+<div style="{ position: relative }">
+
+  Content...
+
+  <el-tooltip
+    :content="String"
+    :delay="Boolean"
+    />
+</div>
+```
+
 ## el-menu & el-menu-item
 ```xml
 <el-menu>
