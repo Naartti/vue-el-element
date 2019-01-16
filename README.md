@@ -2,6 +2,98 @@
 
 > Vue components for design elements with KM & exam.net style guides
 
+## el-button
+```xml
+<el-button
+  :disabled="Boolean"
+  :secondary="Boolean"
+  :danger="Boolean"
+  :marginRight="Boolean"
+  :marginTop="Boolean"
+  :tooltip="String"
+  @click="method"
+  >
+  Button label
+</el-button>
+```
+
+## el-popup
+```xml
+<el-popup
+  :top="Boolean"
+  :overflow="Boolean"
+  v-if="isOpen"
+  @close="isOpen = false"
+  >
+
+  Content...
+
+  <!-- Optional: Footer example -->
+  <el-inline
+    slot="footer"
+    >
+
+    <el-button>Previous</el-button>
+    <el-button>Next</el-button>
+  </el-inline>
+</el-popup>
+```
+
+## el-dropdown
+```xml
+<el-dropdown
+  :options="[{
+    value: 'key1',
+    label: 'Item 1'
+  }, {
+    value: 'key2',
+    label: 'Item 2'
+  }]"
+  v-model="key1"
+  />
+```
+
+## el-checkbox
+Note that the model is an array
+```xml
+<el-checkbox
+  :options="[{
+    value: 'key1',
+    label: 'Item 1'
+  }, {
+    value: 'key2',
+    label: 'Item 2'
+  }]"
+  v-model="[]"
+  />
+```
+
+## el-radio-button
+```xml
+<el-radio-button
+  :options="[{
+    value: 'key1',
+    label: 'Item 1'
+  }, {
+    value: 'key2',
+    label: 'Item 2'
+  }]"
+  v-model="key1"
+  />
+```
+
+## el-menu & el-menu-item
+```xml
+<el-menu>
+  <el-menu-item title=" Chapter 1 ">
+    Content for chapter 1...
+  </el-menu-item>
+  <el-menu-item title=" Chapter 2 ">
+    Content for chapter 2...
+  </el-menu-item>
+</el-menu>
+```
+
 ## Build Setup
 
 ``` bash
