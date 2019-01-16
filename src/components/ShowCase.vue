@@ -4,10 +4,23 @@
     <!-- Text -->
     <el-menu-item title="Text">
       <el-header>Header</el-header>
+      <el-text>Just some regular text.</el-text>
       <el-caption>Caption</el-caption>
+
+      <el-header :marginTop="true">Information wrappers</el-header>
       <el-info>Information</el-info>
-      <el-message>Message</el-message>
-      <el-message :warning="true">Warning message</el-message>
+
+      <el-message
+        :warning="true"
+        >
+        Warning message
+      </el-message>
+      <el-message
+        :warning="true"
+        @click="() => {}"
+        >
+        Clickable message
+      </el-message>
     </el-menu-item>
 
     <!-- Button -->

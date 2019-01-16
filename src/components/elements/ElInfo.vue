@@ -9,8 +9,10 @@
   @mouseover="$emit('mouseover')"
   @mouseleave="$emit('mouseleave')"
   >
-  <div v-if="html"
-    v-html="html"/>
+
+  <div v-if="html !== ''"
+    v-html="html"
+    />
 
   <div>
     <slot></slot>
@@ -22,7 +24,20 @@
 
 export default {
   name: 'ElInfo',
-  props: ['highlight', 'html', 'pointer']
+  props: {
+    highlight: {
+      type: Boolean,
+      default: false
+    },
+    html: {
+      type: String,
+      default: ''
+    },
+    pointer: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 
 </script>

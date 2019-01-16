@@ -1,6 +1,6 @@
 <template>
 <div class='textContainer'>
-  {{text}}
+  <span v-if="text !== ''">{{text}}</span>
   <slot></slot>
 </div>
 </template>
@@ -9,7 +9,12 @@
 
 export default {
   name: 'ElText',
-  props: ['text']
+  props: {
+    text: {
+      type: String,
+      default: ''
+    }
+  }
 }
 
 </script>
@@ -25,5 +30,9 @@ export default {
     text-align: left;
     margin-top: @top-margin-element;
     color: @grey-darker;
+
+    p {
+      font-size: @font-size;
+    }
   }
 </style>
