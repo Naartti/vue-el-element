@@ -8,6 +8,8 @@
   <el-button :secondary="true" :danger="true">Secondary danger</el-button>
 
   <el-caption>Caption</el-caption>
+
+  <el-card>This is a card</el-card>
 </div>
 </template>
 
