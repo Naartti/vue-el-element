@@ -20,7 +20,12 @@
 
 export default {
   name: 'ElExtendButton',
-  props: ['isExpanded']
+  props: {
+    isExpanded: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 
 </script>
