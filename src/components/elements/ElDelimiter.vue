@@ -16,7 +16,16 @@
 
 export default {
   name: 'ElDelimiter',
-  props: ['short', 'dark']
+  props: {
+    short: {
+      type: Boolean,
+      default: false
+    },
+    dark: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 
 </script>
