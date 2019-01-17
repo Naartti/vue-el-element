@@ -23,7 +23,16 @@ export default {
       return (this.isCollapsed == null) ? this.isCollapsed_auto : this.isCollapsed
     }
   },
-  props: ['isCollapsed', 'color'],
+  props: {
+    isCollapsed: {
+      type: Boolean,
+      default: false
+    },
+    color: {
+      type: String,
+      default: 'light'
+    }
+  },
   mounted () {
     if (this.color == null) return
 
