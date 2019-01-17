@@ -19,7 +19,28 @@
 
 export default {
   name: 'ElInput',
-  props: ['placeholder', 'value', 'type', 'warning', 'success'],
+  props: {
+    placeholder: {
+      type: String,
+      default: ''
+    },
+    value: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: ''
+    },
+    warning: {
+      type: Boolean,
+      default: false
+    },
+    success: {
+      type: Boolean,
+      default: false
+    }
+  },
   methods: {
     contentChanged (ev) {
       this.$emit('change', this.value)
