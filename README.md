@@ -3,6 +3,21 @@
 > Vue components for design elements with KM & exam.net style guides
 
 # Import
+## Globalize all components
+```js
+const ElElement = require('@teachiq/el-element')
+
+for (let elementName in ElElement) {
+  Vue.component(elementName, ElElement[elementName])
+}
+```
+
+## Import selected components
+```js
+import { ElButton, ElTooltip } from '@teachiq/el-element'
+```
+
+## Set style guide
 webpack.base.conf.js
 ```js
 const styleGuide = 'kunskapsmatrisen' // or 'exam'
@@ -21,6 +36,7 @@ module.exports = {
 }
 ```
 
+# Elements
 ## el-button
 ```xml
 <el-button
