@@ -1,5 +1,5 @@
 {
-  "name": "el-element",
+  "name": "@teachiq/el-element",
   "version": "1.0.0",
   "description": "Vue components for design elements with KM & exam.net style guides",
   "author": "Mattias Naarttijärvi",
