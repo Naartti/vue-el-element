@@ -60,7 +60,7 @@
 
 <script>
 
-import svgCodes from '@/components/script/svg'
+import svgCodes from '../script/svg'
 
 export default {
   name: 'ElPopup',

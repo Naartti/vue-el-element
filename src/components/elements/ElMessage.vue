@@ -16,7 +16,7 @@
 
 <script>
 
-import svgIcons from '@/components/script/svg'
+import svgIcons from '../script/svg'
 
 export default {
   name: 'ElMessage',

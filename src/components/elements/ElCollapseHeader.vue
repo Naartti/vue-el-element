@@ -27,7 +27,7 @@
 
 <script>
 
-import CollapseToggle from '@/components/elements/ElCollapseToggle.vue'
+import { ElCollapseToggle } from '@teachiq/el-element'
 
 export default {
   name: 'ElCollapseHeader',
@@ -50,7 +50,7 @@ export default {
     }
 
   },
-  components: { CollapseToggle },
+  components: { ElCollapseToggle },
   data () {
     return {
       isExpanded: false
