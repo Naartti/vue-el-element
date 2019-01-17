@@ -2,6 +2,25 @@
 
 > Vue components for design elements with KM & exam.net style guides
 
+# Import
+webpack.base.conf.js
+```js
+const styleGuide = 'kunskapsmatrisen' // or 'exam'
+
+module.exports = {
+  ...,
+  resolve: {
+    ...,
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src'),
+      'style': resolve(`node_modules/@teachiq/el-element/src/style/${styleGuide}`)
+    }
+  },
+  ...
+}
+```
+
 ## el-button
 ```xml
 <el-button

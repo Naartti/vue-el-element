@@ -1,5 +1,7 @@
 import ElButton from './src/components/elements/ElButton.vue'
+import ElTooltip from './src/components/elements/ElTooltip.vue'
 
-export const ElButton = ElButton
-
-export default { ElButton }
+export {
+  ElButton,
+  ElTooltip
+}
