@@ -7,7 +7,7 @@
   }"
   >
 
-  {{text}}
+  <span v-if="text !== ''">{{text}}</span>
 
   <slot></slot>
 </div>
@@ -17,7 +17,20 @@
 
 export default {
   name: 'ElCaption',
-  props: ['text', 'light', 'danger'],
+  props: {
+    text: {
+      type: String,
+      default: ''
+    },
+    light: {
+      type: Boolean,
+      default: false
+    },
+    danger: {
+      type: Boolean,
+      default: false
+    }
+  },
   methods: {
     click () {
       this.$emit('click')
