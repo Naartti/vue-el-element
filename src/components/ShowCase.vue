@@ -45,9 +45,19 @@
         <el-button
           :disabled="true"
           :marginTop="true"
+          :danger="true"
           tooltip="Tooltip"
           >
           Disabled
+        </el-button>
+        <el-button
+          :disabled="true"
+          :secondary="true"
+          :marginTop="true"
+          :danger="true"
+          tooltip="Tooltip"
+          >
+          Secondary disabled
         </el-button>
       </el-inline>
 
