@@ -63,7 +63,6 @@
         right="Right"
         :marginTop="true"
         v-model="switchModel"
-        @change="switchModel = !switchModel"
         />
     </el-menu-item>
 

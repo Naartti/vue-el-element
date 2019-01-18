@@ -61,7 +61,7 @@ export default {
   },
   methods: {
     toggle (isLeft) {
-      this.$emit('change', isLeft)
+      this.$emit('input', isLeft)
     }
   }
 }
