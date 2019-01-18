@@ -77,14 +77,14 @@ export default {
     left: 0px;
     margin: none;
     margin-left: 0px;
-    background-color: @disable-light;
+    background-color: @color-disable-light;
     border-radius: 15px;
     box-sizing: border-box;
     cursor: pointer;
   }
 
   .backgroundActivated {
-    background-color: @success-dark;
+    background-color: @color-success-dark;
   }
 
   .dot {

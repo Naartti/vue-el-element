@@ -94,12 +94,12 @@ export default {
   }
 
   .disabled {
-    background-color: @disable-dark !important;
-    border: 1px solid @disable-dark !important;
+    background-color: @color-disable-dark !important;
+    border: 1px solid @color-disable-dark !important;
   }
 
   .disabledSecondary {
-    color: @disable-dark !important;
+    color: @color-disable-dark !important;
   }
 
   .secondary {

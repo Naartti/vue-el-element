@@ -50,7 +50,7 @@ export default {
     font-size: @font-size;
     text-align: left;
     margin-top: @top-margin-element;
-    color: @font-color;
+    color: @color-font-dark;
     font-style: italic;
   }
 

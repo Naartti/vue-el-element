@@ -77,7 +77,7 @@ export default {
   }
 
   .disabledStyle {
-    background-color: @disable-dark !important;
+    background-color: @color-disable-dark !important;
   }
 
   .secondaryStyle {

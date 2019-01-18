@@ -50,18 +50,9 @@
 
 // Font
 @font-family: 'PT Sans', 'Avenir', Helvetica, Arial, sans-serif;
-@font-color: #373737;
 @font-size: 12px;
 @font-size-header: 18px;
 @font-size-large: 24px;
-
-// State colors
-@disable-light: @color-grey-light;
-@disable-dark: @color-grey-medium;
-@warning-light: @color-danger-light;
-@warning-dark: @color-danger-dark;
-@success-light: #E8F4F3;
-@success-dark: @color-button-primary;
 
 @highlight-background-color: #F9F9F9;
 @highlight-border: 1px solid @color-grey-light;
@@ -99,10 +90,10 @@
 
 // Global classes
 .animation {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: @animation;
+  -moz-transition: @animation;
+  -o-transition: @animation;
+  transition: @animation;
 }
 
 .marginRight {

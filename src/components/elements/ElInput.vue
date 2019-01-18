@@ -87,19 +87,19 @@ export default {
   }
 
   .warningStyle {
-    color: @warning-dark;
-    border-color: @warning-dark;
-    background-color: @warning-light;
+    color: @color-danger-dark;
+    border-color: @color-danger-dark;
+    background-color: @color-danger-light;
   }
 
   .successStyle {
-    color: @success-dark;
-    border-color: @success-dark;
-    background-color: @success-light;
+    color: @color-success-dark;
+    border-color: @color-success-dark;
+    background-color: @color-success-light;
   }
 
   .disabledStyle {
-    background-color: @disable-dark !important;
+    background-color: @color-disable-dark !important;
     color: @color-grey-super-dark !important;
   }
 </style>

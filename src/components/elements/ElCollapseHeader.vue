@@ -73,7 +73,7 @@ export default {
     font-size: 18px;
     text-align: left;
     margin-top: @top-margin-header;
-    color: @font-color;
+    color: @color-font-dark;
   }
 
   .mainHeader {
