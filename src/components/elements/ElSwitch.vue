@@ -107,7 +107,7 @@ export default {
     width: 120px;
     height: 100%;
     text-align: center;
-    color: #757575;
+    color: @color-disable-dark;
     z-index: 2;
     cursor: pointer;
     font-size: @button-font-size;
