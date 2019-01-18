@@ -84,7 +84,7 @@ export default {
   }
 
   .backgroundActivated {
-    background-color: @color-button-primary;
+    background-color: @color-select;
   }
 
   .dot {

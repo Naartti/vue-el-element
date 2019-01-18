@@ -146,8 +146,8 @@ export default {
 
   /* When the radio button is checked, add a blue background */
   .checkboxContainer input:checked ~ .checkmark {
-    background-color: @color-button-primary;
-    border: 1px solid @color-button-primary;
+    background-color: @color-select;
+    border: 1px solid @color-select;
   }
 
   /* Create the checkmark/indicator (hidden when not checked) */
