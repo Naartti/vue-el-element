@@ -1,18 +1,26 @@
 <template>
-<div class="toggleButton"
-  @click="toggle">
+<div
+  class="toggleButton"
+  @click="toggle"
+  >
 
-  <div class="toggleButton-background animation"
+  <div
+    class="toggleButton-background animation"
     ref="background"
-    v-bind:class="{
-        backgroundActivated: checked
+    :class="{
+      backgroundActivated: checked
     }">
 
-    <div class="dot animation" ref="dot" v-bind:class="{ dotActivated: checked }"></div>
+    <div
+      class="dot animation"
+      ref="dot"
+      :class="{
+        dotActivated: checked
+      }"
+      />
   </div>
 </div>
 </template>
-
 <script>
 
 export default {
@@ -28,7 +36,16 @@ export default {
       this.$emit('click')
     }
   },
-  props: ['checked', 'manual'],
+  props: {
+    checked: {
+      type: Boolean,
+      default: false
+    },
+    manual: {
+      type: Boolean,
+      default: false
+    }
+  },
   model: {
     prop: 'checked',
     event: 'input'
@@ -36,7 +53,6 @@ export default {
 }
 
 </script>
-
 <style scoped lang="less">
   @import '~style/variables';
 
