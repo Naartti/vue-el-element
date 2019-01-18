@@ -1,6 +1,7 @@
 <template>
 <div
   class="toggleButton"
+  :class="{ marginRight, marginTop }"
   @click="toggle"
   >
 
@@ -44,6 +45,14 @@ export default {
     manual: {
       type: Boolean,
       default: false
+    },
+    marginRight: {
+      type: Boolean,
+      default: false
+    },
+    marginTop: {
+      type: Boolean,
+      default: false
     }
   },
   model: {
@@ -65,7 +74,6 @@ export default {
     height: auto;
     min-height: 30px;
     min-width: 60px;
-    margin-top: 15px;
     padding: none;
   }
 

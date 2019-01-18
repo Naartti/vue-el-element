@@ -71,6 +71,7 @@
       <el-header :marginTop="true">Toggle button</el-header>
       <el-toggle-button
         v-model="toggleButton"
+        :marginTop="true"
         />
 
       <el-header :marginTop="true">Switcher</el-header>
