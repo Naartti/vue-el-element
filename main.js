@@ -4,6 +4,7 @@ import ElStickySection from './src/components/elements/ElStickySection.vue'
 import ElStickyFooter from './src/components/elements/ElStickyFooter.vue'
 import ElToggleButton from './src/components/elements/ElToggleButton.vue'
 import ElExtendButton from './src/components/elements/ElExtendButton.vue'
+import ElMultiSwitch from './src/components/elements/ElMultiSwitch.vue'
 import ElInputButton from './src/components/elements/ElInputButton.vue'
 import ElRadioButton from './src/components/elements/ElRadioButton.vue'
 import ElIconButton from './src/components/elements/ElIconButton.vue'
@@ -34,6 +35,7 @@ export {
   ElStickyFooter,
   ElToggleButton,
   ElExtendButton,
+  ElMultiSwitch,
   ElInputButton,
   ElRadioButton,
   ElIconButton,

@@ -7,6 +7,7 @@ import ElToggleButton from '@/components/elements/ElToggleButton.vue'
 import ElExtendButton from '@/components/elements/ElExtendButton.vue'
 import ElInputButton from '@/components/elements/ElInputButton.vue'
 import ElRadioButton from '@/components/elements/ElRadioButton.vue'
+import ElMultiSwitch from '@/components/elements/ElMultiSwitch.vue'
 import ElIconButton from '@/components/elements/ElIconButton.vue'
 import ElDelimiter from '@/components/elements/ElDelimiter.vue'
 import ElCheckbox from '@/components/elements/ElCheckbox.vue'
@@ -35,6 +36,7 @@ export default (Vue) => {
   Vue.component('elStickyFooter', ElStickyFooter)
   Vue.component('elToggleButton', ElToggleButton)
   Vue.component('ElExtendButton', ElExtendButton)
+  Vue.component('ElMultiSwitch', ElMultiSwitch)
   Vue.component('elInputButton', ElInputButton)
   Vue.component('elRadioButton', ElRadioButton)
   Vue.component('ElIconButton', ElIconButton)

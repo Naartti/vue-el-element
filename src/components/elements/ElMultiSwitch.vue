@@ -6,29 +6,19 @@
   }"
   >
     <div
+      ref="marker"
       class="marker animation"
-      :class="{
-        markerRight : !value
-      }"
+      :style="`left: ${markerPosition}%;`"
       />
 
     <div
+      v-for="(option, index) in options"
+      :key="index"
       class="toggleLabel animation"
-      :class="{
-        labelSelected : value
-      }"
-      @click="toggle(true)"
+      :class="{ labelSelected : option.value === value}"
+      @click="toggle(option.value, index)"
       >
-      {{left}}
-    </div>
-    <div
-      class="toggleLabel"
-      :class="{
-        labelSelected : !value
-      }"
-      @click="toggle(false)"
-      >
-      {{right}}
+      {{option.label}}
     </div>
   </div>
 </template>
@@ -39,16 +29,12 @@
 export default {
   props: {
     value: {
-      type: Boolean,
-      default: true
+      type: String && Number,
+      default: 0
     },
-    left: {
-      default: 'LEFT',
-      type: String
-    },
-    right: {
-      default: 'RIGHT',
-      type: String
+    options: {
+      type: Array,
+      default: () => []
     },
     marginRight: {
       type: Boolean,
@@ -59,9 +45,33 @@ export default {
       default: false
     }
   },
+  data () {
+    return {
+      selectedIndex: 0
+    }
+  },
+  mounted () {
+    if (this.options.length > 0) {
+      this.$refs.marker.style.width = `${100 / this.options.length}%`
+    }
+
+    this.options.forEach((item, index) => {
+      if (item.value === this.value) {
+        this.selectedIndex = index
+      }
+    })
+  },
+  computed: {
+    markerPosition () {
+      return this.options.length === 0
+        ? 0
+        : 100 * this.selectedIndex / this.options.length
+    }
+  },
   methods: {
-    toggle (isLeft) {
-      this.$emit('input', isLeft)
+    toggle (value, index) {
+      this.selectedIndex = index
+      this.$emit('input', value)
     }
   }
 }
@@ -76,7 +86,7 @@ export default {
     box-shadow: inset @shadow;
     box-sizing: border-box;
     position: relative;
-    width: 240px;
+    width: auto;
     height: 30px;
     left: 0px;
     align-content: space-between;
@@ -104,12 +114,16 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
+    flex-grow: 1 1 0;
+    width: 100%;
     height: 100%;
     text-align: center;
     color: #757575;
     z-index: 2;
     cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-size: 14px;
   }
 

@@ -64,6 +64,12 @@
         :marginTop="true"
         v-model="switchModel"
         />
+
+      <el-multi-switch
+        :options="multiSwitch.options"
+        v-model="multiSwitch.model"
+        :marginTop="true"
+        />
     </el-menu-item>
 
     <!-- Text -->
@@ -224,7 +230,23 @@ export default {
       showPopup: false,
       toggleButton: true,
       switchModel: true,
-      expandCard: false
+      expandCard: false,
+      multiSwitch: {
+        options: [{
+          value: 1,
+          label: 'Mode 1'
+        }, {
+          value: 2,
+          label: 'Mode 2'
+        }, {
+          value: 3,
+          label: 'Mode 3'
+        }, {
+          value: 4,
+          label: 'Mode 4'
+        }],
+        model: 2
+      }
     }
   }
 }
