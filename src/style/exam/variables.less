@@ -1,0 +1,112 @@
+// Color
+@color-brand: #ff9e00;
+@color-accent: #1D2C51;
+@color-backdrop: #576067;
+
+@color-grey-super-dark: #373737;
+@color-grey-dark: #757575;
+@color-grey-medium: #c8c8c8;
+@color-grey-light: #eeeeee;
+@color-grey-super-light: #f9f9f9;
+
+// State color
+@color-disable-light: @color-grey-light;
+@color-disable-dark: @color-grey-medium;
+@color-danger-light: #FBBEBE;
+@color-danger-medium: #E98C8D;
+@color-danger-dark: #B84E43;
+@color-warning-light: #FEECCE;
+@color-warning-medium: #FFC872;
+@color-warning-dark: #805512;
+@color-success-light: #DFF0D8;
+@color-success-medium: #43B8A9;
+@color-success-dark: #42A293;
+@color-info-light: #EFF3F8;
+@color-info-medium: #5B9BD1;
+@color-info-dark: #3B434C;
+
+// Element colors
+@color-font-light: #ffffff;
+@color-font-dark: #222222;
+@color-button-primary: @color-accent;
+@color-button-primary-hover: @color-brand;
+@color-button-secondary: @color-accent;
+@color-button-secondary-hover: @color-brand;
+@color-button-danger: @color-danger-dark;
+@color-button-danger-hover: @color-danger-medium;
+
+
+// Util
+@radius-small: 5px;
+@radius-large: 10px;
+@shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+@shadow-focus: 0 5px 7px rgba(0, 0, 0, 0.1);
+@animation: all 0.2s ease-in-out;
+@slow-animation: all 0.5s ease-in-out;
+@fast-animation: all 0.1s ease-out;
+
+// Width
+@section-max-width: 700px;
+@section-content-max-width: 640px;
+@is-wide-width: 1500px;
+@width-narrow: 900px;
+
+// Font
+@font-family: 'PT Sans', 'Avenir', Helvetica, Arial, sans-serif;
+@font-size: 12px;
+@font-size-header: 18px;
+@font-size-large: 24px;
+
+@highlight-background-color: #F9F9F9;
+@highlight-border: 1px solid @color-grey-light;
+@highlight-shadow: @shadow;
+
+// Design elements
+@top-margin-element: 10px;
+@top-margin-section: 10px;
+@bottom-margin-section: 15px;
+@top-margin-header: 15px;
+@top-margin-header-large: 48px;
+@side-margin: 15px;
+
+// Button
+@button-height: 30px;
+@button-radius: 15px;
+@button-font-size: 14px;
+@button-padding: 0px 25px;
+
+// Select
+@color-select: #5BDE44;
+
+// Input
+@input-height: 30px;
+@input-background: @color-grey-super-light;
+@input-border: 1px solid @color-grey-medium;
+@input-border-focus: 1px solid @color-grey-dark;
+@input-padding: 10px;
+@input-radius: @radius-small;
+
+@dropdown-height: @input-height;
+
+
+// Global classes
+.animation {
+  -webkit-transition: @animation;
+  -moz-transition: @animation;
+  -o-transition: @animation;
+  transition: @animation;
+}
+
+.marginRight {
+  margin-right: @side-margin;
+}
+
+.marginTop {
+  margin-top: @top-margin-element;
+}
+
+
+// Default style elements
+div {
+  font-family: @font-family;
+}
