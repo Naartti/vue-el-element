@@ -3,14 +3,15 @@
   @click="next"
   class="buttonStyle animation"
   v-bind:class="{
-    disabled,
+    disabled: disabled && !secondary,
     disabledSecondary: disabled && secondary,
-    danger,
-    secondary,
+    danger: danger && !secondary && !disabled,
+    secondary: secondary && !danger && !disabled,
     dangerSecondary: danger && secondary && !disabled,
     right,
     marginRight,
-    marginTop
+    marginTop,
+    primary: !disabled && !secondary && !danger
   }"
   >
   <el-tooltip
@@ -86,9 +87,6 @@ export default {
     height: @button-height;
     min-height: @button-height;
     white-space: nowrap;
-    background-color: @color-button-primary;
-    border: 1px solid @color-button-primary;
-    color: #ffffff;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -96,28 +94,58 @@ export default {
     position: relative;
   }
 
+  .primary {
+    background-color: @color-button-primary;
+    border: 1px solid @color-button-primary;
+    color: #ffffff;
+
+    &:hover {
+      background-color: @color-button-primary-hover;
+      border: 1px solid @color-button-primary-hover;
+    }
+  }
+
   .disabled {
     background-color: @color-disable-dark !important;
     border: 1px solid @color-disable-dark !important;
+    color: #ffffff !important;
   }
 
   .disabledSecondary {
+    border: 1px solid @color-disable-dark !important;
     color: @color-disable-dark !important;
   }
 
   .secondary {
-    color: @color-button-primary;
-    background-color: transparent !important;
+    color: @color-button-secondary;
+      border: 1px solid @color-button-secondary;
+    background-color: transparent;
+
+    &:hover {
+      color: @color-button-secondary-hover;
+      border: 1px solid @color-button-secondary-hover;
+    }
   }
 
   .dangerSecondary {
-    color: @color-danger-dark !important;
+    color: @color-danger-dark;
+    border: 1px solid @color-button-danger;
+
+    &:hover {
+      color: @color-button-danger-hover;
+      border: 1px solid @color-button-danger-hover;
+    }
   }
 
   .danger {
     background-color: @color-button-danger;
     border: 1px solid @color-button-danger;
     color: #ffffff;
+
+    &:hover {
+      background-color: @color-button-danger-hover;
+      border: 1px solid @color-button-danger-hover;
+    }
   }
 
   .right {
