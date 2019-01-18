@@ -45,6 +45,7 @@
         <el-button
           :disabled="true"
           :marginTop="true"
+          :marginRight="true"
           :danger="true"
           tooltip="Tooltip"
           >

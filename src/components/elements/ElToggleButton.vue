@@ -81,10 +81,12 @@ export default {
     border-radius: 15px;
     box-sizing: border-box;
     cursor: pointer;
+    box-shadow: inset @shadow;
   }
 
   .backgroundActivated {
     background-color: @color-select;
+    box-shadow: none;
   }
 
   .dot {

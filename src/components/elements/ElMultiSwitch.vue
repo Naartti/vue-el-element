@@ -125,6 +125,7 @@ export default {
     white-space: nowrap;
     overflow: hidden;
     font-size: @button-font-size;
+    box-sizing: border-box;
   }
 
   .labelSelected {
