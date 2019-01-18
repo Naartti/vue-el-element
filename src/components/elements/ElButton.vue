@@ -83,8 +83,8 @@ export default {
     height: @button-height;
     min-height: @button-height;
     white-space: nowrap;
-    background-color: @blue-main;
-    border: 1px solid @blue-main;
+    background-color: @color-button-primary;
+    border: 1px solid @color-button-primary;
     color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -103,17 +103,17 @@ export default {
   }
 
   .secondary {
-    color: @blue-main;
+    color: @color-button-primary;
     background-color: transparent !important;
   }
 
   .dangerSecondary {
-    color: @red !important;
+    color: @color-danger-dark !important;
   }
 
   .danger {
-    background-color: @red;
-    border: 1px solid @red;
+    background-color: @color-button-danger;
+    border: 1px solid @color-button-danger;
     color: #ffffff;
   }
 

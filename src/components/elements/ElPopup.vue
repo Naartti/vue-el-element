@@ -155,7 +155,7 @@ export default {
       left: 0px;
       height: 100%;
       width: 100%;
-      background-color: @panel-color;
+      background-color: @color-backdrop;
       opacity: 0.9;
       z-index: 1;
     }

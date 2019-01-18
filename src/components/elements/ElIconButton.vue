@@ -69,11 +69,6 @@ export default {
     border-radius: @button-radius;
     height: @button-height;
     padding: none;
-
-    &:active {
-      transform: translateY(-1px);
-      box-shadow: @shadow;
-    }
   }
 
   .centerButton {
@@ -86,54 +81,37 @@ export default {
   }
 
   .secondaryStyle {
-    border: 1px solid @button-color;
+    border: 1px solid @color-button-secondary;
     color: @button-color;
     background-color: transparent;
-
-    &:hover {
-      border: 1px solid @button-color-highlight;
-      color: @button-color-highlight;
-    }
   }
 
   .secondaryFillStyle {
     border: 1px solid #fff;
     color: #fff;
-    background-color: @blue-grey;
-
-    &:hover {
-      background-color: @green;
-    }
+    background-color: @color-button-secondary;
   }
 
   .primaryStyle {
     background-color: @button-color;
     color: #ffffff;
     border: 1px solid #ffffff;
-
-    &:hover {
-      background-color: @button-color-highlight
-    }
   }
 
   .blue {
-    background-color: @blue-main;
+    background-color: @color-button-primary;
     color: #ffffff;
     border: 1px solid #ffffff;
-
-    &:hover {
-      background-color: @blue-main-dark;
-    }
   }
 
   .danger {
-    background-color: @warning-dark;
+    background-color: @color-button-danger;
     color: #ffffff;
   }
 
   .dangerSecondary {
-    border: 1px solid @warning-dark;
-    color: @warning-dark;
+    border: 1px solid @color-button-danger;
+    color: @color-button-danger;
     background-color: transparent;
   }
 

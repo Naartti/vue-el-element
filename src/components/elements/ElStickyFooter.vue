@@ -105,7 +105,7 @@ export default {
     position: fixed;
     top: auto;
     bottom: 0px;
-    border-top: 1px solid @grey-light;
+    border-top: 1px solid @color-grey-light;
     background-color: #ffffff;
   }
 

@@ -1,20 +1,20 @@
 // Color
 @color-brand: #43B8A9;
 @color-accent: #5B9BD1;
+@color-backdrop: #576067;
+
 @color-grey-super-dark: #373737;
 @color-grey-dark: #757575;
 @color-grey-medium: #c8c8c8;
 @color-grey-light: #eeeeee;
 @color-grey-super-light: #f9f9f9;
-@color-font-light: #ffffff;
-@color-font-dark: #222222;
 
-// Statee color
+// State color
 @color-disable-light: @color-grey-light;
 @color-disable-dark: @color-grey-medium;
-@color-error-light: #FBBEBE;
-@color-error-medium: #E98C8D;
-@color-error-dark: #B84E43;
+@color-danger-light: #FBBEBE;
+@color-danger-medium: #E98C8D;
+@color-danger-dark: #B84E43;
 @color-warning-light: #FEECCE;
 @color-warning-medium: #FFC872;
 @color-warning-dark: #805512;
@@ -25,33 +25,13 @@
 @color-info-medium: #5B9BD1;
 @color-info-dark: #3B434C;
 
-// Color
-@green-light: #DFF0D8;
-@green: #43B8A9;
-@green-dark: #42A293;
-@red-light: #FBBEBE;
-@red: #E98C8D;
-@red-dark: #B84E43;
-@red-light: #FBE7E7;
-@blue-light: #EFF3F8;
-@blue-main: #5B9BD1;
-@blue-main-dark: #337AB7;
-@blue-dark: #3B434C;
-@blue-darker: #48525D;
-@blue-grey: #94A5A6;
+// Element colors
+@color-font-light: #ffffff;
+@color-font-dark: #222222;
+@color-button-primary: @color-accent;
+@color-button-secondary: @color-accent;
+@color-button-danger: @color-danger-dark;
 
-@yellow-light: #FEECCE;
-@yellow-main: #FFC872;
-@yellow-dark: #805512;
-
-@grey-super-light: #fcfcfc;
-@grey-light: #eeeeee;
-@grey-middle: #C8C8C8;
-@grey-dark: #757575;
-@grey-darker: #373737;
-
-@backdrop-color: @blue-light;
-@panel-color: #576067;
 
 // Util
 @radius-small: 5px;
@@ -76,19 +56,19 @@
 @font-size-large: 24px;
 
 // State colors
-@disable-light: @grey-light;
-@disable-dark: @grey-middle;
-@warning-light: @red-light;
-@warning-dark: @red;
+@disable-light: @color-grey-light;
+@disable-dark: @color-grey-medium;
+@warning-light: @color-danger-light;
+@warning-dark: @color-danger-dark;
 @success-light: #E8F4F3;
-@success-dark: @green;
+@success-dark: @color-button-primary;
 
 @highlight-background-color: #F9F9F9;
-@highlight-border: 1px solid @grey-light;
+@highlight-border: 1px solid @color-grey-light;
 @highlight-shadow: @shadow;
 @highlight-shadow-focus: @shadow-focus;
-@downlight-background-color: @grey-light;
-@downlight-border: 1px solid @grey-light;
+@downlight-background-color: @color-grey-light;
+@downlight-border: 1px solid @color-grey-light;
 @downlight-shadow: none;
 
 
@@ -104,13 +84,13 @@
 @button-radius: 5px;
 @button-font-size: 14px;
 @button-padding: 20px;
-@button-color: @green;
+@button-color: @color-button-primary;
 @button-color-highlight: #4BCCBC;
 
 @input-height: 30px;
-@input-background: @grey-super-light;
-@input-border: 1px solid @grey-middle;
-@input-border-focus: 1px solid @grey-dark;
+@input-background: @color-grey-super-light;
+@input-border: 1px solid @color-grey-medium;
+@input-border-focus: 1px solid @color-grey-dark;
 @input-padding: 10px;
 @input-radius: @radius-small;
 

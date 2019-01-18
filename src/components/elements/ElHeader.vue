@@ -90,7 +90,7 @@ export default {
     font-size: @font-size-header;
     text-align: left;
     margin-top: @top-margin-header;
-    color: @grey-darker;
+    color: @color-grey-super-dark;
   }
 
   .icon {

@@ -48,7 +48,7 @@ export default {
     cursor: pointer;
 
     &:hover {
-      background-color: @grey-super-light;
+      background-color: @color-grey-super-light;
       transform: scale(1.05);
     }
   }
@@ -70,7 +70,7 @@ export default {
   }
 
   .more-line {
-    background-color: @green;
+    background-color: @color-button-primary;
     height: 2px;
     width: 12px;
     border-radius: 1px;

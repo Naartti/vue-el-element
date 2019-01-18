@@ -100,6 +100,6 @@ export default {
 
   .disabledStyle {
     background-color: @disable-dark !important;
-    color: @grey-darker !important;
+    color: @color-grey-super-dark !important;
   }
 </style>

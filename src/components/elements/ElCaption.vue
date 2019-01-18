@@ -59,6 +59,6 @@ export default {
   }
 
   .danger {
-    color: @red;
+    color: @color-danger-dark;
   }
 </style>

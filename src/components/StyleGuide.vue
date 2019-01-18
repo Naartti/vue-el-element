@@ -11,6 +11,11 @@
       <div class="color-preview color-accent" />
       <p>@color-accent</p>
     </div>
+
+    <div class="color-card">
+      <div class="color-preview color-backdrop" />
+      <p>@color-backdrop</p>
+    </div>
   </el-inline>
 
   <el-header :marginTop="true">Grey scale</el-header>
@@ -44,18 +49,18 @@
   <el-header :marginTop="true">State colors</el-header>
   <el-inline>
     <div class="color-card">
-      <div class="color-preview color-error-light" />
-      <p>@color-error-light</p>
+      <div class="color-preview color-danger-light" />
+      <p>@color-danger-light</p>
     </div>
 
     <div class="color-card">
-      <div class="color-preview color-error-medium" />
-      <p>@color-error-medium</p>
+      <div class="color-preview color-danger-medium" />
+      <p>@color-danger-medium</p>
     </div>
 
     <div class="color-card">
-      <div class="color-preview color-error-dark" />
-      <p>@color-error-dark</p>
+      <div class="color-preview color-danger-dark" />
+      <p>@color-danger-dark</p>
     </div>
   </el-inline>
   <el-inline :marginTop="true">
@@ -154,6 +159,10 @@ export default {
     background-color: @color-accent;
   }
 
+  .color-backdrop {
+    background-color: @color-backdrop;
+  }
+
   .color-grey-super-light {
     background-color: @color-grey-super-light;
   }
@@ -174,16 +183,16 @@ export default {
     background-color: @color-grey-super-dark;
   }
 
-  .color-error-dark {
-    background-color: @color-error-dark;
+  .color-danger-dark {
+    background-color: @color-danger-dark;
   }
 
-  .color-error-medium {
-    background-color: @color-error-medium;
+  .color-danger-medium {
+    background-color: @color-danger-medium;
   }
 
-  .color-error-light {
-    background-color: @color-error-light;
+  .color-danger-light {
+    background-color: @color-danger-light;
   }
 
   .color-warning-dark {

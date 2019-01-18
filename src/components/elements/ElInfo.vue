@@ -54,11 +54,11 @@ export default {
     line-height: 30px;
     text-align: left;
     margin-top: @top-margin-element;
-    color: @grey-darker;
-    background-color: @grey-super-light;
+    color: @color-grey-super-dark;
+    background-color: @color-grey-super-light;
     padding-left: 10px;
 
-    border: 1px solid @grey-light;
+    border: 1px solid @color-grey-light;
     border-radius: @radius-small;
     outline: none;
     box-sizing: border-box;

@@ -48,7 +48,7 @@ export default {
     width: 100%;
     height: 1px;
     top: 35px;
-    background-color: @grey-light;
+    background-color: @color-grey-light;
   }
 
   .lineShort {
@@ -56,6 +56,6 @@ export default {
   }
 
   .darkLine {
-    background-color: @grey-dark;
+    background-color: @color-grey-dark;
   }
 </style>

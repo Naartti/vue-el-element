@@ -135,19 +135,19 @@ export default {
     left: 0;
     height: 20px;
     width: 20px;
-    border: 1px solid @grey-middle;
+    border: 1px solid @color-grey-medium;
     border-radius: 2px;
   }
 
   /* On mouse-over, add a grey background color */
   .checkboxContainer:hover input ~ .checkmark {
-    border: 1px solid @green;
+    border: 1px solid @color-button-primary;
   }
 
   /* When the radio button is checked, add a blue background */
   .checkboxContainer input:checked ~ .checkmark {
-    background-color: @green;
-    border: 1px solid @green;
+    background-color: @color-button-primary;
+    border: 1px solid @color-button-primary;
   }
 
   /* Create the checkmark/indicator (hidden when not checked) */

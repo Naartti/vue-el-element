@@ -94,7 +94,7 @@ export default {
     left: 9px;
     height: 100%;
     width: 1px;
-    background-color: @grey-dark;
+    background-color: @color-grey-dark;
   }
 
   /* collapse icon */
@@ -131,7 +131,7 @@ export default {
   }
 
   .more-line {
-    background-color: @grey-darker;
+    background-color: @color-grey-super-dark;
     height: 2px;
     width: 12px;
     border-radius: 1px;

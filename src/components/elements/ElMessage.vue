@@ -67,9 +67,9 @@ export default {
   }
 
   .warning {
-    background-color: @yellow-light;
-    border-left: 10px solid @yellow-main;
-    color: @yellow-dark;
+    background-color: @color-warning-light;
+    border-left: 10px solid @color-warning-medium;
+    color: @color-warning-dark;
   }
 
   .icon {

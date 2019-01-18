@@ -101,9 +101,9 @@ export default {
   .selectContainer-field {
     height: @dropdown-height;
     width: 100%;
-    background-color: @grey-super-light;
+    background-color: @color-grey-super-light;
     border-radius: @radius-small;
-    border: 1px solid @grey-middle;
+    border: 1px solid @color-grey-medium;
     box-sizing: border-box;
     outline: none;
     cursor: pointer;
@@ -111,7 +111,7 @@ export default {
   }
 
   .selectContainer-field:focus {
-    border: 1px solid @grey-dark;
+    border: 1px solid @color-grey-dark;
   }
 
   .marginRight {

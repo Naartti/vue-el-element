@@ -88,7 +88,7 @@ export default {
     top: 0px;
     width: 50%;
     height: 100%;
-    background-color: @blue-main;
+    background-color: @color-button-primary;
     box-shadow: @shadow;
     z-index: 1;
     box-sizing: border-box;

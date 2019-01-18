@@ -29,7 +29,7 @@ export default {
     font-size: 12px;
     text-align: left;
     margin-top: @top-margin-element;
-    color: @grey-darker;
+    color: @color-grey-super-dark;
 
     p {
       font-size: @font-size;

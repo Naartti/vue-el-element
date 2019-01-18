@@ -208,7 +208,7 @@ export default {
     max-width: 500px;
     height: auto;
     min-height: 20px;
-    border: 1px solid @grey-middle;
+    border: 1px solid @color-grey-medium;
     box-sizing: border-box;
     border-radius: @radius-small;
     margin-top: @top-margin-element;
@@ -250,19 +250,19 @@ export default {
       }
 
       .selected {
-        background-color: @green;
+        background-color: @color-button-primary;
         color: #fff;
         border-radius: @radius-small;
 
         &:hover {
           text-decoration: line-through;
-          background-color: @red;
+          background-color: @color-danger-dark;
         }
       }
     }
 
     .dropdown {
-      border-top: 1px solid @grey-middle;
+      border-top: 1px solid @color-grey-medium;
 
       .row {
         cursor: pointer;
@@ -273,7 +273,7 @@ export default {
   }
 
   .highlightRow {
-    background-color: @green;
+    background-color: @color-button-primary;
     color: #fff;
   }
 
