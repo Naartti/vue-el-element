@@ -62,7 +62,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 30px;
+    width: @button-height;
     border: none;
     outline: none;
     cursor: pointer;
@@ -82,7 +82,7 @@ export default {
 
   .secondaryStyle {
     border: 1px solid @color-button-secondary;
-    color: @button-color;
+    color: @color-button-primary;
     background-color: transparent;
   }
 
@@ -93,7 +93,7 @@ export default {
   }
 
   .primaryStyle {
-    background-color: @button-color;
+    background-color: @color-button-primary;
     color: #ffffff;
     border: 1px solid #ffffff;
   }

@@ -74,7 +74,7 @@ export default {
   @import '~style/variables';
 
   .buttonStyle {
-    padding: 5px @button-padding;
+    padding: @button-padding;
     text-decoration: bold;
     text-transform: none;
     cursor: pointer;

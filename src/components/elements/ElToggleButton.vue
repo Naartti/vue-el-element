@@ -61,7 +61,7 @@ export default {
     display: block;
     top: 0px;
     left: 0px;
-    width: auto;
+    width: 60px;
     height: auto;
     min-height: 30px;
     min-width: 60px;
@@ -84,7 +84,7 @@ export default {
   }
 
   .backgroundActivated {
-    background-color: @color-success-dark;
+    background-color: @color-button-primary;
   }
 
   .dot {
