@@ -1,12 +1,12 @@
 <template>
-    <transition name="slide-fade">
-        <div v-show="displayedIndex === index" class="el-menu-item">
-            <h1>{{title}}</h1>
-            <el-delimiter :short="true"></el-delimiter>
+  <transition name="slide-fade">
+    <div v-show="displayedIndex === index" class="el-menu-item">
+      <h1 class="el-menu-item-header">{{title}}</h1>
+      <el-delimiter :short="true" />
 
-            <slot></slot>
-        </div>
-    </transition>
+      <slot />
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -43,6 +43,14 @@ export default {
 <style scoped lang="less">
   .el-menu-item {
     width: 100%;
+  }
+
+  .el-menu-item-header {
+
+    @media (max-width: 700px) {
+      margin-top: 0px;
+      margin-left: 40px;
+    }
   }
 
   .slide-fade-enter-active {

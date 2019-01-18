@@ -20,20 +20,42 @@
 
 <template>
 <div class="menuContainer">
-  <div class="contextPanel">
+  <div
+    class="contextPanel"
+    :class="{ menuIsClosed: !menuIsOpen }"
+    >
     <div v-for="(title, index) in items"
       class="contextPanelItem animation"
-      v-bind:key="index"
-      v-bind:class="{
+      :key="index"
+      :class="{
         contextPanelActiveItem : displayedIndex === index
       }"
-      @click="displayedIndex = index">
+      @click="openTab(index)"
+      >
+
+      <div class="menuButton" />
+
       {{title}}
     </div>
   </div>
 
+  <div
+    class="backdrop"
+    v-if="menuIsOpen"
+    @click="menuIsOpen = false"
+    />
+
+  <div
+    class="openMenuButton animation"
+    @click="menuIsOpen = true"
+    >
+    <span>
+    <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Artboard" transform="translate(-19.000000, -25.000000)" fill="#222222"><path d="M20,25 L33,25 C33.5522847,25 34,25.4477153 34,26 C34,26.5522847 33.5522847,27 33,27 L20,27 C19.4477153,27 19,26.5522847 19,26 C19,25.4477153 19.4477153,25 20,25 Z M20,37 L33,37 C33.5522847,37 34,37.4477153 34,38 C34,38.5522847 33.5522847,39 33,39 L20,39 C19.4477153,39 19,38.5522847 19,38 C19,37.4477153 19.4477153,37 20,37 Z M20,31 L33,31 C33.5522847,31 34,31.4477153 34,32 C34,32.5522847 33.5522847,33 33,33 L20,33 C19.4477153,33 19,32.5522847 19,32 C19,31.4477153 19.4477153,31 20,31 Z" id="Combined-Shape"></path></g></g></svg>
+    </span>
+  </div>
+
   <div class="contentArea">
-    <slot></slot>
+    <slot />
   </div>
 </div>
 </template>
@@ -44,6 +66,7 @@ export default {
   name: 'ElMenu',
   data () {
     return {
+      menuIsOpen: true,
       displayedIndex: 0,
       indexCounter: 0,
       items: []
@@ -55,12 +78,18 @@ export default {
     },
     getIndex () {
       return this.indexCounter++
+    },
+    openTab (index) {
+      this.displayedIndex = index
+      this.menuIsOpen = false
     }
   }
 }
 </script>
 <style scoped lang="less">
   @import '~style/variables';
+
+  @narrow-width: 700px;
 
   .menuContainer {
     display: flex;
@@ -77,6 +106,10 @@ export default {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 14px;
+
+    @media (max-width: @narrow-width) {
+      text-align: left;
+    }
   }
 
   .contextPanelItem:hover {
@@ -98,11 +131,67 @@ export default {
     margin-right: 50px;
     margin-left: 10px;
     padding-top: 65px;
+    z-index: 3;
+
+    @media (max-width: @narrow-width) {
+      position: fixed;
+      background-color: #ffffff;
+      box-shadow: @shadow;
+      margin-left: 0px;
+      margin-top: 0px;
+      margin-right: 0px;
+      padding-left: 10px;
+      padding-top: 10px;
+      padding-right: 30px;
+      height: 100%;
+      max-width: 100%;
+      top: 0px;
+      left: 0px;
+    }
+  }
+
+  .menuIsClosed {
+    @media (max-width: @narrow-width) {
+      display: none;
+    }
+  }
+
+  .backdrop {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: @color-backdrop;
+    opacity: 0.9;
+    cursor: pointer;
+    z-index: 2;
+
+    @media (max-width: @narrow-width) {
+      display: block;
+    }
+  }
+
+  .openMenuButton {
+    display: none;
+    z-index: 2;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    padding: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    @media (max-width: @narrow-width) {
+      display: block;
+    }
   }
 
   .contentArea {
     display: flex;
     flex-grow: 1;
     max-width: 700px;
+    z-index: 1;
   }
 </style>
