@@ -148,6 +148,7 @@ export default {
     align-items: center;
     justify-content: center;
     z-index: 1000000;
+    box-sizing: border-box;
 
     .backdrop {
       position: fixed;
@@ -158,6 +159,7 @@ export default {
       background-color: @color-backdrop;
       opacity: 0.9;
       z-index: 1;
+      box-sizing: border-box;
     }
 
     .body {
@@ -178,6 +180,10 @@ export default {
       overflow-y: hidden;
       overflow-x: hidden;
       box-sizing: border-box;
+
+      @media (max-width: @section-content-max-width) {
+        border-radius: 0px;
+      }
 
       p {
         font-size: 12px;
