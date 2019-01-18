@@ -71,13 +71,13 @@ export default {
 
   .wrapper {
     display: flex;
-    border-radius: 5px;
+    border-radius: @button-radius;
     background-color: #ffffff;
     box-shadow: inset @shadow;
     box-sizing: border-box;
     position: relative;
     width: 240px;
-    height: 30px;
+    height: @button-height;
     left: 0px;
     align-content: space-between;
   }
@@ -92,7 +92,7 @@ export default {
     box-shadow: @shadow;
     z-index: 1;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: @button-radius;
   }
 
   .markerRight {
@@ -110,7 +110,7 @@ export default {
     color: #757575;
     z-index: 2;
     cursor: pointer;
-    font-size: 14px;
+    font-size: @button-font-size;
   }
 
   .labelSelected {
