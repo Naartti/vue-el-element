@@ -23,7 +23,7 @@
 </template>
 <script>
 
-import ElTooltip from './ElTooltip'
+import ElTooltip from './ElTooltip.vue'
 
 export default {
   components: { ElTooltip },

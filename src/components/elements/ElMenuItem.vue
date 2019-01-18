@@ -11,14 +11,22 @@
 
 <script>
 
+import ElDelimiter from './ElDelimiter.vue'
+
 export default {
+  components: { ElDelimiter },
   name: 'ElMenuItem',
   data () {
     return {
       index: null
     }
   },
-  props: ['title'],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    }
+  },
   computed: {
     displayedIndex () {
       return this.$parent.displayedIndex

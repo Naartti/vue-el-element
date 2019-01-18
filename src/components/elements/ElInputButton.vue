@@ -22,10 +22,13 @@
   </el-button>
 </div>
 </template>
-
 <script>
 
+import ElButton from './ElButton.vue'
+import ElInput from './ElInput.vue'
+
 export default {
+  components: { ElButton, ElInput },
   name: 'ElInputButton',
   props: ['placeholder', 'value', 'type', 'warning', 'success', 'disabled', 'buttonType'],
   data () {
