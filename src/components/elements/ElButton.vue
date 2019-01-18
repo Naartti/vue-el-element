@@ -128,7 +128,7 @@ export default {
   }
 
   .dangerSecondary {
-    color: @color-danger-dark;
+    color: @color-button-danger;
     border: 1px solid @color-button-danger;
 
     &:hover {

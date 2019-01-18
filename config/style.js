@@ -1,3 +1,3 @@
 module.exports = {
-  style: 'exam' // 'kunskapsmatrisen' or 'exam'
+  style: 'kunskapsmatrisen' // 'kunskapsmatrisen' or 'exam'
 }
