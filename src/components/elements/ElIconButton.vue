@@ -29,10 +29,12 @@
   </button>
 </div>
 </template>
-
 <script>
 
+import ElTooltip from './ElTooltip'
+
 export default {
+  components: { ElTooltip },
   name: 'ElIconButton',
   props: ['type', 'icon', 'disabled', 'center', 'align', 'margin', 'tooltip'],
   mounted () {},

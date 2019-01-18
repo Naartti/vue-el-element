@@ -23,7 +23,10 @@
 </template>
 <script>
 
+import ElTooltip from './ElTooltip'
+
 export default {
+  components: { ElTooltip },
   name: 'ElButton',
   props: {
     disabled: {

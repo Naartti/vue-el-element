@@ -62,7 +62,7 @@ export default {
     background-color: #ffffff;
     padding: 10px 15px;
     font-size: 12px;
-    border-radius: 5px;
+    border-radius: @radius-small;
     box-sizing: border-box;
   }
 
