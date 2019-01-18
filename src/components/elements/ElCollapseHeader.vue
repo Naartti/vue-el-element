@@ -74,12 +74,14 @@ export default {
     text-align: left;
     margin-top: @top-margin-header;
     color: @color-font-dark;
+    box-sizing: border-box;
   }
 
   .mainHeader {
     padding-left: 30px;
     width: 100%;
     cursor: pointer;
+    box-sizing: border-box;
   }
 
   .collapseContent {
