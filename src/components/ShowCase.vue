@@ -1,6 +1,11 @@
 <template>
 <div>
   <el-menu>
+    <!-- Style guide -->
+    <el-menu-item title="Style">
+      <style-guide />
+    </el-menu-item>
+
     <!-- Button -->
     <el-menu-item title="Button">
       <el-header>Text button</el-header>
@@ -186,7 +191,10 @@
 </template>
 
 <script>
+import StyleGuide from './StyleGuide.vue'
+
 export default {
+  components: { StyleGuide },
   data () {
     return {
       checkbox: {
