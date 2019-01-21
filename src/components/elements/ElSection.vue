@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import '~style/variables';
+  @import '~el-style/variables';
 
   .sectionBlock {
     position: relative;

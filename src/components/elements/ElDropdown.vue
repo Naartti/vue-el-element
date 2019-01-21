@@ -86,7 +86,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import '~style/variables';
+  @import '~el-style/variables';
 
   .selectContainer {
     position: relative;

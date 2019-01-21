@@ -77,7 +77,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  @import '~style/variables.less';
+  @import '~el-style/variables.less';
 
   .wrapper {
     display: flex;

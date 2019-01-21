@@ -75,7 +75,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
-  @import '~style/variables';
+  @import '~el-style/variables';
 
   .buttonStyle {
     padding: @button-padding;

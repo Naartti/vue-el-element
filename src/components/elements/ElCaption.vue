@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import '~style/variables';
+  @import '~el-style/variables';
 
   .caption {
     position: relative;

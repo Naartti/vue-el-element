@@ -121,7 +121,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import '~style/variables';
+  @import '~el-style/variables';
 
   /* Enter and leave animations can use different */
   /* durations and timing functions.              */
