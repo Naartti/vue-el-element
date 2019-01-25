@@ -131,7 +131,7 @@ export default {
     margin-right: 50px;
     margin-left: 10px;
     padding-top: 65px;
-    z-index: 3;
+    z-index: 1;
 
     @media (max-width: @narrow-width) {
       position: fixed;
@@ -147,6 +147,7 @@ export default {
       max-width: 100%;
       top: 0px;
       left: 0px;
+      z-index: 3;
     }
   }
 
