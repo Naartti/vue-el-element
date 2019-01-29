@@ -2,7 +2,7 @@
 <button type="button"
   @click="next"
   class="buttonStyle animation"
-  v-bind:class="{
+  :class="{
     disabled: disabled && !secondary,
     disabledSecondary: disabled && secondary,
     danger: danger && !secondary && !disabled,
@@ -112,13 +112,14 @@ export default {
   }
 
   .disabledSecondary {
+    background-color: transparent;
     border: 1px solid @color-disable-dark !important;
     color: @color-disable-dark !important;
   }
 
   .secondary {
     color: @color-button-secondary;
-      border: 1px solid @color-button-secondary;
+    border: 1px solid @color-button-secondary;
     background-color: transparent;
 
     &:hover {
@@ -128,6 +129,7 @@ export default {
   }
 
   .dangerSecondary {
+    background-color: transparent;
     color: @color-button-danger;
     border: 1px solid @color-button-danger;
 
