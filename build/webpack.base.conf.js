@@ -3,7 +3,6 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-const { style } = require('../config/style')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -37,8 +36,8 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
-      'el-style': resolve(`src/style/${style}`),
-      '@teachiq/el-element': resolve('main')
+      'el-style': resolve(`src/style`),
+      'vue-el-element': resolve('main')
     }
   },
   module: {

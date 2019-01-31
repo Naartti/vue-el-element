@@ -27,7 +27,7 @@
 
 <script>
 
-import { ElCollapseToggle } from '@teachiq/el-element'
+import { ElCollapseToggle } from 'vue-el-element'
 
 export default {
   name: 'ElCollapseHeader',
