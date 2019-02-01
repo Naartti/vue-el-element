@@ -19,9 +19,6 @@ echo 'Bulding for production'
 npm run build
 # npm run buildPkg
 
-# echo 'Git commit'
-git commit -a -m "Build & deploy to npm"
-
 # echo 'Npm patch & publish'
 npm version patch
 npm publish
