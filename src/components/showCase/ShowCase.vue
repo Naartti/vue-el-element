@@ -116,7 +116,21 @@
         Warning message
       </el-message>
       <el-message
-        :warning="true"
+        :danger="true"
+        >
+        Danger message
+      </el-message>
+      <el-message
+        :success="true"
+        >
+        Success message
+      </el-message>
+      <el-message
+        :info="true"
+        >
+        Info message
+      </el-message>
+      <el-message
         @click="() => {}"
         >
         Clickable message
@@ -222,7 +236,7 @@ export default {
   components: { ColorGuide, FontGuide },
   data () {
     return {
-      openTab: 2,
+      openTab: 6,
       checkbox: {
         model: [],
         options: [{
