@@ -21,7 +21,7 @@
 <template>
 <div class="menuContainer">
   <div
-    class="contextPanel"
+    class="contextPanel animation"
     :class="{ menuIsClosed: !menuIsOpen }"
     >
     <div v-for="(title, index) in items"
@@ -64,6 +64,12 @@
 
 export default {
   name: 'ElMenu',
+  props: {
+    align: {
+      type: String,
+      defult: 'right'
+    }
+  },
   data () {
     return {
       menuIsOpen: false,
@@ -106,6 +112,7 @@ export default {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 14px;
+    white-space: wrap;
 
     @media (max-width: @narrow-width) {
       text-align: left;
@@ -137,6 +144,7 @@ export default {
       position: fixed;
       background-color: #ffffff;
       box-shadow: @shadow;
+      box-sizing: border-box;
       margin-left: 0px;
       margin-top: 0px;
       margin-right: 0px;
@@ -144,7 +152,7 @@ export default {
       padding-top: 10px;
       padding-right: 30px;
       height: 100%;
-      max-width: 100%;
+      max-width: 300px;
       top: 0px;
       left: 0px;
       z-index: 3;
@@ -153,7 +161,9 @@ export default {
 
   .menuIsClosed {
     @media (max-width: @narrow-width) {
-      display: none;
+      display: block;
+      margin-left: -300px;
+      opacity: 0;
     }
   }
 
