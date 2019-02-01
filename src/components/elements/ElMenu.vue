@@ -70,6 +70,10 @@
 export default {
   name: 'ElMenu',
   props: {
+    value: {
+      type: Number,
+      default: 0
+    },
     align: {
       type: String,
       default: 'right'
@@ -82,6 +86,14 @@ export default {
       indexCounter: 0,
       items: []
     }
+  },
+  watch: {
+    value () {
+      this.displayedIndex = this.value
+    }
+  },
+  mounted () {
+    this.displayedIndex = this.value
   },
   methods: {
     addItem (title) {
@@ -97,6 +109,8 @@ export default {
 
       this.displayedIndex = index
       this.menuIsOpen = false
+
+      this.$emit('input', index)
     }
   }
 }

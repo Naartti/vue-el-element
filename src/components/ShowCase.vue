@@ -1,16 +1,22 @@
 <template>
 <div>
-  <el-menu>
+  <el-menu
+    v-model="openTab"
+    >
     <!-- Style guide -->
-    <el-menu-item title="Style">
+    <el-menu-section title="Style guide" />
+    <el-menu-item title="Colors">
       <style-guide />
     </el-menu-item>
+    <el-menu-item title="Fonts">
 
-    <el-menu-section title="Menu section" />
+    </el-menu-item>
+    <el-menu-item title="Sizing">
 
-    <el-menu-section title="Menu section with content">
-      <p>Content</p>
-    </el-menu-section>
+    </el-menu-item>
+
+    <!-- Elements -->
+    <el-menu-section title="Build elements" />
 
     <!-- Button -->
     <el-menu-item title="Button">
@@ -215,6 +221,7 @@ export default {
   components: { StyleGuide },
   data () {
     return {
+      openTab: 1,
       checkbox: {
         model: [],
         options: [{
