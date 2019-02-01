@@ -6,10 +6,10 @@
     <!-- Style guide -->
     <el-menu-section title="Style guide" />
     <el-menu-item title="Colors">
-      <style-guide />
+      <color-guide />
     </el-menu-item>
     <el-menu-item title="Fonts">
-
+      <font-guide />
     </el-menu-item>
     <el-menu-item title="Sizing">
 
@@ -215,13 +215,14 @@
 </template>
 
 <script>
-import StyleGuide from './StyleGuide.vue'
+import ColorGuide from './ColorGuide.vue'
+import FontGuide from './FontGuide.vue'
 
 export default {
-  components: { StyleGuide },
+  components: { ColorGuide, FontGuide },
   data () {
     return {
-      openTab: 1,
+      openTab: 2,
       checkbox: {
         model: [],
         options: [{

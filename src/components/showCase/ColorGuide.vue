@@ -135,7 +135,7 @@ export default {
     margin-top: @top-margin-element;
     margin-right: @side-margin;
     font-family: @font-family;
-    font-size: @font-size;
+    font-size: @font-size-small;
     text-align: center;
 
     p {
