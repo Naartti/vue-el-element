@@ -5,11 +5,12 @@
 # Import
 ## Globalize all components
 ```js
-const ElElement = require('vue-el-element')
+import ElElements from 'vue-el-element'
 
-for (let elementName in ElElement) {
-  Vue.component(elementName, ElElement[elementName])
-}
+Object.entries(ElElements)
+  .forEach(([type, ElElement]) => {
+    Vue.component(type, ElElement)
+  })
 ```
 
 ## Import selected components
@@ -132,13 +133,23 @@ Place the tooltip within the item you want to describe. It will place itself at 
 
 ## el-menu & el-menu-item
 ```xml
-<el-menu>
+<el-menu
+  align="right"
+  >
   <el-menu-item title=" Chapter 1 ">
     Content for chapter 1...
   </el-menu-item>
   <el-menu-item title=" Chapter 2 ">
     Content for chapter 2...
   </el-menu-item>
+
+  <!-- Categorize with sections -->
+  <el-menu-section title=" Section 1 " />
+
+  <!-- Clickable sections -->
+  <el-menu-section title=" Section 2 ">
+    Content for section 2
+  </el-menu-section>
 </el-menu>
 ```
 

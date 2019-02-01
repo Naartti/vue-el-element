@@ -6,6 +6,12 @@
       <style-guide />
     </el-menu-item>
 
+    <el-menu-section title="Menu section" />
+
+    <el-menu-section title="Menu section with content">
+      <p>Content</p>
+    </el-menu-section>
+
     <!-- Button -->
     <el-menu-item title="Button">
       <el-header>Text button</el-header>

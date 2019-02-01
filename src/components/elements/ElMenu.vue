@@ -20,25 +20,29 @@
 
 <template>
 <div class="menuContainer">
+  <!-- Menu -->
   <div
     class="contextPanel animation"
     :class="{ menuIsClosed: !menuIsOpen }"
     >
-    <div v-for="(title, index) in items"
+    <div v-for="(item, index) in items"
       class="contextPanelItem animation"
       :key="index"
       :class="{
-        contextPanelActiveItem : displayedIndex === index
+        contextPanelActiveItem : displayedIndex === index,
+        contectPanelSection : item.type === 'section',
+        contectPanelNoClick : item.type === 'section' && !item.clickable,
+        leftAlign : align === 'left',
+        centerAlign : align === 'center'
       }"
       @click="openTab(index)"
       >
 
-      <div class="menuButton" />
-
-      {{title}}
+      {{item.title}}
     </div>
   </div>
 
+  <!-- Narrow menu -->
   <div
     class="backdrop"
     v-if="menuIsOpen"
@@ -54,6 +58,7 @@
     </span>
   </div>
 
+  <!-- Content -->
   <div class="contentArea">
     <slot />
   </div>
@@ -67,7 +72,7 @@ export default {
   props: {
     align: {
       type: String,
-      defult: 'right'
+      default: 'right'
     }
   },
   data () {
@@ -86,6 +91,10 @@ export default {
       return this.indexCounter++
     },
     openTab (index) {
+      if (this.items[index].type === 'section' && !this.items[index].clickable) {
+        return
+      }
+
       this.displayedIndex = index
       this.menuIsOpen = false
     }
@@ -117,20 +126,46 @@ export default {
     @media (max-width: @narrow-width) {
       text-align: left;
     }
-  }
 
-  .contextPanelItem:hover {
-    padding-left: 5px;
-    padding-right: 15px;
-  }
+    &:hover {
+      padding-left: 5px;
+      padding-right: 15px;
+    }
 
-  .contextPanelItem:active {
-    padding-left: 0px;
-    padding-right: 20px;
+    &:active {
+      padding-left: 0px;
+      padding-right: 20px;
+    }
   }
 
   .contextPanelActiveItem {
     font-weight: bold;
+  }
+
+  .contectPanelSection {
+    border-bottom: 1px solid @color-grey-light;
+    margin-top: @top-margin-header;
+    font-size: @font-size-header;
+  }
+
+  .contectPanelNoClick {
+    cursor: default;
+
+    &:hover {
+      padding: 0px 10px;
+    }
+
+    &:active {
+      padding: 0px 10px;
+    }
+  }
+
+  .leftAlign {
+    text-align: left;
+  }
+
+  .centerAlign {
+    text-align: center;
   }
 
   .contextPanel {

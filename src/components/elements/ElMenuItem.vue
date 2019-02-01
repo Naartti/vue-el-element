@@ -33,7 +33,10 @@ export default {
     }
   },
   mounted () {
-    this.$parent.addItem(this.title)
+    this.$parent.addItem({
+      title: this.title,
+      type: 'title'
+    })
     this.index = this.$parent.getIndex()
   }
 }

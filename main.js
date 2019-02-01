@@ -7,6 +7,7 @@ import ElExtendButton from './src/components/elements/ElExtendButton.vue'
 import ElMultiSwitch from './src/components/elements/ElMultiSwitch.vue'
 import ElInputButton from './src/components/elements/ElInputButton.vue'
 import ElRadioButton from './src/components/elements/ElRadioButton.vue'
+import ElMenuSection from './src/components/elements/ElMenuSection.vue'
 import ElIconButton from './src/components/elements/ElIconButton.vue'
 import ElDelimiter from './src/components/elements/ElDelimiter.vue'
 import ElCheckbox from './src/components/elements/ElCheckbox.vue'
@@ -38,6 +39,40 @@ export {
   ElMultiSwitch,
   ElInputButton,
   ElRadioButton,
+  ElMenuSection,
+  ElIconButton,
+  ElDelimiter,
+  ElCheckbox,
+  ElMenuItem,
+  ElDropdown,
+  ElMessage,
+  ElCaption,
+  ElSection,
+  ElTooltip,
+  ElHeader,
+  ElButton,
+  ElInline,
+  ElSelect,
+  ElSwitch,
+  ElPopup,
+  ElInput,
+  ElInfo,
+  ElText,
+  ElCard,
+  ElMenu
+}
+
+export default {
+  ElCollapseHeader,
+  ElCollapseToggle,
+  ElStickySection,
+  ElStickyFooter,
+  ElToggleButton,
+  ElExtendButton,
+  ElMultiSwitch,
+  ElInputButton,
+  ElRadioButton,
+  ElMenuSection,
   ElIconButton,
   ElDelimiter,
   ElCheckbox,
