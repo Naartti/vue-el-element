@@ -159,7 +159,7 @@ export default {
   .contectPanelSection {
     border-bottom: 1px solid @color-grey-light;
     margin-top: @top-margin-header;
-    font-size: @font-size-header;
+    font-size: @font-size-medium;
   }
 
   .contectPanelNoClick {
@@ -254,6 +254,7 @@ export default {
     max-width: 700px;
     z-index: 1;
     box-sizing: border-box;
+    padding-bottom: @bottom-margin-section;
 
     @media (max-width: @narrow-width) {
       padding: 10px 10px;

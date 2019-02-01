@@ -47,7 +47,7 @@ export default {
     position: relative;
     width: 100%;
     height: auto;
-    font-size: @font-size;
+    font-size: @font-size-small;
     text-align: left;
     margin-top: @top-margin-element;
     color: @color-font-dark;

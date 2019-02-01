@@ -14,8 +14,10 @@
     />
 
   <!-- Header -->
-  <span v-if="title !== ''">{{title}}</span>
-  <slot></slot>
+  <h3>
+    <span v-if="title !== ''">{{title}}</span>
+    <slot></slot>
+  </h3>
 </div>
 </template>
 
@@ -87,7 +89,7 @@ export default {
     position: relative;
     width: 100%;
     height: auto;
-    font-size: @font-size-header;
+    font-size: @font-size-medium;
     text-align: left;
     margin-top: @top-margin-header;
     color: @color-grey-super-dark;

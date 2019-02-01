@@ -32,7 +32,7 @@ export default {
     color: @color-grey-super-dark;
 
     p {
-      font-size: @font-size;
+      font-size: @font-size-small;
     }
   }
 </style>

@@ -45,6 +45,8 @@ export default {
 </script>
 
 <style scoped lang="less">
+  @import '~el-style/variables';
+
   .el-menu-item {
     width: 100%;
   }

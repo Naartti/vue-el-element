@@ -51,12 +51,18 @@
 @is-wide-width: 1500px;
 @width-narrow: 900px;
 
-// Font
-@font-family: 'PT Sans', 'Avenir', Helvetica, Arial, sans-serif;
-@font-size: 12px;
-@font-size-header: 18px;
-@font-size-large: 24px;
 
+// Typography
+@font-size-small: 14px;
+@font-size-medium: 18px;
+@font-size-large: 24px;
+@font-size-x-large: 32px;
+@font-size-xx-large: 42px;
+
+@font-family: 'Proxima Nova', 'Avenir', Helvetica, Arial, sans-serif;
+
+
+// Highlights
 @highlight-background-color: #F9F9F9;
 @highlight-border: 1px solid @color-grey-light;
 @highlight-shadow: @shadow;
@@ -65,6 +71,7 @@
 @top-margin-element: 10px;
 @top-margin-section: 10px;
 @bottom-margin-section: 15px;
+@bottom-margin-header: 10px;
 @top-margin-header: 15px;
 @top-margin-header-large: 48px;
 @side-margin: 15px;
@@ -109,4 +116,33 @@
 // Default style elements
 div {
   font-family: @font-family;
+}
+
+p, i {
+  font-size: @font-size-small;
+  font-family: @font-family;
+}
+
+h1 {
+  font-size: @font-size-xx-large;
+  font-family: @font-family;
+  margin-bottom: @bottom-margin-header;
+}
+
+h2 {
+  font-size: @font-size-x-large;
+  font-family: @font-family;
+  margin-bottom: @bottom-margin-header;
+}
+
+h3 {
+  font-size: @font-size-large;
+  font-family: @font-family;
+  margin-bottom: @bottom-margin-header;
+}
+
+h4 {
+  font-size: @font-size-medium;
+  font-family: @font-family;
+  margin-bottom: @bottom-margin-header;
 }
