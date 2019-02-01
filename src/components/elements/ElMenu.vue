@@ -66,7 +66,7 @@ export default {
   name: 'ElMenu',
   data () {
     return {
-      menuIsOpen: true,
+      menuIsOpen: false,
       displayedIndex: 0,
       indexCounter: 0,
       items: []
@@ -194,5 +194,10 @@ export default {
     flex-grow: 1;
     max-width: 700px;
     z-index: 1;
+    box-sizing: border-box;
+
+    @media (max-width: @narrow-width) {
+      padding: 10px 10px;
+    }
   }
 </style>
