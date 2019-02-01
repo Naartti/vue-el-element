@@ -7,7 +7,9 @@
   class='inputContainer animation'
   :class="{
     warningStyle : warning,
-    successStyle : success
+    successStyle : success,
+    marginRight,
+    marginTop,
   }"
   :type='type'
   :placeholder="placeholder"
@@ -37,6 +39,14 @@ export default {
       default: false
     },
     success: {
+      type: Boolean,
+      default: false
+    },
+    marginRight: {
+      type: Boolean,
+      default: false
+    },
+    marginTop: {
       type: Boolean,
       default: false
     }

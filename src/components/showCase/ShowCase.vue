@@ -145,6 +145,7 @@
       <el-input
         placeholder="Input with warning"
         :warning="true"
+        :marginTop="true"
         />
 
       <el-input-button
@@ -236,7 +237,7 @@ export default {
   components: { ColorGuide, FontGuide },
   data () {
     return {
-      openTab: 6,
+      openTab: 7,
       checkbox: {
         model: [],
         options: [{
