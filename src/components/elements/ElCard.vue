@@ -26,7 +26,7 @@ export default {
   .cardContainer {
     position: relative;
     width: auto;
-    min-width: 200px;
+    min-width: @element-min-width;
     height: auto;
     min-height: 30px;
     margin-top: 10px;

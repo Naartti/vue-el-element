@@ -91,7 +91,7 @@ export default {
   .selectContainer {
     position: relative;
     width: 100%;
-    max-width: 200px;
+    max-width: @element-min-width;
     height: @dropdown-height;
     text-align: left;
     border-radius: @radius-small;
@@ -123,7 +123,7 @@ export default {
   }
 
   .wide {
-    max-width: 300px;
-    width: 300px;
+    max-width: @element-min-width-wide;
+    width: @element-min-width-wide;
   }
 </style>
