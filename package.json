@@ -1,6 +1,6 @@
 {
   "name": "vue-el-element",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Vue components for design elements with custom style guides",
   "author": "Mattias Naarttijärvi",
   "main": "main.js",
