@@ -50,6 +50,15 @@ export default {
       selectedIndex: 0
     }
   },
+  watch: {
+    value () {
+      this.options.forEach((item, index) => {
+        if (item.value === this.value) {
+          this.selectedIndex = index
+        }
+      })
+    }
+  },
   mounted () {
     if (this.options.length > 0) {
       this.$refs.marker.style.width = `${100 / this.options.length}%`
