@@ -43,6 +43,14 @@ export default {
     danger: {
       type: Boolean,
       default: false
+    },
+    marginRight: {
+      type: Boolean,
+      default: false
+    },
+    marginTop: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
