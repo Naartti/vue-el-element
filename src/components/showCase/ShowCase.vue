@@ -134,6 +134,23 @@
         >
         Clickable message
       </el-message>
+
+      <el-header :marginTop="true">El Tag</el-header>
+      <el-tag :danger="true" :marginRight="true">
+        Danger
+      </el-tag>
+      <el-tag :warning="true" :marginRight="true">
+        Warning
+      </el-tag>
+      <el-tag :info="true" :marginRight="true">
+        Info
+      </el-tag>
+      <el-tag :success="true" :marginRight="true">
+        Success
+      </el-tag>
+      <el-tag>
+        No status
+      </el-tag>
     </el-menu-item>
 
     <!-- Input -->
@@ -236,7 +253,7 @@ export default {
   components: { ColorGuide, FontGuide },
   data () {
     return {
-      openTab: 5,
+      openTab: 6,
       checkbox: {
         model: [],
         options: [{

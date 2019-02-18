@@ -28,6 +28,7 @@ import ElInfo from './src/components/elements/ElInfo.vue'
 import ElText from './src/components/elements/ElText.vue'
 import ElCard from './src/components/elements/ElCard.vue'
 import ElMenu from './src/components/elements/ElMenu.vue'
+import ElTag from './src/components/elements/ElTag.vue'
 
 export {
   ElCollapseHeader,
@@ -59,7 +60,8 @@ export {
   ElInfo,
   ElText,
   ElCard,
-  ElMenu
+  ElMenu,
+  ElTag
 }
 
 export default {
@@ -92,5 +94,6 @@ export default {
   ElInfo,
   ElText,
   ElCard,
-  ElMenu
+  ElMenu,
+  ElTag
 }
