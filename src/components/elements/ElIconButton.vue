@@ -38,7 +38,9 @@ export default {
   components: { ElTooltip },
   name: 'ElIconButton',
   props: ['type', 'icon', 'disabled', 'center', 'align', 'margin', 'tooltip'],
-  mounted () {},
+  mounted () {
+    console.warn('<el-icon-button /> is depricated. Use <el-button :icon="true">{{svg}}</el-button> instead.')
+  },
   methods: {
     next () {
       this.$emit('click')

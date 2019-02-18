@@ -73,11 +73,7 @@
         </el-button>
       </el-inline>
 
-      <el-header :marginTop="true">Icon button</el-header>
-      <el-icon-button
-        tooltip="Icon button"
-        icon="?"
-        />
+      <icon-button />
 
       <el-header :marginTop="true">Toggle button</el-header>
       <el-toggle-button
@@ -248,12 +244,13 @@
 <script>
 import ColorGuide from './ColorGuide.vue'
 import FontGuide from './FontGuide.vue'
+import IconButton from './IconButton.vue'
 
 export default {
-  components: { ColorGuide, FontGuide },
+  components: { ColorGuide, FontGuide, IconButton },
   data () {
     return {
-      openTab: 6,
+      openTab: 1,
       checkbox: {
         model: [],
         options: [{
@@ -312,6 +309,18 @@ export default {
         }],
         model: 2
       }
+    }
+  },
+  watch: {
+    openTab () {
+      localStorage.setItem('showCaseTab', this.openTab)
+    }
+  },
+  mounted () {
+    let tab = localStorage.getItem('showCaseTab')
+
+    if (tab) {
+      this.openTab = Number(tab)
     }
   }
 }

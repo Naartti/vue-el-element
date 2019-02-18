@@ -12,6 +12,7 @@
     right,
     marginRight,
     marginTop,
+    elIconButton: icon === true,
     primary: !disabled && !secondary && !danger
   }"
   >
@@ -45,6 +46,10 @@ export default {
       default: false
     },
     right: {
+      type: Boolean,
+      default: false
+    },
+    icon: {
       type: Boolean,
       default: false
     },
@@ -154,5 +159,11 @@ export default {
 
   .right {
     align-self: flex-end;
+  }
+
+  .elIconButton {
+    width: @button-height;
+    min-width: @button-height;
+    padding: 0px;
   }
 </style>
