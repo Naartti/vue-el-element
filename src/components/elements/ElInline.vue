@@ -6,9 +6,9 @@
     marginTop,
     stretch
   }"
-  @click="$emit('click')"
+  @click="click"
   >
-  <slot></slot>
+  <slot />
 </div>
 </template>
 
@@ -32,6 +32,13 @@ export default {
     stretch: {
       type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    click () {
+      if (this.$listeners && this.$listeners.click) {
+        this.$emit('click')
+      }
     }
   }
 }
