@@ -1,6 +1,6 @@
 <template>
   <transition name="slide-fade">
-    <div v-show="displayedIndex === index" class="el-menu-item">
+    <div v-if="displayedIndex === index" class="el-menu-item">
       <h1 class="el-menu-item-header">{{title}}</h1>
       <el-delimiter :short="true" />
 
