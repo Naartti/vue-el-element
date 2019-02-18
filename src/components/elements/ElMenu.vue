@@ -255,6 +255,7 @@ export default {
     z-index: 1;
     box-sizing: border-box;
     padding-bottom: @bottom-margin-section;
+    padding-right: 10px;
 
     @media (max-width: @narrow-width) {
       padding: 10px 10px;
