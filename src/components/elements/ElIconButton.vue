@@ -21,9 +21,10 @@
     >
     <el-tooltip
       v-if="tooltip && tooltip !== ''"
-      :content="tooltip"
       :delay="true"
-      />
+      >
+      {{tooltip}}
+    </el-tooltip>
 
     <div v-html="icon"/>
   </button>

@@ -12,7 +12,6 @@
       <font-guide />
     </el-menu-item>
     <el-menu-item title="Sizing">
-
     </el-menu-item>
 
     <!-- Elements -->
@@ -237,7 +236,7 @@ export default {
   components: { ColorGuide, FontGuide },
   data () {
     return {
-      openTab: 7,
+      openTab: 5,
       checkbox: {
         model: [],
         options: [{

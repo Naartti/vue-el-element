@@ -1,5 +1,6 @@
 <template>
-<button type="button"
+<button
+  type="button"
   @click="next"
   class="buttonStyle animation"
   :class="{
@@ -16,9 +17,10 @@
   >
   <el-tooltip
     v-if="tooltip !== ''"
-    :content="tooltip"
     :delay="true"
-    />
+    >
+    {{tooltip}}
+  </el-tooltip>
   <slot/>
 </button>
 </template>
@@ -89,7 +91,7 @@ export default {
     white-space: nowrap;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     position: relative;
   }

@@ -1,8 +1,10 @@
 <template>
-<div class="tooltip animation"
+<div class="el-tooltip animation"
   v-show="isHighlighted && isStillHighlighted"
-  v-html="content"
-  />
+  >
+  <span v-if="content !== ''" v-html="content" />
+  <slot />
+</div>
 </template>
 <script>
 
@@ -73,21 +75,24 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .tooltip {
-    display: block;
+  .el-tooltip {
+    display: flex;
     position: absolute;
     bottom: ~"Calc(100% + 5px)";
-    left: ~"Calc(50% - 85px)";
+    left: auto;
     height: auto;
-    width: 160px;
+    width: auto;
     background-color: #222222;
     box-shadow: @shadow;
     color: #ffffff;
     z-index: 3;
     font-size: 12px;
-    padding: 5px;
-    white-space: pre-wrap;
+    padding: 5px 10px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    white-space: nowrap;
     text-align: center;
+    align-self: center;
 
     &::after {
       content: " ";
