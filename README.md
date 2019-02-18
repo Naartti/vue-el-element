@@ -124,11 +124,38 @@ Place the tooltip within the item you want to describe. It will place itself at 
 
   Content...
 
-  <el-tooltip
-    :content="String"
-    :delay="Boolean"
-    />
+  <el-tooltip :delay="Boolean">
+    Description
+  </el-content>
 </div>
+```
+
+## el-message
+```xml
+<el-message
+  :success="Boolean"
+  :info="Boolean"
+  :warning="Boolean"
+  :danger="Boolean"
+  :marginRight="Boolean"
+  :marginTop="Boolean"
+  >
+  Message content
+</el-message>
+```
+
+## el-tag
+```xml
+<el-tag
+  :success="Boolean"
+  :info="Boolean"
+  :warning="Boolean"
+  :danger="Boolean"
+  :marginRight="Boolean"
+  :marginTop="Boolean"
+  >
+  Tag content
+</el-tag>
 ```
 
 ## el-menu & el-menu-item
