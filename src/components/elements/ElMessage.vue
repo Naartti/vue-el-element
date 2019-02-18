@@ -75,7 +75,7 @@ export default {
 
   .main {
     position: relative;
-    width: auto;
+    width: 100%;
     min-width: @element-min-width;
     height: auto;
     margin-top: @top-margin-element;

@@ -10,9 +10,9 @@
       </span>
     </div>
 
-    <span>
+    <h3>
         {{title}}
-    </span>
+    </h3>
   </div>
 
   <transition name="slide-fade">
