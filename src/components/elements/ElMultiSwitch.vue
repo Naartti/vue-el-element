@@ -1,5 +1,5 @@
 <template>
-<div class="wrapper"
+<div class="el-multi-switch"
   :class="{
     marginRight,
     marginTop
@@ -88,7 +88,7 @@ export default {
 <style lang="less" scoped>
   @import '~el-style/variables.less';
 
-  .wrapper {
+  .el-multi-switch {
     display: flex;
     border-radius: @button-radius;
     background-color: #ffffff;
@@ -97,6 +97,7 @@ export default {
     position: relative;
     width: auto;
     height: @button-height;
+    min-height: @button-height;
     left: 0px;
     align-content: space-between;
   }
