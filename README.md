@@ -52,11 +52,9 @@ module.exports = {
 </el-button>
 ```
 
-## el-popup
+## el-modal
 ```xml
-<el-popup
-  :top="Boolean"
-  :overflow="Boolean"
+<el-modal
   v-if="isOpen"
   @close="isOpen = false"
   >
@@ -71,7 +69,7 @@ module.exports = {
     <el-button>Previous</el-button>
     <el-button>Next</el-button>
   </el-inline>
-</el-popup>
+</el-modal>
 ```
 
 ## el-dropdown
