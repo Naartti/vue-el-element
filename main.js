@@ -23,6 +23,7 @@ import ElInline from './src/components/elements/ElInline.vue'
 import ElSelect from './src/components/elements/ElSelect.vue'
 import ElSwitch from './src/components/elements/ElSwitch.vue'
 import ElPopup from './src/components/elements/ElPopup.vue'
+import ElModal from './src/components/elements/ElModal.vue'
 import ElInput from './src/components/elements/ElInput.vue'
 import ElInfo from './src/components/elements/ElInfo.vue'
 import ElText from './src/components/elements/ElText.vue'
@@ -56,6 +57,7 @@ export {
   ElSelect,
   ElSwitch,
   ElPopup,
+  ElModal,
   ElInput,
   ElInfo,
   ElText,
@@ -90,6 +92,7 @@ export default {
   ElSelect,
   ElSwitch,
   ElPopup,
+  ElModal,
   ElInput,
   ElInfo,
   ElText,

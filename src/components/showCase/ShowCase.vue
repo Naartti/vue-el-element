@@ -225,7 +225,10 @@
       <el-section>This is a section</el-section>
 
       <el-header :marginTop="true">Popup</el-header>
-      <el-button @click="showPopup = true">Show popup</el-button>
+      <el-inline>
+        <el-button @click="showModal = true" :marginRight="true">Show modal</el-button>
+        <el-button @click="showPopup = true" :secondary="true">Show popup</el-button>
+      </el-inline>
 
       <el-header :marginTop="true">Delimiter</el-header>
       <el-delimiter />
@@ -237,7 +240,26 @@
     v-if="showPopup"
     >
     Hello!
+
+    <div style="height: 1000px"/>
+
+    ...world
   </el-popup>
+
+  <el-modal
+    v-if="showModal"
+    @close="showModal = false"
+    >
+    Hello!
+
+    <div style="height: 300px"/>
+
+    ...world
+
+    <el-inline slot="footer">
+      <el-button>Do something</el-button>
+    </el-inline>
+  </el-modal>
 </div>
 </template>
 
@@ -290,6 +312,7 @@ export default {
         model: 'firstName'
       },
       showPopup: false,
+      showModal: false,
       toggleButton: true,
       switchModel: true,
       expandCard: false,
