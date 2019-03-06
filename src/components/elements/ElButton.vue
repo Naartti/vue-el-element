@@ -9,6 +9,7 @@
     danger: danger && !secondary && !disabled,
     secondary: secondary && !danger && !disabled,
     dangerSecondary: danger && secondary && !disabled,
+    link,
     right,
     marginRight,
     marginTop,
@@ -42,6 +43,10 @@ export default {
       default: false
     },
     secondary: {
+      type: Boolean,
+      default: false
+    },
+    link: {
       type: Boolean,
       default: false
     },
@@ -165,5 +170,18 @@ export default {
     width: @button-height;
     min-width: @button-height;
     padding: 0px;
+  }
+
+  .link {
+    background-color: transparent;
+    border: none;
+    color: @color-button-primary;
+
+    &:hover {
+      background-color: transparent;
+      border: none;
+      color: @color-button-link;
+      text-decoration: underline;
+    }
   }
 </style>

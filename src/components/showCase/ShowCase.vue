@@ -66,10 +66,17 @@
           :disabled="true"
           :secondary="true"
           :marginTop="true"
+          :marginRight="true"
           :danger="true"
           tooltip="Tooltip"
           >
           Secondary disabled
+        </el-button>
+        <el-button
+          :marginTop="true"
+          :link="true"
+          >
+          Some link
         </el-button>
       </el-inline>
 
@@ -227,6 +234,7 @@
       <el-header :marginTop="true">Popup</el-header>
       <el-inline>
         <el-button @click="showModal = true" :marginRight="true">Show modal</el-button>
+        <el-button @click="showHighModal = true" :danger="true" :secondary="true" :marginRight="true">Show high modal</el-button>
         <el-button @click="showPopup = true" :secondary="true">Show popup</el-button>
       </el-inline>
 
@@ -250,9 +258,24 @@
     v-if="showModal"
     @close="showModal = false"
     >
-    Hello!
+    Hello! (modal)
 
-    <div style="height: 300px"/>
+    <div style="height: 100px"/>
+
+    ...world
+
+    <el-inline slot="footer">
+      <el-button>Do something</el-button>
+    </el-inline>
+  </el-modal>
+
+  <el-modal
+    v-if="showHighModal"
+    @close="showHighModal = false"
+    >
+    Hello! (modal)
+
+    <div style="height: 1000px"/>
 
     ...world
 
@@ -313,6 +336,7 @@ export default {
       },
       showPopup: false,
       showModal: false,
+      showHighModal: false,
       toggleButton: true,
       switchModel: true,
       expandCard: false,
