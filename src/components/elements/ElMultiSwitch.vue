@@ -29,7 +29,7 @@
 export default {
   props: {
     value: {
-      type: String && Number,
+      type: String || Number,
       default: 0
     },
     options: {

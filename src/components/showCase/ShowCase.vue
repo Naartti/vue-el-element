@@ -345,7 +345,7 @@ export default {
           value: 1,
           label: 'Mode 1'
         }, {
-          value: 2,
+          value: 'två',
           label: 'Mode 2'
         }, {
           value: 3,
@@ -354,7 +354,7 @@ export default {
           value: 4,
           label: 'Mode 4'
         }],
-        model: 2
+        model: 'två'
       }
     }
   },
