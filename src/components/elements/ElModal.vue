@@ -3,60 +3,62 @@
   class="el-modal noPrint"
   :class="{ centerPosition }"
   >
+  <div class="el-modal-scroll-wrapper">
 
-  <!-- Backdrop -->
-  <transition name="fade">
-    <div
-      class="el-modal-backdrop animation"
-      ref="backdrop"
-      @click="close"
-      v-show="isVisible"
-      />
-  </transition>
-
-  <!-- Modal -->
-  <transition name="slide-fade">
-    <div
-      class="body animation"
-      :class="{
-        displayOverflow
-      }"
-      ref="modalBody"
-      v-show="isVisible"
-      >
-
-      <!-- Close button -->
+    <!-- Backdrop -->
+    <transition name="fade">
       <div
-        v-if="displayCloseButton"
-        class="closeButton animation"
-        v-html="closeIcon"
+        class="el-modal-backdrop animation"
+        ref="backdrop"
         @click="close"
+        v-show="isVisible"
         />
+    </transition>
 
-      <!-- Actual content -->
-      <slot />
-
-      <!-- Footer -->
+    <!-- Modal -->
+    <transition name="slide-fade">
       <div
-        class="inline-footer-wrapper"
-        ref="inlineFooterWrapper"
-        v-show="$slots.footer"
+        class="body animation"
+        :class="{
+          displayOverflow
+        }"
+        ref="modalBody"
+        v-show="isVisible"
         >
+
+        <!-- Close button -->
         <div
-          ref="inlineFooter"
-          class="inline-footer"
-          :class="{
-            stickyFixed : !this.disableFooterShadow
-          }"
+          v-if="displayCloseButton"
+          class="closeButton animation"
+          v-html="closeIcon"
+          @click="close"
+          />
+
+        <!-- Actual content -->
+        <slot />
+
+        <!-- Footer -->
+        <div
+          class="inline-footer-wrapper"
+          ref="inlineFooterWrapper"
+          v-show="$slots.footer"
           >
+          <div
+            ref="inlineFooter"
+            class="inline-footer"
+            :class="{
+              stickyFixed : !this.disableFooterShadow
+            }"
+            >
 
-          <slot name="footer" />
+            <slot name="footer" />
 
+          </div>
         </div>
       </div>
-    </div>
-  </transition>
+    </transition>
 
+  </div>
 </div>
 </template>
 
@@ -151,7 +153,7 @@ export default {
       }
     },
     close () {
-      const delay = 200
+      const delay = 300
       this.isVisible = false
 
       setTimeout(() => {
@@ -182,6 +184,11 @@ export default {
     overflow: auto;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+
+    .el-modal-scroll-wrapper {
+      background-color: transparent;
+      width: 100%;
+    }
 
     .el-modal-backdrop {
       position: fixed;
