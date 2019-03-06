@@ -1,13 +1,18 @@
 <template>
 <div
-  class="el-popup noPrint"
+  class="el-modal noPrint"
   :class="{ centerPosition }"
   >
-  <div
-    class="backdrop"
-    ref="backdrop"
-    @click="$emit('close')"
-    />
+
+  <!-- Backdrop -->
+  <transition name="fade">
+    <div
+      class="el-modal-backdrop animation"
+      ref="backdrop"
+      @click="close"
+      v-show="isVisible"
+      />
+  </transition>
 
   <!-- Modal -->
   <transition name="slide-fade">
@@ -16,7 +21,7 @@
       :class="{
         displayOverflow
       }"
-      ref="body"
+      ref="modalBody"
       v-show="isVisible"
       >
 
@@ -25,21 +30,21 @@
         v-if="displayCloseButton"
         class="closeButton animation"
         v-html="closeIcon"
-        @click="$emit('close')"
+        @click="close"
         />
 
       <!-- Actual content -->
-      <slot/>
+      <slot />
 
       <!-- Footer -->
       <div
-        class='inline-footer-wrapper'
-        ref='inlineFooterWrapper'
+        class="inline-footer-wrapper"
+        ref="inlineFooterWrapper"
         v-show="$slots.footer"
         >
         <div
-          ref='inlineFooter'
-          class='inline-footer'
+          ref="inlineFooter"
+          class="inline-footer"
           :class="{
             stickyFixed : !this.disableFooterShadow
           }"
@@ -60,7 +65,7 @@
 import svgCodes from '../script/svg'
 
 export default {
-  name: 'ElPopup',
+  name: 'ElModal',
   props: {
     overflow: {
       type: Boolean,
@@ -79,7 +84,7 @@ export default {
       closeIcon: svgCodes.close,
       disableFooterShadow: false,
       displayOverflow: true,
-      centerPosition: false
+      centerPosition: true
     }
   },
   mounted () {
@@ -102,10 +107,6 @@ export default {
 
     if (this.$slots.footer) {
       this.$el.addEventListener('scroll', this.checkScrollBottom)
-
-      setTimeout(() => {
-        this.checkScrollBottom()
-      }, 1)
     }
 
     window.addEventListener('resize', this.initialize)
@@ -119,34 +120,43 @@ export default {
   },
   methods: {
     initialize () {
-      this.resizeUpdate()
       this.checkHeight()
       this.checkScrollBottom()
+      // this.resizeUpdate()
     },
     resizeUpdate () {
-      let STYLING = this.$refs.body.getBoundingClientRect()
+      let STYLING = this.$refs.modalBody.getBoundingClientRect()
       let EL_HEIGHT = STYLING.height
 
       this.$refs.inlineFooter.style.width = STYLING.width + 'px'
       this.$refs.inlineFooterWrapper.style.height = EL_HEIGHT + 'px'
     },
     checkScrollBottom () {
-      const item = this.$el
-      let scrollBottom = item.scrollHeight - item.clientHeight - item.scrollTop
+      let scrollBottom = this.$el.scrollHeight -
+        this.$el.clientHeight -
+        this.$el.scrollTop
 
       this.disableFooterShadow = scrollBottom < 50 || this.centerPosition
     },
     checkHeight () {
-      const height = this.$refs.body.clientHeight
+      const bodyHeight = this.$refs.modalBody.clientHeight
       const windowHeight = window.innerHeight
       const footerInnerHeight = this.$refs.inlineFooter.scrollHeight
       const footerOuterHeight = this.$refs.inlineFooterWrapper.clientHeight
 
-      this.centerPosition = height < windowHeight - 40
+      this.centerPosition = bodyHeight < windowHeight - 40
 
       if (footerInnerHeight !== footerOuterHeight) {
         this.$refs.inlineFooterWrapper.style.height = `${footerInnerHeight}px`
       }
+    },
+    close () {
+      const delay = 200
+      this.isVisible = false
+
+      setTimeout(() => {
+        this.$emit('close')
+      }, delay)
     }
   }
 }
@@ -160,22 +170,9 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  /* Enter and leave animations can use different */
-  /* durations and timing functions.              */
-  .slide-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-  .slide-fade-leave-active {
-    transition: all 0.8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-
-  .el-popup {
+  .el-modal {
     position: fixed;
+    display: block;
     top: 0px;
     left: 0px;
     height: 100%;
@@ -186,8 +183,9 @@ export default {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 
-    .backdrop {
+    .el-modal-backdrop {
       position: fixed;
+      display: block;
       top: 0px;
       left: 0px;
       height: 100%;
@@ -200,6 +198,7 @@ export default {
 
     .body {
       position: relative;
+      display: block;
       top: auto;
       left: auto;
       width: 100%;
@@ -276,6 +275,7 @@ export default {
     top: auto;
     bottom: 0px;
     width: 100%;
+    max-width: @section-content-max-width;
     left: 0px;
     right: 0px;
     margin: auto;
@@ -292,5 +292,29 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  /* Enter and leave animations can use different */
+  /* durations and timing functions.              */
+  .slide-fade-enter-active {
+    transition: all 0.5s ease;
+  }
+
+  .slide-fade-leave-active {
+    transition: all 0.3s ease;
+  }
+
+  .slide-fade-enter, .slide-fade-leave-to
+  /* .slide-fade-leave-active below version 2.1.8 */ {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0 !important;
   }
 </style>
