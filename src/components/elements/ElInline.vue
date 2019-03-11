@@ -4,7 +4,8 @@
     center,
     nowrap: wrap === false,
     marginTop,
-    stretch
+    stretch,
+    spaceBetween
   }"
   @click="click"
   >
@@ -30,6 +31,10 @@ export default {
       default: false
     },
     stretch: {
+      type: Boolean,
+      default: false
+    },
+    spaceBetween: {
       type: Boolean,
       default: false
     }
@@ -75,5 +80,9 @@ export default {
 
   .stretch {
     width: 100%;
+  }
+
+  .spaceBetween {
+    justify-content: space-between;
   }
 </style>

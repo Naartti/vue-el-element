@@ -214,6 +214,20 @@
           </el-collapse-header>
       </el-collapse-header>
 
+      <el-header :marginTop="true">Inline</el-header>
+      <el-inline>
+        <b>Item 1</b>
+        <b>Item 2</b>
+        <b>Item 3</b>
+      </el-inline>
+
+      <el-header :marginTop="true">Inline with space between</el-header>
+      <el-inline :stretch="true" :space-between="true">
+        <b>Item 1</b>
+        <b>Item 2</b>
+        <b>Item 3</b>
+      </el-inline>
+
       <el-header :marginTop="true">Card</el-header>
       <el-card>
         This is a card
