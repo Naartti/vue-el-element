@@ -369,6 +369,11 @@ export default {
     if (tab) {
       this.openTab = Number(tab)
     }
+  },
+  methods: {
+    log (...args) {
+      console.log('Logging', ...args)
+    }
   }
 }
 </script>

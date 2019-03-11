@@ -29,7 +29,7 @@
 export default {
   props: {
     value: {
-      type: String || Number,
+      type: [String, Number],
       default: 0
     },
     options: {
@@ -81,6 +81,13 @@ export default {
     toggle (value, index) {
       this.selectedIndex = index
       this.$emit('input', value)
+
+      this.change(value)
+    },
+    change (value) {
+      if (this.$listeners && this.$listeners.change) {
+        this.$emit('change', value)
+      }
     }
   }
 }
