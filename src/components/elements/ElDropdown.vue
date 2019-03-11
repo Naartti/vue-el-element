@@ -78,7 +78,13 @@ export default {
   },
   methods: {
     onChange (ev) {
-      this.$emit('input', ev.target.value)
+      const value = ev.target.value
+
+      this.$emit('input', value)
+
+      if (this.$listeners && this.$listeners.change) {
+        this.$emit('change', value)
+      }
     }
   }
 }
