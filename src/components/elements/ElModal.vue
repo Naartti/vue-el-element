@@ -29,7 +29,10 @@
         <!-- Close button -->
         <div
           v-if="displayCloseButton"
-          class="closeButton animation"
+          class="close-button animation"
+          :class="{
+            'close-button-right': closeButtonAlign === 'right'
+          }"
           v-html="closeIcon"
           @click="close"
           />
@@ -76,6 +79,10 @@ export default {
     pauseBodyScroll: {
       type: Boolean,
       default: true
+    },
+    closeButtonAlign: {
+      type: String,
+      default: 'left'
     }
   },
   data () {
@@ -228,7 +235,7 @@ export default {
         margin: 0px;
       }
 
-      .closeButton {
+      .close-button {
         position: absolute;
         top: 10px;
         left: 10px;
@@ -241,6 +248,11 @@ export default {
         }
       }
     }
+  }
+
+  .close-button-right {
+    left: auto !important;
+    right: 5px !important;
   }
 
   .header {

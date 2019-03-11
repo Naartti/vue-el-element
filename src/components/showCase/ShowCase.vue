@@ -271,6 +271,7 @@
   <el-modal
     v-if="showModal"
     @close="showModal = false"
+    close-button-align="right"
     >
     Hello! (modal)
 
@@ -286,6 +287,7 @@
   <el-modal
     v-if="showHighModal"
     @close="showHighModal = false"
+    close-button-align="right"
     >
     Hello! (modal)
 

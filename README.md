@@ -43,8 +43,8 @@ module.exports = {
   :disabled="Boolean"
   :secondary="Boolean"
   :danger="Boolean"
-  :marginRight="Boolean"
-  :marginTop="Boolean"
+  :margin-right="Boolean"
+  :margin-top="Boolean"
   :tooltip="String"
   @click="method"
   >
@@ -57,6 +57,8 @@ module.exports = {
 <el-modal
   v-if="isOpen"
   @close="isOpen = false"
+  :pause-body-scroll="true"
+  close-button-align="right"
   >
 
   Content...
@@ -135,8 +137,8 @@ Place the tooltip within the item you want to describe. It will place itself at 
   :info="Boolean"
   :warning="Boolean"
   :danger="Boolean"
-  :marginRight="Boolean"
-  :marginTop="Boolean"
+  :margin-right="Boolean"
+  :margin-top="Boolean"
   >
   Message content
 </el-message>
@@ -149,8 +151,8 @@ Place the tooltip within the item you want to describe. It will place itself at 
   :info="Boolean"
   :warning="Boolean"
   :danger="Boolean"
-  :marginRight="Boolean"
-  :marginTop="Boolean"
+  :margin-right="Boolean"
+  :margin-top="Boolean"
   >
   Tag content
 </el-tag>
@@ -176,6 +178,18 @@ Place the tooltip within the item you want to describe. It will place itself at 
     Content for section 2
   </el-menu-section>
 </el-menu>
+```
+
+## el-inline
+```xml
+<el-inline
+  :stretch="Boolean"
+  :space-between="Boolean"
+  :wrap="Boolean"
+  :margin-top="Boolean"
+  >
+  Content...
+</el-inline>
 ```
 
 ## Build Setup
