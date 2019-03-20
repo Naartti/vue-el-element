@@ -270,6 +270,25 @@
         No status
       </el-tag>
     </el-menu-item>
+
+    <!-- Navigation -->
+    <el-menu-item title="Navigation">
+
+      <!-- Tab -->
+      <el-tab>
+        <el-tab-item title="Colors">
+          <color-guide />
+        </el-tab-item>
+
+        <el-tab-item title="Fonts">
+          <font-guide />
+        </el-tab-item>
+
+        <el-tab-item title="Got lost...">
+          Follow the light!
+        </el-tab-item>
+      </el-tab>
+    </el-menu-item>
   </el-menu>
 
   <!-- Modals -->

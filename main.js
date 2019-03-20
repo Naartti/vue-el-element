@@ -30,6 +30,8 @@ import ElInfo from './src/components/elements/ElInfo.vue'
 import ElText from './src/components/elements/ElText.vue'
 import ElCard from './src/components/elements/ElCard.vue'
 import ElMenu from './src/components/elements/ElMenu.vue'
+import ElTab from './src/components/elements/ElTab.vue'
+import ElTabItem from './src/components/elements/ElTabItem.vue'
 import ElTag from './src/components/elements/ElTag.vue'
 
 export {
@@ -65,7 +67,9 @@ export {
   ElText,
   ElCard,
   ElMenu,
-  ElTag
+  ElTag,
+  ElTab,
+  ElTabItem
 }
 
 export default {
@@ -101,5 +105,7 @@ export default {
   ElText,
   ElCard,
   ElMenu,
-  ElTag
+  ElTag,
+  ElTab,
+  ElTabItem
 }

@@ -1,0 +1,136 @@
+<!-- Usage
+
+<el-tab>
+  <el-tab-item title=" TITLE 1 ">
+    CONTENT 1
+  </el-tab-item>
+
+  <el-tab-item title=" TITLE 2 ">
+    CONTENT 2
+  </el-tab-item>
+
+    ...
+</el-tab>
+
+-->
+
+<template>
+<div class="el-tab">
+  <!-- Menu -->
+  <div class="tab-wrapper">
+    <div class="tab-wrapper-border" />
+
+    <div v-for="(item, index) in items"
+      class="tab-item animation"
+      :key="index"
+      :class="{
+        'active-tab-item' : displayedIndex === index,
+        marginRight: index !== items.length - 1
+      }"
+      @click="openTab(index)"
+      >
+
+      {{item.title}}
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="contentArea">
+    <slot />
+  </div>
+</div>
+</template>
+
+<script>
+
+export default {
+  name: 'ElTab',
+  props: {
+    value: {
+      type: Number,
+      default: 0
+    }
+  },
+  data () {
+    return {
+      displayedIndex: 0,
+      indexCounter: 0,
+      items: []
+    }
+  },
+  watch: {
+    value () {
+      this.displayedIndex = this.value
+    }
+  },
+  mounted () {
+    this.displayedIndex = this.value
+  },
+  methods: {
+    addItem (title) {
+      this.items.push(title)
+    },
+    getIndex () {
+      return this.indexCounter++
+    },
+    openTab (index) {
+      this.displayedIndex = index
+
+      this.$emit('input', index)
+    }
+  }
+}
+</script>
+<style scoped lang="less">
+  @import '~el-style/variables';
+
+  .el-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+  }
+
+  .tab-wrapper {
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tab-wrapper-border {
+    position: absolute;
+    top: auto;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background-color: @color-grey-light;
+    z-index: -1;
+  }
+
+  .tab-item {
+    padding: 5px 0px;
+    display: inline-block;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-bottom: 2px solid @color-grey-light;
+    z-index: 2;
+    color: @color-grey-dark;
+  }
+
+  .active-tab-item {
+    color: @color-font-dark;
+    border-bottom: 2px solid @color-grey-dark;
+    z-index: 2;
+  }
+
+  .contentArea {
+    width: 100%;
+    max-width: @section-max-width;
+    z-index: 1;
+    box-sizing: border-box;
+    padding-bottom: @bottom-margin-section;
+    margin-top: @top-margin-header;
+  }
+</style>
