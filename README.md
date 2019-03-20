@@ -1,4 +1,4 @@
-# el-element
+# ![alt text](static/favicon.png) vue-el-element
 
 > Vue components for design elements with custom style guides
 
