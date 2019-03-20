@@ -50,11 +50,12 @@
     />
 
   <div
-    class="openMenuButton animation"
+    class="open-menu-button animation"
     @click="menuIsOpen = true"
     >
+    <div class="open-menu-button-background" />
     <span>
-    <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Artboard" transform="translate(-19.000000, -25.000000)" fill="#222222"><path d="M20,25 L33,25 C33.5522847,25 34,25.4477153 34,26 C34,26.5522847 33.5522847,27 33,27 L20,27 C19.4477153,27 19,26.5522847 19,26 C19,25.4477153 19.4477153,25 20,25 Z M20,37 L33,37 C33.5522847,37 34,37.4477153 34,38 C34,38.5522847 33.5522847,39 33,39 L20,39 C19.4477153,39 19,38.5522847 19,38 C19,37.4477153 19.4477153,37 20,37 Z M20,31 L33,31 C33.5522847,31 34,31.4477153 34,32 C34,32.5522847 33.5522847,33 33,33 L20,33 C19.4477153,33 19,32.5522847 19,32 C19,31.4477153 19.4477153,31 20,31 Z" id="Combined-Shape"></path></g></g></svg>
+      <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Artboard" transform="translate(-19.000000, -25.000000)" fill="#222222"><path d="M20,25 L33,25 C33.5522847,25 34,25.4477153 34,26 C34,26.5522847 33.5522847,27 33,27 L20,27 C19.4477153,27 19,26.5522847 19,26 C19,25.4477153 19.4477153,25 20,25 Z M20,37 L33,37 C33.5522847,37 34,37.4477153 34,38 C34,38.5522847 33.5522847,39 33,39 L20,39 C19.4477153,39 19,38.5522847 19,38 C19,37.4477153 19.4477153,37 20,37 Z M20,31 L33,31 C33.5522847,31 34,31.4477153 34,32 C34,32.5522847 33.5522847,33 33,33 L20,33 C19.4477153,33 19,32.5522847 19,32 C19,31.4477153 19.4477153,31 20,31 Z" id="Combined-Shape"></path></g></g></svg>
     </span>
   </div>
 
@@ -233,7 +234,7 @@ export default {
     }
   }
 
-  .openMenuButton {
+  .open-menu-button {
     display: none;
     z-index: 2;
     position: fixed;
@@ -242,10 +243,31 @@ export default {
     padding: 5px;
     cursor: pointer;
     box-sizing: border-box;
+    height: 25px;
+    width: 25px;
 
     @media (max-width: @narrow-width) {
       display: block;
     }
+
+    span {
+      position: absolute;
+      top: 4px;
+      left: 5px;
+    }
+  }
+
+  .open-menu-button-background {
+    position: absolute;
+    background-color: #ffffff;
+    opacity: 0.9;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    border-radius: 3px;
+    cursor: pointer;
   }
 
   .contentArea {
