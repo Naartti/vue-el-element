@@ -56,6 +56,7 @@ export default {
     background-color: @color-grey-super-light;
     border: 1px solid @color-grey-medium;
     color: @color-grey-dark;
+    box-sizing: border-box;
   }
 
   .warning {

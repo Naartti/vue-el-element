@@ -1,5 +1,6 @@
 <template>
-<div class="el-tooltip animation"
+<div
+  class="el-tooltip"
   v-show="isHighlighted && isStillHighlighted"
   >
   <span v-if="content !== ''" v-html="content" />
@@ -45,15 +46,21 @@ export default {
   },
   methods: {
     show () {
+      if (this.isStillHighlighted) {
+        return
+      }
+
       this.isHighlighted = true
 
       if (!this.delay) {
         this.isStillHighlighted = true
+
+        this.$nextTick(this.checkPosition)
       } else {
         setTimeout(() => {
           if (this.isHighlighted) {
             this.isStillHighlighted = true
-            this.checkPosition()
+            this.$nextTick(this.checkPosition)
           }
         }, this.delayDuration)
       }
@@ -61,13 +68,27 @@ export default {
     hide () {
       this.isHighlighted = false
       this.isStillHighlighted = false
+      this.$el.style.transform = 'none'
     },
     checkPosition () {
-      const rect = this.$el.getBoundingClientRect()
-
-      if (rect.y <= 0) {
-        this.$el.style.transform = `translateY(${-rect.y}px)`
+      if (!this.isHighlighted) {
+        return
       }
+
+      const windowWidth = window.innerWidth
+      const rect = this.$el.getBoundingClientRect()
+      let x = 0
+      let y = 0
+
+      if (rect.top <= 0) {
+        y = -rect.top
+      }
+
+      if (windowWidth < rect.left + rect.width) {
+        x = -((rect.left - windowWidth) + rect.width)
+      }
+
+      this.$el.style.transform = `translateY(${y}px) translateX(${x}px)`
     }
   }
 }
