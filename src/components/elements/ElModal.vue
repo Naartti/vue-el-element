@@ -119,7 +119,7 @@ export default {
       document.body.classList.add('document-body-no-scroll')
     }
 
-    if (this.$slots.footer) {
+    if (this.$slots.footer || this.isClosable) {
       this.$el.addEventListener('scroll', this.updateScroll)
     }
 
@@ -143,6 +143,10 @@ export default {
       this.checkTopScroll()
     },
     checkScrollBottom () {
+      if (!this.$slots.footer) {
+        return
+      }
+
       let scrollBottom = this.$el.scrollHeight -
         this.$el.clientHeight -
         this.$el.scrollTop
@@ -150,10 +154,12 @@ export default {
       this.absoluteFooterPosition = scrollBottom < 50 || this.centerPosition
     },
     checkTopScroll () {
-      if (this.isClosable) {
-        let scrollTop = this.$refs.modalBody.getBoundingClientRect().top
-        this.fixedCloseButton = scrollTop < 0
+      if (!this.isClosable) {
+        return
       }
+
+      let scrollTop = this.$refs.modalBody.getBoundingClientRect().top
+      this.fixedCloseButton = scrollTop < 0
     },
     checkHeight () {
       const bodyHeight = this.$refs.modalBody.clientHeight
