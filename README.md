@@ -43,6 +43,7 @@ module.exports = {
   :disabled="Boolean"
   :secondary="Boolean"
   :danger="Boolean"
+  :link="Boolean"
   :margin-right="Boolean"
   :margin-top="Boolean"
   :tooltip="String"

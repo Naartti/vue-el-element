@@ -2,7 +2,8 @@
 <div class="el-multi-switch"
   :class="{
     marginRight,
-    marginTop
+    marginTop,
+    stretch
   }"
   >
     <div
@@ -41,6 +42,10 @@ export default {
       default: false
     },
     marginTop: {
+      type: Boolean,
+      default: false
+    },
+    stretch: {
       type: Boolean,
       default: false
     }
@@ -147,6 +152,10 @@ export default {
 
   .labelSelected {
     color: #ffffff;
+  }
+
+  .stretch {
+    flex-grow: 1;
   }
 
 </style>

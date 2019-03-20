@@ -9,33 +9,38 @@
     <transition name="fade">
       <div
         class="el-modal-backdrop animation"
-        ref="backdrop"
+        :class="{ clickable: isClosable }"
         @click="close"
-        v-show="isVisible"
+        v-if="isVisible"
         />
     </transition>
 
     <!-- Modal -->
     <transition name="slide-fade">
       <div
-        class="body animation"
+        class="el-modal-body animation"
         :class="{
           displayOverflow
         }"
         ref="modalBody"
-        v-show="isVisible"
+        v-if="isVisible"
         >
 
         <!-- Close button -->
         <div
-          v-if="displayCloseButton"
-          class="close-button animation"
-          :class="{
-            'close-button-right': closeButtonAlign === 'right'
-          }"
-          v-html="closeIcon"
-          @click="close"
-          />
+          class="close-button-wrapper"
+          :class="{ fixedCloseButton }"
+          v-if="isClosable"
+          >
+          <div
+            class="close-button animation"
+            :class="{
+              'close-button-right': closeButtonAlign === 'right'
+            }"
+            v-html="closeIcon"
+            @click="close"
+            />
+        </div>
 
         <!-- Actual content -->
         <slot />
@@ -50,7 +55,7 @@
             ref="inlineFooter"
             class="inline-footer"
             :class="{
-              stickyFixed : !this.disableFooterShadow
+              stickyFixed : !this.absoluteFooterPosition
             }"
             >
 
@@ -89,11 +94,16 @@ export default {
     return {
       delay: 1,
       isVisible: false,
-      displayCloseButton: false,
       closeIcon: svgCodes.close,
-      disableFooterShadow: false,
       displayOverflow: true,
-      centerPosition: true
+      centerPosition: true,
+      absoluteFooterPosition: false,
+      fixedCloseButton: false
+    }
+  },
+  computed: {
+    isClosable () {
+      return this.$listeners && this.$listeners.close
     }
   },
   mounted () {
@@ -105,17 +115,12 @@ export default {
       this.$nextTick(this.initialize)
     }, this.delay)
 
-    if (this.$listeners && this.$listeners.close) {
-      this.displayCloseButton = true
-      this.$refs.backdrop.classList.add('clickable')
-    }
-
     if (this.pauseBodyScroll) {
       document.body.classList.add('document-body-no-scroll')
     }
 
     if (this.$slots.footer) {
-      this.$el.addEventListener('scroll', this.checkScrollBottom)
+      this.$el.addEventListener('scroll', this.updateScroll)
     }
 
     window.addEventListener('resize', this.initialize)
@@ -126,26 +131,29 @@ export default {
     }
 
     window.removeEventListener('resize', this.initialize)
+    this.isVisible = false
   },
   methods: {
     initialize () {
       this.checkHeight()
       this.checkScrollBottom()
-      // this.resizeUpdate()
     },
-    resizeUpdate () {
-      let STYLING = this.$refs.modalBody.getBoundingClientRect()
-      let EL_HEIGHT = STYLING.height
-
-      this.$refs.inlineFooter.style.width = STYLING.width + 'px'
-      this.$refs.inlineFooterWrapper.style.height = EL_HEIGHT + 'px'
+    updateScroll () {
+      this.checkScrollBottom()
+      this.checkTopScroll()
     },
     checkScrollBottom () {
       let scrollBottom = this.$el.scrollHeight -
         this.$el.clientHeight -
         this.$el.scrollTop
 
-      this.disableFooterShadow = scrollBottom < 50 || this.centerPosition
+      this.absoluteFooterPosition = scrollBottom < 50 || this.centerPosition
+    },
+    checkTopScroll () {
+      if (this.isClosable) {
+        let scrollTop = this.$refs.modalBody.getBoundingClientRect().top
+        this.fixedCloseButton = scrollTop < 0
+      }
     },
     checkHeight () {
       const bodyHeight = this.$refs.modalBody.clientHeight
@@ -160,6 +168,10 @@ export default {
       }
     },
     close () {
+      if (!this.isClosable) {
+        return
+      }
+
       const delay = 300
       this.isVisible = false
 
@@ -210,7 +222,7 @@ export default {
       box-sizing: border-box;
     }
 
-    .body {
+    .el-modal-body {
       position: relative;
       display: block;
       top: auto;
@@ -234,19 +246,6 @@ export default {
         padding: 30px 15px;
         margin: 0px;
       }
-
-      .close-button {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        height: 20px;
-        width: 20px;
-        cursor: pointer;
-
-        &:hover {
-          transform: scale(1.1);
-        }
-      }
     }
   }
 
@@ -263,11 +262,6 @@ export default {
     overflow: visible !important;
   }
 
-  .disableFooterShadow {
-    box-shadow: none !important;
-    border-radius: 5px;
-  }
-
   .clickable {
     cursor: pointer;
   }
@@ -279,6 +273,7 @@ export default {
     height: auto;
     box-sizing: border-box;
     overflow: visible;
+    z-index: 1000;
   }
 
   .inline-footer {
@@ -311,6 +306,36 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .close-button-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 1px;
+    width: 100%;
+    max-width: @section-content-max-width;
+    margin: auto;
+    z-index: 2;
+    overflow: visible;
+
+    .close-button {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        height: 20px;
+        width: 20px;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+  }
+
+  .fixedCloseButton {
+    position: fixed !important;
   }
 
   /* Enter and leave animations can use different */

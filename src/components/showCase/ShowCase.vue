@@ -90,16 +90,17 @@
 
       <el-header :marginTop="true">Switcher</el-header>
       <el-switch
+        v-model="switchModel"
         left="Left"
         right="Right"
-        :marginTop="true"
-        v-model="switchModel"
+        :margin-top="true"
         />
 
       <el-multi-switch
-        :options="multiSwitch.options"
         v-model="multiSwitch.model"
-        :marginTop="true"
+        :options="multiSwitch.options"
+        :margin-top="true"
+        :stretch="true"
         />
     </el-menu-item>
 
@@ -296,7 +297,11 @@
     ...world
 
     <el-inline slot="footer">
-      <el-button>Do something</el-button>
+      <el-button
+        :secondary="true"
+        :danger="true"
+        @click="showHighModal = false"
+        >Close</el-button>
     </el-inline>
   </el-modal>
 </div>
