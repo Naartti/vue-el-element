@@ -33,6 +33,8 @@ import ElMenu from './src/components/elements/ElMenu.vue'
 import ElTab from './src/components/elements/ElTab.vue'
 import ElTabItem from './src/components/elements/ElTabItem.vue'
 import ElTag from './src/components/elements/ElTag.vue'
+import ElColumn from './src/components/elements/ElColumn.vue'
+import ElColumnItem from './src/components/elements/ElColumnItem.vue'
 
 export {
   ElCollapseHeader,
@@ -69,7 +71,9 @@ export {
   ElMenu,
   ElTag,
   ElTab,
-  ElTabItem
+  ElTabItem,
+  ElColumn,
+  ElColumnItem
 }
 
 export default {
@@ -107,5 +111,7 @@ export default {
   ElMenu,
   ElTag,
   ElTab,
-  ElTabItem
+  ElTabItem,
+  ElColumn,
+  ElColumnItem
 }

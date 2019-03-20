@@ -24,8 +24,7 @@
       class="tab-item animation"
       :key="index"
       :class="{
-        'active-tab-item' : displayedIndex === index,
-        marginRight: index !== items.length - 1
+        'active-tab-item' : displayedIndex === index
       }"
       @click="openTab(index)"
       >
@@ -96,6 +95,10 @@ export default {
     width: auto;
     max-width: 100%;
     box-sizing: border-box;
+
+    div:last-child {
+      margin-right: 0px;
+    }
   }
 
   .tab-wrapper-border {
@@ -116,7 +119,8 @@ export default {
     box-sizing: border-box;
     border-bottom: 2px solid @color-grey-light;
     z-index: 2;
-    color: @color-grey-dark;
+    color: @color-grey-medium;
+    margin-right: 30px;
   }
 
   .active-tab-item {

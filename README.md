@@ -206,6 +206,22 @@ Horisonal navigation
 </el-inline>
 ```
 
+## el-column
+```xml
+<el-column>
+  <el-column-item
+    :grow="Number"
+    >
+    Content for column 1...
+  </el-column-item>
+  <el-column-item
+    :grow="Number"
+    >
+    Content for column 2...
+  </el-column-item>
+</el-column>
+```
+
 ## el-loader
 ```xml
 <el-loader

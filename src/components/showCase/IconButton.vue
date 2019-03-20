@@ -56,5 +56,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-
+  p {
+    color: #cacaca;
+  }
 </style>

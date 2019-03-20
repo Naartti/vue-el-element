@@ -202,20 +202,6 @@
           </el-collapse-header>
       </el-collapse-header>
 
-      <el-header :marginTop="true">Inline</el-header>
-      <el-inline>
-        <b>Item 1</b>
-        <b>Item 2</b>
-        <b>Item 3</b>
-      </el-inline>
-
-      <el-header :marginTop="true">Inline with space between</el-header>
-      <el-inline :stretch="true" :space-between="true">
-        <b>Item 1</b>
-        <b>Item 2</b>
-        <b>Item 3</b>
-      </el-inline>
-
       <el-header :marginTop="true">Card</el-header>
       <el-card>
         This is a card
@@ -286,6 +272,89 @@
 
         <el-tab-item title="Got lost...">
           Follow the light!
+        </el-tab-item>
+      </el-tab>
+    </el-menu-item>
+
+    <!-- Layout -->
+    <el-menu-item title="Layout">
+
+      <!-- inline -->
+      <el-header :marginTop="true">Inline</el-header>
+      <p>&#60;el-inline&#62;</p>
+      <el-inline>
+        <b>Item 1</b>
+        <b>Item 2</b>
+        <b>Item 3</b>
+      </el-inline>
+
+      <el-header :marginTop="true">Inline with space between</el-header>
+      <p>&#60;el-inline :stretch="true" :space-between="true"&#62;</p>
+      <el-inline :stretch="true" :space-between="true">
+        <b>Item 1</b>
+        <b>Item 2</b>
+        <b>Item 3</b>
+      </el-inline>
+      <el-delimiter />
+
+      <!-- Columns -->
+      <el-header>Columns</el-header>
+      <el-tab>
+        <el-tab-item title="One larger">
+          <el-column>
+            <el-column-item :grow="2">
+              <el-header>Column 1</el-header>
+              <p>&#60;el-column-item :grow="2"&#62;</p>
+              <el-delimiter :short="true" />
+              <color-guide />
+            </el-column-item>
+            <el-column-item :grow="1">
+              <el-header>Column 2</el-header>
+              <p>&#60;el-column-item :grow="1"&#62;</p>
+              <el-delimiter :short="true" />
+              <font-guide />
+            </el-column-item>
+          </el-column>
+        </el-tab-item>
+
+        <el-tab-item title="Equal sizing">
+          <el-column>
+            <el-column-item :grow="1">
+              <el-header>Column 1</el-header>
+              <p>&#60;el-column-item :grow="1"&#62;</p>
+              <el-delimiter :short="true" />
+              <color-guide />
+            </el-column-item>
+            <el-column-item :grow="1">
+              <el-header>Column 2</el-header>
+              <p>&#60;el-column-item :grow="1"&#62;</p>
+              <el-delimiter :short="true" />
+              <font-guide />
+            </el-column-item>
+          </el-column>
+        </el-tab-item>
+
+        <el-tab-item title="Three columns">
+          <el-column>
+            <el-column-item :grow="1">
+              <el-header>Column 1</el-header>
+              <p>&#60;el-column-item :grow="1"&#62;</p>
+              <el-delimiter :short="true" />
+              <color-guide />
+            </el-column-item>
+            <el-column-item :grow="1">
+              <el-header>Column 2</el-header>
+              <p>&#60;el-column-item :grow="1"&#62;</p>
+              <el-delimiter :short="true" />
+              <font-guide />
+            </el-column-item>
+            <el-column-item :grow="1">
+              <el-header>Column 3</el-header>
+              <p>&#60;el-column-item :grow="1"&#62;</p>
+              <el-delimiter :short="true" />
+              <font-guide />
+            </el-column-item>
+          </el-column>
         </el-tab-item>
       </el-tab>
     </el-menu-item>
@@ -433,4 +502,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
+  p {
+    color: #cacaca;
+  }
 </style>
