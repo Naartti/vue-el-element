@@ -28,19 +28,22 @@ dropdownOptions: [{
 -->
 
 <template>
-<div class="selectContainer"
-  v-bind:class="{
+<div
+  class="el-dropdown"
+  :class="{
     marginRight,
     marginTop,
     wide
   }"
   >
-  <select @change="onChange"
-    class="selectContainer-field"
+  <select
+    @change="onChange"
+    class="el-dropdown-field"
     :value="value"
     >
 
-    <option v-for="item in options"
+    <option
+      v-for="item in options"
       :key="item.value"
       :value="item.value"
       :disabled="item.value === null"
@@ -69,7 +72,7 @@ export default {
     },
     marginTop: {
       type: Boolean,
-      default: true
+      default: false
     },
     wide: {
       type: Boolean,
@@ -85,6 +88,8 @@ export default {
       if (this.$listeners && this.$listeners.change) {
         this.$emit('change', value)
       }
+
+      ev.target.blur()
     }
   }
 }
@@ -94,7 +99,7 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .selectContainer {
+  .el-dropdown {
     position: relative;
     width: 100%;
     max-width: @element-min-width;
@@ -104,7 +109,7 @@ export default {
     box-sizing: border-box;
   }
 
-  .selectContainer-field {
+  .el-dropdown-field {
     height: @dropdown-height;
     width: 100%;
     background-color: @color-grey-super-light;
@@ -116,16 +121,8 @@ export default {
     padding-left: 10px;
   }
 
-  .selectContainer-field:focus {
+  .el-dropdown-field:focus {
     border: 1px solid @color-grey-dark;
-  }
-
-  .marginRight {
-    margin-right: @side-margin;
-  }
-
-  .marginTop {
-    margin-top: @top-margin-element;
   }
 
   .wide {
