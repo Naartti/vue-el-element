@@ -154,7 +154,9 @@ export default {
       this.absoluteFooterPosition = scrollBottom < 50 || this.centerPosition
     },
     checkTopScroll () {
-      if (!this.isClosable) {
+      if (!this.isClosable ||
+        !this.$refs ||
+        !this.$refs.modalBody) {
         return
       }
 
