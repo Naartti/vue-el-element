@@ -20,6 +20,8 @@
     <!-- Button -->
     <el-menu-item title="Button">
       <el-header>Text button</el-header>
+      <p>&#60;el-button&#62;</p>
+
       <el-inline
         :stretch="true"
         :wrap="true"
@@ -83,12 +85,14 @@
       <icon-button />
 
       <el-header :marginTop="true">Toggle button</el-header>
+      <p>&#60;el-toggle-button&#62;</p>
       <el-toggle-button
         v-model="toggleButton"
         :marginTop="true"
         />
 
       <el-header :marginTop="true">Switcher</el-header>
+      <p>&#60;el-switch&#62; and &#60;el-multi-switch&#62;</p>
       <el-switch
         v-model="switchModel"
         left="Left"
@@ -138,23 +142,6 @@
         >
         Clickable message
       </el-message>
-
-      <el-header :marginTop="true">El Tag</el-header>
-      <el-tag :danger="true" :marginRight="true">
-        Danger
-      </el-tag>
-      <el-tag :warning="true" :marginRight="true">
-        Warning
-      </el-tag>
-      <el-tag :info="true" :marginRight="true">
-        Info
-      </el-tag>
-      <el-tag :success="true" :marginRight="true">
-        Success
-      </el-tag>
-      <el-tag>
-        No status
-      </el-tag>
     </el-menu-item>
 
     <!-- Input -->
@@ -256,8 +243,36 @@
       <el-header :marginTop="true">Delimiter</el-header>
       <el-delimiter />
     </el-menu-item>
+
+    <!-- Hierarcy -->
+    <el-menu-item title="Status">
+      <el-header :margin-top="false">Loader</el-header>
+      <p>&#60;el-loader&#62;</p>
+      <el-loader
+        :marginTop="false"
+        />
+
+      <el-header :marginTop="true">Tags</el-header>
+      <p>&#60;el-tag&#62;</p>
+      <el-tag :danger="true" :marginRight="true">
+        Danger
+      </el-tag>
+      <el-tag :warning="true" :marginRight="true">
+        Warning
+      </el-tag>
+      <el-tag :info="true" :marginRight="true">
+        Info
+      </el-tag>
+      <el-tag :success="true" :marginRight="true">
+        Success
+      </el-tag>
+      <el-tag>
+        No status
+      </el-tag>
+    </el-menu-item>
   </el-menu>
 
+  <!-- Modals -->
   <el-popup
     @close="showPopup = false"
     v-if="showPopup"

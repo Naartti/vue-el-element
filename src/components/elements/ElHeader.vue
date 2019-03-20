@@ -1,6 +1,6 @@
 <template>
 <div
-  class='main'
+  class="el-header"
   :class="{ marginTop }"
   @click="$listeners.click ? $emit('click') : null"
   >
@@ -8,7 +8,7 @@
   <!-- Icon -->
   <div v-if="hasNotification"
     v-html="icon"
-    class="icon animation"
+    class="el-header-icon animation"
     :class="{ pointer : clickableIcon }"
     @click="$emit('click')"
     />
@@ -84,7 +84,7 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .main {
+  .el-header {
     font-family: @font-family;
     position: relative;
     width: 100%;
@@ -95,7 +95,7 @@ export default {
     color: @color-grey-super-dark;
   }
 
-  .icon {
+  .el-header-icon {
     position: absolute;
     left: -25px;
   }

@@ -193,6 +193,13 @@ Place the tooltip within the item you want to describe. It will place itself at 
 </el-inline>
 ```
 
+## el-loader
+```xml
+<el-loader
+  :margin-top="Boolean"
+  />
+```
+
 ## Build Setup
 
 ``` bash

@@ -19,6 +19,7 @@ import ElSection from './src/components/elements/ElSection.vue'
 import ElTooltip from './src/components/elements/ElTooltip.vue'
 import ElHeader from './src/components/elements/ElHeader.vue'
 import ElButton from './src/components/elements/ElButton.vue'
+import ElLoader from './src/components/elements/ElLoader.vue'
 import ElInline from './src/components/elements/ElInline.vue'
 import ElSelect from './src/components/elements/ElSelect.vue'
 import ElSwitch from './src/components/elements/ElSwitch.vue'
@@ -53,6 +54,7 @@ export {
   ElTooltip,
   ElHeader,
   ElButton,
+  ElLoader,
   ElInline,
   ElSelect,
   ElSwitch,
@@ -88,6 +90,7 @@ export default {
   ElTooltip,
   ElHeader,
   ElButton,
+  ElLoader,
   ElInline,
   ElSelect,
   ElSwitch,

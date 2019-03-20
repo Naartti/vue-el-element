@@ -1,6 +1,8 @@
 <template>
 <div>
   <el-header :marginTop="true">Icon button</el-header>
+  <p>&#60;el-button :icon="true"&#62; svgCode &#60;/el-button&#62;</p>
+
   <el-inline :marginTop="true">
     <el-button
       :icon="true"
