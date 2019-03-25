@@ -1,5 +1,5 @@
 <template>
-<span
+<div
   class="el-tag-wrapper"
   :class="{
     warning,
@@ -11,7 +11,7 @@
   }"
   >
   <slot />
-</span>
+</div>
 </template>
 <script>
 export default {
@@ -49,7 +49,11 @@ export default {
   .el-tag-wrapper {
     position: relative;
     height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: auto;
+    min-width: auto;
     padding: 0px 15px;
     border-radius: 15px;
     text-align: center;

@@ -235,26 +235,28 @@
       <el-header :margin-top="false">Loader</el-header>
       <p>&#60;el-loader&#62;</p>
       <el-loader
-        :marginTop="false"
+        :margin-top="false"
         />
 
       <el-header :marginTop="true">Tags</el-header>
       <p>&#60;el-tag&#62;</p>
-      <el-tag :danger="true" :marginRight="true">
-        Danger
-      </el-tag>
-      <el-tag :warning="true" :marginRight="true">
-        Warning
-      </el-tag>
-      <el-tag :info="true" :marginRight="true">
-        Info
-      </el-tag>
-      <el-tag :success="true" :marginRight="true">
-        Success
-      </el-tag>
-      <el-tag>
-        No status
-      </el-tag>
+      <el-inline>
+        <el-tag :danger="true" :marginRight="true">
+          Danger
+        </el-tag>
+        <el-tag :warning="true" :marginRight="true">
+          Warning
+        </el-tag>
+        <el-tag :info="true" :marginRight="true">
+          Info
+        </el-tag>
+        <el-tag :success="true" :marginRight="true">
+          Success
+        </el-tag>
+        <el-tag>
+          No status
+        </el-tag>
+      </el-inline>
     </el-menu-item>
 
     <!-- Navigation -->
