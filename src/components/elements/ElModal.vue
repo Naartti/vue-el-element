@@ -103,7 +103,7 @@ export default {
   },
   computed: {
     isClosable () {
-      return this.$listeners && this.$listeners.close
+      return this.$listeners && this.$listeners.close && this.$listeners.close !== null
     }
   },
   mounted () {

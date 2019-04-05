@@ -2,6 +2,32 @@
 # ![alt text](https://raw.githubusercontent.com/Naartti/vue-el-element/master/static/favicon.png) vue-el-element
 > Vue components for design elements with custom style guides
 
+# Installation
+## For Vue-cli 3
+```
+npm install --save-dev postcss-url postcss-import vue-el-element
+```
+
+vue.config.js
+```js
+module.exports = {
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'el-style': 'node_modules/vue-el-element/src/style' // Or redirect to your own style guide
+      }
+    }
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        data: '@import "el-style/variables.less";'
+      }
+    }
+  }
+}
+```
+
 # Import
 ## Globalize all components
 ```js
