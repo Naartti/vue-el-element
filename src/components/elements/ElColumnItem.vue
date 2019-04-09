@@ -1,7 +1,10 @@
 <template>
 <div
   class="el-column-item"
-  :style="`flex-grow: ${grow};`"
+  :class="{
+    'el-column-item-fix-width': width !== 'auto'
+  }"
+  :style="`flex-grow: ${grow}; width: ${styleWidth}; max-width: ${styleWidth};`"
   >
   <slot />
 </div>
@@ -12,6 +15,15 @@ export default {
     grow: {
       type: Number,
       default: 1
+    },
+    width: {
+      type: [String, Number],
+      default: 'auto'
+    }
+  },
+  computed: {
+    styleWidth () {
+      return !isNaN(this.width) ? `${this.width}px` : this.width
     }
   }
 }
@@ -26,5 +38,10 @@ export default {
     margin-left: @side-margin;
     width: auto;
     flex-basis: 0;
+  }
+
+  .el-column-item-fix-width {
+    flex-basis: auto;
+    flex-grow: 0;
   }
 </style>

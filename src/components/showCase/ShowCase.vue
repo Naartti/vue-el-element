@@ -358,6 +358,34 @@
             </el-column-item>
           </el-column>
         </el-tab-item>
+
+        <!-- Responsive columns -->
+        <el-tab-item title="Responsive">
+          <el-button @click="wrapColumns = !wrapColumns">
+            Wrap it!
+          </el-button>
+          <br>
+
+          <el-column :wrap="wrapColumns" :margin-top="true">
+            <el-column-item :width="200">
+              <h3 style="margin-top: 0px;">Some title</h3>
+              <p>Some caption</p>
+            </el-column-item>
+            <el-column-item>
+              <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b>
+            </el-column-item>
+          </el-column>
+          <el-column :wrap="wrapColumns" :margin-top="true">
+            <el-column-item :width="200">
+              <h3 style="margin-top: 0px;">Some other title, a long one</h3>
+              <p>More suspisious captions</p>
+            </el-column-item>
+            <el-column-item>
+              <b>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b>
+            </el-column-item>
+          </el-column>
+          <el-delimiter />
+        </el-tab-item>
       </el-tab>
     </el-menu-item>
   </el-menu>
@@ -481,7 +509,8 @@ export default {
           label: 'Mode 4'
         }],
         model: 'två'
-      }
+      },
+      wrapColumns: false
     }
   },
   watch: {
