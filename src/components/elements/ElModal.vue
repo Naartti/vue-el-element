@@ -20,7 +20,8 @@
       <div
         class="el-modal-body animation"
         :class="{
-          displayOverflow
+          displayOverflow,
+          'el-modal-body-wide': wide
         }"
         ref="modalBody"
         v-if="isVisible"
@@ -88,6 +89,10 @@ export default {
     closeButtonAlign: {
       type: String,
       default: 'left'
+    },
+    wide: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -229,31 +234,31 @@ export default {
       z-index: 1;
       box-sizing: border-box;
     }
+  }
 
-    .el-modal-body {
-      position: relative;
-      display: block;
-      top: auto;
-      left: auto;
-      width: 100%;
-      max-width: @section-content-max-width;
-      height: auto;
-      text-align: left;
-      z-index: 2;
-      background-color: #fff;
-      border-radius: @radius-small;
-      box-shadow: @shadow-wide;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      box-sizing: border-box;
-      margin: 20px auto;
-      padding: 30px 30px;
+  .el-modal-body {
+    position: relative;
+    display: block;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: @section-content-max-width;
+    height: auto;
+    text-align: left;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: @radius-small;
+    box-shadow: @shadow-wide;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 20px auto;
+    padding: 30px 30px;
 
-      @media (max-width: @section-content-max-width) {
-        border-radius: 0px;
-        padding: 30px 15px;
-        margin: 0px;
-      }
+    @media (max-width: @section-content-max-width) {
+      border-radius: 0px;
+      padding: 30px 15px;
+      margin: 0px;
     }
   }
 
@@ -344,6 +349,28 @@ export default {
 
   .fixedCloseButton {
     position: fixed !important;
+  }
+
+  .el-modal-body-wide {
+    max-width: @section-content-wide-max-width;
+
+    .stickyFixed {
+      max-width: @section-content-wide-max-width;
+
+      @media (max-width: @section-content-wide-max-width) {
+        padding: @top-margin-element 15px;
+      }
+    }
+
+    .close-button-wrapper {
+      max-width: @section-content-wide-max-width;
+    }
+
+    @media (max-width: @section-content-wide-max-width) {
+      border-radius: 0px;
+      padding: 30px 15px;
+      margin: 0px;
+    }
   }
 
   /* Enter and leave animations can use different */

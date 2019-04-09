@@ -406,6 +406,7 @@
     v-if="showModal"
     @close="showModal = false"
     close-button-align="right"
+    :wide="wideModals"
     >
     Hello! (modal)
 
@@ -414,6 +415,12 @@
     ...world
 
     <el-inline slot="footer">
+      <el-button
+        :margin-right="true"
+        @click="wideModals = !wideModals"
+        >
+        Wideify
+      </el-button>
       <el-button>Do something</el-button>
     </el-inline>
   </el-modal>
@@ -510,7 +517,8 @@ export default {
         }],
         model: 'två'
       },
-      wrapColumns: false
+      wrapColumns: false,
+      wideModals: false
     }
   },
   watch: {
