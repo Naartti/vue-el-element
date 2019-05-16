@@ -40,6 +40,7 @@ import ElTextarea from 'elements/ElTextarea.vue'
 // Smart wrappers
 import ElStickyFooter from 'elements/ElStickyFooter.vue'
 import ElStickyHeader from 'elements/ElStickyHeader.vue'
+import ElTooltip from 'elements/ElTooltip.vue'
 
 export {
   ElButton,
@@ -66,6 +67,7 @@ export {
   ElLoader,
   ElStickyFooter,
   ElStickyHeader,
+  ElTooltip,
   ElHeader,
   ElCaption,
   ElInfo
@@ -95,6 +97,7 @@ export default {
   ElLoader,
   ElStickyFooter,
   ElStickyHeader,
+  ElTooltip,
   ElHeader,
   ElCaption,
   ElInfo
