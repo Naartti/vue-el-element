@@ -31,6 +31,7 @@ import ElTag from 'elements/ElTag.vue'
 import ElLoader from 'elements/ElLoader.vue'
 import ElHeader from 'elements/ElHeader.vue'
 import ElCaption from 'elements/ElCaption.vue'
+import ElInfo from 'elements/ElInfo.vue'
 
 // Input
 import ElInput from 'elements/ElInput.vue'
@@ -66,7 +67,8 @@ export {
   ElStickyFooter,
   ElStickyHeader,
   ElHeader,
-  ElCaption
+  ElCaption,
+  ElInfo
 }
 export default {
   ElButton,
@@ -94,5 +96,6 @@ export default {
   ElStickyFooter,
   ElStickyHeader,
   ElHeader,
-  ElCaption
+  ElCaption,
+  ElInfo
 }
