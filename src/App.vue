@@ -217,6 +217,7 @@
     <el-delimiter />
     <h3>El Header</h3>
     <el-header>Just a header</el-header>
+    <el-header tight>Tight header</el-header>
     <el-header warning>
       Header with warning
     </el-header>

@@ -18,7 +18,12 @@
     @click="$emit('click')"
     />
 
-  <h3 class="el-header__header">
+  <h3
+    class="el-header__header"
+    :class="{
+      'el-header__header--tight': tight
+    }"
+    >
     <slot />
   </h3>
 </div>
@@ -33,7 +38,8 @@ export default {
     warning: Boolean,
     danger: Boolean,
     success: Boolean,
-    marginTop: Boolean
+    marginTop: Boolean,
+    tight: Boolean
   },
   computed: {
     clickable () {
@@ -68,7 +74,6 @@ export default {
     height: auto;
     font-size: @font-size-medium;
     text-align: left;
-    margin-top: @top-margin-header;
     color: @color-grey-super-dark;
 
     &__icon {
@@ -87,6 +92,10 @@ export default {
 
     &__header {
       display: inline-block;
+
+      &--tight {
+        margin: 0px;
+      }
     }
   }
 </style>
