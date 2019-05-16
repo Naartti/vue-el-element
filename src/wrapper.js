@@ -29,6 +29,8 @@ import ElCollapseHeader from 'elements/ElCollapseHeader.vue'
 import ElMessage from 'elements/ElMessage.vue'
 import ElTag from 'elements/ElTag.vue'
 import ElLoader from 'elements/ElLoader.vue'
+import ElHeader from 'elements/ElHeader.vue'
+import ElCaption from 'elements/ElCaption.vue'
 
 // Input
 import ElInput from 'elements/ElInput.vue'
@@ -62,7 +64,9 @@ export {
   ElTag,
   ElLoader,
   ElStickyFooter,
-  ElStickyHeader
+  ElStickyHeader,
+  ElHeader,
+  ElCaption
 }
 export default {
   ElButton,
@@ -88,5 +92,7 @@ export default {
   ElTag,
   ElLoader,
   ElStickyFooter,
-  ElStickyHeader
+  ElStickyHeader,
+  ElHeader,
+  ElCaption
 }

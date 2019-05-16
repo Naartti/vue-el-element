@@ -187,6 +187,7 @@
   </el-menu-item>
 
   <el-menu-item title="Text">
+    <h3>El Message</h3>
     <el-message
       :warning="true"
       >
@@ -212,6 +213,31 @@
       >
       Clickable message
     </el-message>
+
+    <el-delimiter />
+    <h3>El Header</h3>
+    <el-header>Just a header</el-header>
+    <el-header warning>
+      Header with warning
+    </el-header>
+    <el-header danger>
+      Header with danger
+    </el-header>
+    <el-header success @click="() => {}">
+      Header with success
+    </el-header>
+
+    <el-delimiter />
+    <h3>El Caption</h3>
+    <el-caption>
+      Some caption
+    </el-caption>
+    <el-caption danger @click="() => {}">
+      Some danger caption
+    </el-caption>
+    <el-caption light style="background-color: #222;">
+      Some light caption
+    </el-caption>
   </el-menu-item>
 
   <el-menu-item title="Status">
