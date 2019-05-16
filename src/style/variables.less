@@ -102,52 +102,101 @@
 
 
 // Global classes
-.animation {
+.el-animation {
   -webkit-transition: @animation;
   -moz-transition: @animation;
   -o-transition: @animation;
   transition: @animation;
 }
 
-.marginRight {
+.el-margin--right {
   margin-right: @side-margin;
 }
 
-.marginTop {
+.el-margin--top {
   margin-top: @top-margin-element;
+}
+
+.el-align-right {
+  align-self: flex-end;
+}
+
+.el-text-align--left {
+  text-align: left;
+}
+
+.el-text-align--center {
+  text-align: center;
+}
+
+.el-text-align--right {
+  text-align: right;
+}
+
+
+// Transitions
+.slide-fade-enter-active {
+  transition: all .5s ease;
+}
+.slide-fade-enter {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+.slide-fade-enter-active {
+  transition: all 0.5s ease;
+}
+
+// Long slide fide (modal)
+.slide-fade-long-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-long-enter, .slide-fade-long-leave-to {
+  transform: translateY(100px);
+  opacity: 0;
+}
+
+// Just fade
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0 !important;
 }
 
 
 // Default style elements
-div {
-  font-family: @font-family;
-}
+.el-element-font {
+  div {
+    font-family: @font-family;
+  }
 
-p, i {
-  font-size: @font-size-small;
-  font-family: @font-family;
-}
+  p, i {
+    font-size: @font-size-small;
+    font-family: @font-family;
+  }
 
-h1 {
-  font-size: @font-size-xx-large;
-  font-family: @font-family;
-  margin-bottom: @bottom-margin-header;
-}
+  h1 {
+    font-size: @font-size-xx-large;
+    font-family: @font-family;
+    margin-bottom: @bottom-margin-header;
+  }
 
-h2 {
-  font-size: @font-size-x-large;
-  font-family: @font-family;
-  margin-bottom: @bottom-margin-header;
-}
+  h2 {
+    font-size: @font-size-x-large;
+    font-family: @font-family;
+    margin-bottom: @bottom-margin-header;
+  }
 
-h3 {
-  font-size: @font-size-large;
-  font-family: @font-family;
-  margin-bottom: @bottom-margin-header;
-}
+  h3 {
+    font-size: @font-size-large;
+    font-family: @font-family;
+    margin-bottom: @bottom-margin-header;
+  }
 
-h4 {
-  font-size: @font-size-medium;
-  font-family: @font-family;
-  margin-bottom: @bottom-margin-header;
+  h4 {
+    font-size: @font-size-medium;
+    font-family: @font-family;
+    margin-bottom: @bottom-margin-header;
+  }
 }

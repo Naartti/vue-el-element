@@ -1,20 +1,19 @@
 <template>
-<div class='inlineContainer'
-  v-bind:class="{
-    center,
-    nowrap: wrap === false,
-    marginTop,
-    stretch,
-    spaceBetween
+<div
+  class="el-inline"
+  :class="{
+    'el-inline--center': center,
+    'el-inline--nowrap': !wrap,
+    'el-inline--stretch': stretch,
+    'el-inline--space-between': spaceBetween,
+    'el-margin--top': marginTop
   }"
   @click="click"
   >
   <slot />
 </div>
 </template>
-
 <script>
-
 export default {
   name: 'ElInline',
   props: {
@@ -47,13 +46,11 @@ export default {
     }
   }
 }
-
 </script>
-
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .inlineContainer {
+  .el-inline {
     position: relative;
     width: auto;
     min-width: @element-min-width;
@@ -64,25 +61,21 @@ export default {
     justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
-  }
 
-  .center {
-    justify-content: center;
-  }
+    &--center {
+      justify-content: center;
+    }
 
-  .nowrap {
-    flex-wrap: nowrap !important;
-  }
+    &--nowrap {
+      flex-wrap: nowrap !important;
+    }
 
-  .marginTop {
-    margin-top: @top-margin-element !important;
-  }
+    &--stretch {
+      width: 100%;
+    }
 
-  .stretch {
-    width: 100%;
-  }
-
-  .spaceBetween {
-    justify-content: space-between;
+    &--space-between {
+      justify-content: space-between;
+    }
   }
 </style>

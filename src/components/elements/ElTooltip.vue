@@ -3,7 +3,12 @@
   class="el-tooltip"
   v-show="isHighlighted && isStillHighlighted"
   >
-  <span v-if="content !== ''" v-html="content" />
+
+  <span
+    v-if="content !== ''"
+    v-html="content"
+    />
+
   <slot />
 </div>
 </template>

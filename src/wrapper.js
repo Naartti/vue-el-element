@@ -1,61 +1,92 @@
-import ElCollapseHeader from './components/elements/ElCollapseHeader.vue'
-import ElCollapseToggle from './components/elements/ElCollapseToggle.vue'
-import ElStickySection from './components/elements/ElStickySection.vue'
-import ElStickyFooter from './components/elements/ElStickyFooter.vue'
-import ElToggleButton from './components/elements/ElToggleButton.vue'
-import ElExtendButton from './components/elements/ElExtendButton.vue'
-import ElMultiSwitch from './components/elements/ElMultiSwitch.vue'
-import ElInputButton from './components/elements/ElInputButton.vue'
-import ElRadioButton from './components/elements/ElRadioButton.vue'
-import ElIconButton from './components/elements/ElIconButton.vue'
-import ElDelimiter from './components/elements/ElDelimiter.vue'
-import ElCheckbox from './components/elements/ElCheckbox.vue'
-import ElMenuItem from './components/elements/ElMenuItem.vue'
-import ElDropdown from './components/elements/ElDropdown.vue'
-import ElMessage from './components/elements/ElMessage.vue'
-import ElCaption from './components/elements/ElCaption.vue'
-import ElSection from './components/elements/ElSection.vue'
-import ElTooltip from './components/elements/ElTooltip.vue'
-import ElHeader from './components/elements/ElHeader.vue'
-import ElButton from './components/elements/ElButton.vue'
-import ElInline from './components/elements/ElInline.vue'
-import ElSelect from './components/elements/ElSelect.vue'
-import ElSwitch from './components/elements/ElSwitch.vue'
-import ElPopup from './components/elements/ElPopup.vue'
-import ElInput from './components/elements/ElInput.vue'
-import ElInfo from './components/elements/ElInfo.vue'
-import ElText from './components/elements/ElText.vue'
-import ElCard from './components/elements/ElCard.vue'
-import ElMenu from './components/elements/ElMenu.vue'
+// Navigators
+import ElMenu from 'elements/ElMenu.vue'
+import ElMenuItem from 'elements/ElMenuItem.vue'
+import ElMenuSection from 'elements/ElMenuSection.vue'
+import ElTab from 'elements/ElTab.vue'
+import ElTabItem from 'elements/ElTabItem.vue'
+import ElDelimiter from 'elements/ElDelimiter.vue'
+
+// Alignors
+import ElInline from 'elements/ElInline.vue'
+import ElColumn from 'elements/ElColumn.vue'
+import ElColumnItem from 'elements/ElColumnItem.vue'
+
+// Selectors
+import ElDropdown from 'elements/ElDropdown.vue'
+import ElCheckbox from 'elements/ElCheckbox.vue'
+import ElRadioButton from 'elements/ElRadioButton.vue'
+
+// Actors
+import ElButton from 'elements/ElButton.vue'
+import ElToggleButton from 'elements/ElToggleButton.vue'
+import ElMultiSwitch from 'elements/ElMultiSwitch.vue'
+
+// Hierarcy
+import ElModal from 'elements/ElModal.vue'
+import ElCollapseHeader from 'elements/ElCollapseHeader.vue'
+
+// Information
+import ElMessage from 'elements/ElMessage.vue'
+import ElTag from 'elements/ElTag.vue'
+import ElLoader from 'elements/ElLoader.vue'
+
+// Input
+import ElInput from 'elements/ElInput.vue'
+import ElTextarea from 'elements/ElTextarea.vue'
+
+// Smart wrappers
+import ElStickyFooter from 'elements/ElStickyFooter.vue'
+import ElStickyHeader from 'elements/ElStickyHeader.vue'
 
 export {
-  ElCollapseHeader,
-  ElCollapseToggle,
-  ElStickySection,
-  ElStickyFooter,
-  ElToggleButton,
-  ElExtendButton,
-  ElMultiSwitch,
-  ElInputButton,
-  ElRadioButton,
-  ElIconButton,
-  ElDelimiter,
-  ElCheckbox,
-  ElMenuItem,
-  ElDropdown,
-  ElMessage,
-  ElCaption,
-  ElSection,
-  ElTooltip,
-  ElHeader,
   ElButton,
+  ElToggleButton,
+  ElMultiSwitch,
+  ElMenu,
+  ElMenuItem,
+  ElTab,
+  ElTabItem,
+  ElDelimiter,
   ElInline,
-  ElSelect,
-  ElSwitch,
-  ElPopup,
+  ElMenuSection,
+  ElDropdown,
+  ElCheckbox,
+  ElRadioButton,
+  ElColumn,
+  ElColumnItem,
+  ElModal,
+  ElMessage,
   ElInput,
-  ElInfo,
-  ElText,
-  ElCard,
-  ElMenu
+  ElTextarea,
+  ElCollapseHeader,
+  ElTag,
+  ElLoader,
+  ElStickyFooter,
+  ElStickyHeader
+}
+export default {
+  ElButton,
+  ElToggleButton,
+  ElMultiSwitch,
+  ElMenu,
+  ElMenuItem,
+  ElTab,
+  ElTabItem,
+  ElDelimiter,
+  ElInline,
+  ElMenuSection,
+  ElDropdown,
+  ElCheckbox,
+  ElRadioButton,
+  ElColumn,
+  ElColumnItem,
+  ElModal,
+  ElMessage,
+  ElInput,
+  ElTextarea,
+  ElCollapseHeader,
+  ElTag,
+  ElLoader,
+  ElStickyFooter,
+  ElStickyHeader
 }

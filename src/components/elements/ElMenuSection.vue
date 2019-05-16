@@ -1,7 +1,7 @@
 <template>
   <transition name="slide-fade">
     <div v-show="displayedIndex === index" class="el-menu-item">
-      <h1 class="el-menu-item-header">{{title}}</h1>
+      <h1 class="el-menu-item__header">{{title}}</h1>
       <el-delimiter :short="true" />
 
       <slot />
@@ -15,7 +15,7 @@ import ElDelimiter from './ElDelimiter.vue'
 
 export default {
   components: { ElDelimiter },
-  name: 'ElMenuItem',
+  name: 'ElMenuSection',
   data () {
     return {
       index: null
@@ -49,22 +49,12 @@ export default {
 
   .el-menu-item {
     width: 100%;
-  }
 
-  .el-menu-item-header {
-
-    @media (max-width: 700px) {
-      margin-top: 0px;
-      margin-left: 40px;
+    &__header {
+      @media (max-width: 700px) {
+        margin-top: 0px;
+        margin-left: 40px;
+      }
     }
-  }
-
-  .slide-fade-enter-active {
-    transition: all .5s ease;
-  }
-
-  .slide-fade-enter {
-    transform: translateY(-10px);
-    opacity: 0;
   }
 </style>

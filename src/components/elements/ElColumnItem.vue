@@ -2,7 +2,7 @@
 <div
   class="el-column-item"
   :class="{
-    'el-column-item-fix-width': width !== 'auto'
+    'el-column-item--fix-width': width !== 'auto'
   }"
   :style="`flex-grow: ${grow}; width: ${styleWidth}; max-width: ${styleWidth};`"
   >
@@ -40,7 +40,7 @@ export default {
     flex-basis: 0;
   }
 
-  .el-column-item-fix-width {
+  .el-column-item--fix-width {
     flex-basis: auto;
     flex-grow: 0;
   }

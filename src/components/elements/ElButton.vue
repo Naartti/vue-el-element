@@ -2,19 +2,19 @@
 <button
   type="button"
   @click="next"
-  class="buttonStyle animation"
+  class="el-button el-animation"
   :class="{
-    disabled: disabled && !secondary,
-    disabledSecondary: disabled && secondary,
-    danger: danger && !secondary && !disabled,
-    secondary: secondary && !danger && !disabled,
-    dangerSecondary: danger && secondary && !disabled,
-    link,
-    right,
-    marginRight,
-    marginTop,
-    elIconButton: icon === true,
-    primary: !disabled && !secondary && !danger
+    'el-button--icon': icon === true,
+    'el-button--primary': !disabled && !secondary && !danger,
+    'el-button--disabled': disabled && !secondary,
+    'el-button--secondary--disabled': disabled && secondary,
+    'el-button--danger': danger && !secondary && !disabled,
+    'el-button--secondary': secondary && !danger && !disabled,
+    'el-button--secondary--danger': danger && secondary && !disabled,
+    'el-button--link': link,
+    'el-align--right': right,
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop
   }"
   >
   <el-tooltip
@@ -23,7 +23,7 @@
     >
     {{tooltip}}
   </el-tooltip>
-  <slot/>
+  <slot />
 </button>
 </template>
 <script>
@@ -34,38 +34,14 @@ export default {
   components: { ElTooltip },
   name: 'ElButton',
   props: {
-    disabled: {
-      type: Boolean,
-      default: false
-    },
-    danger: {
-      type: Boolean,
-      default: false
-    },
-    secondary: {
-      type: Boolean,
-      default: false
-    },
-    link: {
-      type: Boolean,
-      default: false
-    },
-    right: {
-      type: Boolean,
-      default: false
-    },
-    icon: {
-      type: Boolean,
-      default: false
-    },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    },
+    disabled: Boolean,
+    danger: Boolean,
+    secondary: Boolean,
+    link: Boolean,
+    right: Boolean,
+    icon: Boolean,
+    marginRight: Boolean,
+    marginTop: Boolean,
     tooltip: {
       type: String,
       default: ''
@@ -89,7 +65,7 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .buttonStyle {
+  .el-button {
     padding: @button-padding;
     text-decoration: bold;
     text-transform: none;
@@ -104,84 +80,80 @@ export default {
     justify-content: center;
     align-items: center;
     position: relative;
-  }
 
-  .primary {
-    background-color: @color-button-primary;
-    border: 1px solid @color-button-primary;
-    color: #ffffff;
+    &--primary {
+      background-color: @color-button-primary;
+      border: 1px solid @color-button-primary;
+      color: #ffffff;
 
-    &:hover {
-      background-color: @color-button-primary-hover;
-      border: 1px solid @color-button-primary-hover;
+      &:hover {
+        background-color: @color-button-primary-hover;
+        border: 1px solid @color-button-primary-hover;
+      }
     }
-  }
 
-  .disabled {
-    background-color: @color-disable-dark !important;
-    border: 1px solid @color-disable-dark !important;
-    color: #ffffff !important;
-  }
+    &--secondary {
+      color: @color-button-secondary;
+      border: 1px solid @color-button-secondary;
+      background-color: transparent;
 
-  .disabledSecondary {
-    background-color: transparent;
-    border: 1px solid @color-disable-dark !important;
-    color: @color-disable-dark !important;
-  }
+      &:hover {
+        color: @color-button-secondary-hover;
+        border: 1px solid @color-button-secondary-hover;
+      }
 
-  .secondary {
-    color: @color-button-secondary;
-    border: 1px solid @color-button-secondary;
-    background-color: transparent;
+      &--disabled {
+        background-color: transparent;
+        border: 1px solid @color-disable-dark;
+        color: @color-disable-dark;
+      }
 
-    &:hover {
-      color: @color-button-secondary-hover;
-      border: 1px solid @color-button-secondary-hover;
+      &--danger {
+        background-color: transparent;
+        color: @color-button-danger;
+        border: 1px solid @color-button-danger;
+
+        &:hover {
+          color: @color-button-danger-hover;
+          border: 1px solid @color-button-danger-hover;
+        }
+      }
     }
-  }
 
-  .dangerSecondary {
-    background-color: transparent;
-    color: @color-button-danger;
-    border: 1px solid @color-button-danger;
-
-    &:hover {
-      color: @color-button-danger-hover;
-      border: 1px solid @color-button-danger-hover;
+    &--disabled {
+      background-color: @color-disable-dark;
+      border: 1px solid @color-disable-dark;
+      color: #ffffff;
     }
-  }
 
-  .danger {
-    background-color: @color-button-danger;
-    border: 1px solid @color-button-danger;
-    color: #ffffff;
+    &--danger {
+      background-color: @color-button-danger;
+      border: 1px solid @color-button-danger;
+      color: #ffffff;
 
-    &:hover {
-      background-color: @color-button-danger-hover;
-      border: 1px solid @color-button-danger-hover;
+      &:hover {
+        background-color: @color-button-danger-hover;
+        border: 1px solid @color-button-danger-hover;
+      }
     }
-  }
 
-  .right {
-    align-self: flex-end;
-  }
+    &--icon {
+      width: @button-height;
+      min-width: @button-height;
+      padding: 0px;
+    }
 
-  .elIconButton {
-    width: @button-height;
-    min-width: @button-height;
-    padding: 0px;
-  }
-
-  .link {
-    background-color: transparent;
-    border: none;
-    color: @color-button-primary;
-
-    &:hover {
+    &--link {
       background-color: transparent;
       border: none;
-      color: @color-button-link;
-      text-decoration: underline;
+      color: @color-button-primary;
+
+      &:hover {
+        background-color: transparent;
+        border: none;
+        color: @color-button-link;
+        text-decoration: underline;
+      }
     }
   }
 </style>

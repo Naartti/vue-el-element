@@ -28,10 +28,14 @@ checkboxOptions: [{
 -->
 
 <template>
-<div class="mainContainer">
+<div>
   <label v-for="(item, index) in options"
-    class="checkboxContainer"
-    :class="{ marginTop, marginRight }"
+    class="el-checkbox-item"
+    :class="{
+      '-right': marginRight,
+      'el-margin--top': marginTop,
+      'el-checkbox-item-checkmark': checkmark
+    }"
     :key="index"
     :value="value"
     >
@@ -48,7 +52,10 @@ checkboxOptions: [{
       @click="onChange()"
       >
 
-    <span class="checkmark" :value="value" />
+    <span
+      class="el-checkbox-checkmark"
+      :value="value"
+      />
   </label>
 </div>
 </template>
@@ -78,6 +85,10 @@ export default {
     marginRight: {
       type: Boolean,
       default: false
+    },
+    checkmark: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
@@ -103,10 +114,8 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .mainContainer {}
-
   /* The container */
-  .checkboxContainer {
+  .el-checkbox-item {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -122,14 +131,14 @@ export default {
   }
 
   /* Hide the browser's default radio button */
-  .checkboxContainer input {
+  .el-checkbox-item input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
 
   /* Create a custom radio button */
-  .checkmark {
+  .el-checkbox-checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -140,30 +149,30 @@ export default {
   }
 
   /* On mouse-over, add a grey background color */
-  .checkboxContainer:hover input ~ .checkmark {
+  .el-checkbox-item:hover input ~ .el-checkbox-checkmark {
     border: 1px solid @color-button-primary;
   }
 
   /* When the radio button is checked, add a blue background */
-  .checkboxContainer input:checked ~ .checkmark {
+  .el-checkbox-item input:checked ~ .el-checkbox-checkmark {
     background-color: @color-select;
     border: 1px solid @color-select;
   }
 
   /* Create the checkmark/indicator (hidden when not checked) */
-  .checkmark:after {
+  .el-checkbox-checkmark:after {
     content: "";
     position: absolute;
     display: none;
   }
 
   /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
+  .el-checkbox-item-checkmark input:checked ~ .el-checkbox-checkmark:after {
     display: block;
   }
 
   /* Style the checkmark/indicator */
-  .container .checkmark:after {
+  .el-checkbox-item-checkmark .el-checkbox-checkmark:after {
     left: 7px;
     top: 4px;
     width: 5px;

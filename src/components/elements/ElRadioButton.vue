@@ -31,8 +31,11 @@ radioOptions: [{
 <div>
   <label
     v-for="(item, index) in options"
-    class="radioContainer"
-    :class="{ marginTop, marginRight }"
+    class="el-radio-button-item"
+    :class="{
+      'el-margin--right': marginRight,
+      'el-margin--top': marginTop
+    }"
     :key="index"
     :value="value"
     >
@@ -49,7 +52,10 @@ radioOptions: [{
       @click="onChange(item.value)"
       >
 
-    <span class="checkmark" :value="value"></span>
+    <span
+      class="el-radio-button-checkmark"
+      :value="value"
+      />
   </label>
 </div>
 </template>
@@ -102,7 +108,7 @@ export default {
   @import '~el-style/variables';
 
   /* The container */
-  .radioContainer {
+  .el-radio-button-item {
     display: block;
     position: relative;
     padding-left: 35px;
@@ -118,14 +124,14 @@ export default {
   }
 
   /* Hide the browser's default radio button */
-  .radioContainer input {
+  .el-radio-button-item input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
 
   /* Create a custom radio button */
-  .checkmark {
+  .el-radio-button-checkmark {
     position: absolute;
     top: 0;
     left: 0;
@@ -136,12 +142,12 @@ export default {
   }
 
   /* On mouse-over, add a grey background color */
-  .radioContainer:hover input ~ .checkmark {
+  .el-radio-button-item:hover input ~ .el-radio-button-checkmark {
     border: 1px solid @color-button-primary;
   }
 
   /* When the radio button is checked, add a blue background */
-  .radioContainer input:checked ~ .checkmark {
+  .el-radio-button-item input:checked ~ .el-radio-button-checkmark {
     background-color: @color-select;
     border: 1px solid @color-select;
   }

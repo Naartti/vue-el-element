@@ -2,8 +2,8 @@
 <div
   class="el-column"
   :class="{
-    'el-column-wrap': wrap,
-    marginTop
+    'el-column--wrap': wrap,
+    'el-margin--top': marginTop
   }"
   >
   <slot />
@@ -39,7 +39,7 @@ export default {
     }
   }
 
-  .el-column-wrap {
+  .el-column--wrap {
    flex-direction: column;
 
     div.el-column-item {

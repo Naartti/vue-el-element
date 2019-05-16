@@ -4,12 +4,12 @@
   @change="contentChanged"
   @keyup="duringChange"
   @input="$emit('input', $event.target.value)"
-  class='inputContainer animation'
+  class='el-input el-animation'
   :class="{
-    warningStyle : warning,
-    successStyle : success,
-    marginRight,
-    marginTop,
+    'el-input--warning' : warning,
+    'el-input--success' : success,
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop
   }"
   :type='type'
   :placeholder="placeholder"
@@ -75,7 +75,7 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .inputContainer {
+  .el-input {
     position: relative;
     flex-grow: 1;
     width: 100%;
@@ -94,22 +94,17 @@ export default {
     &:focus {
       border: @input-border-focus;
     }
-  }
 
-  .warningStyle {
-    color: @color-danger-dark;
-    border-color: @color-danger-dark;
-    background-color: @color-danger-light;
-  }
+    &--warning {
+      color: @color-danger-dark;
+      border-color: @color-danger-dark;
+      background-color: @color-danger-light;
+    }
 
-  .successStyle {
-    color: @color-success-dark;
-    border-color: @color-success-dark;
-    background-color: @color-success-light;
-  }
-
-  .disabledStyle {
-    background-color: @color-disable-dark !important;
-    color: @color-grey-super-dark !important;
+    &--success {
+      color: @color-success-dark;
+      border-color: @color-success-dark;
+      background-color: @color-success-light;
+    }
   }
 </style>

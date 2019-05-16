@@ -1,22 +1,26 @@
 <template>
 <div
-  class="toggleButton"
-  :class="{ marginRight, marginTop }"
+  class="el-toggle-button"
+  :class="{
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop
+  }"
   @click="toggle"
   >
 
   <div
-    class="toggleButton-background animation"
+    class="el-toggle-button__background el-animation"
     ref="background"
     :class="{
-      backgroundActivated: checked
-    }">
+      'el-toggle-button__background--active': checked
+    }"
+    >
 
     <div
-      class="dot animation"
+      class="el-toggle-button__dot el-animation"
       ref="dot"
       :class="{
-        dotActivated: checked
+        'el-toggle-button__dot--active': checked
       }"
       />
   </div>
@@ -38,22 +42,10 @@ export default {
     }
   },
   props: {
-    checked: {
-      type: Boolean,
-      default: false
-    },
-    manual: {
-      type: Boolean,
-      default: false
-    },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    }
+    checked: Boolean,
+    manual: Boolean,
+    marginRight: Boolean,
+    marginTop: Boolean
   },
   model: {
     prop: 'checked',
@@ -65,7 +57,7 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .toggleButton {
+  .el-toggle-button {
     position: relative;
     display: block;
     top: 0px;
@@ -75,41 +67,41 @@ export default {
     min-height: 30px;
     min-width: 60px;
     padding: none;
-  }
 
-  .toggleButton-background {
-    position: relative;
-    width: 60px;
-    height: 30px;
-    top: 0px;
-    left: 0px;
-    margin: none;
-    margin-left: 0px;
-    background-color: @color-disable-light;
-    border-radius: 15px;
-    box-sizing: border-box;
-    cursor: pointer;
-    box-shadow: inset @shadow;
-  }
+    &__background {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      top: 0px;
+      left: 0px;
+      margin: none;
+      margin-left: 0px;
+      background-color: @color-disable-light;
+      border-radius: 15px;
+      box-sizing: border-box;
+      cursor: pointer;
+      box-shadow: inset @shadow;
 
-  .backgroundActivated {
-    background-color: @color-select;
-    box-shadow: none;
-  }
+      &--active {
+        background-color: @color-select;
+        box-shadow: none;
+      }
+    }
 
-  .dot {
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    height: 24px;
-    width: 24px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
+    &__dot {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      height: 24px;
+      width: 24px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      box-sizing: border-box;
+      cursor: pointer;
 
-  .dotActivated {
-    left: 33px;
+      &--active {
+        left: 33px;
+      }
+    }
   }
 </style>

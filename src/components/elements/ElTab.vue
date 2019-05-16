@@ -17,14 +17,14 @@
 <template>
 <div class="el-tab">
   <!-- Menu -->
-  <div class="tab-wrapper">
-    <div class="tab-wrapper-border" />
+  <div class="el-tab__nav">
+    <div class="el-tab__nav__border" />
 
     <div v-for="(item, index) in items"
-      class="tab-item animation"
+      class="el-tab__item el-animation"
       :key="index"
       :class="{
-        'active-tab-item' : displayedIndex === index
+        'el-tab__item--active' : displayedIndex === index
       }"
       @click="openTab(index)"
       >
@@ -34,7 +34,7 @@
   </div>
 
   <!-- Content -->
-  <div class="contentArea">
+  <div class="el-tab__content">
     <slot />
   </div>
 </div>
@@ -88,53 +88,53 @@ export default {
     flex-direction: column;
     justify-content: stretch;
     align-items: flex-start;
-  }
 
-  .tab-wrapper {
-    position: relative;
-    width: auto;
-    max-width: 100%;
-    box-sizing: border-box;
+    &__nav {
+      position: relative;
+      width: auto;
+      max-width: 100%;
+      box-sizing: border-box;
 
-    div:last-child {
-      margin-right: 0px;
+      div:last-child {
+        margin-right: 0px;
+      }
+
+      &__border {
+        position: absolute;
+        top: auto;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        height: 2px;
+        background-color: @color-grey-light;
+        z-index: -1;
+      }
     }
-  }
 
-  .tab-wrapper-border {
-    position: absolute;
-    top: auto;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background-color: @color-grey-light;
-    z-index: -1;
-  }
+    &__item {
+      padding: 5px 0px;
+      display: inline-block;
+      cursor: pointer;
+      box-sizing: border-box;
+      border-bottom: 2px solid @color-grey-light;
+      z-index: 2;
+      color: @color-grey-medium;
+      margin-right: 30px;
 
-  .tab-item {
-    padding: 5px 0px;
-    display: inline-block;
-    cursor: pointer;
-    box-sizing: border-box;
-    border-bottom: 2px solid @color-grey-light;
-    z-index: 2;
-    color: @color-grey-medium;
-    margin-right: 30px;
-  }
+      &--active {
+        color: @color-font-dark;
+        border-bottom: 2px solid @color-grey-dark;
+        z-index: 2;
+      }
+    }
 
-  .active-tab-item {
-    color: @color-font-dark;
-    border-bottom: 2px solid @color-grey-dark;
-    z-index: 2;
-  }
-
-  .contentArea {
-    width: 100%;
-    max-width: @section-max-width;
-    z-index: 1;
-    box-sizing: border-box;
-    padding-bottom: @bottom-margin-section;
-    margin-top: @top-margin-header;
+    &__content {
+      width: 100%;
+      max-width: @section-max-width;
+      z-index: 1;
+      box-sizing: border-box;
+      padding-bottom: @bottom-margin-section;
+      margin-top: @top-margin-header;
+    }
   }
 </style>

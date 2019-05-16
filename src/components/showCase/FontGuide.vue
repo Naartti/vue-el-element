@@ -1,6 +1,6 @@
 <template>
 <div>
-  <el-header>Font family</el-header>
+  <h3>Font family</h3>
   <p ref="fontFinder">@font-family: {{fontFamily}}</p>
   <el-delimiter />
 

@@ -4,8 +4,10 @@
   class="el-loader"
   >
   <svg
-    class="el-line-loader"
-    :class="{ marginTop }"
+    class="el-loader__loader"
+    :class="{
+      'el-margin--top': marginTop
+    }"
     v-if="paused === false"
     width="100%"
     :height="`${height}px`"
@@ -15,7 +17,7 @@
     >
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <rect
-        class="el-line-color"
+        class="el-loader--color"
         :x="x"
         :y="y"
         :width="width"
@@ -29,14 +31,8 @@
 <script>
 export default {
   props: {
-    paused: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    }
+    paused: Boolean,
+    marginTop: Boolean
   },
   data () {
     return {
@@ -105,19 +101,17 @@ export default {
     height: 5px;
     width: 100%;
     margin: auto;
-  }
 
-  .el-line-loader {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-  }
+    &__loader {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+    }
 
-  .el-line-color {
-    background-color: @color-brand;
-    background: @color-brand;
-    fill: @color-brand;
+    &--color {
+      fill: @color-brand;
+    }
   }
 </style>

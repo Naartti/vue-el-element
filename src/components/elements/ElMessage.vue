@@ -1,20 +1,25 @@
 <template>
-<div class='main animation'
+<div
+  class='el-message el-animation'
   :class="{
-    warning,
-    success,
-    info,
-    danger,
-    isClickable
+    'el-message--warning': warning,
+    'el-message--success': success,
+    'el-message--info': info,
+    'el-message--danger': danger,
+    'el-message--clickable': isClickable,
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop
   }"
   @click="clickInvoker"
   >
-  <span v-if="warning"
-    class="icon"
+  <span
+    v-if="warning"
+    class="el-message__icon"
     v-html="icon.warning"
     />
-  <span v-else-if="danger"
-    class="icon"
+  <span
+    v-else-if="danger"
+    class="el-message__icon"
     v-html="icon.danger"
     />
   <slot />
@@ -23,35 +28,17 @@
 
 <script>
 
-import svgIcons from '../script/svg'
+import svgIcons from 'script/svg'
 
 export default {
   name: 'ElMessage',
   props: {
-    warning: {
-      type: Boolean,
-      default: false
-    },
-    success: {
-      type: Boolean,
-      default: false
-    },
-    info: {
-      type: Boolean,
-      default: false
-    },
-    danger: {
-      type: Boolean,
-      default: false
-    },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    }
+    warning: Boolean,
+    success: Boolean,
+    info: Boolean,
+    danger: Boolean,
+    marginRight: Boolean,
+    marginTop: Boolean
   },
   data () {
     return {
@@ -81,7 +68,7 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .main {
+  .el-message {
     position: relative;
     width: 100%;
     min-width: @element-min-width;
@@ -92,48 +79,48 @@ export default {
     font-size: @font-size-small;
     border-radius: @radius-small;
     box-sizing: border-box;
-  }
 
-  .icon {
-    margin-right: 10px;
-    height: 100%;
-    position: relative;
-    top: 2px;
-  }
+    &--clickable {
+      cursor: pointer;
 
-  .isClickable {
-    cursor: pointer;
+      &:hover {
+        box-shadow: @shadow;
+      }
 
-    &:hover {
-      box-shadow: @shadow;
+      &:active {
+        transform: scale(1.01);
+      }
     }
 
-    &:active {
-      transform: scale(1.01);
+    &--warning {
+      background-color: @color-warning-light;
+      border-left: 10px solid @color-warning-medium;
+      color: @color-warning-dark;
     }
-  }
 
-  .warning {
-    background-color: @color-warning-light;
-    border-left: 10px solid @color-warning-medium;
-    color: @color-warning-dark;
-  }
+    &--success {
+      background-color: @color-success-light;
+      border-left: 10px solid @color-success-medium;
+      color: @color-success-dark;
+    }
 
-  .success {
-    background-color: @color-success-light;
-    border-left: 10px solid @color-success-medium;
-    color: @color-success-dark;
-  }
+    &--info {
+      background-color: @color-info-light;
+      border-left: 10px solid @color-info-medium;
+      color: @color-info-dark;
+    }
 
-  .info {
-    background-color: @color-info-light;
-    border-left: 10px solid @color-info-medium;
-    color: @color-info-dark;
-  }
+    &--danger {
+      background-color: @color-danger-light;
+      border-left: 10px solid @color-danger-medium;
+      color: @color-danger-dark;
+    }
 
-  .danger {
-    background-color: @color-danger-light;
-    border-left: 10px solid @color-danger-medium;
-    color: @color-danger-dark;
+    &__icon {
+      margin-right: 10px;
+      height: 100%;
+      position: relative;
+      top: 2px;
+    }
   }
 </style>

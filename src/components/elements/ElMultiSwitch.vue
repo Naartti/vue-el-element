@@ -1,22 +1,25 @@
 <template>
-<div class="el-multi-switch"
+<div
+  class="el-multi-switch"
   :class="{
-    marginRight,
-    marginTop,
-    stretch
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-multi-switch--stretch': stretch
   }"
   >
     <div
       ref="marker"
-      class="marker animation"
+      class="el-multi-switch__marker el-animation"
       :style="`left: ${markerPosition}%;`"
       />
 
     <div
       v-for="(option, index) in options"
       :key="index"
-      class="toggleLabel animation"
-      :class="{ labelSelected : option.value === value}"
+      class="el-multi-switch__label el-animation"
+      :class="{
+        'el-multi-switch__label--active' : option.value === value
+      }"
       @click="toggle(option.value, index)"
       >
       {{option.label}}
@@ -24,9 +27,6 @@
   </div>
 </template>
 <script>
-
-// v-model = isLeft
-
 export default {
   props: {
     value: {
@@ -112,50 +112,43 @@ export default {
     min-height: @button-height;
     left: 0px;
     align-content: space-between;
-  }
 
-  .marker {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 50%;
-    height: 100%;
-    background-color: @color-button-primary;
-    box-shadow: @shadow;
-    z-index: 1;
-    box-sizing: border-box;
-    border-radius: @button-radius;
-  }
+    &--stretch {
+      flex-grow: 1;
+    }
 
-  .markerRight {
-    left: 50%;
-  }
+    &__marker {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 50%;
+      height: 100%;
+      background-color: @color-button-primary;
+      box-shadow: @shadow;
+      box-sizing: border-box;
+      border-radius: @button-radius;
+    }
 
-  .toggleLabel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1 1 0;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: @color-disable-dark;
-    z-index: 2;
-    cursor: pointer;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: @button-font-size;
-    box-sizing: border-box;
-  }
+    &__label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 1 1 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      color: @color-disable-dark;
+      cursor: pointer;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: @button-font-size;
+      box-sizing: border-box;
 
-  .labelSelected {
-    color: #ffffff;
+      &--active {
+        color: #ffffff;
+      }
+    }
   }
-
-  .stretch {
-    flex-grow: 1;
-  }
-
 </style>

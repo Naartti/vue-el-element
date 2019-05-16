@@ -1,6 +1,6 @@
 <template>
 <div>
-  <el-header>Main colors</el-header>
+  <h3>Main colors</h3>
   <el-inline>
     <div class="color-card">
       <div class="color-preview color-brand" />
@@ -18,7 +18,7 @@
     </div>
   </el-inline>
 
-  <el-header :marginTop="true">Grey scale</el-header>
+  <h3>Grey scale</h3>
   <el-inline>
     <div class="color-card">
       <div class="color-preview color-grey-super-light" />
@@ -46,7 +46,7 @@
     </div>
   </el-inline>
 
-  <el-header :marginTop="true">State colors</el-header>
+  <h3 :marginTop="true">State colors</h3>
   <el-inline>
     <div class="color-card">
       <div class="color-preview color-danger-light" />

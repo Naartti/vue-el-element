@@ -1,14 +1,14 @@
 <template>
 <div
-  class='el-sticky-footer'
+  class='el-sticky-header'
   ref='referenceContainer'
   >
   <div
     ref='main'
-    class='el-sticky-footer__content'
+    class='el-sticky-header__content'
     :class="{
-      'el-sticky-footer__content--fixed': isOutside === true,
-      'el-sticky-footer__content--shadow': shadow === true && isOutside === true
+      'el-sticky-header__content--fixed': isOutside === true,
+      'el-sticky-header__content--shadow': shadow === true && isOutside === true
     }"
     >
 
@@ -65,22 +65,9 @@ export default {
       this.referenceContainer.style.height = EL_HEIGHT + 'px'
     },
     scrollUpdate () {
-      let PARENT_TOP = this.parentContainer.getBoundingClientRect().top
-      let HEIGHT = window.innerHeight
       let STYLING = this.referenceContainer.getBoundingClientRect()
-      let EL_HEIGHT = STYLING.height
       let SCROLL_TOP = STYLING.top
-      let IS_OUTSIDE_SCREEN = HEIGHT - PARENT_TOP - EL_HEIGHT < 0
-
-      if (SCROLL_TOP > HEIGHT - EL_HEIGHT &&
-        !IS_OUTSIDE_SCREEN &&
-        !this.isOutside) {
-        this.isOutside = true
-      } else if (SCROLL_TOP < HEIGHT - EL_HEIGHT && this.isOutside) {
-        this.isOutside = false
-      } else if (IS_OUTSIDE_SCREEN && this.isOutside) {
-        this.isOutside = false
-      }
+      this.isOutside = SCROLL_TOP < 0
     }
   }
 }
@@ -90,10 +77,11 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .el-sticky-footer {
+  .el-sticky-header {
     position: relative;
     width: 100%;
     height: auto;
+    z-index: 2;
 
     &__content {
       position: relative;
@@ -102,8 +90,8 @@ export default {
       &--fixed {
         position: fixed;
         top: auto;
-        bottom: 0px;
-        border-top: 1px solid @color-grey-light;
+        top: 0px;
+        border-bottom: 1px solid @color-grey-light;
         background-color: #ffffff;
       }
 

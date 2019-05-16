@@ -31,9 +31,9 @@ dropdownOptions: [{
 <div
   class="el-dropdown"
   :class="{
-    marginRight,
-    marginTop,
-    wide
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-dropdown-wide': wide
   }"
   >
   <select
@@ -125,7 +125,7 @@ export default {
     border: 1px solid @color-grey-dark;
   }
 
-  .wide {
+  .el-dropdown-wide {
     max-width: @element-min-width-wide;
     width: @element-min-width-wide;
   }

@@ -3,29 +3,8 @@
 > Vue components for design elements with custom style guides
 
 # Installation
-## For Vue-cli 3
 ```
-npm install --save-dev postcss-url postcss-import vue-el-element
-```
-
-vue.config.js
-```js
-module.exports = {
-  configureWebpack: {
-    resolve: {
-      alias: {
-        'el-style': 'node_modules/vue-el-element/src/style' // Or redirect to your own style guide
-      }
-    }
-  },
-  css: {
-    loaderOptions: {
-      less: {
-        data: '@import "el-style/variables.less";'
-      }
-    }
-  }
-}
+npm install --save vue-el-element
 ```
 
 # Import
@@ -44,24 +23,6 @@ Object.entries(ElElements)
 import { ElButton, ElTooltip } from 'vue-el-element'
 ```
 
-## Set style guide
-webpack.base.conf.js
-```js
-
-module.exports = {
-  ...,
-  resolve: {
-    ...,
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
-      'el-style': resolve(`node_modules/vue-el-element/src/style`) // or copy variables.less and set your custom style
-    }
-  },
-  ...
-}
-```
-
 # Elements
 ## el-button
 ```xml
@@ -76,6 +37,24 @@ module.exports = {
   @click="method"
   >
   Button label
+</el-button>
+```
+Boolean props can also be activated as:
+```xml
+<el-button>
+  Primary action
+</el-button>
+
+<el-button secondary>
+  Secondary action
+</el-button>
+
+<el-button secondary danger>
+  Close
+</el-button>
+
+<el-button danger>
+  Delete
 </el-button>
 ```
 
@@ -237,11 +216,13 @@ Horisonal navigation
 <el-column>
   <el-column-item
     :grow="Number"
+    :wrap="Boolean"
     >
     Content for column 1...
   </el-column-item>
   <el-column-item
     :grow="Number"
+    :wrap="Boolean"
     >
     Content for column 2...
   </el-column-item>
@@ -255,6 +236,52 @@ Horisonal navigation
   />
 ```
 
+## el-sticky-header & el-sticky-footer
+```xml
+<el-sticky-header>
+  content...
+</el-sticky-header>
+
+<el-sticky-footer>
+  content...
+</el-sticky-footer>
+```
+
+# Change style guide
+The elements' css classes follow the BEM naming scheematics.
+
+## Rounded button
+```css
+.el-button {
+  height: 30px;
+  border-radius: 15px;
+}
+```
+
+## Change danger color of button
+```css
+.el-button--danger {
+  background-color: #FA3E44;
+}
+
+.el-button--danger:hover {
+  background-color: #CB3837;
+}
+```
+
+## Change modal styling
+```css
+.el-modal__body {
+  border-radius: 0px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.el-modal__body--wide {
+  max-width: 1200px;
+}
+```
+
+
 ## Build Setup
 
 ``` bash
@@ -262,5 +289,5 @@ Horisonal navigation
 npm install
 
 # serve with hot reload at localhost:8080
-npm run dev
+npm run serve
 ```

@@ -1,27 +1,31 @@
 <template>
 <div
-  class="el-modal noPrint"
-  :class="{ centerPosition }"
+  class="el-modal"
+  :class="{
+    'el-modal--center': centerPosition
+  }"
   >
-  <div class="el-modal-scroll-wrapper">
+  <div class="el-modal__scroll-wrapper">
 
     <!-- Backdrop -->
     <transition name="fade">
       <div
-        class="el-modal-backdrop animation"
-        :class="{ clickable: isClosable }"
+        class="el-modal__backdrop el-animation"
+        :class="{
+          'el-modal__backdrop--clickable': isClosable
+        }"
         @click="close"
         v-if="isVisible"
         />
     </transition>
 
     <!-- Modal -->
-    <transition name="slide-fade">
+    <transition name="slide-fade-long">
       <div
-        class="el-modal-body animation"
+        class="el-modal__body el-animation"
         :class="{
-          displayOverflow,
-          'el-modal-body-wide': wide
+          'el-modal__body--overflow': displayOverflow,
+          'el-modal__body--wide': wide
         }"
         ref="modalBody"
         v-if="isVisible"
@@ -29,14 +33,17 @@
 
         <!-- Close button -->
         <div
-          class="close-button-wrapper"
-          :class="{ fixedCloseButton }"
+          class="el-modal__close-button"
+          :class="{
+            'el-modal__close-button--fixed': fixedCloseButton,
+            'el-modal__close-button--wide': wide
+          }"
           v-if="isClosable"
           >
           <div
-            class="close-button animation"
+            class="el-modal__close-button__icon el-animation"
             :class="{
-              'close-button-right': closeButtonAlign === 'right'
+              'el-modal__close-button--right': closeButtonAlign === 'right'
             }"
             v-html="closeIcon"
             @click="close"
@@ -48,15 +55,16 @@
 
         <!-- Footer -->
         <div
-          class="inline-footer-wrapper"
+          class="el-modal__footer"
           ref="inlineFooterWrapper"
           v-show="$slots.footer"
           >
           <div
             ref="inlineFooter"
-            class="inline-footer"
+            class="el-modal__footer__body"
             :class="{
-              stickyFixed : !this.absoluteFooterPosition
+              'el-modal__footer__body--sticky' : !this.absoluteFooterPosition,
+              'el-modal__footer__body--wide': wide
             }"
             >
 
@@ -73,7 +81,7 @@
 
 <script>
 
-import svgCodes from '../script/svg'
+import svgCodes from 'script/svg.js'
 
 export default {
   name: 'ElModal',
@@ -121,7 +129,7 @@ export default {
     }, this.delay)
 
     if (this.pauseBodyScroll) {
-      document.body.classList.add('document-body-no-scroll')
+      document.body.classList.add('document__body--no-scroll')
     }
 
     if (this.$slots.footer || this.isClosable) {
@@ -132,7 +140,7 @@ export default {
   },
   destroyed () {
     if (this.pauseBodyScroll) {
-      document.body.classList.remove('document-body-no-scroll')
+      document.body.classList.remove('document__body--no-scroll')
     }
 
     window.removeEventListener('resize', this.initialize)
@@ -197,7 +205,7 @@ export default {
 
 </script>
 <style>
-  .document-body-no-scroll {
+  .document__body--no-scroll {
     overflow: hidden !important;
   }
 </style>
@@ -217,12 +225,18 @@ export default {
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
 
-    .el-modal-scroll-wrapper {
+    &--center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__scroll-wrapper {
       background-color: transparent;
       width: 100%;
     }
 
-    .el-modal-backdrop {
+    &__backdrop {
       position: fixed;
       display: block;
       top: 0px;
@@ -233,167 +247,133 @@ export default {
       opacity: 0.9;
       z-index: 1;
       box-sizing: border-box;
-    }
-  }
 
-  .el-modal-body {
-    position: relative;
-    display: block;
-    top: auto;
-    left: auto;
-    width: 100%;
-    max-width: @section-content-max-width;
-    height: auto;
-    text-align: left;
-    z-index: 2;
-    background-color: #fff;
-    border-radius: @radius-small;
-    box-shadow: @shadow-wide;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    box-sizing: border-box;
-    margin: 20px auto;
-    padding: 30px 30px;
-
-    @media (max-width: @section-content-max-width) {
-      border-radius: 0px;
-      padding: 30px 15px;
-      margin: 0px;
-    }
-  }
-
-  .close-button-right {
-    left: auto !important;
-    right: 5px !important;
-  }
-
-  .header {
-    width: 100%;
-  }
-
-  .displayOverflow {
-    overflow: visible !important;
-  }
-
-  .clickable {
-    cursor: pointer;
-  }
-
-  .inline-footer-wrapper {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: auto;
-    box-sizing: border-box;
-    overflow: visible;
-    z-index: 1000;
-  }
-
-  .inline-footer {
-    position: relative;
-    display: block;
-    width: 100%;
-    padding: @top-margin-element 0px;
-    box-sizing: border-box;
-  }
-
-  .stickyFixed {
-    position: fixed;
-    top: auto;
-    bottom: 0px;
-    width: 100%;
-    max-width: @section-content-max-width;
-    left: 0px;
-    right: 0px;
-    margin: auto;
-    border-top: 1px solid @color-grey-light;
-    background-color: #ffffff;
-    padding: @top-margin-element 30px;
-
-    @media (max-width: @section-content-max-width) {
-      padding: @top-margin-element 15px;
-    }
-  }
-
-  .centerPosition {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .close-button-wrapper {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 1px;
-    width: 100%;
-    max-width: @section-content-max-width;
-    margin: auto;
-    z-index: 2;
-    overflow: visible;
-
-    .close-button {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        height: 20px;
-        width: 20px;
+      &--clickable {
         cursor: pointer;
+      }
+    }
 
-        &:hover {
-          transform: scale(1.1);
+    &__body {
+      position: relative;
+      display: block;
+      top: auto;
+      left: auto;
+      width: 100%;
+      max-width: @section-content-max-width;
+      height: auto;
+      text-align: left;
+      z-index: 2;
+      background-color: #fff;
+      border-radius: @radius-small;
+      box-shadow: @shadow-wide;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      box-sizing: border-box;
+      margin: 20px auto;
+      padding: 30px 30px;
+
+      @media (max-width: @section-content-max-width) {
+        border-radius: 0px;
+        padding: 30px 15px;
+        margin: 0px;
+      }
+
+      &--overflow {
+        overflow: visible !important;
+      }
+
+      &--wide {
+        max-width: @section-content-wide-max-width;
+
+        @media (max-width: @section-content-wide-max-width) {
+          border-radius: 0px;
+          padding: 30px 15px;
+          margin: 0px;
         }
       }
-  }
+    }
 
-  .fixedCloseButton {
-    position: fixed !important;
-  }
+    &__footer {
+      position: relative;
+      display: block;
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+      overflow: visible;
+      z-index: 1000;
 
-  .el-modal-body-wide {
-    max-width: @section-content-wide-max-width;
+      &__body {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: @top-margin-element 0px;
+        box-sizing: border-box;
 
-    .stickyFixed {
-      max-width: @section-content-wide-max-width;
+        &--sticky {
+          position: fixed;
+          top: auto;
+          bottom: 0px;
+          width: 100%;
+          max-width: @section-content-max-width;
+          left: 0px;
+          right: 0px;
+          margin: auto;
+          border-top: 1px solid @color-grey-light;
+          background-color: #ffffff;
+          padding: @top-margin-element 30px;
 
-      @media (max-width: @section-content-wide-max-width) {
-        padding: @top-margin-element 15px;
+          @media (max-width: @section-content-max-width) {
+            padding: @top-margin-element 15px;
+          }
+        }
+
+        &--wide {
+          max-width: @section-content-wide-max-width;
+
+          @media (max-width: @section-content-wide-max-width) {
+            padding: @top-margin-element 15px;
+          }
+        }
       }
     }
 
-    .close-button-wrapper {
-      max-width: @section-content-wide-max-width;
+    &__close-button {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      height: 1px;
+      width: 100%;
+      max-width: @section-content-max-width;
+      margin: auto;
+      z-index: 2;
+      overflow: visible;
+
+      &--wide {
+        max-width: @section-content-wide-max-width;
+      }
+
+      &--fixed {
+        position: fixed !important;
+      }
+
+      &--right {
+        left: auto !important;
+        right: 5px !important;
+      }
+
+      &__icon {
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          height: 20px;
+          width: 20px;
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
     }
-
-    @media (max-width: @section-content-wide-max-width) {
-      border-radius: 0px;
-      padding: 30px 15px;
-      margin: 0px;
-    }
-  }
-
-  /* Enter and leave animations can use different */
-  /* durations and timing functions.              */
-  .slide-fade-enter-active {
-    transition: all 0.5s ease;
-  }
-
-  .slide-fade-leave-active {
-    transition: all 0.3s ease;
-  }
-
-  .slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active below version 2.1.8 */ {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-  }
-
-  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    opacity: 0 !important;
   }
 </style>
