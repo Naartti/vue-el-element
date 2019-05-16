@@ -1,19 +1,20 @@
 <template>
-<div class='delimiter'
-  v-bind:class="{
-    delimiterShort : short===true
-  }">
-  <div class='line'
-    v-bind:class="{
-      lineShort : short===true,
-      darkLine : dark===true
-    }">
-  </div>
+<div
+  class='el-delimiter'
+  :class="{
+    'el-delimiter-short' : short === true
+  }"
+  >
+  <div
+    class='el-delimiter-line'
+    :class="{
+      'el-delimiter-line-short' : short === true,
+      'el-delimiter-line-dark' : dark === true
+    }"
+    />
 </div>
 </template>
-
 <script>
-
 export default {
   name: 'ElDelimiter',
   props: {
@@ -27,23 +28,21 @@ export default {
     }
   }
 }
-
 </script>
-
 <style scoped lang="less">
   @import '~el-style/variables';
 
-  .delimiter {
+  .el-delimiter {
     position: relative;
     width: 100%;
     height: 70px;
   }
 
-  .delimiterShort {
+  .el-delimiter-short {
     height: 30px;
   }
 
-  .line {
+  .el-delimiter-line {
     position: absolute;
     width: 100%;
     height: 1px;
@@ -51,11 +50,11 @@ export default {
     background-color: @color-grey-light;
   }
 
-  .lineShort {
+  .el-delimiter-line-short {
     top: 10px;
   }
 
-  .darkLine {
+  .el-delimiter-line-dark {
     background-color: @color-grey-dark;
   }
 </style>
