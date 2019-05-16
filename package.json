@@ -18,7 +18,9 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "build-bundle": "vue-cli-service build --target lib --name vue-el-element ./src/wrapper.js",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "npm:patch": "npm run lint && npm run build-bundle && npm run patch && npm run publish",
+    "npm:minor": "npm run lint && npm run build-bundle && npm run minor && npm run publish"
   },
   "dependencies": {
     "core-js": "^2.6.5",
