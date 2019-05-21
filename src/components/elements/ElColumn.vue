@@ -3,7 +3,10 @@
   class="el-column"
   :class="{
     'el-column--wrap': wrap,
-    'el-margin--top': marginTop
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
   <slot />
@@ -16,10 +19,10 @@ export default {
       type: Boolean,
       default: false
     },
-    marginTop: {
-      type: Boolean,
-      default: false
-    }
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   }
 }
 </script>

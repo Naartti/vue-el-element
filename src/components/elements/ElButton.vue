@@ -14,7 +14,9 @@
     'el-button--link': link,
     'el-align--right': right,
     'el-margin--right': marginRight,
-    'el-margin--top': marginTop
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
   <el-tooltip
@@ -40,12 +42,15 @@ export default {
     link: Boolean,
     right: Boolean,
     icon: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
     tooltip: {
       type: String,
       default: ''
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
+
   },
   methods: {
     next () {

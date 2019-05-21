@@ -3,7 +3,9 @@
   class="el-toggle-button"
   :class="{
     'el-margin--right': marginRight,
-    'el-margin--top': marginTop
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   @click="toggle"
   >
@@ -45,7 +47,9 @@ export default {
     checked: Boolean,
     manual: Boolean,
     marginRight: Boolean,
-    marginTop: Boolean
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   model: {
     prop: 'checked',

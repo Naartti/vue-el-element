@@ -9,7 +9,9 @@
     'el-input--warning' : warning,
     'el-input--success' : success,
     'el-margin--right': marginRight,
-    'el-margin--top': marginTop
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   :type='type'
   :placeholder="placeholder"
@@ -42,14 +44,10 @@ export default {
       type: Boolean,
       default: false
     },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    }
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   methods: {
     contentChanged (ev) {

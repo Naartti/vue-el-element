@@ -3,7 +3,9 @@
   class='el-collapse-header'
   :class="{
     'el-margin--right': marginRight,
-    'el-margin--top': marginTop
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
   <div
@@ -63,15 +65,10 @@ export default {
       type: Boolean,
       default: false
     },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    }
-
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   data () {
     return {

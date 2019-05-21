@@ -7,7 +7,9 @@
     'el-tag--info': info,
     'el-tag--danger': danger,
     'el-margin--right': marginRight,
-    'el-margin--top': marginTop
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
   <slot />
@@ -21,7 +23,9 @@ export default {
     success: Boolean,
     info: Boolean,
     marginRight: Boolean,
-    marginTop: Boolean
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   }
 }
 </script>

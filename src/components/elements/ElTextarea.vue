@@ -6,7 +6,9 @@
     'el-textarea--warning' : warning,
     'el-textarea--success' : success,
     'el-margin--right': marginRight,
-    'el-margin--top': marginTop
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   @input="$emit('input', $event.target.value)"
   :placeholder="placeholder"
@@ -27,7 +29,9 @@ export default {
     warning: Boolean,
     success: Boolean,
     marginRight: Boolean,
-    marginTop: Boolean
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   }
 }
 </script>

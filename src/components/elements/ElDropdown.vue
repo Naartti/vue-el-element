@@ -31,9 +31,11 @@ dropdownOptions: [{
 <div
   class="el-dropdown"
   :class="{
+    'el-dropdown-wide': wide,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
-    'el-dropdown-wide': wide
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
   <select
@@ -66,18 +68,14 @@ export default {
       type: Array,
       default: () => []
     },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    },
     wide: {
       type: Boolean,
       default: false
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   methods: {
     onChange (ev) {

@@ -32,8 +32,10 @@ checkboxOptions: [{
   <label v-for="(item, index) in options"
     class="el-checkbox-item"
     :class="{
-      '-right': marginRight,
+      'el-margin-right': marginRight,
       'el-margin--top': marginTop,
+      'el-margin--left': marginLeft,
+      'el-margin--bottom': marginBottom,
       'el-checkbox-item-checkmark': checkmark
     }"
     :key="index"
@@ -78,18 +80,11 @@ export default {
       type: Array,
       default: () => []
     },
-    marginTop: {
-      type: Boolean,
-      default: false
-    },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    checkmark: {
-      type: Boolean,
-      default: false
-    }
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean,
+    checkmark: Boolean
   },
   mounted () {
     this.checked = this.value

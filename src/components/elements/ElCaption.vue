@@ -6,7 +6,10 @@
     'el-caption--light' : light === true,
     'el-caption--danger' : danger === true,
     'el-caption--clickable': clickable,
-    'el-margin--top': marginTop
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
 
@@ -21,7 +24,10 @@ export default {
   props: {
     light: Boolean,
     danger: Boolean,
-    marginTop: Boolean
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   computed: {
     clickable () {

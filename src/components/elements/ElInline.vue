@@ -6,7 +6,10 @@
     'el-inline--nowrap': !wrap,
     'el-inline--stretch': stretch,
     'el-inline--space-between': spaceBetween,
-    'el-margin--top': marginTop
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   @click="click"
   >
@@ -25,10 +28,6 @@ export default {
       type: Boolean,
       default: true
     },
-    marginTop: {
-      type: Boolean,
-      default: false
-    },
     stretch: {
       type: Boolean,
       default: false
@@ -36,7 +35,11 @@ export default {
     spaceBetween: {
       type: Boolean,
       default: false
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   methods: {
     click () {

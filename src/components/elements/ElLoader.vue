@@ -2,12 +2,15 @@
 <div
   ref="lineLoader"
   class="el-loader"
+  :class="{
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
+  }"
   >
   <svg
     class="el-loader__loader"
-    :class="{
-      'el-margin--top': marginTop
-    }"
     v-if="paused === false"
     width="100%"
     :height="`${height}px`"
@@ -32,7 +35,10 @@
 export default {
   props: {
     paused: Boolean,
-    marginTop: Boolean
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   data () {
     return {

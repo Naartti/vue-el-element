@@ -8,7 +8,9 @@
     'el-message--danger': danger,
     'el-message--clickable': isClickable,
     'el-margin--right': marginRight,
-    'el-margin--top': marginTop
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   @click="clickInvoker"
   >
@@ -38,7 +40,9 @@ export default {
     info: Boolean,
     danger: Boolean,
     marginRight: Boolean,
-    marginTop: Boolean
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   data () {
     return {

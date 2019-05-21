@@ -2,9 +2,11 @@
 <div
   class="el-multi-switch"
   :class="{
+    'el-multi-switch--stretch': stretch,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
-    'el-multi-switch--stretch': stretch
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
     <div
@@ -37,18 +39,14 @@ export default {
       type: Array,
       default: () => []
     },
-    marginRight: {
-      type: Boolean,
-      default: false
-    },
-    marginTop: {
-      type: Boolean,
-      default: false
-    },
     stretch: {
       type: Boolean,
       default: false
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   data () {
     return {
