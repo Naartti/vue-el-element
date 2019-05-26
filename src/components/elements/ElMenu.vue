@@ -24,7 +24,7 @@
   <div
     class="el-menu__context-panel el-animation"
     :class="{
-      'el-menu--closed': !menuIsOpen
+      'el-menu__context-panel--closed': !menuIsOpen
     }"
     >
     <div v-for="(item, index) in items"
@@ -131,14 +131,6 @@ export default {
     justify-content: flex-start;
     align-items: flex-start;
 
-    &--closed {
-      @media (max-width: @narrow-width) {
-        display: block;
-        margin-left: -300px;
-        opacity: 0;
-      }
-    }
-
     &__backdrop {
       display: none;
       position: fixed;
@@ -157,11 +149,12 @@ export default {
     }
 
     &__context-panel {
+      position: relative;
       flex: 0 0 170px;
       margin-right: 50px;
       margin-left: 10px;
       padding-top: 65px;
-      z-index: 1;
+      z-index: 4;
 
       @media (max-width: @narrow-width) {
         position: fixed;
@@ -178,7 +171,15 @@ export default {
         max-width: 300px;
         top: 0px;
         left: 0px;
-        z-index: 3;
+        z-index: 4;
+      }
+
+      &--closed {
+        @media (max-width: @narrow-width) {
+          display: block;
+          margin-left: -300px;
+          opacity: 0;
+        }
       }
 
       &__item {
@@ -229,7 +230,7 @@ export default {
 
     &__button {
       display: none;
-      z-index: 2;
+      z-index: 3;
       position: fixed;
       top: 15px;
       left: 10px;
