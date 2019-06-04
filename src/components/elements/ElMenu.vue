@@ -171,7 +171,7 @@ export default {
         max-width: 300px;
         top: 0px;
         left: 0px;
-        z-index: 4;
+        z-index: 6;
       }
 
       &--closed {
@@ -268,13 +268,14 @@ export default {
       display: flex;
       flex-grow: 1;
       max-width: 700px;
-      z-index: 1;
+      z-index: 5;
       box-sizing: border-box;
       padding-bottom: @bottom-margin-section;
       padding-right: 10px;
 
       @media (max-width: @narrow-width) {
         padding: 10px 10px;
+        z-index: 1;
       }
     }
   }
