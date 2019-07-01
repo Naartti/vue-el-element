@@ -2,7 +2,7 @@
 <div
   class="el-modal"
   :class="{
-    'el-modal--center': centerPosition
+    'el-modal--center': centerPosition && !top
   }"
   >
   <div class="el-modal__scroll-wrapper">
@@ -101,6 +101,10 @@ export default {
     wide: {
       type: Boolean,
       default: false
+    },
+    top: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -111,12 +115,28 @@ export default {
       displayOverflow: true,
       centerPosition: true,
       absoluteFooterPosition: false,
-      fixedCloseButton: false
+      fixedCloseButton: false,
+      observer: null
     }
   },
   computed: {
     isClosable () {
       return this.$listeners && this.$listeners.close && this.$listeners.close !== null
+    }
+  },
+  watch: {
+    isVisible () {
+      this.$nextTick(() => {
+        if (this.isVisible && this.$refs.modalBody) {
+        // Update modal when slot-content is changing
+          this.observer.observe(
+            this.$refs.modalBody,
+            { attributes: true, childList: true, characterData: true, subtree: true }
+          )
+        } else {
+          this.observer.disconnect()
+        }
+      })
     }
   },
   mounted () {
@@ -137,6 +157,11 @@ export default {
     }
 
     window.addEventListener('resize', this.initialize)
+
+    // Update modal when slot-content is changing
+    this.observer = new MutationObserver(() => {
+      this.initialize()
+    })
   },
   destroyed () {
     if (this.pauseBodyScroll) {
@@ -152,6 +177,7 @@ export default {
       this.checkScrollBottom()
     },
     updateScroll () {
+      this.checkHeight()
       this.checkScrollBottom()
       this.checkTopScroll()
     },
@@ -177,6 +203,11 @@ export default {
       this.fixedCloseButton = scrollTop < 0
     },
     checkHeight () {
+      if (!this.$refs ||
+        !this.$refs.modalBody) {
+        return
+      }
+
       const bodyHeight = this.$refs.modalBody.clientHeight
       const windowHeight = window.innerHeight
       const footerInnerHeight = this.$refs.inlineFooter.scrollHeight

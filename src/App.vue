@@ -289,6 +289,14 @@
   @close="activeModal = ''"
   >
   hello!
+
+  <el-button @click="someBoolean = !someBoolean">
+    Toggle
+  </el-button>
+
+  <div v-if="someBoolean" style="background-color: green; height: 800px;">
+    wide
+  </div>
 </el-modal>
 <el-modal
   v-if="activeModal === 'high'"

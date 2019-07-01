@@ -64,6 +64,7 @@ Boolean props can also be activated as:
   v-if="isOpen"
   @close="isOpen = false"
   :pause-body-scroll="true"
+  :top="true"
   close-button-align="right"
   >
 
