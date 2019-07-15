@@ -181,12 +181,6 @@ export default {
   },
   methods: {
     moveToRoot () {
-      const parentElement = this.$el.parentElement
-      if (!parentElement) {
-        return
-      }
-
-      parentElement.removeChild(this.$el)
       document.body.appendChild(this.$el)
     },
     initialize () {
