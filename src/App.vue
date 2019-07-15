@@ -276,14 +276,14 @@
 </el-menu>
 
 <!-- Modals -->
-<el-modal
+<el-modal root
   v-if="activeModal === 'wide'"
   wide
   @close="activeModal = ''"
   >
   hello!
 </el-modal>
-<el-modal
+<el-modal root
   v-if="activeModal === 'normal'"
   close-button-align="right"
   @close="activeModal = ''"
@@ -298,7 +298,7 @@
     wide
   </div>
 </el-modal>
-<el-modal
+<el-modal root
   v-if="activeModal === 'high'"
   @close="activeModal = ''"
   >

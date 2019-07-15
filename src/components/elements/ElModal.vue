@@ -105,6 +105,10 @@ export default {
     top: {
       type: Boolean,
       default: false
+    },
+    root: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -142,6 +146,10 @@ export default {
   mounted () {
     this.displayOverflow = this.overflow
 
+    if (this.root === true) {
+      this.moveToRoot()
+    }
+
     setTimeout(() => {
       this.isVisible = true
 
@@ -172,6 +180,15 @@ export default {
     this.isVisible = false
   },
   methods: {
+    moveToRoot () {
+      const parentElement = this.$el.parentElement
+      if (!parentElement) {
+        return
+      }
+
+      parentElement.removeChild(this.$el)
+      document.body.appendChild(this.$el)
+    },
     initialize () {
       this.checkHeight()
       this.checkScrollBottom()
