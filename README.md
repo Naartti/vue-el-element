@@ -1,5 +1,5 @@
 <!-- # ![alt text](static/favicon.png) vue-el-element -->
-# ![alt text](https://raw.githubusercontent.com/Naartti/vue-el-element/master/static/favicon.png) vue-el-element
+# ![alt text](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/favicon.png) vue-el-element
 > Vue components for design elements with custom style guides
 
 # Installation

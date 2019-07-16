@@ -63,7 +63,12 @@
   </div>
 
   <!-- Content -->
-  <div class="el-menu__content">
+  <div
+    class="el-menu__content"
+    :class="{
+      'el-menu__content--center': centerContent
+    }"
+    >
     <slot />
   </div>
 </div>
@@ -81,6 +86,10 @@ export default {
     align: {
       type: String,
       default: 'right'
+    },
+    centerContent: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -130,6 +139,8 @@ export default {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-left: auto;
+    margin-right: auto;
 
     &__backdrop {
       display: none;
@@ -272,6 +283,10 @@ export default {
       box-sizing: border-box;
       padding-bottom: @bottom-margin-section;
       padding-right: 10px;
+
+      &--center {
+        margin: 0px auto;
+      }
 
       @media (max-width: @narrow-width) {
         padding: 10px 10px;

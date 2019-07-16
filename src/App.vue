@@ -1,6 +1,10 @@
 <template>
 <div id="app" class="el-element-font">
-<el-menu v-model="menuItemIndex" align="left">
+<el-menu
+  center-content
+  v-model="menuItemIndex"
+  align="left"
+  >
   <el-menu-section title="Design guide" />
   <el-menu-item title="Colors">
     <color-guide />
