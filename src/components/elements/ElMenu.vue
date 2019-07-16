@@ -19,7 +19,12 @@
 -->
 
 <template>
-<div class="el-menu">
+<div
+  class="el-menu"
+  :class="{
+    'el-menu--center': center
+  }"
+  >
   <!-- Menu -->
   <div
     class="el-menu__context-panel el-animation"
@@ -87,10 +92,8 @@ export default {
       type: String,
       default: 'right'
     },
-    centerContent: {
-      type: Boolean,
-      default: false
-    }
+    centerContent: { type: Boolean, default: false },
+    center: { type: Boolean, default: false }
   },
   data () {
     return {
@@ -132,6 +135,7 @@ export default {
   @import '~el-style/variables';
 
   @narrow-width: 700px;
+  @center-max-width: @section-content-wide-max-width;
 
   .el-menu {
     display: flex;
@@ -141,6 +145,10 @@ export default {
     align-items: flex-start;
     margin-left: auto;
     margin-right: auto;
+
+    &--center {
+      max-width: @center-max-width;
+    }
 
     &__backdrop {
       display: none;
