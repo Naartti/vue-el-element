@@ -86,7 +86,6 @@ export default {
     border-radius: @input-radius;
     border: @input-border;
     outline: none;
-    margin-right: 10px;
     box-sizing: border-box;
 
     &:focus {

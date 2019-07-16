@@ -2,7 +2,11 @@
 <div
   class="el-select"
   :class="{
-    'el-select--open': matchedItems.length > 0
+    'el-select--open': matchedItems.length > 0,
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
   <div
@@ -87,7 +91,11 @@ export default {
     resultLimit: {
       type: Number,
       default: Infinity
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   data () {
     return {
@@ -183,7 +191,7 @@ export default {
 
       // Remove tag via backspace
       if (ev.keyCode === 8 && this.model === '' && this.selection.length > 0) {
-        this.selection.splice(this.selection.length - 1, 1)
+        this.selection = this.selection.slice(0, this.selection.length - 1)
         ev.preventDefault()
         return false
       }
@@ -207,15 +215,17 @@ export default {
 }
 </script>
 <style scoped lang="less">
+  @import '~el-style/variables.less';
+
   .el-select {
     position: relative;
     box-sizing: border-box;
     height: auto;
-    min-height: 30px;
+    min-height: @input-height;
     width: 100%;
-    border: 1px solid #cacaca;
-    background-color: #f9f9f9;
-    border-radius: 3px;
+    background-color: @input-background;
+    border-radius: @input-radius;
+    border: @input-border;
     overflow: hidden;
 
     &--open {
@@ -227,7 +237,7 @@ export default {
       flex-direction: row;
       justify-content: space-between;
       align-content: flex-start;
-      background-color: #f9f9f9;
+      background-color: @input-background;
       height: auto;
       min-height: 30px;
       width: 100%;
@@ -244,21 +254,20 @@ export default {
         &__filter {
           display: flex;
           margin: 2px 2px;
-          background-color: #E7F5FA;
-          color: #1364A3;
+          border: 1px solid @color-info-medium;
+          background-color: @color-info-light;
+          color: @color-info-dark;
           cursor: pointer;
           align-items: center;
           padding: 1px 10px;
-          height: 26px;
-          border-radius: 5px;
-          font-size: 12px;
+          border-radius: @radius-small;
+          font-size: @font-size-small;
           box-sizing: border-box;
-          border: 1px solid #9CDCFF;
 
           &:hover {
-            background-color: #F496AE;
-            color: #CE2553;
-            border: 1px solid #F48770;
+            color: @color-danger-dark;
+            border-color: @color-danger-dark;
+            background-color: @color-danger-light;
             text-decoration: line-through;
           }
         }
@@ -267,11 +276,11 @@ export default {
           border: none;
           outline: none;
           flex-grow: 1;
-          border-radius: 10px;
-          padding: 2px 10px;
-          height: 30px;
+          border-radius: @radius-large;
+          padding: 2px @input-padding;
+          height: @input-height;
           box-sizing: border-box;
-          background-color: #f9f9f9;
+          background-color: @input-background;
         }
       }
 
@@ -280,12 +289,12 @@ export default {
         position: relative;
         width: 30px;
         min-width: 30px;
-        height: 30px;
+        height: @input-height;
         cursor: pointer;
         justify-content: center;
         align-content: center;
         align-items: center;
-        border-radius: 10px;
+        border-radius: @radius-large;
 
         &:hover {
           transform: scale(1.1);
@@ -296,7 +305,7 @@ export default {
     &__matches {
       box-sizing: border-box;
       padding: 5px 0px;
-      border-radius: 0px 0px 5px 5px;
+      border-radius: 0px 0px @radius-small @radius-small;
 
       &__tag {
         cursor: pointer;
@@ -304,11 +313,11 @@ export default {
         padding: 2px 10px;
 
         &:hover {
-          background-color: #eee;
+          background-color: @color-grey-light;
         }
 
         &--active {
-          background-color: #eee;
+          background-color: @color-grey-light;
         }
       }
     }
