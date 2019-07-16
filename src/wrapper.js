@@ -15,6 +15,7 @@ import ElColumnItem from 'elements/ElColumnItem.vue'
 import ElDropdown from 'elements/ElDropdown.vue'
 import ElCheckbox from 'elements/ElCheckbox.vue'
 import ElRadioButton from 'elements/ElRadioButton.vue'
+import ElSelect from 'elements/ElSelect.vue'
 
 // Actors
 import ElButton from 'elements/ElButton.vue'
@@ -70,7 +71,8 @@ export {
   ElTooltip,
   ElHeader,
   ElCaption,
-  ElInfo
+  ElInfo,
+  ElSelect
 }
 export default {
   ElButton,
@@ -100,5 +102,6 @@ export default {
   ElTooltip,
   ElHeader,
   ElCaption,
-  ElInfo
+  ElInfo,
+  ElSelect
 }

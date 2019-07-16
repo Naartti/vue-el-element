@@ -2,9 +2,14 @@
 <div id="app" class="el-element-font">
 <el-menu
   center-content
+  center
   v-model="menuItemIndex"
   align="left"
   >
+  <el-menu-item title="Get started">
+    Install via npm
+  </el-menu-item>
+
   <el-menu-section title="Design guide" />
   <el-menu-item title="Colors">
     <color-guide />
@@ -12,8 +17,11 @@
   <el-menu-item title="Fonts">
     <font-guide />
   </el-menu-item>
+  <el-menu-item title="Spacing">
+    <spacing-guide />
+  </el-menu-item>
 
-  <el-menu-section title="Clickables" />
+  <el-menu-section title="Elements" />
   <el-menu-item title="Button">
     <h3>El Button</h3>
     <el-inline>
@@ -90,7 +98,7 @@
       />
   </el-menu-item>
 
-  <el-menu-item title="Smart items">
+  <el-menu-item title="Sticky items">
     <h3>El Sticky Header</h3>
     <el-sticky-header>
       This is a sticky header
@@ -108,21 +116,35 @@
   <el-menu-item title="Tabs">
     <el-tab>
       <el-tab-item title="Active tab">
-        <p>Hello!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. Quisque eget dolor condimentum, tempus neque eget, varius tortor. Proin a mattis nisl. Proin bibendum aliquet bibendum.</p>
       </el-tab-item>
       <el-tab-item title="Another tab">
-        <p>Orugh dorem!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
       </el-tab-item>
       <el-tab-item title="A third tab">
-        <p>Untz untz untz</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. </p>
       </el-tab-item>
     </el-tab>
   </el-menu-item>
 
   <el-menu-item title="Select">
+
+    <h2>El Select</h2>
+    <el-select
+    v-model="elSelectModel"
+      :options="[
+        { value: 1, label: 'Apple' },
+        { value: 2, label: 'Banana' },
+        { value: 3, label: 'Orange' },
+        { value: 4, label: 'Lime' },
+        { value: 5, label: 'Melon' },
+        { value: 6, label: 'Peach' },
+      ]"
+      />
+
+    <el-delimiter />
     <h2>El Dropdown</h2>
     <el-dropdown
-      margin-top
       :options="[
         { value: null, label: '-- Select an item--' },
         { value: 1, label: 'Item 1' },
@@ -133,7 +155,6 @@
     <el-delimiter />
     <h2>El Checkbox</h2>
     <el-checkbox
-      :margin-top="true"
       :options="[
         { value: 1, label: 'Item 1' },
         { value: 2, label: 'Item 2' }
@@ -153,10 +174,14 @@
   <el-menu-item title="Layout">
     <el-column>
       <el-column-item>
-        First column
+        <p>First column<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. Quisque eget dolor condimentum, tempus neque eget, varius tortor. Proin a mattis nisl. Proin bibendum aliquet bibendum.
+        </p>
       </el-column-item>
       <el-column-item>
-        Second column
+        <p>Second column<br><br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. Quisque eget dolor condimentum, tempus neque eget, varius tortor. Proin a mattis nisl. Proin bibendum aliquet bibendum.
+        </p>
       </el-column-item>
     </el-column>
   </el-menu-item>
@@ -321,16 +346,18 @@
 <script>
 import ColorGuide from '@/components/showCase/ColorGuide.vue'
 import FontGuide from '@/components/showCase/FontGuide.vue'
+import SpacingGuide from '@/components/showCase/SpacingGuide.vue'
 
 export default {
   name: 'app',
-  components: { ColorGuide, FontGuide },
+  components: { ColorGuide, FontGuide, SpacingGuide },
   data () {
     return {
       activeModal: '',
       someBoolean: false,
       someValue: 1,
-      someString: ''
+      someString: '',
+      elSelectModel: []
     }
   },
   computed: {
