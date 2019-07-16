@@ -1,5 +1,5 @@
 <!-- # ![alt text](static/favicon.png) vue-el-element -->
-# ![alt text](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/favicon.png) vue-el-element
+# ![Vue el element logo](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/favicon.png) vue-el-element
 > Vue components for design elements with custom style guides
 
 # Installation
@@ -25,6 +25,7 @@ import { ElButton, ElTooltip } from 'vue-el-element'
 
 # Elements
 ## el-button
+![el button](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/el-button.png)
 ```xml
 <el-button
   :disabled="Boolean"
@@ -124,6 +125,21 @@ Note that the model is an array
   />
 ```
 
+## el-multi-switch
+![el multi switch](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/el-multi-switch.png)
+```xml
+<el-multi-switch
+  :options="[{
+    value: 'key1',
+    label: 'Item 1'
+  }, {
+    value: 'key2',
+    label: 'Item 2'
+  }]"
+  v-model="key1"
+  />
+```
+
 ## el-tooltip
 Place the tooltip within the item you want to describe. It will place itself at the center of that element. Note that you need the parent element not to have static positioning.
 ```xml
@@ -152,6 +168,7 @@ Place the tooltip within the item you want to describe. It will place itself at 
 ```
 
 ## el-tag
+![el tag](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/el-tag.png)
 ```xml
 <el-tag
   :success="Boolean"
@@ -189,6 +206,7 @@ Place the tooltip within the item you want to describe. It will place itself at 
 
 ## el-tab & el-tab-item
 Horisonal navigation
+![el tab](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/el-tab.png)
 ```xml
 <el-tab>
   <el-tab-item title="Tab 1">

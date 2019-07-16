@@ -107,13 +107,13 @@
 
   <el-menu-item title="Tabs">
     <el-tab>
-      <el-tab-item title="Agrarbah">
+      <el-tab-item title="Active tab">
         <p>Hello!</p>
       </el-tab-item>
-      <el-tab-item title="Mordor">
+      <el-tab-item title="Another tab">
         <p>Orugh dorem!</p>
       </el-tab-item>
-      <el-tab-item title="Orion">
+      <el-tab-item title="A third tab">
         <p>Untz untz untz</p>
       </el-tab-item>
     </el-tab>
