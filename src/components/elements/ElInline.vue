@@ -3,7 +3,7 @@
   class="el-inline"
   :class="{
     'el-inline--center': center,
-    'el-inline--nowrap': !wrap,
+    'el-inline--nowrap': !wrap || nowrap,
     'el-inline--stretch': stretch,
     'el-inline--space-between': spaceBetween,
     'el-margin--right': marginRight,
@@ -27,6 +27,10 @@ export default {
     wrap: {
       type: Boolean,
       default: true
+    },
+    nowrap: {
+      type: Boolean,
+      default: false
     },
     stretch: {
       type: Boolean,
