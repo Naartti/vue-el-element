@@ -55,7 +55,9 @@ export default {
   },
   mounted () {
     let container = this.$refs.lineLoader
-    this.totalWidth = container.getBoundingClientRect().width
+    this.$nextTick(() => {
+      this.totalWidth = container.getBoundingClientRect().width
+    })
 
     this.animateStep()
   },
