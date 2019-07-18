@@ -7,96 +7,40 @@
   align="left"
   >
   <el-menu-item title="Get started">
-    Install via npm
+    <get-started />
   </el-menu-item>
 
-  <el-menu-section title="Design guide" />
-  <el-menu-item title="Colors">
-    <color-guide />
-  </el-menu-item>
-  <el-menu-item title="Fonts">
-    <font-guide />
-  </el-menu-item>
-  <el-menu-item title="Spacing">
-    <spacing-guide />
-  </el-menu-item>
-
+  <!-- Elements -->
   <el-menu-section title="Elements" />
-  <el-menu-item title="Button">
-    <h3>El Button</h3>
-    <el-inline>
-      <el-button
-        :margin-right="true"
-        :margin-top="true"
-        >
-        Primary
-      </el-button>
-      <el-button
-        secondary
-        margin-right
-        margin-top
-        >
-        Secondary
-      </el-button>
-      <el-button
-        secondary
-        danger
-        margin-right
-        margin-top
-        >
-        Secondary danger
-      </el-button>
-      <el-button
-        danger
-        margin-right
-        margin-top
-        >
-        Danger
-      </el-button>
-      <el-button
-        disabled
-        margin-right
-        margin-top
-        tooltip="Disabled"
-        >
-        Disabled
-      </el-button>
-      <el-button
-        disabled
-        secondary
-        margin-right
-        margin-top
-        tooltip="Disabled"
-        >
-        Secondary disabled
-      </el-button>
-      <el-button
-        link
-        margin-right
-        margin-top
-        >
-        Link
-      </el-button>
-    </el-inline>
-
-    <el-delimiter />
-    <h3>El Toggle Button</h3>
-    <el-toggle-button
-      v-model="someBoolean"
-      />
-
-    <el-delimiter />
-    <h3>El Multi Switch</h3>
-    <el-multi-switch
-      v-model="someValue"
-      :options="[
-        { value: 1, label: 'Item 1' },
-        { value: 2, label: 'Item 2' },
-        { value: 3, label: 'Item 3' },
-        { value: 4, label: 'Item 4' },
-      ]"
-      />
+  <el-menu-item title="el-button">
+    <el-button-docs />
   </el-menu-item>
+  <el-menu-item title="el-toggle-button">
+    <el-toggle-button-docs />
+  </el-menu-item>
+  <el-menu-item title="el-multi-switch">
+    <el-multi-switch-docs />
+  </el-menu-item>
+  <el-menu-item title="el-tab & el-tab-item">
+    <el-tab-docs />
+  </el-menu-item>
+  <el-menu-item title="el-select">
+    <el-select-docs />
+  </el-menu-item>
+  <el-menu-item title="el-modal">
+    <el-modal-docs />
+  </el-menu-item>
+  <el-menu-item title="el-tag">
+    <el-tag-docs />
+  </el-menu-item>
+  <el-menu-item title="el-loader">
+    <el-loader-docs />
+  </el-menu-item>
+  <el-menu-item title="el-image">
+    <el-image-docs />
+  </el-menu-item>
+
+  <!-- <el-menu-section title="Remaining" />
 
   <el-menu-item title="Sticky items">
     <h3>El Sticky Header</h3>
@@ -113,35 +57,7 @@
     </el-sticky-footer>
   </el-menu-item>
 
-  <el-menu-item title="Tabs">
-    <el-tab>
-      <el-tab-item title="Active tab">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. Quisque eget dolor condimentum, tempus neque eget, varius tortor. Proin a mattis nisl. Proin bibendum aliquet bibendum.</p>
-      </el-tab-item>
-      <el-tab-item title="Another tab">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-      </el-tab-item>
-      <el-tab-item title="A third tab">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. </p>
-      </el-tab-item>
-    </el-tab>
-  </el-menu-item>
-
   <el-menu-item title="Select">
-
-    <h2>El Select</h2>
-    <el-select
-    v-model="elSelectModel"
-      :options="[
-        { value: 1, label: 'Apple' },
-        { value: 2, label: 'Banana' },
-        { value: 3, label: 'Orange' },
-        { value: 4, label: 'Lime' },
-        { value: 5, label: 'Melon' },
-        { value: 6, label: 'Peach' },
-      ]"
-      />
-
     <el-delimiter />
     <h2>El Dropdown</h2>
     <el-dropdown
@@ -190,29 +106,6 @@
     <el-collapse-header title="El Collapse Header">
       Hello!
     </el-collapse-header>
-
-    <el-delimiter />
-    <h3>El Modal</h3>
-    <el-inline>
-      <el-button
-        @click="activeModal = 'normal'"
-        margin-top margin-right
-        >
-        Normal modal
-      </el-button>
-      <el-button
-        @click="activeModal = 'high'"
-        margin-top margin-right
-        >
-        High modal
-      </el-button>
-      <el-button
-        @click="activeModal = 'wide'"
-        margin-top margin-right
-        >
-        Wide modal
-      </el-button>
-    </el-inline>
   </el-menu-item>
 
   <el-menu-item title="Text">
@@ -276,21 +169,6 @@
     </el-caption>
   </el-menu-item>
 
-  <el-menu-item title="Status">
-    <h3>El Tag</h3>
-    <el-inline>
-      <el-tag margin-right margin-top warning>Warning</el-tag>
-      <el-tag margin-right margin-top danger>Danger</el-tag>
-      <el-tag margin-right margin-top success>Success</el-tag>
-      <el-tag margin-right margin-top info>info</el-tag>
-      <el-tag margin-right margin-top >No status</el-tag>
-    </el-inline>
-
-    <el-delimiter />
-    <h3>El Loader</h3>
-    <el-loader />
-  </el-menu-item>
-
   <el-menu-item title="Input">
     <h3>El Input</h3>
     <el-input v-model="someString" />
@@ -301,63 +179,48 @@
     <el-delimiter />
     <h3>El Text Area</h3>
     <el-textarea v-model="someString" />
+  </el-menu-item> -->
+
+  <el-menu-section title="Design guide" />
+  <el-menu-item title="Colors">
+    <color-guide />
   </el-menu-item>
+  <el-menu-item title="Fonts">
+    <font-guide />
+  </el-menu-item>
+  <el-menu-item title="Spacing">
+    <spacing-guide />
+  </el-menu-item>
+
+  <!-- <el-menu-section title="Customize" />
+  <el-menu-item title="Style">
+    <custom-style />
+  </el-menu-item> -->
 </el-menu>
-
-<!-- Modals -->
-<el-modal root
-  v-if="activeModal === 'wide'"
-  wide
-  @close="activeModal = ''"
-  >
-  hello!
-</el-modal>
-<el-modal root
-  v-if="activeModal === 'normal'"
-  close-button-align="right"
-  @close="activeModal = ''"
-  >
-  hello!
-
-  <el-button @click="someBoolean = !someBoolean">
-    Toggle
-  </el-button>
-
-  <div v-if="someBoolean" style="background-color: green; height: 800px;">
-    wide
-  </div>
-</el-modal>
-<el-modal root
-  v-if="activeModal === 'high'"
-  @close="activeModal = ''"
-  >
-  hello!
-
-  <div style="height: 1200px; background-color: #eee; width: 10px;" />
-
-  <el-inline slot="footer">
-    <el-button @click="activeModal = ''">
-      Close
-    </el-button>
-  </el-inline>
-</el-modal>
 </div>
 </template>
 <script>
-import ColorGuide from '@/components/showCase/ColorGuide.vue'
-import FontGuide from '@/components/showCase/FontGuide.vue'
-import SpacingGuide from '@/components/showCase/SpacingGuide.vue'
+import GetStarted from 'docs/GetStarted.vue'
+import ColorGuide from 'showCase/ColorGuide.vue'
+import FontGuide from 'showCase/FontGuide.vue'
+import SpacingGuide from 'showCase/SpacingGuide.vue'
+import CustomStyle from 'showCase/CustomStyle.vue'
+import ElButtonDocs from 'docs/ElButtonDocs.vue'
+import ElImageDocs from 'docs/ElImageDocs.vue'
+import ElToggleButtonDocs from 'docs/ElToggleButtonDocs.vue'
+import ElMultiSwitchDocs from 'docs/ElMultiSwitchDocs.vue'
+import ElTabDocs from 'docs/ElTabDocs.vue'
+import ElSelectDocs from 'docs/ElSelectDocs.vue'
+import ElModalDocs from 'docs/ElModalDocs.vue'
+import ElTagDocs from 'docs/ElTagDocs.vue'
+import ElLoaderDocs from 'docs/ElLoaderDocs.vue'
 
 export default {
   name: 'app',
-  components: { ColorGuide, FontGuide, SpacingGuide },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs },
   data () {
     return {
-      activeModal: '',
-      someBoolean: false,
-      someValue: 1,
-      someString: '',
-      elSelectModel: []
+      someString: ''
     }
   },
   computed: {
@@ -377,4 +240,17 @@ export default {
  #app {
    display: relative;
  }
+
+ .el-element-docs {
+    margin-bottom: 100px;
+
+    table {
+      width: 100%;
+
+      th, td {
+        text-align: left;
+        width: 30%;
+      }
+    }
+  }
 </style>
