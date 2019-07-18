@@ -54,6 +54,9 @@
   <el-menu-item title="el-message">
     <el-message-docs />
   </el-menu-item>
+  <el-menu-item title="el-header">
+    <el-header-docs />
+  </el-menu-item>
 
   <!-- <el-menu-section title="Remaining" />
 
@@ -84,20 +87,6 @@
     <el-info>
       some info
     </el-info>
-
-    <el-delimiter />
-    <h3>El Header</h3>
-    <el-header>Just a header</el-header>
-    <el-header tight>Tight header</el-header>
-    <el-header warning>
-      Header with warning
-    </el-header>
-    <el-header danger>
-      Header with danger
-    </el-header>
-    <el-header success @click="() => {}">
-      Header with success
-    </el-header>
 
     <el-delimiter />
     <h3>El Caption</h3>
@@ -162,10 +151,11 @@ import ElCheckboxDocs from 'docs/ElCheckboxDocs.vue'
 import ElRadioButtonDocs from 'docs/ElRadioButtonDocs.vue'
 import ElColumnDocs from 'docs/ElColumnDocs.vue'
 import ElMessageDocs from 'docs/ElMessageDocs.vue'
+import ElHeaderDocs from 'docs/ElHeaderDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs },
   data () {
     return {
       someString: ''
