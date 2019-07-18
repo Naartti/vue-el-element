@@ -21,8 +21,11 @@
   <el-menu-item title="el-multi-switch">
     <el-multi-switch-docs />
   </el-menu-item>
-  <el-menu-item title="el-tab & el-tab-item">
-    <el-tab-docs />
+  <el-menu-item title="el-message">
+    <el-message-docs />
+  </el-menu-item>
+  <el-menu-item title="el-header">
+    <el-header-docs />
   </el-menu-item>
   <el-menu-item title="el-select">
     <el-select-docs />
@@ -51,11 +54,11 @@
   <el-menu-item title="el-column & el-column-item">
     <el-column-docs />
   </el-menu-item>
-  <el-menu-item title="el-message">
-    <el-message-docs />
+  <el-menu-item title="el-menu & el-menu-item">
+    <el-menu-docs />
   </el-menu-item>
-  <el-menu-item title="el-header">
-    <el-header-docs />
+  <el-menu-item title="el-tab & el-tab-item">
+    <el-tab-docs />
   </el-menu-item>
 
   <!-- <el-menu-section title="Remaining" />
@@ -152,10 +155,11 @@ import ElRadioButtonDocs from 'docs/ElRadioButtonDocs.vue'
 import ElColumnDocs from 'docs/ElColumnDocs.vue'
 import ElMessageDocs from 'docs/ElMessageDocs.vue'
 import ElHeaderDocs from 'docs/ElHeaderDocs.vue'
+import ElMenuDocs from 'docs/ElMenuDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs },
   data () {
     return {
       someString: ''

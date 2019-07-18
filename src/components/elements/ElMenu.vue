@@ -90,7 +90,14 @@ export default {
     },
     align: {
       type: String,
-      default: 'right'
+      default: 'right',
+      validator: x => {
+        return {
+          left: true,
+          right: true,
+          center: true
+        }[x] === true
+      }
     },
     centerContent: { type: Boolean, default: false },
     center: { type: Boolean, default: false }
