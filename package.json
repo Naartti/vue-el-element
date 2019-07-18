@@ -3,10 +3,20 @@
   "version": "1.4.13",
   "description": "Vue components for standard design elements",
   "author": "Mattias Naarttijärvi",
+  "homepage": "https://elelement.com",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Naartti/vue-el-element.git"
   },
+  "keywords": [
+    "ui",
+    "components",
+    "elements",
+    "clean",
+    "vue",
+    "javascript"
+  ],
   "main": "dist/vue-el-element.common.js",
   "module": "dist/vue-el-element.esm.js",
   "unpkg": "dist/vue-el-element.min.js",
