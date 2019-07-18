@@ -7,7 +7,9 @@ const aliases = {
   '@': 'src',
   'el-style': 'src/style',
   'script': 'src/script',
-  'elements': 'src/components/elements'
+  'elements': 'src/components/elements',
+  'showCase': 'src/components/showCase',
+  'docs': 'src/docs'
 }
 
 module.exports = {
