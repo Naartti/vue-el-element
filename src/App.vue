@@ -51,6 +51,9 @@
   <el-menu-item title="el-radio-button">
     <el-radio-button-docs />
   </el-menu-item>
+  <el-menu-item title="el-inline">
+    <el-inline-docs />
+  </el-menu-item>
   <el-menu-item title="el-column & el-column-item">
     <el-column-docs />
   </el-menu-item>
@@ -156,10 +159,11 @@ import ElColumnDocs from 'docs/ElColumnDocs.vue'
 import ElMessageDocs from 'docs/ElMessageDocs.vue'
 import ElHeaderDocs from 'docs/ElHeaderDocs.vue'
 import ElMenuDocs from 'docs/ElMenuDocs.vue'
+import ElInlineDocs from 'docs/ElInlineDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs },
   data () {
     return {
       someString: ''
