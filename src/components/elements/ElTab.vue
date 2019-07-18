@@ -76,6 +76,10 @@ export default {
       this.displayedIndex = index
 
       this.$emit('input', index)
+
+      this.$nextTick(() => {
+        this.$emit('change', index)
+      })
     }
   }
 }
