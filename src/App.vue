@@ -48,6 +48,12 @@
   <el-menu-item title="el-radio-button">
     <el-radio-button-docs />
   </el-menu-item>
+  <el-menu-item title="el-column & el-column-item">
+    <el-column-docs />
+  </el-menu-item>
+  <el-menu-item title="el-message">
+    <el-message-docs />
+  </el-menu-item>
 
   <!-- <el-menu-section title="Remaining" />
 
@@ -66,21 +72,6 @@
     </el-sticky-footer>
   </el-menu-item>
 
-  <el-menu-item title="Layout">
-    <el-column>
-      <el-column-item>
-        <p>First column<br><br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. Quisque eget dolor condimentum, tempus neque eget, varius tortor. Proin a mattis nisl. Proin bibendum aliquet bibendum.
-        </p>
-      </el-column-item>
-      <el-column-item>
-        <p>Second column<br><br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque elementum ut magna vitae ultrices. Vivamus egestas dui pulvinar rhoncus semper. Sed auctor tortor nisi, ac cursus nisl iaculis quis. Duis convallis, erat eu molestie venenatis, dui sapien sagittis metus, non dictum nunc lectus quis eros. Curabitur dignissim quis dui sit amet venenatis. Ut congue luctus maximus. Quisque eget dolor condimentum, tempus neque eget, varius tortor. Proin a mattis nisl. Proin bibendum aliquet bibendum.
-        </p>
-      </el-column-item>
-    </el-column>
-  </el-menu-item>
-
   <el-menu-item title="Hierarcy">
     <el-collapse-header title="El Collapse Header">
       Hello!
@@ -88,33 +79,6 @@
   </el-menu-item>
 
   <el-menu-item title="Text">
-    <h3>El Message</h3>
-    <el-message
-      :warning="true"
-      >
-      Warning message
-    </el-message>
-    <el-message
-      :danger="true"
-      >
-      Danger message
-    </el-message>
-    <el-message
-      :success="true"
-      >
-      Success message
-    </el-message>
-    <el-message
-      :info="true"
-      >
-      Info message
-    </el-message>
-    <el-message
-      @click="() => {}"
-      >
-      Clickable message
-    </el-message>
-
     <el-delimiter />
     <h3>El Info</h3>
     <el-info>
@@ -196,10 +160,12 @@ import ElLoaderDocs from 'docs/ElLoaderDocs.vue'
 import ElDropdownDocs from 'docs/ElDropdownDocs.vue'
 import ElCheckboxDocs from 'docs/ElCheckboxDocs.vue'
 import ElRadioButtonDocs from 'docs/ElRadioButtonDocs.vue'
+import ElColumnDocs from 'docs/ElColumnDocs.vue'
+import ElMessageDocs from 'docs/ElMessageDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs },
   data () {
     return {
       someString: ''

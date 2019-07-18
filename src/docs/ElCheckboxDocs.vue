@@ -49,10 +49,6 @@ export default {
         prop: 'options',
         type: 'Array',
         default: '[]'
-      }, {
-        prop: 'wide',
-        type: 'Boolean',
-        default: 'false'
       }]
     }
   },
