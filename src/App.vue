@@ -39,6 +39,15 @@
   <el-menu-item title="el-image">
     <el-image-docs />
   </el-menu-item>
+  <el-menu-item title="el-dropdown">
+    <el-dropdown-docs />
+  </el-menu-item>
+  <el-menu-item title="el-checkbox">
+    <el-checkbox-docs />
+  </el-menu-item>
+  <el-menu-item title="el-radio-button">
+    <el-radio-button-docs />
+  </el-menu-item>
 
   <!-- <el-menu-section title="Remaining" />
 
@@ -55,36 +64,6 @@
     <el-sticky-footer>
       This is a sticky footer
     </el-sticky-footer>
-  </el-menu-item>
-
-  <el-menu-item title="Select">
-    <el-delimiter />
-    <h2>El Dropdown</h2>
-    <el-dropdown
-      :options="[
-        { value: null, label: '-- Select an item--' },
-        { value: 1, label: 'Item 1' },
-        { value: 2, label: 'Item 2' }
-      ]"
-      />
-
-    <el-delimiter />
-    <h2>El Checkbox</h2>
-    <el-checkbox
-      :options="[
-        { value: 1, label: 'Item 1' },
-        { value: 2, label: 'Item 2' }
-      ]"
-      />
-
-    <el-delimiter />
-    <h2>El Radio Button</h2>
-    <el-radio-button
-      :options="[
-        { value: 1, label: 'Item 1' },
-        { value: 2, label: 'Item 2' }
-      ]"
-      />
   </el-menu-item>
 
   <el-menu-item title="Layout">
@@ -214,10 +193,13 @@ import ElSelectDocs from 'docs/ElSelectDocs.vue'
 import ElModalDocs from 'docs/ElModalDocs.vue'
 import ElTagDocs from 'docs/ElTagDocs.vue'
 import ElLoaderDocs from 'docs/ElLoaderDocs.vue'
+import ElDropdownDocs from 'docs/ElDropdownDocs.vue'
+import ElCheckboxDocs from 'docs/ElCheckboxDocs.vue'
+import ElRadioButtonDocs from 'docs/ElRadioButtonDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs },
   data () {
     return {
       someString: ''
