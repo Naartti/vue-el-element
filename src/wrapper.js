@@ -33,6 +33,7 @@ import ElLoader from 'elements/ElLoader.vue'
 import ElHeader from 'elements/ElHeader.vue'
 import ElCaption from 'elements/ElCaption.vue'
 import ElInfo from 'elements/ElInfo.vue'
+import ElImage from 'elements/ElImage.vue'
 
 // Input
 import ElInput from 'elements/ElInput.vue'
@@ -72,7 +73,8 @@ export {
   ElHeader,
   ElCaption,
   ElInfo,
-  ElSelect
+  ElSelect,
+  ElImage
 }
 export default {
   ElButton,
@@ -103,5 +105,6 @@ export default {
   ElHeader,
   ElCaption,
   ElInfo,
-  ElSelect
+  ElSelect,
+  ElImage
 }

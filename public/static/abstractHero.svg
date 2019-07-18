@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="489px" height="306px" viewBox="0 0 489 306" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>abstractHero</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="156" y="29" width="177" height="255" rx="5"></rect>
+        <filter x="-15.5%" y="-6.9%" width="131.1%" height="121.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="abstractHero" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Rectangle">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <rect id="Rectangle" fill="#D8D8D8" x="170" y="46" width="100" height="29"></rect>
+        <rect id="Rectangle-Copy" fill="#EEEEEE" x="170" y="115" width="70" height="85"></rect>
+        <rect id="Rectangle-Copy-2" fill="#EEEEEE" x="249" y="115" width="70" height="32"></rect>
+        <rect id="Rectangle-Copy-4" fill="#EEEEEE" x="249" y="157" width="70" height="43"></rect>
+        <rect id="Rectangle" fill="#D8D8D8" x="170" y="85" width="50" height="14"></rect>
+        <rect id="Rectangle-Copy-3" stroke="#E98C8D" x="170.5" y="210.5" width="49" height="13" rx="3"></rect>
+        <rect id="Rectangle" fill="#EEEEEE" x="225" y="85" width="50" height="14"></rect>
+        <path id="Path-3" d="M165.527464,60.5 C165.776187,58.2500248 167.683723,56.5 170,56.5 C172.485281,56.5 174.5,58.5147186 174.5,61 C174.5,63.4852814 172.485281,65.5 170,65.5 C167.683723,65.5 165.776187,63.7499752 165.527464,61.5 L85.5,61.5 L85.5,29 L86.5,29 L86.5,60.5 L165.527464,60.5 Z M173.5,61 C173.5,59.0670034 171.932997,57.5 170,57.5 C168.067003,57.5 166.5,59.0670034 166.5,61 C166.5,62.9329966 168.067003,64.5 170,64.5 C171.932997,64.5 173.5,62.9329966 173.5,61 Z" fill="#5B9BD1" fill-rule="nonzero"></path>
+        <path id="Path-3" d="M279.472536,92.5 C279.223813,94.7499752 277.316277,96.5 275,96.5 C272.514719,96.5 270.5,94.4852814 270.5,92 C270.5,89.5147186 272.514719,87.5 275,87.5 C277.316277,87.5 279.223813,89.2500248 279.472536,91.5 L410.5,91.5 L410.5,60 L411.5,60 L411.5,92.5 L279.472536,92.5 Z M271.5,92 C271.5,93.9329966 273.067003,95.5 275,95.5 C276.932997,95.5 278.5,93.9329966 278.5,92 C278.5,90.0670034 276.932997,88.5 275,88.5 C273.067003,88.5 271.5,90.0670034 271.5,92 Z" fill="#5B9BD1" fill-rule="nonzero"></path>
+        <path id="Path-3" d="M323.472536,131.5 C323.223813,133.749975 321.316277,135.5 319,135.5 C316.514719,135.5 314.5,133.485281 314.5,131 C314.5,128.514719 316.514719,126.5 319,126.5 C321.316277,126.5 323.223813,128.250025 323.472536,130.5 L389.5,130.5 L389.5,176 L388.5,176 L388.5,131.5 L323.472536,131.5 Z M315.5,131 C315.5,132.932997 317.067003,134.5 319,134.5 C320.932997,134.5 322.5,132.932997 322.5,131 C322.5,129.067003 320.932997,127.5 319,127.5 C317.067003,127.5 315.5,129.067003 315.5,131 Z" fill="#5B9BD1" fill-rule="nonzero"></path>
+        <text id="&lt;el-header&gt;" font-family="PTSans-Regular, PT Sans" font-size="12" font-weight="normal" fill="#373737">
+            <tspan x="55.358" y="18">&lt;el-header&gt;</tspan>
+        </text>
+        <path id="Path-3" d="M165.527464,130.5 C165.776187,128.250025 167.683723,126.5 170,126.5 C172.485281,126.5 174.5,128.514719 174.5,131 C174.5,133.485281 172.485281,135.5 170,135.5 C167.683723,135.5 165.776187,133.749975 165.527464,131.5 L42.5,131.5 L42.5,115 L43.5,115 L43.5,130.5 L165.527464,130.5 Z M173.5,131 C173.5,129.067003 171.932997,127.5 170,127.5 C168.067003,127.5 166.5,129.067003 166.5,131 C166.5,132.932997 168.067003,134.5 170,134.5 C171.932997,134.5 173.5,132.932997 173.5,131 Z" fill="#5B9BD1" fill-rule="nonzero"></path>
+        <text id="&lt;el-column&gt;" font-family="PTSans-Regular, PT Sans" font-size="12" font-weight="normal" fill="#373737">
+            <tspan x="11.056" y="104">&lt;el-column&gt;</tspan>
+        </text>
+        <path id="Path-3" d="M165.527464,217.5 C165.776187,215.250025 167.683723,213.5 170,213.5 C172.485281,213.5 174.5,215.514719 174.5,218 C174.5,220.485281 172.485281,222.5 170,222.5 C167.683723,222.5 165.776187,220.749975 165.527464,218.5 L115.5,218.5 L115.5,202 L116.5,202 L116.5,217.5 L165.527464,217.5 Z M173.5,218 C173.5,216.067003 171.932997,214.5 170,214.5 C168.067003,214.5 166.5,216.067003 166.5,218 C166.5,219.932997 168.067003,221.5 170,221.5 C171.932997,221.5 173.5,219.932997 173.5,218 Z" fill="#5B9BD1" fill-rule="nonzero"></path>
+        <text id="&lt;el-button&gt;" font-family="PTSans-Regular, PT Sans" font-size="12" font-weight="normal" fill="#373737">
+            <tspan x="87.006" y="191">&lt;el-button&gt;</tspan>
+        </text>
+        <text id="&lt;el-tab&gt;" font-family="PTSans-Regular, PT Sans" font-size="12" font-weight="normal" fill="#373737">
+            <tspan x="389" y="50">&lt;el-tab&gt;</tspan>
+        </text>
+        <text id="&lt;el-image&gt;" font-family="PTSans-Regular, PT Sans" font-size="12" font-weight="normal" fill="#373737">
+            <tspan x="360.254" y="194">&lt;el-image&gt;</tspan>
+        </text>
+        <rect id="Rectangle" fill="#EEEEEE" x="170" y="102" width="149" height="3"></rect>
+        <path d="M249,147 L319,115" id="Line" stroke="#D8D8D8" stroke-width="0.5" stroke-linecap="round"></path>
+        <path d="M249,147 L319,115" id="Line" stroke="#D8D8D8" stroke-width="0.5" stroke-linecap="round" transform="translate(284.000000, 131.000000) scale(1, -1) translate(-284.000000, -131.000000) "></path>
+    </g>
+</svg>
