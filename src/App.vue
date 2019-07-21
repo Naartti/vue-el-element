@@ -27,6 +27,9 @@
   <el-menu-item title="el-header">
     <el-header-docs />
   </el-menu-item>
+  <el-menu-item title="el-collapse-header">
+    <el-collapse-header-docs />
+  </el-menu-item>
   <el-menu-item title="el-select">
     <el-select-docs />
   </el-menu-item>
@@ -160,10 +163,11 @@ import ElMessageDocs from 'docs/ElMessageDocs.vue'
 import ElHeaderDocs from 'docs/ElHeaderDocs.vue'
 import ElMenuDocs from 'docs/ElMenuDocs.vue'
 import ElInlineDocs from 'docs/ElInlineDocs.vue'
+import ElCollapseHeaderDocs from 'docs/ElCollapseHeaderDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs },
   data () {
     return {
       someString: ''
