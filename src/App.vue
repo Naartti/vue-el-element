@@ -57,13 +57,13 @@
   <el-menu-item title="el-inline">
     <el-inline-docs />
   </el-menu-item>
-  <el-menu-item title="el-column & el-column-item">
+  <el-menu-item title="el-column">
     <el-column-docs />
   </el-menu-item>
-  <el-menu-item title="el-menu & el-menu-item">
+  <el-menu-item title="el-menu">
     <el-menu-docs />
   </el-menu-item>
-  <el-menu-item title="el-tab & el-tab-item">
+  <el-menu-item title="el-tab">
     <el-tab-docs />
   </el-menu-item>
 
@@ -145,7 +145,6 @@ import GetStarted from 'docs/GetStarted.vue'
 import ColorGuide from 'showCase/ColorGuide.vue'
 import FontGuide from 'showCase/FontGuide.vue'
 import SpacingGuide from 'showCase/SpacingGuide.vue'
-import CustomStyle from 'showCase/CustomStyle.vue'
 import ElButtonDocs from 'docs/ElButtonDocs.vue'
 import ElImageDocs from 'docs/ElImageDocs.vue'
 import ElToggleButtonDocs from 'docs/ElToggleButtonDocs.vue'
@@ -167,7 +166,7 @@ import ElCollapseHeaderDocs from 'docs/ElCollapseHeaderDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, CustomStyle, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs },
+  components: { GetStarted, ColorGuide, FontGuide, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs },
   data () {
     return {
       someString: ''

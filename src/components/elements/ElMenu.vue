@@ -27,7 +27,7 @@
   >
   <!-- Menu -->
   <div
-    class="el-menu__context-panel el-animation"
+    class="el-menu__context-panel el-momentum-scroll el-animation"
     :class="{
       'el-menu__context-panel--closed': !menuIsOpen
     }"
@@ -180,7 +180,9 @@ export default {
       margin-right: 50px;
       margin-left: 10px;
       padding-top: 65px;
+      padding-bottom: 65px;
       z-index: 4;
+      overflow: scroll;
 
       @media (max-width: @narrow-width) {
         position: fixed;
@@ -210,7 +212,8 @@ export default {
 
       &__item {
         cursor: pointer;
-        margin-bottom: 5px;
+        padding-bottom: 3px;
+        padding-top: 3px;
         padding-left: 10px;
         padding-right: 10px;
         font-size: 14px;
@@ -221,28 +224,34 @@ export default {
         }
 
         &:hover {
-          padding-left: 5px;
-          padding-right: 15px;
-        }
-
-        &:active {
-          padding-left: 0px;
-          padding-right: 20px;
+          transform: translateX(5px);
         }
 
         &--active {
+          position: relative;
           font-weight: bold;
+
+          &::before {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 4px;
+            height: 100%;
+            border-radius: 3px 0px 0px 3px;
+            content: " ";
+            background-color: @color-accent-3;
+          }
+
+          &:hover {
+            transform: none;
+          }
         }
 
         &--no-click {
           cursor: default;
 
           &:hover {
-            padding: 0px 10px;
-          }
-
-          &:active {
-            padding: 0px 10px;
+            transform: translateX(0px);
           }
         }
 
