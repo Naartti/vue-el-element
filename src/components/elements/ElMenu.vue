@@ -22,7 +22,11 @@
 <div
   class="el-menu"
   :class="{
-    'el-menu--center': center
+    'el-menu--center': center,
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   >
   <!-- Menu -->
@@ -32,6 +36,10 @@
       'el-menu__context-panel--closed': !menuIsOpen
     }"
     >
+
+    <!-- Empty dummy title for menu alignment with content -->
+    <h1 v-if="title === true">&nbsp;</h1>
+
     <div v-for="(item, index) in items"
       class="el-menu__context-panel__item el-animation"
       :key="index"
@@ -78,9 +86,7 @@
   </div>
 </div>
 </template>
-
 <script>
-
 export default {
   name: 'ElMenu',
   props: {
@@ -100,7 +106,12 @@ export default {
       }
     },
     centerContent: { type: Boolean, default: false },
-    center: { type: Boolean, default: false }
+    center: { type: Boolean, default: false },
+    title: { type: Boolean, default: true },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   data () {
     return {
@@ -152,6 +163,7 @@ export default {
     align-items: flex-start;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 
     &--center {
       max-width: @center-max-width;
@@ -179,7 +191,7 @@ export default {
       flex: 0 0 170px;
       margin-right: 50px;
       margin-left: 10px;
-      padding-top: 65px;
+      padding-top: 0px;
       padding-bottom: 65px;
       z-index: 4;
       overflow: scroll;

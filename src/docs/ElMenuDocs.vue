@@ -75,6 +75,10 @@ export default {
         prop: 'center-content',
         type: 'Boolean',
         default: 'false'
+      }, {
+        prop: 'title',
+        type: 'Boolean',
+        default: 'true'
       }],
       elMenuItemProps: [{
         prop: 'title',

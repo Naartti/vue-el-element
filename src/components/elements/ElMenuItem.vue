@@ -1,15 +1,20 @@
 <template>
-  <transition name="slide-fade">
-    <div
-      v-if="displayedIndex === index"
-      class="el-menu-item"
+<transition name="slide-fade">
+  <div
+    v-if="displayedIndex === index"
+    class="el-menu-item"
+    >
+    <h1
+      v-if="showTitle"
+      class="el-menu-item__header"
       >
-      <h1 class="el-menu-item__header">{{title}}</h1>
-      <el-delimiter :short="true" />
+      {{title}}
+    </h1>
+    <el-delimiter v-if="showTitle" short />
 
-      <slot />
-    </div>
-  </transition>
+    <slot />
+  </div>
+</transition>
 </template>
 <script>
 
@@ -32,6 +37,9 @@ export default {
   computed: {
     displayedIndex () {
       return this.$parent.displayedIndex
+    },
+    showTitle () {
+      return this.$parent.$props.title === true
     }
   },
   mounted () {

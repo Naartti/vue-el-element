@@ -3,7 +3,7 @@
   <h2>Usage</h2>
   <el-tab @change="reRender">
     <el-tab-item title="Large">
-      <el-image large stretch
+      <el-image stretch
         src="static/Mountains--wide.png"
         />
       <br><pre><code class="hljs html">{{code.large}}</code></pre>

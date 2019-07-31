@@ -1,6 +1,7 @@
 <template>
 <div id="app" class="el-element-font">
 <el-menu
+  :title="true"
   center-content
   center
   v-model="menuItemIndex"
@@ -171,6 +172,9 @@ export default {
     return {
       someString: ''
     }
+  },
+  mounted () {
+    document.body.classList.add('el-element-font')
   },
   computed: {
     menuItemIndex: {
