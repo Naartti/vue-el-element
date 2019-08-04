@@ -3,7 +3,7 @@
   <p>Build awesome clean web apps that's responsive, mobile friendly and accessable with vue-el-element.</p><br>
 
   <el-image
-    src="static/abstractHero.svg"
+    src="static/abstractHero--dark.svg"
     />
 
   <h2>Installation</h2>
