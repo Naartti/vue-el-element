@@ -1,14 +1,18 @@
 <template>
 <div
   class='el-sticky-header'
+  :class="{
+    'el-sticky-header--fixed': isOutside
+  }"
   ref='referenceContainer'
   >
   <div
     ref='main'
     class='el-sticky-header__content'
     :class="{
-      'el-sticky-header__content--fixed': isOutside === true,
-      'el-sticky-header__content--shadow': shadow === true && isOutside === true
+      'el-sticky-header__content--fixed': isOutside,
+      'el-sticky-header__content--border': border && isOutside,
+      'el-sticky-header__content--shadow': shadow && isOutside
     }"
     >
 
@@ -22,7 +26,8 @@
 export default {
   name: 'ElStickyFooter',
   props: {
-    shadow: Boolean
+    shadow: { type: Boolean, default: false },
+    border: { type: Boolean, default: false }
   },
   data () {
     return {
@@ -83,6 +88,10 @@ export default {
     height: auto;
     z-index: 2;
 
+    &--fixed {
+      z-index: 3;
+    }
+
     &__content {
       position: relative;
       padding: @top-margin-element 0px;
@@ -91,8 +100,11 @@ export default {
         position: fixed;
         top: auto;
         top: 0px;
+        background-color: @background-color;
+      }
+
+      &--border {
         border-bottom: 1px solid @color-grey-light;
-        background-color: #ffffff;
       }
 
       &--shadow {
