@@ -9,117 +9,77 @@
     'el-margin--bottom': marginBottom
   }"
   >
-  <svg
+  <div
+    v-if="!paused"
     class="el-loader__loader"
-    v-if="paused === false"
-    width="100%"
-    :height="`${height}px`"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    >
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <rect
-        class="el-loader--color"
-        :x="x"
-        :y="y"
-        :width="width"
-        :height="height"
-        rx="2"
-        />
-    </g>
-  </svg>
+    />
 </div>
 </template>
 <script>
 export default {
   props: {
-    paused: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
-  },
-  data () {
-    return {
-      x: 0,
-      y: 0,
-      height: 5,
-      width: 200,
-      totalWidth: 1000,
-      smoothDelay: 10,
-      roughDelay: 40,
-      isRunning: false,
-      forwardDirection: true
-    }
-  },
-  mounted () {
-    let container = this.$refs.lineLoader
-    this.$nextTick(() => {
-      this.totalWidth = container.getBoundingClientRect().width
-    })
-
-    this.animateStep()
-  },
-  methods: {
-    animateStep () {
-      if (this.isRunning) return
-
-      this.isRunning = true
-
-      let percentage = this.x / this.totalWidth
-      let stepSize = 10 + 10 * percentage * percentage
-
-      this.x = this.forwardDirection === true
-        ? this.x + stepSize
-        : this.x - stepSize
-
-      if (this.x > this.totalWidth) {
-        this.forwardDirection = false
-      } else if (this.x < -this.width) {
-        this.forwardDirection = true
-      }
-
-      if (this.paused === false) {
-        if (window.requestAnimationFrame) {
-          window.requestAnimationFrame(() => {
-            setTimeout(() => {
-              this.isRunning = false
-              this.animateStep()
-            }, this.smoothDelay)
-          })
-        } else {
-          setTimeout(() => {
-            this.isRunning = false
-            this.animateStep()
-          }, this.roughDelay)
-        }
-      }
-    }
+    paused: { type: Boolean, default: false },
+    marginRight: { type: Boolean, default: false },
+    marginTop: { type: Boolean, default: false },
+    marginBottom: { type: Boolean, default: false },
+    marginLeft: { type: Boolean, default: false }
   }
 }
 </script>
 <style lang="less" scoped>
   @import '~el-style/variables';
 
+  @height: 5px;
+
   .el-loader {
     position: relative;
     top: 0px;
     left: 0px;
-    height: 5px;
+    height: @height;
     width: 100%;
     margin: auto;
+    overflow: hidden;
 
     &__loader {
       position: absolute;
       top: 0px;
       left: 0px;
       width: 100%;
-      height: 100%;
-    }
+      height: @height;
 
-    &--color {
-      fill: @color-primary-4;
+      animation-name: el-loader__animation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      /* Safari 4.0 - 8.0 */
+      -webkit-animation-name: el-loader__animation;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 0px;
+        left: -20%;
+        width: 20%;
+        height: @height;
+        background-color: @color-primary-4;
+      }
     }
   }
+
+  @keyframes el-loader__animation {
+    0% { transform: translateX(0%); }
+    50% { transform: translateX(120%); }
+    100% { transform: translateX(0%); }
+  }
+
+  @-webkit-keyframes el-loader__animation {
+    0% { transform: translateX(0%); }
+    50% { transform: translateX(120%); }
+    100% { transform: translateX(0%); }
+  }
+
 </style>
