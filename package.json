@@ -52,6 +52,7 @@
     "highlight.js": "^9.15.8",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "vue-router": "^3.0.7",
     "vue-template-compiler": "^2.5.21"
   }
 }
