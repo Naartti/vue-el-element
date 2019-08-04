@@ -2,15 +2,26 @@
 <div class="el-element-docs">
   <h2>Usage</h2>
   <el-tab @change="reRender">
-    <el-tab-item title="Large">
-      <el-image stretch
+    <el-tab-item title="Default">
+      <el-image
         src="static/Mountains--wide.png"
+        alt="Snowy mountains"
         />
-      <br><pre><code class="hljs html">{{code.large}}</code></pre>
+      <br><pre><code class="hljs html">{{code.default}}</code></pre>
     </el-tab-item>
-    <el-tab-item title="Narrow & blur">
+    <el-tab-item title="Limit height">
+      <el-image
+        src="static/Mountains--wide.png"
+        alt="Snowy mountains"
+        max-height="200"
+        />
+      <br><pre><code class="hljs html">{{code.height}}</code></pre>
+    </el-tab-item>
+    <el-tab-item title="Blur background">
       <el-image blur
         src="static/Mountains--narrow.png"
+        alt="Snowy mountains"
+        max-height="200"
         />
       <br><pre><code class="hljs html">{{code.narrow}}</code></pre>
     </el-tab-item>
@@ -41,8 +52,8 @@
     <el-image
       circle
       inset-shadow
-      small
       margin-right
+      max-height="100"
       src="static/profile.png"
       />
     <div>
@@ -60,21 +71,24 @@ export default {
   data () {
     return {
       code: {
-        large: `<el-image
-  large
-  stretch
-  src="static/Mountains--wide.png"
+        default: `<el-image
+  src="static/Mountains.png"
+  />`,
+        height: `<el-image
+  max-height="200"
+  src="static/Mountains.png"
   />`,
         narrow: `<el-image
   blur
-  src="static/Mountains--narrow.png"
+  src="static/Mountains.png"
   />`,
         demo: `<el-inline nowrap>
   <el-image
     circle
     inset-shadow
-    small
     margin-right
+    max-height="100"
+    alt="Profile picture of Mattias"
     src="static/profile.png"
     />
 
@@ -88,6 +102,18 @@ export default {
 </el-inline>`
       },
       props: [{
+        prop: 'src',
+        type: 'String',
+        default: '"'
+      }, {
+        prop: 'caption',
+        type: 'String',
+        default: '"'
+      }, {
+        prop: 'alt',
+        type: 'String',
+        default: '"'
+      }, {
         prop: 'stretch',
         type: 'Boolean',
         default: 'true'
@@ -98,7 +124,7 @@ export default {
       }, {
         prop: 'max-height',
         type: 'String',
-        default: '400px'
+        default: 'auto'
       }, {
         prop: 'circle',
         type: 'Boolean',
@@ -107,14 +133,6 @@ export default {
         prop: 'inset-shadow',
         type: 'Boolean',
         default: 'false'
-      }, {
-        prop: 'caption',
-        type: 'String',
-        default: '"'
-      }, {
-        prop: 'alt',
-        type: 'String',
-        default: '"'
       }]
     }
   },
