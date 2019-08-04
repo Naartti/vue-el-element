@@ -93,15 +93,15 @@ export default {
     }
 
     &--warning {
-      color: @color-danger-dark;
-      border-color: @color-danger-dark;
-      background-color: @color-danger-light;
+      color: @color-danger-7;
+      border-color: @color-danger-7;
+      background-color: @color-danger-1;
     }
 
     &--success {
-      color: @color-success-dark;
-      border-color: @color-success-dark;
-      background-color: @color-success-light;
+      color: @color-success-7;
+      border-color: @color-success-7;
+      background-color: @color-success-1;
     }
   }
 </style>

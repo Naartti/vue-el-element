@@ -139,7 +139,7 @@ export default {
     left: 0;
     height: 20px;
     width: 20px;
-    border: 1px solid @color-grey-medium;
+    border: 1px solid @color-grey-5;
     border-radius: 2px;
   }
 
@@ -172,7 +172,7 @@ export default {
     top: 4px;
     width: 5px;
     height: 10px;
-    border: solid #ffffff;
+    border: solid @color-background;
     border-width: 0 3px 3px 0;
     border-radius: 1px;
     -webkit-transform: rotate(45deg);

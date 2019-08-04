@@ -40,14 +40,14 @@ export default {
       width: 100%;
       height: 1px;
       top: 35px;
-      background-color: @color-grey-light;
+      background-color: @color-grey-2;
 
       &--short {
         top: 10px;
       }
 
       &--dark {
-        background-color: @color-grey-dark;
+        background-color: @color-grey-5;
       }
     }
   }

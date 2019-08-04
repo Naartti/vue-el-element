@@ -100,11 +100,11 @@ export default {
         position: fixed;
         top: auto;
         top: 0px;
-        background-color: @background-color;
+        background-color: @color-background;
       }
 
       &--border {
-        border-bottom: 1px solid @color-grey-light;
+        border-bottom: 1px solid @color-grey-2;
       }
 
       &--shadow {

@@ -89,7 +89,7 @@ export default {
     &--primary {
       background-color: @color-button-primary;
       border: 1px solid @color-button-primary;
-      color: #ffffff;
+      color: @color-font-light;
 
       &:hover {
         background-color: @color-button-primary-hover;
@@ -128,13 +128,13 @@ export default {
     &--disabled {
       background-color: @color-disable-dark;
       border: 1px solid @color-disable-dark;
-      color: #ffffff;
+      color: @color-font-light;
     }
 
     &--danger {
       background-color: @color-button-danger;
       border: 1px solid @color-button-danger;
-      color: #ffffff;
+      color: @color-font-light;
 
       &:hover {
         background-color: @color-button-danger-hover;

@@ -113,7 +113,7 @@ export default {
       height: 100%;
       width: 1px;
       z-index: -1;
-      background-color: @color-grey-light;
+      background-color: @color-grey-2;
     }
 
     &__icon {
@@ -148,7 +148,7 @@ export default {
       }
 
       &__line {
-        background-color: @color-grey-super-dark;
+        background-color: @color-grey-7;
         height: 2px;
         width: 12px;
         border-radius: 1px;

@@ -110,7 +110,7 @@ export default {
         left: 0px;
         width: 100%;
         height: 2px;
-        background-color: @color-grey-light;
+        background-color: @color-grey-2;
         z-index: -1;
       }
     }
@@ -120,14 +120,14 @@ export default {
       display: inline-block;
       cursor: pointer;
       box-sizing: border-box;
-      border-bottom: 2px solid @color-grey-light;
+      border-bottom: 2px solid @color-grey-2;
       z-index: 2;
-      color: @color-grey-medium;
+      color: @color-grey-5;
       margin-right: 30px;
 
       &--active {
         color: @color-font-dark;
-        border-bottom: 2px solid @color-grey-dark;
+        border-bottom: 2px solid @color-grey-5;
         z-index: 2;
       }
     }

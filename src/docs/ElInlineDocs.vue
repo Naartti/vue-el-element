@@ -86,7 +86,7 @@ export default {
   .block {
     height: @button-height;
     border-radius: @radius-small;
-    background-color: @color-grey-medium;
+    background-color: @color-grey-5;
     width: 100px;
 
     &--margin {

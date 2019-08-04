@@ -1,51 +1,24 @@
-@background-color: #222222;
+@import "./colors.less";
+
+@color-background: #222222;
 
 // Color
-@color-brand: #43B8A9;
-@color-accent: #5B9BD1;
-@color-backdrop: #111;
-
-// 7 shades of blue
-@color-accent-1: #EEF3FA;
-@color-accent-2: #D3E7F5;
-@color-accent-3: #A2CEEB;
-@color-accent-4: #439CD6;
-@color-accent-5: #007BBC;
-@color-accent-6: #005187;
-@color-accent-7: #38434D;
-
-@color-grey-super-dark: #cacaca;
-@color-grey-dark: #757575;
-@color-grey-medium: #757575;
-@color-grey-light: #373737;
-@color-grey-super-light: #222;
+@color-backdrop: #111111;
 
 // State color
-@color-disable-light: @color-grey-light;
-@color-disable-dark: @color-grey-medium;
-@color-danger-dark: #FBBEBE;
-@color-danger-medium: #E98C8D;
-@color-danger-light: #B84E43;
-@color-warning-dark: #FEECCE;
-@color-warning-medium: #FFC872;
-@color-warning-light: #805512;
-@color-success-dark: #DFF0D8;
-@color-success-medium: #43B8A9;
-@color-success-light: #42A293;
-@color-info-dark: #EFF3F8;
-@color-info-medium: #5B9BD1;
-@color-info-light: #3B434C;
+@color-disable-light: @color-grey-2;
+@color-disable-dark: @color-grey-5;
 
 // Element colors
 @color-font-light: #373737;
 @color-font-dark: #c8c8c8;
-@color-button-primary: @color-accent;
-@color-button-primary-hover: #337AB7;
-@color-button-secondary: @color-accent;
-@color-button-secondary-hover: #337AB7;
-@color-button-danger: @color-danger-medium;
-@color-button-danger-hover: @color-danger-dark;
-@color-button-link: #337AB7;
+@color-button-primary: @color-primary-4;
+@color-button-primary-hover: @color-primary-5;
+@color-button-secondary: @color-primary-4;
+@color-button-secondary-hover: @color-primary-5;
+@color-button-danger: @color-danger-4;
+@color-button-danger-hover: @color-danger-7;
+@color-button-link: @color-primary-5;
 
 
 // Util
@@ -80,7 +53,7 @@
 
 // Highlights
 @highlight-background-color: #F9F9F9;
-@highlight-border: 1px solid @color-grey-light;
+@highlight-border: 1px solid @color-grey-2;
 @highlight-shadow: @shadow;
 
 // Design elements
@@ -104,9 +77,9 @@
 
 // Input
 @input-height: 30px;
-@input-background: @color-grey-super-light;
-@input-border: 1px solid @color-grey-medium;
-@input-border-focus: 1px solid @color-grey-dark;
+@input-background: @color-grey-1;
+@input-border: 1px solid @color-grey-5;
+@input-border-focus: 1px solid @color-grey-5;
 @input-padding: 10px;
 @input-radius: @radius-small;
 

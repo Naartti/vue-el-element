@@ -4,12 +4,12 @@
   <el-inline>
     <div class="color-card">
       <div class="color-preview color-brand" />
-      <p>@color-brand</p>
+      <p>@color-primary-4</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-accent" />
-      <p>@color-accent</p>
+      <p>@color-secondary-4</p>
     </div>
 
     <div class="color-card">
@@ -22,27 +22,27 @@
   <el-inline>
     <div class="color-card">
       <div class="color-preview color-grey-super-light" />
-      <p>@color-grey-super-light</p>
+      <p>@color-grey-1</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-grey-light" />
-      <p>@color-grey-light</p>
+      <p>@color-grey-2</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-grey-medium" />
-      <p>@color-grey-medium</p>
+      <p>@color-grey-5</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-grey-dark" />
-      <p>@color-grey-dark</p>
+      <p>@color-grey-5</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-grey-super-dark" />
-      <p>@color-grey-super-dark</p>
+      <p>@color-grey-7</p>
     </div>
   </el-inline>
 
@@ -50,65 +50,65 @@
   <el-inline>
     <div class="color-card">
       <div class="color-preview color-danger-light" />
-      <p>@color-danger-light</p>
+      <p>@color-danger-1</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-danger-medium" />
-      <p>@color-danger-medium</p>
+      <p>@color-danger-4</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-danger-dark" />
-      <p>@color-danger-dark</p>
+      <p>@color-danger-7</p>
     </div>
   </el-inline>
   <el-inline :marginTop="true">
     <div class="color-card">
       <div class="color-preview color-warning-light" />
-      <p>@color-warning-light</p>
+      <p>@color-warning-1</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-warning-medium" />
-      <p>@color-warning-medium</p>
+      <p>@color-warning-4</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-warning-dark" />
-      <p>@color-warning-dark</p>
+      <p>@color-warning-7</p>
     </div>
   </el-inline>
   <el-inline :marginTop="true">
     <div class="color-card">
       <div class="color-preview color-info-light" />
-      <p>@color-info-light</p>
+      <p>@color-info-1</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-info-medium" />
-      <p>@color-info-medium</p>
+      <p>@color-info-4</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-info-dark" />
-      <p>@color-info-dark</p>
+      <p>@color-info-7</p>
     </div>
   </el-inline>
   <el-inline :marginTop="true">
     <div class="color-card">
       <div class="color-preview color-success-light" />
-      <p>@color-success-light</p>
+      <p>@color-success-1</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-success-medium" />
-      <p>@color-success-medium</p>
+      <p>@color-success-4</p>
     </div>
 
     <div class="color-card">
       <div class="color-preview color-success-dark" />
-      <p>@color-success-dark</p>
+      <p>@color-success-7</p>
     </div>
   </el-inline>
 </div>
@@ -152,11 +152,11 @@ export default {
   }
 
   .color-brand {
-    background-color: @color-brand;
+    background-color: @color-primary-4;
   }
 
   .color-accent {
-    background-color: @color-accent;
+    background-color: @color-secondary-4;
   }
 
   .color-backdrop {
@@ -164,71 +164,71 @@ export default {
   }
 
   .color-grey-super-light {
-    background-color: @color-grey-super-light;
+    background-color: @color-grey-1;
   }
 
   .color-grey-light {
-    background-color: @color-grey-light;
+    background-color: @color-grey-2;
   }
 
   .color-grey-medium {
-    background-color: @color-grey-medium;
+    background-color: @color-grey-5;
   }
 
   .color-grey-dark {
-    background-color: @color-grey-dark;
+    background-color: @color-grey-5;
   }
 
   .color-grey-super-dark {
-    background-color: @color-grey-super-dark;
+    background-color: @color-grey-7;
   }
 
   .color-danger-dark {
-    background-color: @color-danger-dark;
+    background-color: @color-danger-7;
   }
 
   .color-danger-medium {
-    background-color: @color-danger-medium;
+    background-color: @color-danger-4;
   }
 
   .color-danger-light {
-    background-color: @color-danger-light;
+    background-color: @color-danger-1;
   }
 
   .color-warning-dark {
-    background-color: @color-warning-dark;
+    background-color: @color-warning-7;
   }
 
   .color-warning-medium {
-    background-color: @color-warning-medium;
+    background-color: @color-warning-4;
   }
 
   .color-warning-light {
-    background-color: @color-warning-light;
+    background-color: @color-warning-1;
   }
 
   .color-info-dark {
-    background-color: @color-info-dark;
+    background-color: @color-info-7;
   }
 
   .color-info-medium {
-    background-color: @color-info-medium;
+    background-color: @color-info-4;
   }
 
   .color-info-light {
-    background-color: @color-info-light;
+    background-color: @color-info-1;
   }
 
   .color-success-dark {
-    background-color: @color-success-dark;
+    background-color: @color-success-7;
   }
 
   .color-success-medium {
-    background-color: @color-success-medium;
+    background-color: @color-success-4;
   }
 
   .color-success-light {
-    background-color: @color-success-light;
+    background-color: @color-success-1;
   }
 
 </style>

@@ -78,7 +78,7 @@ export default {
     min-width: @element-min-width;
     height: auto;
     margin-top: @top-margin-element;
-    background-color: @color-grey-super-light;
+    background-color: @color-grey-1;
     padding: 10px 15px;
     font-size: @font-size-small;
     border-radius: @radius-small;
@@ -97,27 +97,27 @@ export default {
     }
 
     &--warning {
-      background-color: @color-warning-light;
-      border-left: 10px solid @color-warning-medium;
-      color: @color-warning-dark;
+      background-color: @color-warning-1;
+      border-left: 10px solid @color-warning-4;
+      color: @color-warning-7;
     }
 
     &--success {
-      background-color: @color-success-light;
-      border-left: 10px solid @color-success-medium;
-      color: @color-success-dark;
+      background-color: @color-success-1;
+      border-left: 10px solid @color-success-4;
+      color: @color-success-7;
     }
 
     &--info {
-      background-color: @color-info-light;
-      border-left: 10px solid @color-info-medium;
-      color: @color-info-dark;
+      background-color: @color-info-1;
+      border-left: 10px solid @color-info-4;
+      color: @color-info-7;
     }
 
     &--danger {
-      background-color: @color-danger-light;
-      border-left: 10px solid @color-danger-medium;
-      color: @color-danger-dark;
+      background-color: @color-danger-1;
+      border-left: 10px solid @color-danger-4;
+      color: @color-danger-7;
     }
 
     &__icon {

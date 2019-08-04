@@ -43,7 +43,7 @@ export default {}
 <style lang="less">
   @import '~el-style/variables.less';
 
-  @highlight-color: @color-danger-medium;
+  @highlight-color: @color-danger-4;
 
   .spacing-guide {
     &__line {

@@ -30,7 +30,7 @@ export default {
     height: auto;
     min-height: 30px;
     margin-top: 10px;
-    background-color: #ffffff;
+    background-color: @color-background;
     padding: 15px 10px;
     box-shadow: @shadow;
   }

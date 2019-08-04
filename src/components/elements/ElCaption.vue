@@ -57,11 +57,11 @@ export default {
     font-style: italic;
 
     &--light {
-      color: #ffffff;
+      color: @color-font-light;
     }
 
     &--danger {
-      color: @color-danger-dark;
+      color: @color-danger-7;
     }
 
     &--clickable {

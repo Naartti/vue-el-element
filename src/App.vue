@@ -182,7 +182,7 @@ export default {
 
  #app, body {
    display: relative;
-   background-color: @background-color;
+   background-color: @color-background;
  }
 
  .el-element-docs {

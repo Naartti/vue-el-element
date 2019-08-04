@@ -254,9 +254,9 @@ export default {
         &__filter {
           display: flex;
           margin: 2px 2px;
-          border: 1px solid @color-info-medium;
-          background-color: @color-info-light;
-          color: @color-info-dark;
+          border: 1px solid @color-info-3;
+          background-color: @color-info-1;
+          color: @color-info-7;
           cursor: pointer;
           align-items: center;
           padding: 1px 10px;
@@ -265,9 +265,9 @@ export default {
           box-sizing: border-box;
 
           &:hover {
-            color: @color-danger-dark;
-            border-color: @color-danger-dark;
-            background-color: @color-danger-light;
+            color: @color-danger-7;
+            border-color: @color-danger-7;
+            background-color: @color-danger-1;
             text-decoration: line-through;
           }
         }
@@ -315,11 +315,11 @@ export default {
         padding: 2px 10px;
 
         &:hover {
-          background-color: @color-grey-light;
+          background-color: @color-grey-2;
         }
 
         &--active {
-          background-color: @color-grey-light;
+          background-color: @color-grey-2;
         }
       }
     }

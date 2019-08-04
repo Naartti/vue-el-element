@@ -119,7 +119,7 @@ export default {
     }
 
     &--color {
-      fill: @color-brand;
+      fill: @color-primary-4;
     }
   }
 </style>

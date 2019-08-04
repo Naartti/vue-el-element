@@ -80,14 +80,14 @@ export default {
       left: 0px;
       margin: none;
       margin-left: 0px;
-      background-color: @color-disable-light;
+      background-color: @color-grey-2;
       border-radius: 15px;
       box-sizing: border-box;
       cursor: pointer;
       box-shadow: inset @shadow;
 
       &--active {
-        background-color: @color-select;
+        background-color: @color-primary-4;
         box-shadow: none;
       }
     }
@@ -98,13 +98,16 @@ export default {
       left: 3px;
       height: 24px;
       width: 24px;
-      background-color: @background-color;
+      background-color: @color-grey-0;
       border-radius: 50%;
       box-sizing: border-box;
       cursor: pointer;
+      box-shadow: @shadow;
 
       &--active {
         left: 33px;
+        background-color: @color-grey-0;
+        box-shadow: none;
       }
     }
   }

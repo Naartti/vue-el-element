@@ -135,7 +135,7 @@ export default {
     left: 0;
     height: 20px;
     width: 20px;
-    border: 1px solid @color-grey-medium;
+    border: 1px solid @color-grey-5;
     border-radius: 50%;
   }
 

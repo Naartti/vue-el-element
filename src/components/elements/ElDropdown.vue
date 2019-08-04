@@ -110,9 +110,9 @@ export default {
   .el-dropdown-field {
     height: @dropdown-height;
     width: 100%;
-    background-color: @color-grey-super-light;
+    background-color: @color-grey-1;
     border-radius: @radius-small;
-    border: 1px solid @color-grey-medium;
+    border: 1px solid @color-grey-5;
     box-sizing: border-box;
     outline: none;
     cursor: pointer;
@@ -121,7 +121,7 @@ export default {
   }
 
   .el-dropdown-field:focus {
-    border: 1px solid @color-grey-dark;
+    border: 1px solid @color-grey-5;
   }
 
   .el-dropdown-wide {

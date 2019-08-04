@@ -103,8 +103,8 @@ export default {
         position: fixed;
         top: auto;
         bottom: 0px;
-        border-top: 1px solid @color-grey-light;
-        background-color: #ffffff;
+        border-top: 1px solid @color-grey-2;
+        background-color: @color-background;
       }
 
       &--shadow {

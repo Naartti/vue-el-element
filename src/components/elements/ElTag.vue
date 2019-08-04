@@ -43,33 +43,33 @@ export default {
     padding: 0px 15px;
     border-radius: 15px;
     text-align: center;
-    background-color: @color-grey-super-light;
-    border: 1px solid @color-grey-medium;
-    color: @color-grey-dark;
+    background-color: @color-grey-1;
+    border: 1px solid @color-grey-5;
+    color: @color-grey-5;
     box-sizing: border-box;
 
     &--warning {
-      background-color: @color-warning-light;
-      border: 1px solid @color-warning-medium;
-      color: @color-warning-dark;
+      background-color: @color-warning-1;
+      border: 1px solid @color-warning-4;
+      color: @color-warning-7;
     }
 
     &--success {
-      background-color: @color-success-light;
-      border: 1px solid @color-success-medium;
-      color: @color-success-dark;
+      background-color: @color-success-1;
+      border: 1px solid @color-success-4;
+      color: @color-success-7;
     }
 
     &--info {
-      background-color: @color-info-light;
-      border: 1px solid @color-info-medium;
-      color: @color-info-dark;
+      background-color: @color-info-1;
+      border: 1px solid @color-info-4;
+      color: @color-info-7;
     }
 
     &--danger {
-      background-color: @color-danger-light;
-      border: 1px solid @color-danger-medium;
-      color: @color-danger-dark;
+      background-color: @color-danger-1;
+      border: 1px solid @color-danger-4;
+      color: @color-danger-7;
     }
   }
 </style>

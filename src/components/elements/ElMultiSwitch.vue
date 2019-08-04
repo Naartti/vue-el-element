@@ -101,7 +101,7 @@ export default {
   .el-multi-switch {
     display: flex;
     border-radius: @button-radius;
-    background-color: @color-grey-light;
+    background-color: @color-grey-1;
     box-shadow: inset @shadow;
     box-sizing: border-box;
     position: relative;
@@ -136,7 +136,7 @@ export default {
       width: 100%;
       height: 100%;
       text-align: center;
-      color: @color-disable-dark;
+      color: @color-grey-5;
       cursor: pointer;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -145,7 +145,7 @@ export default {
       box-sizing: border-box;
 
       &--active {
-        color: #ffffff;
+        color: @color-font-light;
       }
     }
   }

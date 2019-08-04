@@ -207,7 +207,7 @@ export default {
 
       @media (max-width: @narrow-width) {
         position: fixed;
-        background-color: @background-color;
+        background-color: @color-background;
         box-shadow: @shadow;
         box-sizing: border-box;
         margin-left: 0px;
@@ -260,7 +260,7 @@ export default {
             height: 100%;
             border-radius: 3px 0px 0px 3px;
             content: " ";
-            background-color: @color-accent-3;
+            background-color: @color-secondary-4;
           }
 
           &:hover {
@@ -277,7 +277,7 @@ export default {
         }
 
         &__section {
-          border-bottom: 1px solid @color-grey-light;
+          border-bottom: 1px solid @color-grey-2;
           margin-top: @top-margin-header;
           font-size: @font-size-medium;
         }
@@ -308,7 +308,7 @@ export default {
 
       &__background {
         position: absolute;
-        background-color: @background-color;
+        background-color: @color-background;
         opacity: 0.9;
         height: 100%;
         width: 100%;
