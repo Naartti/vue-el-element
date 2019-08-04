@@ -117,6 +117,7 @@ export default {
     outline: none;
     cursor: pointer;
     padding-left: 10px;
+    color: @color-font-dark;
   }
 
   .el-dropdown-field:focus {

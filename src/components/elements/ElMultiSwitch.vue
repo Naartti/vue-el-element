@@ -101,7 +101,7 @@ export default {
   .el-multi-switch {
     display: flex;
     border-radius: @button-radius;
-    background-color: #ffffff;
+    background-color: @color-grey-light;
     box-shadow: inset @shadow;
     box-sizing: border-box;
     position: relative;

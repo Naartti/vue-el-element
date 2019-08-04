@@ -80,7 +80,7 @@ export default {
     height: auto;
     font-size: @font-size-medium;
     text-align: left;
-    color: @color-grey-super-dark;
+    color: @color-font-dark;
 
     &__icon {
       display: inline-block;

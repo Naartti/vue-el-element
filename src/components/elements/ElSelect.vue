@@ -281,6 +281,8 @@ export default {
           height: @input-height;
           box-sizing: border-box;
           background-color: @input-background;
+          color: @color-font-dark;
+          caret-color: @color-font-dark;
         }
       }
 

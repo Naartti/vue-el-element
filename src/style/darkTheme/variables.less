@@ -1,9 +1,9 @@
-@background-color: #ffffff;
+@background-color: #222222;
 
 // Color
 @color-brand: #43B8A9;
 @color-accent: #5B9BD1;
-@color-backdrop: #576067;
+@color-backdrop: #111;
 
 // 7 shades of blue
 @color-accent-1: #EEF3FA;
@@ -14,31 +14,31 @@
 @color-accent-6: #005187;
 @color-accent-7: #38434D;
 
-@color-grey-super-dark: #373737;
+@color-grey-super-dark: #cacaca;
 @color-grey-dark: #757575;
-@color-grey-medium: #c8c8c8;
-@color-grey-light: #eeeeee;
-@color-grey-super-light: #f9f9f9;
+@color-grey-medium: #757575;
+@color-grey-light: #373737;
+@color-grey-super-light: #222;
 
 // State color
 @color-disable-light: @color-grey-light;
 @color-disable-dark: @color-grey-medium;
-@color-danger-light: #FBBEBE;
+@color-danger-dark: #FBBEBE;
 @color-danger-medium: #E98C8D;
-@color-danger-dark: #B84E43;
-@color-warning-light: #FEECCE;
+@color-danger-light: #B84E43;
+@color-warning-dark: #FEECCE;
 @color-warning-medium: #FFC872;
-@color-warning-dark: #805512;
-@color-success-light: #DFF0D8;
+@color-warning-light: #805512;
+@color-success-dark: #DFF0D8;
 @color-success-medium: #43B8A9;
-@color-success-dark: #42A293;
-@color-info-light: #EFF3F8;
+@color-success-light: #42A293;
+@color-info-dark: #EFF3F8;
 @color-info-medium: #5B9BD1;
-@color-info-dark: #3B434C;
+@color-info-light: #3B434C;
 
 // Element colors
-@color-font-light: #ffffff;
-@color-font-dark: #222222;
+@color-font-light: #373737;
+@color-font-dark: #c8c8c8;
 @color-button-primary: @color-accent;
 @color-button-primary-hover: #337AB7;
 @color-button-secondary: @color-accent;
@@ -191,6 +191,8 @@
 
 // Default style elements
 .el-element-font {
+  color: @color-font-dark;
+
   div {
     font-family: @font-family;
   }

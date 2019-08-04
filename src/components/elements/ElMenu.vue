@@ -38,7 +38,9 @@
     >
 
     <!-- Empty dummy title for menu alignment with content -->
-    <h1 v-if="title === true">&nbsp;</h1>
+    <h1 v-if="title === true && !menuIsOpen">
+      &nbsp;
+    </h1>
 
     <div v-for="(item, index) in items"
       class="el-menu__context-panel__item el-animation"
@@ -71,7 +73,14 @@
     >
     <div class="el-menu__button__background" />
     <span>
-      <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-19.000000, -25.000000)" fill="#222222"><path d="M20,25 L33,25 C33.5522847,25 34,25.4477153 34,26 C34,26.5522847 33.5522847,27 33,27 L20,27 C19.4477153,27 19,26.5522847 19,26 C19,25.4477153 19.4477153,25 20,25 Z M20,37 L33,37 C33.5522847,37 34,37.4477153 34,38 C34,38.5522847 33.5522847,39 33,39 L20,39 C19.4477153,39 19,38.5522847 19,38 C19,37.4477153 19.4477153,37 20,37 Z M20,31 L33,31 C33.5522847,31 34,31.4477153 34,32 C34,32.5522847 33.5522847,33 33,33 L20,33 C19.4477153,33 19,32.5522847 19,32 C19,31.4477153 19.4477153,31 20,31 Z"></path></g></g></svg>
+      <svg width="15px" height="14px" viewBox="0 0 15 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g
+          transform="translate(-19.000000, -25.000000)"
+          class="el-menu__button__icon"
+          >
+          <path d="M20,25 L33,25 C33.5522847,25 34,25.4477153 34,26 C34,26.5522847 33.5522847,27 33,27 L20,27 C19.4477153,27 19,26.5522847 19,26 C19,25.4477153 19.4477153,25 20,25 Z M20,37 L33,37 C33.5522847,37 34,37.4477153 34,38 C34,38.5522847 33.5522847,39 33,39 L20,39 C19.4477153,39 19,38.5522847 19,38 C19,37.4477153 19.4477153,37 20,37 Z M20,31 L33,31 C33.5522847,31 34,31.4477153 34,32 C34,32.5522847 33.5522847,33 33,33 L20,33 C19.4477153,33 19,32.5522847 19,32 C19,31.4477153 19.4477153,31 20,31 Z"></path></g></g>
+      </svg>
     </span>
   </div>
 
@@ -198,7 +207,7 @@ export default {
 
       @media (max-width: @narrow-width) {
         position: fixed;
-        background-color: #ffffff;
+        background-color: @background-color;
         box-shadow: @shadow;
         box-sizing: border-box;
         margin-left: 0px;
@@ -299,7 +308,7 @@ export default {
 
       &__background {
         position: absolute;
-        background-color: #ffffff;
+        background-color: @background-color;
         opacity: 0.9;
         height: 100%;
         width: 100%;
@@ -308,6 +317,10 @@ export default {
         z-index: -1;
         border-radius: 3px;
         cursor: pointer;
+      }
+
+      &__icon {
+        fill: @color-font-dark;
       }
     }
 

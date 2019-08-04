@@ -305,7 +305,7 @@ export default {
       height: auto;
       text-align: left;
       z-index: 2;
-      background-color: #fff;
+      background-color: @background-color;
       border-radius: @radius-small;
       box-shadow: @shadow-wide;
       overflow-y: scroll;
@@ -361,7 +361,7 @@ export default {
           right: 0px;
           margin: auto;
           border-top: 1px solid @color-grey-light;
-          background-color: #ffffff;
+          background-color: @background-color;
           padding: @top-margin-element 30px;
 
           @media (max-width: @section-content-max-width) {

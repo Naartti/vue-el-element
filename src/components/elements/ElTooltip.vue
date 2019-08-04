@@ -108,9 +108,9 @@ export default {
     left: auto;
     height: auto;
     width: auto;
-    background-color: #222222;
+    background-color: @color-grey-super-dark;
     box-shadow: @shadow;
-    color: #ffffff;
+    color: @color-font-light;
     z-index: 3;
     font-size: 12px;
     padding: 5px 10px;
@@ -128,7 +128,7 @@ export default {
       margin-left: -10px;
       border-width: 10px;
       border-style: solid;
-      border-color: #222222 transparent transparent transparent;
+      border-color: @color-grey-super-dark transparent transparent transparent;
     }
   }
 </style>

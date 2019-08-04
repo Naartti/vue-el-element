@@ -98,7 +98,7 @@ export default {
       left: 3px;
       height: 24px;
       width: 24px;
-      background-color: #ffffff;
+      background-color: @background-color;
       border-radius: 50%;
       box-sizing: border-box;
       cursor: pointer;
