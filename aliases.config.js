@@ -5,7 +5,7 @@ function resolveSrc (_path) {
 
 const aliases = {
   '@': 'src',
-  'el-style': 'src/style/darkTheme',
+  'el-style': 'src/style',
   'script': 'src/script',
   'elements': 'src/components/elements',
   'showCase': 'src/components/showCase',

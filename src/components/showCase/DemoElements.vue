@@ -118,6 +118,44 @@
   </el-column>
   <el-delimiter />
 
+  <!-- el-input -->
+  <el-column margin-top>
+    <el-column-item>
+      <el-header>el-input</el-header>
+
+      <el-input placeholder="..." />
+    </el-column-item>
+    <el-column-item width="60">
+      <el-sticky-header>
+        <el-button secondary link
+          @click="route('el-input')"
+          >
+          <span v-html="linkIcon" />
+        </el-button>
+      </el-sticky-header>
+    </el-column-item>
+  </el-column>
+  <el-delimiter />
+
+  <!-- el-textarea -->
+  <el-column margin-top>
+    <el-column-item>
+      <el-header>el-textarea</el-header>
+
+      <el-textarea />
+    </el-column-item>
+    <el-column-item width="60">
+      <el-sticky-header>
+        <el-button secondary link
+          @click="route('el-textarea')"
+          >
+          <span v-html="linkIcon" />
+        </el-button>
+      </el-sticky-header>
+    </el-column-item>
+  </el-column>
+  <el-delimiter />
+
   <!-- el-checkbox -->
   <el-column margin-top>
     <el-column-item>

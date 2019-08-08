@@ -112,7 +112,7 @@ export default {
     width: 100%;
     background-color: @color-grey-1;
     border-radius: @radius-small;
-    border: 1px solid @color-grey-5;
+    border: 1px solid @color-grey-3;
     box-sizing: border-box;
     outline: none;
     cursor: pointer;

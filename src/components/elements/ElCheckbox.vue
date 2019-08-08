@@ -46,6 +46,7 @@ checkboxOptions: [{
 
     <input
       type="checkbox"
+      class="el-checkbox__input"
 
       :id="index"
       :value="item.value"
@@ -142,6 +143,11 @@ export default {
     border: 1px solid @color-grey-5;
     border-radius: 2px;
   }
+
+  // Highlight on focus
+  // .el-checkbox__input:focus ~ .el-checkbox-checkmark {
+  //   border: 1px solid @color-button-primary;
+  // }
 
   /* On mouse-over, add a grey background color */
   .el-checkbox-item:hover input ~ .el-checkbox-checkmark {
