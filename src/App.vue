@@ -1,7 +1,7 @@
 <template>
 <div id="app" class="el-element-font">
 <el-menu
-  :title="true"
+  title
   center-content
   center
   v-model="menuItemIndex"
@@ -9,6 +9,7 @@
   ref="elMenu"
   @input="setRoute"
   >
+
   <el-menu-item title="Get started">
     <get-started />
   </el-menu-item>
@@ -50,6 +51,9 @@
   </el-menu-item>
   <el-menu-item title="el-image">
     <el-image-docs />
+  </el-menu-item>
+  <el-menu-item title="el-uploader">
+    <el-uploader-docs />
   </el-menu-item>
   <el-menu-item title="el-dropdown">
     <el-dropdown-docs />
@@ -110,10 +114,11 @@ import ElHeaderDocs from 'docs/ElHeaderDocs.vue'
 import ElMenuDocs from 'docs/ElMenuDocs.vue'
 import ElInlineDocs from 'docs/ElInlineDocs.vue'
 import ElCollapseHeaderDocs from 'docs/ElCollapseHeaderDocs.vue'
+import ElUploaderDocs from 'docs/ElUploaderDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs },
+  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs, ElUploaderDocs },
   data () {
     return {
       someString: '',

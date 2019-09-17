@@ -38,6 +38,7 @@ import ElImage from 'elements/ElImage.vue'
 // Input
 import ElInput from 'elements/ElInput.vue'
 import ElTextarea from 'elements/ElTextarea.vue'
+import ElUploader from 'elements/ElUploader.vue'
 
 // Smart wrappers
 import ElStickyFooter from 'elements/ElStickyFooter.vue'
@@ -74,7 +75,8 @@ export {
   ElCaption,
   ElInfo,
   ElSelect,
-  ElImage
+  ElImage,
+  ElUploader
 }
 export default {
   ElButton,
@@ -106,5 +108,6 @@ export default {
   ElCaption,
   ElInfo,
   ElSelect,
-  ElImage
+  ElImage,
+  ElUploader
 }
