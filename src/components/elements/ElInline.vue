@@ -5,6 +5,7 @@
     'el-inline--center': center,
     'el-inline--nowrap': !wrap || nowrap,
     'el-inline--stretch': stretch,
+    'el-inline--tight': tight,
     'el-inline--space-between': spaceBetween,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
@@ -43,7 +44,8 @@ export default {
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
-    marginLeft: Boolean
+    marginLeft: Boolean,
+    tight: Boolean
   },
   methods: {
     click () {
@@ -78,6 +80,10 @@ export default {
 
     &--stretch {
       width: 100%;
+    }
+
+    &--tight {
+      min-height: 0px;
     }
 
     &--space-between {

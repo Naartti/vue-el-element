@@ -22,7 +22,7 @@
     </span>
   </div>
 
-  <el-inline>
+  <el-inline tight>
     <div
       v-if="trend !== ''"
       class="el-kpi__trend"
@@ -107,7 +107,7 @@ export default {
     }
 
     &__caption {
-      font-size: @font-size-small;
+      font-size: @font-size-x-small;
       color: @color-grey-6;
       font-style: italic;
 
