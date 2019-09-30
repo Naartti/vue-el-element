@@ -12,7 +12,9 @@
     'el-margin--left': marginLeft,
     'el-margin--bottom': marginBottom
   }"
-  @click="clickInvoker"
+  @click="$emit('click')"
+  @mouseover="$emit('mouseover')"
+  @mouseleave="$emit('mouseleave')"
   >
   <span
     v-if="warning"
