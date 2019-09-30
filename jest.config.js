@@ -13,9 +13,7 @@ module.exports = {
   transformIgnorePatterns: [
     '/node_modules/'
   ],
-  moduleNameMapper: {
-    '^@/(.*)$': '<rootDir>/src/$1'
-  },
+  moduleNameMapper: require('./aliases.config.js').jest,
   snapshotSerializers: [
     'jest-serializer-vue'
   ],

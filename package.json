@@ -29,6 +29,7 @@
     "lint": "vue-cli-service lint",
     "build-bundle": "vue-cli-service build --target lib --name vue-el-element ./src/wrapper.js",
     "test:unit": "vue-cli-service test:unit",
+    "watch": "vue-cli-service test:unit --watch",
     "npm:patch": "npm run lint && npm run build-bundle && npm version patch && npm publish",
     "npm:minor": "npm run lint && npm run build-bundle && npm version minor && npm publish",
     "host": "npm run lint && npm run build && firebase deploy"
