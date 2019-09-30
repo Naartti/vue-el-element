@@ -4,7 +4,11 @@
   :class="{
     'el-info--highlight': highlight === true,
     'el-animation': highlight === true,
-    'el-info--clickable': clickable
+    'el-info--clickable': clickable,
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   @click="$emit('click')"
   @mouseover="$emit('mouseover')"
@@ -18,7 +22,11 @@
 export default {
   name: 'ElInfo',
   props: {
-    highlight: Boolean
+    highlight: Boolean,
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   computed: {
     clickable () {
@@ -36,12 +44,11 @@ export default {
     height: auto;
     min-height: 30px;
     font-size: 12px;
-    line-height: 30px;
     text-align: left;
     margin-top: @top-margin-element;
     color: @color-grey-7;
     background-color: @color-grey-1;
-    padding-left: 10px;
+    padding: 6px 10px;
 
     border: 1px solid @color-grey-2;
     border-radius: @radius-small;
