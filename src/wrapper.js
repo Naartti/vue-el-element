@@ -34,6 +34,7 @@ import ElHeader from 'elements/ElHeader.vue'
 import ElCaption from 'elements/ElCaption.vue'
 import ElInfo from 'elements/ElInfo.vue'
 import ElImage from 'elements/ElImage.vue'
+import ElKpi from 'elements/ElKpi.vue'
 
 // Input
 import ElInput from 'elements/ElInput.vue'
@@ -76,7 +77,8 @@ export {
   ElInfo,
   ElSelect,
   ElImage,
-  ElUploader
+  ElUploader,
+  ElKpi
 }
 export default {
   ElButton,
@@ -109,5 +111,6 @@ export default {
   ElInfo,
   ElSelect,
   ElImage,
-  ElUploader
+  ElUploader,
+  ElKpi
 }
