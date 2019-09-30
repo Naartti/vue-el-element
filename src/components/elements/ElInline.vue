@@ -60,7 +60,6 @@ export default {
   .el-inline {
     position: relative;
     width: auto;
-    min-width: @element-min-width;
     height: auto;
     min-height: 30px;
     display: flex;
