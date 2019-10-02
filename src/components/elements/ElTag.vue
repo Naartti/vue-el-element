@@ -6,6 +6,7 @@
     'el-tag--success': success,
     'el-tag--info': info,
     'el-tag--danger': danger,
+    'el-tag--nowrap': nowrap,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
     'el-margin--left': marginLeft,
@@ -22,6 +23,7 @@ export default {
     danger: Boolean,
     success: Boolean,
     info: Boolean,
+    nowrap: Boolean,
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
@@ -70,6 +72,10 @@ export default {
       background-color: @color-danger-1;
       border: 1px solid @color-danger-4;
       color: @color-danger-7;
+    }
+
+    &--nowrap {
+      white-space: nowrap;
     }
   }
 </style>

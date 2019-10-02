@@ -121,6 +121,10 @@ export default {
         prop: 'info',
         type: 'Boolean',
         default: 'false'
+      }, {
+        prop: 'nowrap',
+        type: 'Boolean',
+        default: 'false'
       }]
     }
   },
