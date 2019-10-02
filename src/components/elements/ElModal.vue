@@ -145,11 +145,6 @@ export default {
           this.observer.disconnect()
         }
       })
-    },
-    isFinishedAnimation () {
-      if (this.isFinishedAnimation) {
-        this.updateBackdropHeight()
-      }
     }
   },
   mounted () {
@@ -166,6 +161,7 @@ export default {
 
       setTimeout(() => {
         this.isFinishedAnimation = true
+        this.updateBackdropHeight()
       }, this.animationDuration)
     }, this.delay)
 
@@ -200,6 +196,7 @@ export default {
     initialize () {
       this.checkHeight()
       this.checkScrollBottom()
+      this.updateBackdropHeight()
     },
     updateScroll () {
       this.checkHeight()
@@ -245,15 +242,21 @@ export default {
       }
     },
     updateBackdropHeight () {
-      if (!this.isVisible || !this.$refs.backdrop || !this.$refs.modalBody) {
+      if (!this.isVisible || !this.$refs.backdrop || !this.$refs.modalBody || !this.isFinishedAnimation) {
         return
       }
 
-      const scrollHeight = this.$el.scrollHeight
-      const { height } = this.$refs.modalBody.getBoundingClientRect()
+      this.isFinishedAnimation = false
 
-      const backdropHeight = scrollHeight > 0 ? `${Math.ceil(scrollHeight)}px` : `${Math.ceil(height)}px`
-      this.$refs.backdrop.style.height = backdropHeight
+      this.$nextTick(() => {
+        const scrollHeight = this.$el.scrollHeight
+        const { height } = this.$refs.modalBody.getBoundingClientRect()
+
+        const backdropHeight = scrollHeight > 0 ? `${Math.ceil(scrollHeight)}px` : `${Math.ceil(height)}px`
+        this.$refs.backdrop.style.height = backdropHeight
+
+        this.isFinishedAnimation = true
+      })
     },
     close () {
       if (!this.isClosable) {
