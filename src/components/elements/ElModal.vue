@@ -12,10 +12,12 @@
       <div
         class="el-modal__backdrop el-animation"
         :class="{
-          'el-modal__backdrop--clickable': isClosable
+          'el-modal__backdrop--clickable': isClosable,
+          'el-modal__backdrop--scrollable': isFinishedAnimation
         }"
         @click="close"
         v-if="isVisible"
+        ref="backdrop"
         />
     </transition>
 
@@ -114,7 +116,9 @@ export default {
   data () {
     return {
       delay: 1,
+      animationDuration: 500,
       isVisible: false,
+      isFinishedAnimation: false,
       closeIcon: svgCodes.close,
       displayOverflow: true,
       centerPosition: true,
@@ -132,7 +136,7 @@ export default {
     isVisible () {
       this.$nextTick(() => {
         if (this.isVisible && this.$refs.modalBody) {
-        // Update modal when slot-content is changing
+          // Update modal when slot-content is changing
           this.observer.observe(
             this.$refs.modalBody,
             { attributes: true, childList: true, characterData: true, subtree: true }
@@ -141,6 +145,11 @@ export default {
           this.observer.disconnect()
         }
       })
+    },
+    isFinishedAnimation () {
+      if (this.isFinishedAnimation) {
+        this.updateBackdropHeight()
+      }
     }
   },
   mounted () {
@@ -154,6 +163,10 @@ export default {
       this.isVisible = true
 
       this.$nextTick(this.initialize)
+
+      setTimeout(() => {
+        this.isFinishedAnimation = true
+      }, this.animationDuration)
     }, this.delay)
 
     if (this.pauseBodyScroll) {
@@ -178,6 +191,7 @@ export default {
 
     window.removeEventListener('resize', this.initialize)
     this.isVisible = false
+    this.isFinishedAnimation = false
   },
   methods: {
     moveToRoot () {
@@ -230,6 +244,17 @@ export default {
         this.$refs.inlineFooterWrapper.style.height = `${footerInnerHeight}px`
       }
     },
+    updateBackdropHeight () {
+      if (!this.isVisible || !this.$refs.backdrop || !this.$refs.modalBody) {
+        return
+      }
+
+      const scrollHeight = this.$el.scrollHeight
+      const { height } = this.$refs.modalBody.getBoundingClientRect()
+
+      const backdropHeight = scrollHeight > 0 ? `${Math.ceil(scrollHeight)}px` : `${Math.ceil(height)}px`
+      this.$refs.backdrop.style.height = backdropHeight
+    },
     close () {
       if (!this.isClosable) {
         return
@@ -237,6 +262,7 @@ export default {
 
       const delay = 300
       this.isVisible = false
+      this.isFinishedAnimation = false
 
       setTimeout(() => {
         this.$emit('close')
@@ -283,7 +309,8 @@ export default {
       display: block;
       top: 0px;
       left: 0px;
-      height: 100%;
+      height: auto;
+      min-height: 100vh;
       width: 100%;
       background-color: @color-backdrop;
       opacity: 0.9;
@@ -292,6 +319,10 @@ export default {
 
       &--clickable {
         cursor: pointer;
+      }
+
+      &--scrollable {
+        position: absolute;
       }
     }
 
