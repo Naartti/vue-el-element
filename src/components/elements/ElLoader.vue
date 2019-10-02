@@ -1,6 +1,5 @@
 <template>
 <div
-  ref="lineLoader"
   class="el-loader"
   :class="{
     'el-margin--right': marginRight,
@@ -33,11 +32,8 @@ export default {
 
   .el-loader {
     position: relative;
-    top: 0px;
-    left: 0px;
     height: @height;
     width: 100%;
-    margin: auto;
     overflow: hidden;
 
     &__loader {
