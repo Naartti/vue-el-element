@@ -31,7 +31,7 @@
   >
   <!-- Menu -->
   <div
-    class="el-menu__context-panel el-momentum-scroll el-animation"
+    class="el-menu__context-panel el-momentum-scroll el-animation el-no-scroll"
     :class="{
       'el-menu__context-panel--closed': !menuIsOpen
     }"
@@ -62,7 +62,7 @@
 
   <!-- Narrow menu -->
   <div
-    class="el-menu__backdrop"
+    class="el-menu__backdrop el-momentum-scroll el-no-scroll"
     v-if="menuIsOpen"
     @click="menuIsOpen = false"
     />
@@ -203,7 +203,8 @@ export default {
       padding-top: 0px;
       padding-bottom: 65px;
       z-index: 4;
-      overflow: scroll;
+      overflow-y: auto;
+      overflow-x: hidden;
 
       @media (max-width: @narrow-width) {
         position: fixed;
