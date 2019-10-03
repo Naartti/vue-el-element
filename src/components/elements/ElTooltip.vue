@@ -124,7 +124,7 @@ export default {
         this.$nextTick(this.checkPosition)
       } else {
         setTimeout(() => {
-          if (this.isHighlighted) {
+          if (this.isHighlighted && !this.isStillHighlighted) {
             this.isStillHighlighted = true
             this.$nextTick(this.checkPosition)
           }
@@ -139,7 +139,7 @@ export default {
       this.isAboveWindow = false
     },
     checkPosition () {
-      if (!this.isHighlighted) {
+      if (!this.isHighlighted && this.isVisible) {
         return
       }
 

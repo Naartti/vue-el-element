@@ -3,7 +3,7 @@
   <h2>Showcase</h2>
   <el-inline>
     <div class="block block--margin">
-      <el-tooltip visible top>
+      <el-tooltip visible>
         Top
       </el-tooltip>
     </div>
