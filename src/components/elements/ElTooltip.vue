@@ -1,14 +1,14 @@
 <template>
 <div
+  v-show="isVisible"
   class="el-tooltip"
-  v-show="isHighlighted && isStillHighlighted"
+  :class="{
+    'el-tooltip--bottom': isBottom,
+    'el-tooltip--top': isTop,
+    'el-tooltip--left': isLeft,
+    'el-tooltip--right': isRight
+  }"
   >
-
-  <span
-    v-if="content !== ''"
-    v-html="content"
-    />
-
   <slot />
 </div>
 </template>
@@ -17,34 +17,95 @@
 export default {
   name: 'ElTooltip',
   props: {
-    content: {
-      type: String,
-      default: ''
-    },
-    delay: {
-      type: Boolean,
-      default: false
+    visible: Boolean,
+    bottom: Boolean,
+    top: Boolean,
+    left: Boolean,
+    right: Boolean,
+    delay: Boolean,
+    delayDuration: {
+      type: Number,
+      default: 400
     }
   },
   data () {
     return {
+      isAboveWindow: false,
+      isRightOfWindow: false,
+      isLeftOfWindow: false,
       isHighlighted: false,
-      isStillHighlighted: false,
-      delayDuration: 400
+      isStillHighlighted: false
+    }
+  },
+  computed: {
+    isRight () {
+      if (this.isRightOfWindow) {
+        return false
+      }
+
+      if (this.isLeftOfWindow) {
+        return true
+      }
+
+      return this.right
+    },
+    isLeft () {
+      if (this.isRightOfWindow) {
+        return true
+      }
+
+      if (this.isLeftOfWindow) {
+        return false
+      }
+
+      return this.left
+    },
+    isBottom () {
+      if (this.isLeft || this.isRight) {
+        return false
+      }
+
+      if (this.isAboveWindow) {
+        return true
+      }
+
+      return this.bottom || this.isAboveWindow
+    },
+    isTop () {
+      if (this.isLeft || this.isRight) {
+        return false
+      }
+
+      if (this.isAboveWindow) {
+        return false
+      }
+
+      return this.top || (!this.bottom && !this.isAboveWindow)
+    },
+    isVisible () {
+      return this.visible || (this.isHighlighted && this.isStillHighlighted)
     }
   },
   mounted () {
     const parent = this.$el.parentNode
 
-    if (!parent) return
+    if (!parent) {
+      return
+    }
 
     parent.addEventListener('mouseover', this.show)
     parent.addEventListener('mouseleave', this.hide)
+
+    if (this.visible) {
+      this.show()
+    }
   },
   destroyed () {
     const parent = this.$el.parentNode
 
-    if (!parent) return
+    if (!parent) {
+      return
+    }
 
     parent.removeEventListener('mouseover', this.show)
     parent.removeEventListener('mouseleave', this.hide)
@@ -73,7 +134,9 @@ export default {
     hide () {
       this.isHighlighted = false
       this.isStillHighlighted = false
-      this.$el.style.transform = 'none'
+      this.isRightOfWindow = false
+      this.isLeftOfWindow = false
+      this.isAboveWindow = false
     },
     checkPosition () {
       if (!this.isHighlighted) {
@@ -82,18 +145,10 @@ export default {
 
       const windowWidth = window.innerWidth
       const rect = this.$el.getBoundingClientRect()
-      let x = 0
-      let y = 0
 
-      if (rect.top <= 0) {
-        y = -rect.top
-      }
-
-      if (windowWidth < rect.left + rect.width) {
-        x = -((rect.left - windowWidth) + rect.width)
-      }
-
-      this.$el.style.transform = `translateY(${y}px) translateX(${x}px)`
+      this.isAboveWindow = rect.top <= 0
+      this.isRightOfWindow = windowWidth < rect.left + rect.width
+      this.isLeftOfWindow = rect.left <= 0
     }
   }
 }
@@ -101,11 +156,16 @@ export default {
 <style scoped lang="less">
   @import '~el-style/variables';
 
+  @tooltip-offset: ~"Calc(100% + 5px)";
+  @tooltip-offset-negative: ~"Calc(-100% - 5px)";
+
   .el-tooltip {
     display: flex;
     position: absolute;
-    bottom: ~"Calc(100% + 5px)";
-    left: auto;
+    top: auto;
+    bottom: @tooltip-offset;
+    left: 50%;
+    right: auto;
     height: auto;
     width: auto;
     background-color: @color-grey-7;
@@ -119,16 +179,85 @@ export default {
     white-space: nowrap;
     text-align: center;
     align-self: center;
+    transform: translateX(-50%);
 
-    &::after {
-      content: " ";
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      margin-left: -10px;
-      border-width: 10px;
-      border-style: solid;
-      border-color: @color-grey-7 transparent transparent transparent;
+    &--top {
+      // Downwards arrow
+      &::after {
+        content: " ";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: @color-grey-7 transparent transparent transparent;
+      }
+    }
+
+    &--bottom {
+      bottom: auto;
+      top: @tooltip-offset;
+
+      // Downwards arrow
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent @color-grey-7 transparent;
+      }
+    }
+
+    &--left {
+      bottom: auto;
+      top: 50%;
+      left: 0px;
+      right: auto;
+      transform: translateX(@tooltip-offset-negative) translateY(-50%);
+
+      // Downwards arrow
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: auto;
+        top: 50%;
+        left: 100%;
+        margin-left: -1px;
+        margin-bottom: auto;
+        margin-top: auto;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent transparent @color-grey-7;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--right {
+      bottom: auto;
+      top: 50%;
+      left: @tooltip-offset;
+      right: auto;
+      transform: translateY(-50%);
+
+      // Downwards arrow
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: auto;
+        top: 50%;
+        left: 0px;
+        margin-left: 1px;
+        margin-bottom: auto;
+        margin-top: auto;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent @color-grey-7 transparent transparent;
+        transform: translateY(-50%) translateX(-100%);
+      }
     }
   }
 </style>
