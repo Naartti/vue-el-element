@@ -249,6 +249,12 @@ export default {
       this.isFinishedAnimation = false
 
       this.$nextTick(() => {
+        if (!this.$refs ||
+          !this.$refs.modalBody) {
+          this.isFinishedAnimation = true
+          return
+        }
+
         const scrollHeight = this.$el.scrollHeight
         const { height } = this.$refs.modalBody.getBoundingClientRect()
 
