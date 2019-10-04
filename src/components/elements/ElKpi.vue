@@ -17,11 +17,14 @@
       'el-kpi__value--danger': danger
     }"
     >
+    <slot />
+
     {{kpiValue}}
 
     <span v-if="unit !== ''">
       {{unit}}
     </span>
+
   </div>
 
   <el-inline tight>
@@ -97,6 +100,8 @@ export default {
   @import "~el-style/variables.less";
 
   .el-kpi {
+    position: relative;
+
     &--clickable {
       cursor: pointer;
 
@@ -106,6 +111,7 @@ export default {
     }
 
     &__value {
+      position: relative;
       color: @color-grey-7;
       font-weight: 900;
       font-size: 18px;
