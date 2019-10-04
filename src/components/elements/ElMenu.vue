@@ -57,6 +57,12 @@
       >
 
       {{item.title}}
+
+      <el-notification relative
+        v-if="item.notification"
+        >
+        {{item.notification}}
+      </el-notification>
     </div>
   </div>
 
@@ -139,11 +145,15 @@ export default {
     this.displayedIndex = this.value
   },
   methods: {
-    addItem (title) {
-      this.items.push(title)
+    addItem (item) {
+      this.items.push(item)
     },
     getIndex () {
       return this.indexCounter++
+    },
+    updateItem ({ index, ...item }) {
+      this.items[index] = item
+      this.$forceUpdate()
     },
     openTab (index) {
       if (this.items[index].type === 'section' && !this.items[index].clickable) {
@@ -240,6 +250,7 @@ export default {
         padding-right: 10px;
         font-size: 14px;
         white-space: wrap;
+        position: relative;
 
         @media (max-width: @narrow-width) {
           text-align: left;

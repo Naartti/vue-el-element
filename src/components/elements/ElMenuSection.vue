@@ -25,20 +25,42 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    notification: {
+      type: [String, Number],
+      default: 0
     }
   },
   computed: {
     displayedIndex () {
       return this.$parent.displayedIndex
+    },
+    clickable () {
+      return this.$slots.default !== undefined
     }
+  },
+  watch: {
+    title: 'update',
+    notification: 'update'
   },
   mounted () {
     this.$parent.addItem({
       title: this.title,
       type: 'section',
-      clickable: this.$slots.default !== undefined
+      clickable: this.clickable
     })
     this.index = this.$parent.getIndex()
+  },
+  methods: {
+    update () {
+      this.$parent.updateItem({
+        index: this.index,
+        title: this.title,
+        type: 'section',
+        notification: this.notification,
+        clickable: this.clickable
+      })
+    }
   }
 }
 
