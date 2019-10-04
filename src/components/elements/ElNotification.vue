@@ -2,6 +2,8 @@
 <div
   class="el-notification"
   :class="{
+    'el-notification--left': left,
+    'el-notification--relative': relative
   }"
   >
   <slot />
@@ -10,6 +12,17 @@
 <script>
 
 export default {
+  name: 'ElNotification',
+  props: {
+    relative: {
+      type: Boolean,
+      default: false
+    },
+    left: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 <style scoped lang="less">
@@ -32,5 +45,19 @@ export default {
     padding: 2px;
     border: 1px solid @color-grey-0;
     transform: translateX(50%) translateY(-50%);
+
+    &--left {
+      right: auto;
+      left: 0px;
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+    &--relative {
+      display: inline-flex;
+      position: relative;
+      left: auto;
+      right: auto;
+      transform: none;
+    }
   }
 </style>
