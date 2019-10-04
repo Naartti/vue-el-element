@@ -24,6 +24,10 @@ export default {
     title: {
       type: String,
       default: ''
+    },
+    notification: {
+      type: [String, Number],
+      default: 0
     }
   },
   computed: {
@@ -31,12 +35,25 @@ export default {
       return this.$parent.displayedIndex
     }
   },
+  watch: {
+    title: 'update',
+    notification: 'update'
+  },
   mounted () {
     this.$parent.addItem({
       title: this.title,
-      type: 'title'
+      notification: this.notification
     })
     this.index = this.$parent.getIndex()
+  },
+  methods: {
+    update () {
+      this.$parent.updateItem({
+        index: this.index,
+        title: this.title,
+        notification: this.notification
+      })
+    }
   }
 }
 

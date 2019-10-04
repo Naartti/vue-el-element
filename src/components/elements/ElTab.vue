@@ -30,6 +30,12 @@
       >
 
       {{item.title}}
+
+      <el-notification
+        v-if="item.notification"
+        >
+        {{item.notification}}
+      </el-notification>
     </div>
   </div>
 
@@ -72,6 +78,10 @@ export default {
     getIndex () {
       return this.indexCounter++
     },
+    updateItem ({ index, ...item }) {
+      this.items[index] = item
+      this.$forceUpdate()
+    },
     openTab (index) {
       this.displayedIndex = index
 
@@ -92,6 +102,7 @@ export default {
     flex-direction: column;
     justify-content: stretch;
     align-items: flex-start;
+    position: relative;
 
     &__nav {
       position: relative;
@@ -118,6 +129,7 @@ export default {
     &__item {
       padding: 5px 0px;
       display: inline-block;
+      position: relative;
       cursor: pointer;
       box-sizing: border-box;
       border-bottom: 2px solid @color-grey-2;
