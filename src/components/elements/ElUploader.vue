@@ -2,7 +2,12 @@
 <div
   class="el-uploader el-animation"
   :class="{
-    'el-uploader--active': this.isActive
+    'el-uploader--active': this.isActive,
+    'el-uploader--disabled': this.disabled,
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
   }"
   ref="dropArea"
   @click="openFileBrowse"
@@ -14,7 +19,7 @@
 
   <!-- Hidden upload file form -->
   <div class="el-uploader__form">
-    <form>
+    <form v-if="!disabled">
       <input
         type="file"
         ref="fileInput"
@@ -51,7 +56,13 @@ export default {
     preventDefaultOnBody: {
       type: Boolean,
       default: true
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean,
+    disabled: Boolean
+
   },
   data () {
     return {
@@ -79,10 +90,18 @@ export default {
   },
   methods: {
     activate (ev) {
+      if (this.disabled) {
+        return
+      }
+
       this.isActive = true
       this.preventDefaults(ev)
     },
     deactivate (ev) {
+      if (this.disabled) {
+        return
+      }
+
       this.isActive = false
       this.preventDefaults(ev)
     },
@@ -91,18 +110,34 @@ export default {
       ev.stopPropagation()
     },
     handleDrop (ev) {
+      if (this.disabled) {
+        return
+      }
+
       const files = ev.dataTransfer.files
       this.emitFiles(files)
       this.deactivate(ev)
     },
     handleBrowse () {
+      if (this.disabled) {
+        return
+      }
+
       const files = this.$refs.fileInput.files
       this.emitFiles(files)
     },
     emitFiles (files) {
+      if (this.disabled) {
+        return
+      }
+
       this.$emit('select', [ ...files ])
     },
     openFileBrowse () {
+      if (this.disabled) {
+        return
+      }
+
       this.$refs.fileInput.click()
     }
   }
@@ -114,11 +149,11 @@ export default {
   .el-uploader {
     background-color: @color-primary-1;
     border: 1px dashed @color-primary-4;
+    color: @color-primary-6;
     border-radius: @radius-small;
     width: 100%;
     height: @input-height;
     cursor: pointer;
-    color: @color-primary-6;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -133,6 +168,19 @@ export default {
       border: 1px solid @color-primary-5;
       background-color: @color-primary-1;
       box-shadow: inset @shadow;
+    }
+
+    &--disabled {
+      cursor: not-allowed;
+      background-color: @color-grey-1;
+      border: 1px dashed @color-grey-4;
+      color: @color-grey-6;
+
+      &:hover {
+        background-color: @color-grey-1;
+        border: 1px dashed @color-grey-4;
+        color: @color-grey-6;
+      }
     }
 
     &__form {
