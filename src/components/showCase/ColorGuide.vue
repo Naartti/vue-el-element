@@ -1,114 +1,41 @@
 <template>
 <div>
-  <h3>Main colors</h3>
+  <el-header margin-top>Main</el-header>
+  <el-inline
+    v-for="state in ['primary', 'secondary']"
+    :key="state"
+    >
+    <div class="color-card"
+      v-for="index in [1, 2, 3, 4, 5, 6, 7]"
+      :key="`${state}_${index}`"
+      >
+      <div :class="`color-preview color-${state}-${index}`" />
+      <p>{{`@color-${state}-${index}`}}</p>
+    </div>
+  </el-inline>
+
+  <el-header margin-top>Grey</el-header>
   <el-inline>
-    <div class="color-card">
-      <div class="color-preview color-brand" />
-      <p>@color-primary-4</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-accent" />
-      <p>@color-secondary-4</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-backdrop" />
-      <p>@color-backdrop</p>
+    <div class="color-card"
+      v-for="index in [1, 2, 3, 4, 5, 6, 7]"
+      :key="`grey_${index}`"
+      >
+      <div :class="`color-preview color-grey-${index}`" />
+      <p>{{`@color-grey-${index}`}}</p>
     </div>
   </el-inline>
 
-  <h3>Grey scale</h3>
-  <el-inline>
-    <div class="color-card">
-      <div class="color-preview color-grey-super-light" />
-      <p>@color-grey-1</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-grey-light" />
-      <p>@color-grey-2</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-grey-medium" />
-      <p>@color-grey-5</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-grey-dark" />
-      <p>@color-grey-5</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-grey-super-dark" />
-      <p>@color-grey-7</p>
-    </div>
-  </el-inline>
-
-  <h3 :marginTop="true">State colors</h3>
-  <el-inline>
-    <div class="color-card">
-      <div class="color-preview color-danger-light" />
-      <p>@color-danger-1</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-danger-medium" />
-      <p>@color-danger-4</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-danger-dark" />
-      <p>@color-danger-7</p>
-    </div>
-  </el-inline>
-  <el-inline :marginTop="true">
-    <div class="color-card">
-      <div class="color-preview color-warning-light" />
-      <p>@color-warning-1</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-warning-medium" />
-      <p>@color-warning-4</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-warning-dark" />
-      <p>@color-warning-7</p>
-    </div>
-  </el-inline>
-  <el-inline :marginTop="true">
-    <div class="color-card">
-      <div class="color-preview color-info-light" />
-      <p>@color-info-1</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-info-medium" />
-      <p>@color-info-4</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-info-dark" />
-      <p>@color-info-7</p>
-    </div>
-  </el-inline>
-  <el-inline :marginTop="true">
-    <div class="color-card">
-      <div class="color-preview color-success-light" />
-      <p>@color-success-1</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-success-medium" />
-      <p>@color-success-4</p>
-    </div>
-
-    <div class="color-card">
-      <div class="color-preview color-success-dark" />
-      <p>@color-success-7</p>
+  <el-header margin-top>State</el-header>
+  <el-inline
+    v-for="state in ['success', 'info', 'warning', 'danger']"
+    :key="state"
+    >
+    <div class="color-card"
+      v-for="index in [1, 2, 3, 4, 5, 6, 7]"
+      :key="`${state}_${index}`"
+      >
+      <div :class="`color-preview color-${state}-${index}`" />
+      <p>{{`@color-${state}-${index}`}}</p>
     </div>
   </el-inline>
 </div>
@@ -123,7 +50,7 @@ export default {
 
   .color-card {
     height: 120px;
-    width: 120px;
+    width: 80px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -151,84 +78,60 @@ export default {
     box-shadow: inset @shadow;
   }
 
-  .color-brand {
-    background-color: @color-primary-4;
-  }
+  .color-primary-7 { background-color: @color-primary-7; }
+  .color-primary-6 { background-color: @color-primary-6; }
+  .color-primary-5 { background-color: @color-primary-5; }
+  .color-primary-4 { background-color: @color-primary-4; }
+  .color-primary-3 { background-color: @color-primary-3; }
+  .color-primary-2 { background-color: @color-primary-2; }
+  .color-primary-1 { background-color: @color-primary-1; }
 
-  .color-accent {
-    background-color: @color-secondary-4;
-  }
+  .color-secondary-7 { background-color: @color-secondary-7; }
+  .color-secondary-6 { background-color: @color-secondary-6; }
+  .color-secondary-5 { background-color: @color-secondary-5; }
+  .color-secondary-4 { background-color: @color-secondary-4; }
+  .color-secondary-3 { background-color: @color-secondary-3; }
+  .color-secondary-2 { background-color: @color-secondary-2; }
+  .color-secondary-1 { background-color: @color-secondary-1; }
 
-  .color-backdrop {
-    background-color: @color-backdrop;
-  }
+  .color-grey-7 { background-color: @color-grey-7; }
+  .color-grey-6 { background-color: @color-grey-6; }
+  .color-grey-5 { background-color: @color-grey-5; }
+  .color-grey-4 { background-color: @color-grey-4; }
+  .color-grey-3 { background-color: @color-grey-3; }
+  .color-grey-2 { background-color: @color-grey-2; }
+  .color-grey-1 { background-color: @color-grey-1; }
 
-  .color-grey-super-light {
-    background-color: @color-grey-1;
-  }
+  .color-danger-7 { background-color: @color-danger-7; }
+  .color-danger-6 { background-color: @color-danger-6; }
+  .color-danger-5 { background-color: @color-danger-5; }
+  .color-danger-4 { background-color: @color-danger-4; }
+  .color-danger-3 { background-color: @color-danger-3; }
+  .color-danger-2 { background-color: @color-danger-2; }
+  .color-danger-1 { background-color: @color-danger-1; }
 
-  .color-grey-light {
-    background-color: @color-grey-2;
-  }
+  .color-warning-7 { background-color: @color-warning-7; }
+  .color-warning-6 { background-color: @color-warning-6; }
+  .color-warning-5 { background-color: @color-warning-5; }
+  .color-warning-4 { background-color: @color-warning-4; }
+  .color-warning-3 { background-color: @color-warning-3; }
+  .color-warning-2 { background-color: @color-warning-2; }
+  .color-warning-1 { background-color: @color-warning-1; }
 
-  .color-grey-medium {
-    background-color: @color-grey-5;
-  }
+  .color-info-7 { background-color: @color-info-7; }
+  .color-info-6 { background-color: @color-info-6; }
+  .color-info-5 { background-color: @color-info-5; }
+  .color-info-4 { background-color: @color-info-4; }
+  .color-info-3 { background-color: @color-info-3; }
+  .color-info-2 { background-color: @color-info-2; }
+  .color-info-1 { background-color: @color-info-1; }
 
-  .color-grey-dark {
-    background-color: @color-grey-5;
-  }
-
-  .color-grey-super-dark {
-    background-color: @color-grey-7;
-  }
-
-  .color-danger-dark {
-    background-color: @color-danger-7;
-  }
-
-  .color-danger-medium {
-    background-color: @color-danger-4;
-  }
-
-  .color-danger-light {
-    background-color: @color-danger-1;
-  }
-
-  .color-warning-dark {
-    background-color: @color-warning-7;
-  }
-
-  .color-warning-medium {
-    background-color: @color-warning-4;
-  }
-
-  .color-warning-light {
-    background-color: @color-warning-1;
-  }
-
-  .color-info-dark {
-    background-color: @color-info-7;
-  }
-
-  .color-info-medium {
-    background-color: @color-info-4;
-  }
-
-  .color-info-light {
-    background-color: @color-info-1;
-  }
-
-  .color-success-dark {
-    background-color: @color-success-7;
-  }
-
-  .color-success-medium {
-    background-color: @color-success-4;
-  }
-
-  .color-success-light {
-    background-color: @color-success-1;
-  }
+  .color-success-7 { background-color: @color-success-7; }
+  .color-success-6 { background-color: @color-success-6; }
+  .color-success-5 { background-color: @color-success-5; }
+  .color-success-4 { background-color: @color-success-4; }
+  .color-success-3 { background-color: @color-success-3; }
+  .color-success-2 { background-color: @color-success-2; }
+  .color-success-1 { background-color: @color-success-1; }
 
 </style>

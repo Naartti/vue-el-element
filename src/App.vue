@@ -52,6 +52,9 @@
   <el-menu-item title="el-tag">
     <el-tag-docs />
   </el-menu-item>
+  <el-menu-item title="el-notification">
+    <el-notification-docs />
+  </el-menu-item>
   <el-menu-item title="el-loader">
     <el-loader-docs />
   </el-menu-item>
@@ -123,10 +126,11 @@ import ElCollapseHeaderDocs from 'docs/ElCollapseHeaderDocs.vue'
 import ElUploaderDocs from 'docs/ElUploaderDocs.vue'
 import ElKpiDocs from 'docs/ElKpiDocs.vue'
 import ElTooltipDocs from 'docs/ElTooltipDocs.vue'
+import ElNotificationDocs from 'docs/ElNotificationDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs, ElUploaderDocs, ElKpiDocs, ElTooltipDocs },
+  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs, ElUploaderDocs, ElKpiDocs, ElTooltipDocs, ElNotificationDocs },
   data () {
     return {
       someString: '',

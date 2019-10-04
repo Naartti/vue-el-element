@@ -6,7 +6,7 @@
     caption="Drop image here (or click to upload)"
     accept="image/*"
     :multiple="true"
-    @select="upload"
+    @select="upload" disabled
     />
 
   <el-image margin-top
@@ -75,6 +75,10 @@ export default {
         default: 'true'
       }, {
         prop: 'prevent-default-on-body',
+        type: 'Boolean',
+        default: 'true'
+      }, {
+        prop: 'disabled',
         type: 'Boolean',
         default: 'true'
       }]
