@@ -5,8 +5,10 @@
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
     'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    'el-margin--bottom': marginBottom,
+    'el-kpi--clickable': clickable
   }"
+  @click="$emit('click')"
   >
   <div
     class="el-kpi__value"
@@ -84,6 +86,9 @@ export default {
       }
 
       return spaceThousand(this.value)
+    },
+    clickable () {
+      return this.$listeners && this.$listeners.click
     }
   }
 }
@@ -92,6 +97,14 @@ export default {
   @import "~el-style/variables.less";
 
   .el-kpi {
+    &--clickable {
+      cursor: pointer;
+
+      &:hover .el-kpi__value {
+        text-decoration: underline;
+      }
+    }
+
     &__value {
       color: @color-grey-7;
       font-weight: 900;
