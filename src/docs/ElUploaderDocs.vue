@@ -6,7 +6,7 @@
     caption="Drop image here (or click to upload)"
     accept="image/*"
     :multiple="true"
-    @select="upload" disabled
+    @select="upload"
     />
 
   <el-image margin-top

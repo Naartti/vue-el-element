@@ -79,7 +79,6 @@ export default {
     width: 100%;
     min-width: @element-min-width;
     height: auto;
-    margin-top: @top-margin-element;
     background-color: @color-grey-1;
     padding: 10px 15px;
     font-size: @font-size-small;
