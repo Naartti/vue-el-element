@@ -21,6 +21,7 @@ import ElSelect from 'elements/ElSelect.vue'
 import ElButton from 'elements/ElButton.vue'
 import ElToggleButton from 'elements/ElToggleButton.vue'
 import ElMultiSwitch from 'elements/ElMultiSwitch.vue'
+import ElExpandButton from 'elements/ElExpandButton.vue'
 
 // Hierarcy
 import ElModal from 'elements/ElModal.vue'
@@ -80,7 +81,8 @@ export {
   ElImage,
   ElUploader,
   ElKpi,
-  ElNotification
+  ElNotification,
+  ElExpandButton
 }
 export default {
   ElButton,
@@ -115,5 +117,6 @@ export default {
   ElImage,
   ElUploader,
   ElKpi,
-  ElNotification
+  ElNotification,
+  ElExpandButton
 }

@@ -43,6 +43,9 @@
   <el-menu-item title="el-collapse-header">
     <el-collapse-header-docs />
   </el-menu-item>
+  <el-menu-item title="el-expand-button">
+    <el-expand-button-docs />
+  </el-menu-item>
   <el-menu-item title="el-select">
     <el-select-docs />
   </el-menu-item>
@@ -127,10 +130,11 @@ import ElUploaderDocs from 'docs/ElUploaderDocs.vue'
 import ElKpiDocs from 'docs/ElKpiDocs.vue'
 import ElTooltipDocs from 'docs/ElTooltipDocs.vue'
 import ElNotificationDocs from 'docs/ElNotificationDocs.vue'
+import ElExpandButtonDocs from 'docs/ElExpandButtonDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs, ElUploaderDocs, ElKpiDocs, ElTooltipDocs, ElNotificationDocs },
+  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs, ElUploaderDocs, ElKpiDocs, ElTooltipDocs, ElNotificationDocs, ElExpandButtonDocs },
   data () {
     return {
       someString: '',
@@ -203,6 +207,7 @@ export default {
  }
 
  .el-element-docs {
+    position: relative;
     margin-bottom: 100px;
 
     table {

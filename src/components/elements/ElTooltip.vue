@@ -180,6 +180,7 @@ export default {
     text-align: center;
     align-self: center;
     transform: translateX(-50%);
+    line-height: normal;
 
     &--top {
       // Downwards arrow
