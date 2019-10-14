@@ -12,11 +12,13 @@
     'el-button--secondary': secondary && !danger && !disabled,
     'el-button--secondary--danger': danger && secondary && !disabled,
     'el-button--link': link,
+    'el-button--big': big,
+    'el-button--box': box,
     'el-align--right': right,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
     'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    'el-margin--bottom': marginBottom,
   }"
   >
   <el-tooltip
@@ -49,8 +51,9 @@ export default {
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
-    marginLeft: Boolean
-
+    marginLeft: Boolean,
+    big: Boolean,
+    box: Boolean
   },
   methods: {
     next () {
@@ -159,6 +162,15 @@ export default {
         color: @color-button-link;
         text-decoration: underline;
       }
+    }
+
+    &--big {
+      font-size: 22px;
+    }
+
+    &--box {
+      height: 50px;
+      border-radius: 5px;
     }
   }
 </style>

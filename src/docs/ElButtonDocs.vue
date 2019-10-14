@@ -54,6 +54,21 @@
       >
       Link
     </el-button>
+    <el-button
+      big
+      margin-right
+      margin-top
+      >
+      Big button
+    </el-button>
+    <el-button
+      box
+      danger
+      margin-right
+      margin-top
+      >
+      Box button
+    </el-button>
   </el-inline>
 
   <el-delimiter />
