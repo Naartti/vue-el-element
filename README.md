@@ -32,6 +32,8 @@ import { ElButton, ElTooltip } from 'vue-el-element'
   :secondary="Boolean"
   :danger="Boolean"
   :link="Boolean"
+  :big="Boolean"
+  :box="Boolean"
   :margin-right="Boolean"
   :margin-top="Boolean"
   :tooltip="String"
