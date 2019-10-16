@@ -7,6 +7,7 @@
     'el-message--info': info,
     'el-message--danger': danger,
     'el-message--clickable': isClickable,
+    'el-message--icon': hasIcon,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
     'el-margin--left': marginLeft,
@@ -17,14 +18,14 @@
   @mouseleave="$emit('mouseleave')"
   >
   <span
-    v-if="warning"
+    v-if="warning && icon"
     class="el-message__icon"
-    v-html="icon.warning"
+    v-html="iconImage.warning"
     />
   <span
-    v-else-if="danger"
+    v-else-if="danger && icon"
     class="el-message__icon"
-    v-html="icon.danger"
+    v-html="iconImage.danger"
     />
   <slot />
 </div>
@@ -41,6 +42,7 @@ export default {
     success: Boolean,
     info: Boolean,
     danger: Boolean,
+    icon: { type: Boolean, default: true },
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
@@ -48,11 +50,20 @@ export default {
   },
   data () {
     return {
-      icon: {
+      iconImage: {
         warning: svgIcons.warning,
         danger: svgIcons.dangerWarning
       },
       isClickable: false
+    }
+  },
+  computed: {
+    hasIcon () {
+      if (!this.icon) {
+        return false
+      }
+
+      return this.danger || this.warning
     }
   },
   mounted () {
@@ -121,11 +132,19 @@ export default {
       color: @color-danger-7;
     }
 
+    &--icon {
+      padding-left: 30px;
+    }
+
     &__icon {
-      margin-right: 10px;
+      position: absolute;
       height: 100%;
-      position: relative;
-      top: 2px;
+      top: 0px;
+      left: 7px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>

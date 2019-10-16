@@ -1,9 +1,13 @@
 <template>
 <div class="el-element-docs">
   <h2>Show case</h2>
-  <el-message margin-top warning>Warning</el-message>
+  <el-message margin-top warning>
+      Warning
+  </el-message>
   <el-message margin-top danger>Danger</el-message>
-  <el-message margin-top success>Success</el-message>
+  <el-message margin-top success>
+      Warning
+  </el-message>
   <el-message margin-top info>Info</el-message>
   <el-message margin-top>No status</el-message>
 
@@ -89,6 +93,10 @@ export default {
         prop: 'info',
         type: 'Boolean',
         default: 'false'
+      }, {
+        prop: 'icon',
+        type: 'Boolean',
+        default: 'true'
       }]
     }
   },
