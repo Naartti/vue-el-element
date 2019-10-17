@@ -49,20 +49,23 @@ export default {
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
-    marginLeft: Boolean
-
+    marginLeft: Boolean,
+    blurDelay: {
+      type: Number,
+      default: 400
+    }
   },
   methods: {
-    next () {
+    next (...args) {
       if (this.disabled === true) return
 
-      this.$emit('click')
+      this.$emit('click', ...args)
 
       setTimeout(() => {
         if (this.$el && this.$el.blur) {
           this.$el.blur()
         }
-      }, 400)
+      }, this.blurDelay)
     }
   }
 }

@@ -186,6 +186,10 @@ export default {
         prop: 'tooltip',
         type: 'String',
         default: '""'
+      }, {
+        prop: 'blur-delay',
+        type: 'Number',
+        default: '400'
       }]
     }
   },
