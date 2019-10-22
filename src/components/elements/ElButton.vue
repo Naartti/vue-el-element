@@ -56,10 +56,10 @@ export default {
     }
   },
   methods: {
-    next (...args) {
+    next () {
       if (this.disabled === true) return
 
-      this.$emit('click', ...args)
+      this.$emit('click')
 
       setTimeout(() => {
         if (this.$el && this.$el.blur) {

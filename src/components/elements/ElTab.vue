@@ -15,7 +15,15 @@
 -->
 
 <template>
-<div class="el-tab">
+<div
+  class="el-tab"
+  :class="{
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
+  }"
+  >
   <!-- Menu -->
   <div class="el-tab__nav">
     <div class="el-tab__nav__border" />
@@ -54,7 +62,11 @@ export default {
     value: {
       type: Number,
       default: 0
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   data () {
     return {
