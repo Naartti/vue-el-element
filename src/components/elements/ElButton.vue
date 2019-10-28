@@ -155,6 +155,8 @@ export default {
       background-color: transparent;
       border: none;
       color: @color-button-primary;
+      padding-right: 0px;
+      padding-left: 0px;
 
       &:hover {
         background-color: transparent;

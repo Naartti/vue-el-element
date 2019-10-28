@@ -7,6 +7,7 @@
     'el-inline--stretch': stretch,
     'el-inline--tight': tight,
     'el-inline--space-between': spaceBetween,
+    'el-inline--end': end,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
     'el-margin--left': marginLeft,
@@ -38,6 +39,10 @@ export default {
       default: false
     },
     spaceBetween: {
+      type: Boolean,
+      default: false
+    },
+    end: {
       type: Boolean,
       default: false
     },
@@ -88,6 +93,10 @@ export default {
 
     &--space-between {
       justify-content: space-between;
+    }
+
+    &--end {
+      justify-content: flex-end;
     }
   }
 </style>
