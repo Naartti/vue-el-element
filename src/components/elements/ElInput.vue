@@ -60,6 +60,11 @@ export default {
       }
     }
   },
+  mounted () {
+    if (this.focus && this.$el) {
+      this.$el.focus()
+    }
+  },
   methods: {
     contentChanged (ev) {
       this.$emit('change', this.value)
