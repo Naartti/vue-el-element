@@ -32,6 +32,7 @@ export default {
   @import '~el-style/variables';
 
   .el-column-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
