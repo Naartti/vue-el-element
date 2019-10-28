@@ -44,10 +44,21 @@ export default {
       type: Boolean,
       default: false
     },
+    focus: {
+      type: Boolean,
+      default: false
+    },
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
     marginLeft: Boolean
+  },
+  watch: {
+    focus (isFocus) {
+      if (isFocus && this.$el) {
+        this.$el.focus()
+      }
+    }
   },
   methods: {
     contentChanged (ev) {
