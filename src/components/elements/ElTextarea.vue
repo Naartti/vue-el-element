@@ -11,6 +11,7 @@
     'el-margin--bottom': marginBottom
   }"
   @input="$emit('input', $event.target.value)"
+  @change="$emit('change', $event.target.value)"
   :placeholder="placeholder"
   />
 </template>
