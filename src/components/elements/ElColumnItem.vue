@@ -39,6 +39,7 @@ export default {
     margin-left: @side-margin;
     width: auto;
     flex-basis: 0;
+    align-items: flex-start;
   }
 
   .el-column-item--fix-width {
