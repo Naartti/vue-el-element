@@ -2,7 +2,9 @@
 <div
   class="el-column-item"
   :class="{
-    'el-column-item--fix-width': width !== 'auto'
+    'el-column-item--fix-width': width !== 'auto',
+    'el-column-item--flex-start': flexStart,
+    'el-column-item--flex-end': flexEnd
   }"
   :style="`flex-grow: ${grow}; width: ${styleWidth}; max-width: ${styleWidth};`"
   >
@@ -19,6 +21,14 @@ export default {
     width: {
       type: [String, Number],
       default: 'auto'
+    },
+    flexStart: {
+      type: Boolean,
+      default: false
+    },
+    flexEnd: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
@@ -39,11 +49,18 @@ export default {
     margin-left: @side-margin;
     width: auto;
     flex-basis: 0;
-    align-items: flex-start;
-  }
 
-  .el-column-item--fix-width {
-    flex-basis: auto;
-    flex-grow: 0;
+    &--flex-start {
+      align-items: flex-start;
+    }
+
+    &--flex-end {
+      align-items: flex-end;
+    }
+
+    &--fix-width {
+      flex-basis: auto;
+      flex-grow: 0;
+    }
   }
 </style>
