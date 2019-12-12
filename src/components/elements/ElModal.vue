@@ -53,7 +53,9 @@
         </div>
 
         <!-- Actual content -->
-        <slot />
+        <div class="el-modal__body__content">
+          <slot />
+        </div>
 
         <!-- Footer -->
         <div
@@ -373,6 +375,12 @@ export default {
           margin: 0px;
         }
       }
+
+      &__content {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+      }
     }
 
     &__footer {
@@ -455,6 +463,7 @@ export default {
           display: flex;
           justify-content: center;
           align-items: center;
+          z-index: 10;
 
           &:hover {
             transform: scale(1.1);
