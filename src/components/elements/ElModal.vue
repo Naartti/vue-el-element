@@ -428,7 +428,7 @@ export default {
       width: 100%;
       max-width: @section-content-max-width;
       margin: auto;
-      z-index: 2;
+      z-index: 10;
       overflow: visible;
 
       &--wide {
@@ -446,11 +446,15 @@ export default {
 
       &__icon {
           position: absolute;
-          top: 10px;
-          left: 10px;
+          top: 5px;
+          left: 5px;
           height: 20px;
           width: 20px;
           cursor: pointer;
+          background-color: @color-background;
+          display: flex;
+          justify-content: center;
+          align-items: center;
 
           &:hover {
             transform: scale(1.1);
