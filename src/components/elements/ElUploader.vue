@@ -2,6 +2,7 @@
 <div
   class="el-uploader el-animation"
   :class="{
+    'el-uploader--focus': this.isFocus,
     'el-uploader--active': this.isActive,
     'el-uploader--disabled': this.disabled,
     'el-margin--right': marginRight,
@@ -35,6 +36,15 @@
     >
     {{caption}}
   </div>
+
+  <input
+    v-if="enablePaste"
+    type="text"
+    ref="pasteInput"
+    class="el-uploader__paste"
+    @focus="isFocus = true"
+    @blur="isFocus = false"
+    />
 </div>
 </template>
 <script>
@@ -57,15 +67,16 @@ export default {
       type: Boolean,
       default: true
     },
+    enablePaste: Boolean,
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
     marginLeft: Boolean,
     disabled: Boolean
-
   },
   data () {
     return {
+      isFocus: false,
       isActive: false
     }
   },
@@ -79,6 +90,10 @@ export default {
       ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         document.body.addEventListener(eventName, this.preventDefaults, false)
       })
+    }
+
+    if (this.enablePaste && this.$refs.pasteInput) {
+      this.$refs.pasteInput.addEventListener('paste', this.handlePaste)
     }
   },
   destroyed () {
@@ -139,6 +154,16 @@ export default {
       }
 
       this.$refs.fileInput.click()
+    },
+    handlePaste (ev) {
+      if (!this.enablePaste || !this.$refs.pasteInput || !ev || !ev.clipboardData || !ev.clipboardData.files) {
+        return
+      }
+
+      const files = ev.clipboardData.files
+      this.emitFiles(files)
+
+      this.$refs.pasteInput.blur()
     }
   }
 }
@@ -157,11 +182,17 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    overflow: hidden;
 
     &:hover {
       background-color: @color-primary-2;
       border: 1px dashed @color-primary-5;
       color: @color-primary-7;
+    }
+
+    &--focus {
+      outline: auto 5px;
     }
 
     &--active {
@@ -186,6 +217,17 @@ export default {
     &__form {
       visibility: hidden;
       display: none;
+    }
+
+    &__paste {
+      position: absolute;
+      opacity: 0;
+      left: 0px;
+      height: 0px;
+      width: 0px;
+      border: none;
+      outline: none;
+      background-color: transparent;
     }
   }
 </style>

@@ -6,6 +6,7 @@
     caption="Drop image here (or click to upload)"
     accept="image/*"
     :multiple="true"
+    :enable-paste="true"
     @select="upload"
     />
 
@@ -81,6 +82,10 @@ export default {
         prop: 'disabled',
         type: 'Boolean',
         default: 'true'
+      }, {
+        prop: 'enable-paste',
+        type: 'Boolean',
+        default: 'false'
       }]
     }
   },
