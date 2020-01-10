@@ -85,7 +85,7 @@
 
 <script>
 
-import svgCodes from 'script/svg.js'
+import closeIcon from '@/assets/icons/close.js'
 
 export default {
   name: 'ElModal',
@@ -121,7 +121,7 @@ export default {
       animationDuration: 500,
       isVisible: false,
       isFinishedAnimation: false,
-      closeIcon: svgCodes.close,
+      closeIcon: closeIcon,
       displayOverflow: true,
       centerPosition: true,
       absoluteFooterPosition: false,

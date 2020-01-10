@@ -33,7 +33,9 @@
 </template>
 <script>
 
-import svgIcons from 'script/svg'
+import warningIcon from '@/assets/icons/warning.js'
+import dangerIcon from '@/assets/icons/danger.js'
+import successIcon from '@/assets/icons/success.js'
 
 export default {
   name: 'ElHeader',
@@ -53,11 +55,11 @@ export default {
     },
     icon () {
       if (this.danger) {
-        return svgIcons.danger
+        return dangerIcon
       } else if (this.warning) {
-        return svgIcons.warning
+        return warningIcon
       } else if (this.success) {
-        return svgIcons.success
+        return successIcon
       }
 
       return ''

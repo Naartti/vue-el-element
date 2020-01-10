@@ -48,6 +48,53 @@ import ElStickyFooter from 'elements/ElStickyFooter.vue'
 import ElStickyHeader from 'elements/ElStickyHeader.vue'
 import ElTooltip from 'elements/ElTooltip.vue'
 
+const elements = {
+  ElButton,
+  ElToggleButton,
+  ElMultiSwitch,
+  ElMenu,
+  ElMenuItem,
+  ElTab,
+  ElTabItem,
+  ElDelimiter,
+  ElInline,
+  ElMenuSection,
+  ElDropdown,
+  ElCheckbox,
+  ElRadioButton,
+  ElColumn,
+  ElColumnItem,
+  ElModal,
+  ElMessage,
+  ElInput,
+  ElTextarea,
+  ElCollapseHeader,
+  ElTag,
+  ElLoader,
+  ElStickyFooter,
+  ElStickyHeader,
+  ElTooltip,
+  ElHeader,
+  ElCaption,
+  ElInfo,
+  ElSelect,
+  ElImage,
+  ElUploader,
+  ElKpi,
+  ElNotification,
+  ElExpandButton
+}
+
+const install = (Vue) => {
+  Object.entries(elements).forEach(([type, el]) => {
+    Vue.component(type, el)
+  })
+}
+
+if (typeof window !== 'undefined' && window.Vue) {
+  install(window.Vue)
+}
+
 export {
   ElButton,
   ElToggleButton,
@@ -84,7 +131,9 @@ export {
   ElNotification,
   ElExpandButton
 }
+
 export default {
+  install,
   ElButton,
   ElToggleButton,
   ElMultiSwitch,

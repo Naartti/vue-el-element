@@ -6,7 +6,7 @@ module.exports = {
     }
   },
   css: {
-    sourceMap: true,
+    sourceMap: false,
     loaderOptions: {
       // pass options to sass-loader
       less: {

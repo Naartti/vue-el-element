@@ -33,7 +33,8 @@
 
 <script>
 
-import svgIcons from 'script/svg'
+import warningIcon from '@/assets/icons/warning.js'
+import dangerWarningIcon from '@/assets/icons/dangerWarning.js'
 
 export default {
   name: 'ElMessage',
@@ -51,8 +52,8 @@ export default {
   data () {
     return {
       iconImage: {
-        warning: svgIcons.warning,
-        danger: svgIcons.dangerWarning
+        warning: warningIcon,
+        danger: dangerWarningIcon
       },
       isClickable: false
     }
