@@ -16,10 +16,7 @@ window.refreshHljs = () => {
 
 Vue.config.productionTip = false
 
-Object.entries(VueElElements)
-  .forEach(([type, ElElement]) => {
-    Vue.component(type, ElElement)
-  })
+Vue.use(VueElElements)
 
 new Vue({
   router,

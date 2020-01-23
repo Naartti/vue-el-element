@@ -10,12 +10,10 @@ npm install --save vue-el-element
 # Import
 ## Globalize all components
 ```js
-import ElElements from 'vue-el-element'
+import Vue from 'vue'
+import VueElElements from 'vue-el-element'
 
-Object.entries(ElElements)
-  .forEach(([type, ElElement]) => {
-    Vue.component(type, ElElement)
-  })
+Vue.use(VueElElements)
 ```
 
 ## Import selected components
