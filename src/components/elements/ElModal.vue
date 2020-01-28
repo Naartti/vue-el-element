@@ -10,10 +10,11 @@
     <!-- Backdrop -->
     <transition name="fade">
       <div
-        class="el-modal__backdrop el-animation"
+        class="el-modal__backdrop"
         :class="{
           'el-modal__backdrop--clickable': isClosable,
-          'el-modal__backdrop--scrollable': isFinishedAnimation
+          'el-modal__backdrop--scrollable': isFinishedAnimation,
+          'el-animation': !isFinishedAnimation
         }"
         @click="close"
         v-if="isVisible"
