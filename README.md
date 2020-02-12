@@ -165,6 +165,24 @@ Place the tooltip within the item you want to describe. It will place itself at 
 </el-message>
 ```
 
+## el-input
+```xml
+<el-input
+  :success="Boolean"
+  :warning="Boolean"
+  v-model="value"
+  />
+```
+
+## el-textarea
+```xml
+<el-textarea
+  :success="Boolean"
+  :warning="Boolean"
+  v-model="value"
+  />
+```
+
 ## el-tag
 ![el tag](https://raw.githubusercontent.com/Naartti/vue-el-element/master/public/static/el-tag.png)
 ```xml
