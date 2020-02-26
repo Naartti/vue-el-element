@@ -18,61 +18,54 @@
   </el-menu-item>
 
   <!-- Elements -->
-  <el-menu-section title="Elements" />
+  <el-menu-section title="Action" />
   <el-menu-item title="el-button">
     <el-button-docs />
-  </el-menu-item>
-  <el-menu-item title="el-tooltip">
-    <el-tooltip-docs />
   </el-menu-item>
   <el-menu-item title="el-toggle-button">
     <el-toggle-button-docs />
   </el-menu-item>
-  <el-menu-item title="el-multi-switch">
-    <el-multi-switch-docs />
-  </el-menu-item>
-  <el-menu-item title="el-message">
-    <el-message-docs />
-  </el-menu-item>
-  <el-menu-item title="el-kpi">
-    <el-kpi-docs />
-  </el-menu-item>
+
+  <el-menu-section title="Content" />
   <el-menu-item title="el-header">
     <el-header-docs />
   </el-menu-item>
-  <el-menu-item title="el-collapse-header">
-    <el-collapse-header-docs />
+  <el-menu-item title="el-tooltip">
+    <el-tooltip-docs />
   </el-menu-item>
-  <el-menu-item title="el-expand-button">
-    <el-expand-button-docs />
+  <el-menu-item title="el-image">
+    <el-image-docs />
   </el-menu-item>
-  <el-menu-item title="el-input">
-    <el-input-docs />
-  </el-menu-item>
-  <el-menu-item title="el-textarea">
-    <el-textarea-docs />
-  </el-menu-item>
-  <el-menu-item title="el-select">
-    <el-select-docs />
-  </el-menu-item>
-  <el-menu-item title="el-modal">
-    <el-modal-docs />
-  </el-menu-item>
-  <el-menu-item title="el-tag">
-    <el-tag-docs />
-  </el-menu-item>
+
+  <el-menu-section title="Status" />
   <el-menu-item title="el-notification">
     <el-notification-docs />
   </el-menu-item>
   <el-menu-item title="el-loader">
     <el-loader-docs />
   </el-menu-item>
-  <el-menu-item title="el-image">
-    <el-image-docs />
+  <el-menu-item title="el-message">
+    <el-message-docs />
+  </el-menu-item>
+  <el-menu-item title="el-tag">
+    <el-tag-docs />
+  </el-menu-item>
+  <el-menu-item title="el-kpi">
+    <el-kpi-docs />
+  </el-menu-item>
+
+  <el-menu-section title="Inputs" />
+  <el-menu-item title="el-input">
+    <el-input-docs />
+  </el-menu-item>
+  <el-menu-item title="el-textarea">
+    <el-textarea-docs />
   </el-menu-item>
   <el-menu-item title="el-uploader">
     <el-uploader-docs />
   </el-menu-item>
+
+  <el-menu-section title="Selectors" />
   <el-menu-item title="el-dropdown">
     <el-dropdown-docs />
   </el-menu-item>
@@ -82,17 +75,36 @@
   <el-menu-item title="el-radio-button">
     <el-radio-button-docs />
   </el-menu-item>
-  <el-menu-item title="el-inline">
-    <el-inline-docs />
+  <el-menu-item title="el-multi-switch">
+    <el-multi-switch-docs />
   </el-menu-item>
-  <el-menu-item title="el-column">
-    <el-column-docs />
+  <el-menu-item title="el-select">
+    <el-select-docs />
   </el-menu-item>
+
+  <el-menu-section title="Hierarchy" />
+  <el-menu-item title="el-collapse-header">
+    <el-collapse-header-docs />
+  </el-menu-item>
+  <el-menu-item title="el-expand-button">
+    <el-expand-button-docs />
+  </el-menu-item>
+  <el-menu-item title="el-modal">
+    <el-modal-docs />
+  </el-menu-item>
+
+  <el-menu-section title="Layout" />
   <el-menu-item title="el-menu">
     <el-menu-docs />
   </el-menu-item>
   <el-menu-item title="el-tab">
     <el-tab-docs />
+  </el-menu-item>
+  <el-menu-item title="el-column">
+    <el-column-docs />
+  </el-menu-item>
+  <el-menu-item title="el-inline">
+    <el-inline-docs />
   </el-menu-item>
 
   <el-menu-section title="Design guide" />
@@ -167,10 +179,6 @@ export default {
   watch: {
     $route (to, from) {
       this.findRoute(to.params.elementName)
-
-      this.$nextTick(() => {
-        window.scrollTo(0, 0)
-      })
     }
   },
   methods: {
@@ -180,10 +188,6 @@ export default {
     setRoute (index) {
       const title = this.getMenuIndexTitle(index)
       this.$router.push(title)
-
-      this.$nextTick(() => {
-        window.scrollTo(0, 0)
-      })
     },
     findRoute (elementName) {
       let index = 0
