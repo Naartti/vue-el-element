@@ -3,8 +3,8 @@
   <h2>Show case</h2>
   <el-inline>
     <el-button
-      :margin-right="true"
-      :margin-top="true"
+      margin-right
+      margin-top
       >
       Primary
     </el-button>
@@ -188,6 +188,10 @@ export default {
         default: 'false'
       }, {
         prop: 'link',
+        type: 'Boolean',
+        default: 'false'
+      }, {
+        prop: 'stretch',
         type: 'Boolean',
         default: 'false'
       }, {

@@ -15,6 +15,7 @@
     'el-button--link--danger': link && danger,
     'el-button--link--disabled': link && disabled,
     'el-align--right': right,
+    'el-align--stretch': stretch,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
     'el-margin--left': marginLeft,
@@ -48,6 +49,7 @@ export default {
       type: String,
       default: ''
     },
+    stretch: Boolean,
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,

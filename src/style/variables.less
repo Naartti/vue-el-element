@@ -94,24 +94,34 @@
   transition: @animation;
 }
 
-.el-margin--right {
-  margin-right: @side-margin;
+.el-margin {
+  &--right {
+    margin-right: @side-margin;
+  }
+
+  &--left {
+    margin-left: @side-margin;
+  }
+
+  &--bottom {
+    margin-bottom: @bottom-margin-element;
+  }
+
+  &--top {
+    margin-top: @top-margin-element;
+  }
 }
 
-.el-margin--left {
-  margin-left: @side-margin;
-}
+.el-align{
+  &--right {
+    align-self: flex-end;
+  }
 
-.el-margin--bottom {
-  margin-bottom: @bottom-margin-element;
-}
-
-.el-margin--top {
-  margin-top: @top-margin-element;
-}
-
-.el-align-right {
-  align-self: flex-end;
+  &--stretch {
+    width: 100%;
+    align-self: stretch;
+    flex: 1;
+  }
 }
 
 .el-text-align--left {
