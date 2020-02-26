@@ -13,6 +13,7 @@
     'el-button--secondary--danger': danger && secondary && !disabled,
     'el-button--link': link,
     'el-button--link--danger': link && danger,
+    'el-button--link--disabled': link && disabled,
     'el-align--right': right,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
@@ -115,6 +116,7 @@ export default {
         background-color: transparent;
         border: 1px solid @color-disable-dark;
         color: @color-disable-dark;
+        cursor: not-allowed;
       }
 
       &--danger {
@@ -133,6 +135,7 @@ export default {
       background-color: @color-disable-dark;
       border: 1px solid @color-disable-dark;
       color: @color-font-light;
+      cursor: not-allowed;
     }
 
     &--danger {
@@ -171,6 +174,16 @@ export default {
 
         &:hover {
           color: @color-button-danger-hover;
+        }
+      }
+
+      &--disabled {
+        color: @color-disable-dark;
+        cursor: not-allowed;
+
+        &:hover {
+          color: @color-disable-dark;
+          text-decoration: none;
         }
       }
     }
