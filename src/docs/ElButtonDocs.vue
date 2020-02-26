@@ -54,6 +54,14 @@
       >
       Link
     </el-button>
+    <el-button
+      link
+      danger
+      margin-right
+      margin-top
+      >
+      Link danger
+    </el-button>
   </el-inline>
 
   <el-delimiter />

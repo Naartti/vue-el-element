@@ -12,6 +12,7 @@
     'el-button--secondary': secondary && !danger && !disabled,
     'el-button--secondary--danger': danger && secondary && !disabled,
     'el-button--link': link,
+    'el-button--link--danger': link && danger,
     'el-align--right': right,
     'el-margin--right': marginRight,
     'el-margin--top': marginTop,
@@ -163,6 +164,14 @@ export default {
         border: none;
         color: @color-button-link;
         text-decoration: underline;
+      }
+
+      &--danger {
+        color: @color-button-danger;
+
+        &:hover {
+          color: @color-button-danger-hover;
+        }
       }
     }
   }
