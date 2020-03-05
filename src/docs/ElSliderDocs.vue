@@ -1,5 +1,6 @@
 <template>
 <div class="el-element-docs">
+  <!--
   <h2>Show case</h2>
   <el-inline>
     <el-slider
@@ -8,6 +9,7 @@
   </el-inline>
 
   <el-delimiter />
+  -->
 
   <h2>Usage</h2>
   <el-tab @change="reRender">
