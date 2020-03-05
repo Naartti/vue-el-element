@@ -1,5 +1,13 @@
 <template>
-<div class="el-slider">
+<div
+  class="el-slider"
+  :class="{
+    'el-margin--right': marginRight,
+    'el-margin--top': marginTop,
+    'el-margin--left': marginLeft,
+    'el-margin--bottom': marginBottom
+  }"
+>
 
   <div
     class="el-slider__remaining"
@@ -44,7 +52,11 @@ export default {
     value: {
       type: Number,
       default: 0
-    }
+    },
+    marginRight: Boolean,
+    marginTop: Boolean,
+    marginBottom: Boolean,
+    marginLeft: Boolean
   },
   watch: {
     value: 'update'

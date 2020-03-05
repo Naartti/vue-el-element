@@ -46,40 +46,14 @@ export default {
     return {
       percentage: 0.5,
       code: {
-        primary: `<el-button
-  @click="doSomething()"
-  >
-  Button label
-</el-button>`
+        primary: `<el-slider
+  v-model="percentage"
+  />`
       },
       props: [{
-        prop: 'secondary',
-        type: 'Boolean',
-        default: 'false'
-      }, {
-        prop: 'danger',
-        type: 'Boolean',
-        default: 'false'
-      }, {
-        prop: 'disabled',
-        type: 'Boolean',
-        default: 'false'
-      }, {
-        prop: 'link',
-        type: 'Boolean',
-        default: 'false'
-      }, {
-        prop: 'stretch',
-        type: 'Boolean',
-        default: 'false'
-      }, {
-        prop: 'tooltip',
-        type: 'String',
-        default: '""'
-      }, {
-        prop: 'blur-delay',
+        prop: 'value',
         type: 'Number',
-        default: '400'
+        default: '0'
       }]
     }
   },
