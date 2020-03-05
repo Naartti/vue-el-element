@@ -64,6 +64,9 @@
   <el-menu-item title="el-uploader">
     <el-uploader-docs />
   </el-menu-item>
+  <el-menu-item title="el-slider">
+    <el-slider-docs />
+  </el-menu-item>
 
   <el-menu-section title="Selectors" />
   <el-menu-item title="el-dropdown">
@@ -151,10 +154,11 @@ import ElKpiDocs from 'docs/ElKpiDocs.vue'
 import ElTooltipDocs from 'docs/ElTooltipDocs.vue'
 import ElNotificationDocs from 'docs/ElNotificationDocs.vue'
 import ElExpandButtonDocs from 'docs/ElExpandButtonDocs.vue'
+import ElSliderDocs from 'docs/ElSliderDocs.vue'
 
 export default {
   name: 'app',
-  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElInputDocs, ElTextareaDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs, ElUploaderDocs, ElKpiDocs, ElTooltipDocs, ElNotificationDocs, ElExpandButtonDocs },
+  components: { GetStarted, ColorGuide, FontGuide, DemoElements, SpacingGuide, ElButtonDocs, ElImageDocs, ElToggleButtonDocs, ElMultiSwitchDocs, ElTabDocs, ElInputDocs, ElTextareaDocs, ElSelectDocs, ElModalDocs, ElTagDocs, ElLoaderDocs, ElDropdownDocs, ElCheckboxDocs, ElRadioButtonDocs, ElColumnDocs, ElMessageDocs, ElHeaderDocs, ElMenuDocs, ElInlineDocs, ElCollapseHeaderDocs, ElUploaderDocs, ElKpiDocs, ElTooltipDocs, ElNotificationDocs, ElExpandButtonDocs, ElSliderDocs },
   data () {
     return {
       someString: '',

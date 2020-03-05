@@ -16,6 +16,7 @@ import ElDropdown from 'elements/ElDropdown.vue'
 import ElCheckbox from 'elements/ElCheckbox.vue'
 import ElRadioButton from 'elements/ElRadioButton.vue'
 import ElSelect from 'elements/ElSelect.vue'
+import ElSlider from 'elements/ElSlider.vue'
 
 // Actors
 import ElButton from 'elements/ElButton.vue'
@@ -82,7 +83,8 @@ const elements = {
   ElUploader,
   ElKpi,
   ElNotification,
-  ElExpandButton
+  ElExpandButton,
+  ElSlider
 }
 
 const install = (Vue) => {
@@ -129,7 +131,8 @@ export {
   ElUploader,
   ElKpi,
   ElNotification,
-  ElExpandButton
+  ElExpandButton,
+  ElSlider
 }
 
 export default {
@@ -167,5 +170,6 @@ export default {
   ElUploader,
   ElKpi,
   ElNotification,
-  ElExpandButton
+  ElExpandButton,
+  ElSlider
 }
