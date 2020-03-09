@@ -55,18 +55,18 @@ dropdownOptions: [{
   </select>
 </div>
 </template>
-
 <script>
-
 export default {
   name: 'ElDropdown',
   props: {
     value: {
-      default: null
+      default: null,
+      required: true
     },
     options: {
       type: Array,
-      default: () => []
+      default: () => [],
+      required: true
     },
     wide: {
       type: Boolean,
@@ -76,6 +76,14 @@ export default {
     marginTop: Boolean,
     marginBottom: Boolean,
     marginLeft: Boolean
+  },
+  watch: {
+    options: {
+      deep: true,
+      handler () {
+        this.$nextTick(this.$forceUpdate.bind(this))
+      }
+    }
   },
   methods: {
     onChange (ev) {
@@ -91,9 +99,7 @@ export default {
     }
   }
 }
-
 </script>
-
 <style scoped lang="less">
   @import '~el-style/variables';
 
