@@ -129,7 +129,8 @@ export default {
       this.drag(ev)
       this.isDraging = false
 
-      this.emitValue()
+      this.update()
+
       ev.preventDefault()
       return false
     },

@@ -16,6 +16,9 @@
     <el-tab-item title="Primary">
       <el-slider
         v-model="percentage"
+        :max="5"
+        :min="0"
+        :decimals="4"
         />
       <br><pre><code class="hljs html">{{code.primary}}</code></pre>
     </el-tab-item>
@@ -46,7 +49,7 @@
 export default {
   data () {
     return {
-      percentage: 0.5,
+      percentage: 1,
       code: {
         primary: `<el-slider
   v-model="percentage"
@@ -56,6 +59,18 @@ export default {
         prop: 'value',
         type: 'Number',
         default: '0'
+      }, {
+        prop: 'min',
+        type: 'Number',
+        default: '0'
+      }, {
+        prop: 'max',
+        type: 'Number',
+        default: '1'
+      }, {
+        prop: 'decimals',
+        type: 'Number',
+        default: '2'
       }]
     }
   },
