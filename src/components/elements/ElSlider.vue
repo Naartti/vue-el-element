@@ -51,6 +51,10 @@ export default {
       type: Number,
       default: 1
     },
+    decimals: {
+      type: Number,
+      default: 2
+    },
     marginRight: Boolean,
     marginTop: Boolean,
     marginBottom: Boolean,
@@ -71,6 +75,10 @@ export default {
   },
   methods: {
     update () {
+      if (this.isDraging) {
+        return
+      }
+
       const value = this.value || 0
       const percentageDragged = (value - this.min) / (this.max - this.min)
       if (this.percentageDragged === percentageDragged) {
@@ -126,7 +134,9 @@ export default {
       return false
     },
     emitValue () {
-      const newValue = this.percentageDragged * (this.max - this.min) + this.min
+      let newValue = this.percentageDragged * (this.max - this.min) + this.min
+      const multiplier = Math.pow(10, this.decimals)
+      newValue = Math.round(newValue * multiplier) / multiplier
 
       this.$emit('input', newValue)
       this.$emit('change', newValue)
