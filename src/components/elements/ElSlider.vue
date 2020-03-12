@@ -35,23 +35,21 @@
 <script>
 export default {
   name: 'ElSlider',
-  mounted () {
-    if (this.value && !this.startValue) {
-      this.percentageDragged = this.value
-    }
-
-    if (this.percentageDragged > 1) {
-      this.percentageDragged = 1
-    } else if (this.percentageDragged < 0) {
-      this.percentageDragged = 0
-    }
-
-    this.redraw()
+  created () {
+    this.update()
   },
   props: {
     value: {
       type: Number,
       default: 0
+    },
+    min: {
+      type: Number,
+      default: 0
+    },
+    max: {
+      type: Number,
+      default: 1
     },
     marginRight: Boolean,
     marginTop: Boolean,
@@ -59,24 +57,37 @@ export default {
     marginLeft: Boolean
   },
   watch: {
-    value: 'update'
+    value: 'update',
+    min: 'update',
+    max: 'update'
   },
   data () {
     return {
       isDraging: false,
       width: 0,
       percentage: 0,
-      percentageDragged: Number(this.startValue) || 0
+      percentageDragged: 0
     }
   },
   methods: {
     update () {
-      this.percentageDragged = this.value
+      const value = this.value || 0
+      const percentageDragged = (value - this.min) / (this.max - this.min)
+      if (this.percentageDragged === percentageDragged) {
+        return
+      }
 
-      if (this.percentageDragged > 1) this.percentageDragged = 1
-      else if (this.percentageDragged < 0) this.percentageDragged = 0
+      this.percentageDragged = percentageDragged
 
+      this.checkPercentageDraggedRange()
       this.redraw()
+    },
+    checkPercentageDraggedRange () {
+      if (this.percentageDragged > 1) {
+        this.percentageDragged = 1
+      } else if (this.percentageDragged < 0) {
+        this.percentageDragged = 0
+      }
     },
     startDrag (ev) {
       this.isDraging = true
@@ -97,18 +108,11 @@ export default {
       }
 
       const x = ev.offsetX
-
       this.percentageDragged = x / this.width
 
-      if (this.percentageDragged > 1) {
-        this.percentageDragged = 1
-      } else if (this.percentageDragged < 0) {
-        this.percentageDragged = 0
-      }
-
+      this.checkPercentageDraggedRange()
       this.redraw()
-      this.$emit('input', this.percentageDragged)
-      this.$emit('drag', this.percentageDragged)
+      this.emitValue()
 
       ev.preventDefault()
       return false
@@ -117,15 +121,18 @@ export default {
       this.drag(ev)
       this.isDraging = false
 
-      this.$emit('input', this.percentageDragged)
-      this.$emit('change', this.percentageDragged)
-
+      this.emitValue()
       ev.preventDefault()
       return false
     },
+    emitValue () {
+      const newValue = this.percentageDragged * (this.max - this.min) + this.min
+
+      this.$emit('input', newValue)
+      this.$emit('change', newValue)
+    },
     redraw () {
-      const percentage = Math.round(this.percentageDragged * 100)
-      this.percentage = percentage
+      this.percentage = Math.round(this.percentageDragged * 100)
     }
   }
 }
