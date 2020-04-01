@@ -8,10 +8,7 @@
     'el-inline--tight': tight,
     'el-inline--space-between': spaceBetween,
     'el-inline--end': end,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   @click="click"
   >
@@ -19,8 +16,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
   name: 'ElInline',
+  mixins: [margin],
   props: {
     center: {
       type: Boolean,
@@ -46,10 +46,6 @@ export default {
       type: Boolean,
       default: false
     },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean,
     tight: Boolean
   },
   methods: {

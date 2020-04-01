@@ -32,12 +32,7 @@ radioOptions: [{
   <label
     v-for="(item, index) in options"
     class="el-radio-button-item"
-    :class="{
-      'el-margin--right': marginRight,
-      'el-margin--top': marginTop,
-      'el-margin--left': marginLeft,
-      'el-margin--bottom': marginBottom
-    }"
+    :class="marginClassName"
     :key="index"
     :value="value"
     >
@@ -61,11 +56,12 @@ radioOptions: [{
   </label>
 </div>
 </template>
-
 <script>
+import margin from '@/util/mixins/margin'
 
 export default {
   name: 'ElRadioButton',
+  mixins: [margin],
   data () {
     return {
       checked: null
@@ -79,11 +75,7 @@ export default {
     options: {
       type: Array,
       default: () => []
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   mounted () {
     this.checked = this.value

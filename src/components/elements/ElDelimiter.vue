@@ -2,7 +2,8 @@
 <div
   class='el-delimiter'
   :class="{
-    'el-delimiter--short' : short === true
+    'el-delimiter--short' : short === true,
+    [marginClassName]: true,
   }"
   >
   <div
@@ -15,8 +16,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
   name: 'ElDelimiter',
+  mixins: [margin],
   props: {
     short: Boolean,
     dark: Boolean

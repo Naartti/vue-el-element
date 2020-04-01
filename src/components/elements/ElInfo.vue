@@ -5,10 +5,7 @@
     'el-info--highlight': highlight === true,
     'el-animation': highlight === true,
     'el-info--clickable': clickable,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   @click="$emit('click')"
   @mouseover="$emit('mouseover')"
@@ -19,14 +16,13 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
   name: 'ElInfo',
+  mixins: [margin],
   props: {
-    highlight: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    highlight: Boolean
   },
   computed: {
     clickable () {

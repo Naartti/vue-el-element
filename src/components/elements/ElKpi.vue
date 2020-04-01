@@ -2,11 +2,8 @@
 <div
   class="el-kpi"
   :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom,
-    'el-kpi--clickable': clickable
+    'el-kpi--clickable': clickable,
+    [marginClassName]: true,
   }"
   @click="$emit('click')"
   >
@@ -50,10 +47,12 @@
 </div>
 </template>
 <script>
-
+import margin from '@/util/mixins/margin'
 import spaceThousand from 'script/spaceThousands.js'
 
 export default {
+  name: 'ElKpi',
+  mixins: [margin],
   props: {
     value: {
       type: [Number, String],
@@ -76,11 +75,7 @@ export default {
       default: true
     },
     success: Boolean,
-    danger: Boolean,
-    marginTop: Boolean,
-    marginLeft: Boolean,
-    marginRight: Boolean,
-    marginBottom: Boolean
+    danger: Boolean
   },
   computed: {
     kpiValue () {

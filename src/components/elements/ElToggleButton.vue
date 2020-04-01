@@ -1,12 +1,7 @@
 <template>
 <div
   class="el-toggle-button"
-  :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
-  }"
+  :class="marginClassName"
   @click="toggle"
   >
 
@@ -31,9 +26,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
 
 export default {
   name: 'ElToggleButton',
+  mixins: [margin],
   methods: {
     toggle () {
       if (this.manual === true) {
@@ -47,11 +44,7 @@ export default {
   },
   props: {
     checked: Boolean,
-    manual: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    manual: Boolean
   },
   model: {
     prop: 'checked',

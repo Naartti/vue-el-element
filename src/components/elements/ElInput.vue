@@ -8,21 +8,19 @@
   :class="{
     'el-input--warning' : warning,
     'el-input--success' : success,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   :type='type'
   :placeholder="placeholder"
   ref="inputField"
   >
 </template>
-
 <script>
+import margin from '@/util/mixins/margin'
 
 export default {
   name: 'ElInput',
+  mixins: [margin],
   props: {
     placeholder: {
       type: String,
@@ -47,11 +45,7 @@ export default {
     focus: {
       type: Boolean,
       default: false
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   watch: {
     focus (isFocus) {

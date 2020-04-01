@@ -7,27 +7,24 @@
     'el-tag--info': info,
     'el-tag--danger': danger,
     'el-tag--nowrap': nowrap,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   >
   <slot />
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
+  name: 'ElTag',
+  mixins: [margin],
   props: {
     warning: Boolean,
     danger: Boolean,
     success: Boolean,
     info: Boolean,
-    nowrap: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    nowrap: Boolean
   }
 }
 </script>

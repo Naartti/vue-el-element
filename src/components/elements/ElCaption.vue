@@ -6,28 +6,22 @@
     'el-caption--light' : light === true,
     'el-caption--danger' : danger === true,
     'el-caption--clickable': clickable,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   >
 
   <slot />
 </div>
 </template>
-
 <script>
+import margin from '@/util/mixins/margin'
 
 export default {
   name: 'ElCaption',
+  mixins: [margin],
   props: {
     light: Boolean,
-    danger: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    danger: Boolean
   },
   computed: {
     clickable () {

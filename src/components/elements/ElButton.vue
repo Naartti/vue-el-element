@@ -14,12 +14,8 @@
     'el-button--link': link,
     'el-button--link--danger': link && danger,
     'el-button--link--disabled': link && disabled,
-    'el-align--right': right,
-    'el-align--stretch': stretch,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [alignClassName]: true,
+    [marginClassName]: true,
   }"
   >
   <el-tooltip
@@ -32,28 +28,24 @@
 </button>
 </template>
 <script>
-
+import margin from '@/util/mixins/margin'
+import align from '@/util/mixins/align'
 import ElTooltip from './ElTooltip.vue'
 
 export default {
   components: { ElTooltip },
+  mixins: [margin, align],
   name: 'ElButton',
   props: {
     disabled: Boolean,
     danger: Boolean,
     secondary: Boolean,
     link: Boolean,
-    right: Boolean,
     icon: Boolean,
     tooltip: {
       type: String,
       default: ''
     },
-    stretch: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean,
     blurDelay: {
       type: Number,
       default: 400

@@ -8,10 +8,7 @@
     'el-message--danger': danger,
     'el-message--clickable': isClickable,
     'el-message--icon': hasIcon,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   @click="$emit('click')"
   @mouseover="$emit('mouseover')"
@@ -30,24 +27,20 @@
   <slot />
 </div>
 </template>
-
 <script>
-
+import margin from '@/util/mixins/margin'
 import warningIcon from '@/assets/icons/warning.js'
 import dangerWarningIcon from '@/assets/icons/dangerWarning.js'
 
 export default {
   name: 'ElMessage',
+  mixins: [margin],
   props: {
     warning: Boolean,
     success: Boolean,
     info: Boolean,
     danger: Boolean,
-    icon: { type: Boolean, default: true },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    icon: { type: Boolean, default: true }
   },
   data () {
     return {

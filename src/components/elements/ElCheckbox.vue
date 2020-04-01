@@ -32,11 +32,8 @@ checkboxOptions: [{
   <label v-for="(item, index) in options"
     class="el-checkbox-item"
     :class="{
-      'el-margin-right': marginRight,
-      'el-margin--top': marginTop,
-      'el-margin--left': marginLeft,
-      'el-margin--bottom': marginBottom,
-      'el-checkbox-item-checkmark': checkmark
+      'el-checkbox-item-checkmark': checkmark,
+      [marginClassName]: true,
     }"
     :key="index"
     :value="value"
@@ -62,11 +59,12 @@ checkboxOptions: [{
   </label>
 </div>
 </template>
-
 <script>
+import margin from '@/util/mixins/margin'
 
 export default {
   name: 'ElCheckbox',
+  mixins: [margin],
   data () {
     return {
       checked: []
@@ -81,10 +79,6 @@ export default {
       type: Array,
       default: () => []
     },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean,
     checkmark: Boolean
   },
   mounted () {

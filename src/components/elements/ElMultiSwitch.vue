@@ -3,10 +3,7 @@
   class="el-multi-switch"
   :class="{
     'el-multi-switch--stretch': stretch,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   >
     <div
@@ -29,7 +26,10 @@
   </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
 export default {
+  name: 'ElMultiSwitch',
+  mixins: [margin],
   props: {
     value: {
       type: [String, Number],
@@ -42,11 +42,7 @@ export default {
     stretch: {
       type: Boolean,
       default: false
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   data () {
     return {

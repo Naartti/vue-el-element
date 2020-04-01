@@ -4,11 +4,7 @@
   :style="`max-height: ${maxHeight};`"
   :class="{
     'el-image--stretch': stretch,
-
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   >
   <img
@@ -41,7 +37,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
+  name: 'ElImage',
+  mixins: [margin],
   props: {
     src: {
       type: String,
@@ -64,12 +64,7 @@ export default {
     maxHeight: {
       type: [String, Number],
       default: 'auto'
-    },
-
-    marginRight: { type: Boolean, default: false },
-    marginTop: { type: Boolean, default: false },
-    marginBottom: { type: Boolean, default: false },
-    marginLeft: { type: Boolean, default: false }
+    }
   },
   computed: {
     styleMaxHeight () {

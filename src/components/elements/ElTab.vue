@@ -17,12 +17,7 @@
 <template>
 <div
   class="el-tab"
-  :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
-  }"
+  :class="marginClassName"
   >
   <!-- Menu -->
   <div class="el-tab__nav">
@@ -53,20 +48,17 @@
   </div>
 </div>
 </template>
-
 <script>
+import margin from '@/util/mixins/margin'
 
 export default {
   name: 'ElTab',
+  mixins: [margin],
   props: {
     value: {
       type: Number,
       default: 0
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   data () {
     return {

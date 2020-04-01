@@ -1,12 +1,7 @@
 <template>
 <div
   class="el-header"
-  :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
-  }"
+  :class="marginClassName"
   @click="$listeners.click ? $emit('click') : null"
   >
 
@@ -32,22 +27,19 @@
 </div>
 </template>
 <script>
-
+import margin from '@/util/mixins/margin'
 import warningIcon from '@/assets/icons/warning.js'
 import dangerIcon from '@/assets/icons/danger.js'
 import successIcon from '@/assets/icons/success.js'
 
 export default {
   name: 'ElHeader',
+  mixins: [margin],
   props: {
     warning: Boolean,
     danger: Boolean,
     success: Boolean,
-    tight: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    tight: Boolean
   },
   computed: {
     clickable () {

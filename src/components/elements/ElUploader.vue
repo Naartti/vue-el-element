@@ -5,10 +5,7 @@
     'el-uploader--focus': this.isFocus,
     'el-uploader--active': this.isActive,
     'el-uploader--disabled': this.disabled,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   ref="dropArea"
   @click="openFileBrowse"
@@ -48,8 +45,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
 
 export default {
+  name: 'ElUploader',
+  mixins: [margin],
   props: {
     caption: {
       type: String,
@@ -68,10 +68,6 @@ export default {
       default: true
     },
     enablePaste: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean,
     disabled: Boolean
   },
   data () {

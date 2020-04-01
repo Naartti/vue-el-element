@@ -2,12 +2,7 @@
 <div
   ref="lineLoader"
   class="el-loader"
-  :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
-  }"
+  :class="marginClassName"
   >
   <svg
     class="el-loader__loader"
@@ -32,13 +27,13 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
+  name: 'ElLoaderSvg',
+  mixins: [margin],
   props: {
-    paused: Boolean,
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    paused: Boolean
   },
   data () {
     return {

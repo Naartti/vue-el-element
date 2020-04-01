@@ -6,10 +6,7 @@
     'el-expand-button--color': color,
     'el-expand-button--shadow': shadow,
     'el-expand-button--secondary': secondary,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   @click="$emit('input', !value)"
   >
@@ -43,19 +40,18 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
   name: 'ElExpandButton',
+  mixins: [margin],
   props: {
     value: { type: Boolean, default: false },
     rounded: { type: Boolean, default: false },
     color: { type: Boolean, default: false },
     secondary: { type: Boolean, default: false },
     shadow: { type: Boolean, default: false },
-    horizontal: { type: Boolean, default: false },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    horizontal: { type: Boolean, default: false }
   }
 }
 </script>

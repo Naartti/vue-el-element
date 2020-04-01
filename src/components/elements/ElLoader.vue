@@ -1,12 +1,7 @@
 <template>
 <div
   class="el-loader"
-  :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
-  }"
+  :class="marginClassName"
   >
   <div
     v-if="!paused"
@@ -15,13 +10,12 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
 export default {
+  name: 'ElLoader',
+  mixins: [margin],
   props: {
-    paused: { type: Boolean, default: false },
-    marginRight: { type: Boolean, default: false },
-    marginTop: { type: Boolean, default: false },
-    marginBottom: { type: Boolean, default: false },
-    marginLeft: { type: Boolean, default: false }
+    paused: { type: Boolean, default: false }
   }
 }
 </script>

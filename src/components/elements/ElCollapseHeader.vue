@@ -1,12 +1,7 @@
 <template>
 <div
   class='el-collapse-header'
-  :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
-  }"
+  :class="marginClassName"
   >
   <div
     class='el-collapse-header__header'
@@ -54,8 +49,10 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
 export default {
   name: 'ElCollapseHeader',
+  mixins: [margin],
   props: {
     title: {
       type: String,
@@ -64,11 +61,7 @@ export default {
     open: {
       type: Boolean,
       default: false
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   data () {
     return {

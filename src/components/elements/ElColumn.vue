@@ -3,26 +3,22 @@
   class="el-column"
   :class="{
     'el-column--wrap': wrap,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   >
   <slot />
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
+  mixins: [margin],
   props: {
     wrap: {
       type: Boolean,
       default: false
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   }
 }
 </script>

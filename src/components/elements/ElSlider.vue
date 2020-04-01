@@ -1,13 +1,8 @@
 <template>
 <div
   class="el-slider"
-  :class="{
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
-  }"
->
+  :class="marginClassName"
+  >
 
   <div
     class="el-slider__remaining"
@@ -33,8 +28,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
   name: 'ElSlider',
+  mixins: [margin],
   created () {
     this.update()
   },
@@ -54,11 +52,7 @@ export default {
     decimals: {
       type: Number,
       default: 2
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   watch: {
     value: 'update',

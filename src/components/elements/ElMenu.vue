@@ -23,10 +23,7 @@
   class="el-menu"
   :class="{
     'el-menu--center': center,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   >
   <!-- Menu -->
@@ -102,8 +99,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
   name: 'ElMenu',
+  mixins: [margin],
   props: {
     value: {
       type: Number,
@@ -122,11 +122,7 @@ export default {
     },
     centerContent: { type: Boolean, default: false },
     center: { type: Boolean, default: false },
-    title: { type: Boolean, default: true },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    title: { type: Boolean, default: true }
   },
   data () {
     return {

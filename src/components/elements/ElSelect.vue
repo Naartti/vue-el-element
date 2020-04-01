@@ -3,10 +3,7 @@
   class="el-select"
   :class="{
     'el-select--open': matchedItems.length > 0,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [marginClassName]: true,
   }"
   >
   <div
@@ -69,8 +66,11 @@
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+
 export default {
   name: 'SearchBar',
+  mixins: [margin],
   props: {
     value: {
       type: Array,
@@ -91,11 +91,7 @@ export default {
     resultLimit: {
       type: Number,
       default: Infinity
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   data () {
     return {

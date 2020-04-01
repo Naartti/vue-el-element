@@ -32,10 +32,8 @@ dropdownOptions: [{
   class="el-dropdown"
   :class="{
     'el-dropdown-wide': wide,
-    'el-margin--right': marginRight,
-    'el-margin--top': marginTop,
-    'el-margin--left': marginLeft,
-    'el-margin--bottom': marginBottom
+    [alignClassName]: true,
+    [marginClassName]: true,
   }"
   >
   <select
@@ -56,8 +54,12 @@ dropdownOptions: [{
 </div>
 </template>
 <script>
+import margin from '@/util/mixins/margin'
+import align from '@/util/mixins/align'
+
 export default {
   name: 'ElDropdown',
+  mixins: [margin, align],
   props: {
     value: {
       default: null,
@@ -71,11 +73,7 @@ export default {
     wide: {
       type: Boolean,
       default: false
-    },
-    marginRight: Boolean,
-    marginTop: Boolean,
-    marginBottom: Boolean,
-    marginLeft: Boolean
+    }
   },
   watch: {
     options: {
