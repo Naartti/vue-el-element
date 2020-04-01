@@ -83,9 +83,7 @@
   </div>
 </div>
 </template>
-
 <script>
-
 import closeIcon from '@/assets/icons/close.js'
 
 export default {
@@ -101,7 +99,10 @@ export default {
     },
     closeButtonAlign: {
       type: String,
-      default: 'left'
+      default: 'left',
+      validator (value) {
+        return ['left', 'right'].indexOf(value) !== -1
+      }
     },
     wide: {
       type: Boolean,
@@ -302,7 +303,7 @@ export default {
     z-index: 1000000;
     box-sizing: border-box;
     overflow: auto;
-    overflow-y: scroll;
+    overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
     &--center {
@@ -351,7 +352,7 @@ export default {
       background-color: @color-background;
       border-radius: @radius-small;
       box-shadow: @shadow-wide;
-      overflow-y: scroll;
+      overflow-y: auto;
       overflow-x: hidden;
       box-sizing: border-box;
       margin: 20px auto;
@@ -404,11 +405,11 @@ export default {
           position: fixed;
           top: auto;
           bottom: 0px;
-          width: 100%;
           max-width: @section-content-max-width;
-          left: 0px;
-          right: 0px;
-          margin: auto;
+          left: auto;
+          right: auto;
+          margin: 0px 0px;
+          margin-left: -30px;
           border-top: 1px solid @color-grey-2;
           background-color: @color-background;
           padding: @top-margin-element 30px;
@@ -431,12 +432,13 @@ export default {
     &__close-button {
       position: absolute;
       top: 0px;
-      left: 0px;
-      right: 0px;
+      left: auto;
+      right: auto;
       height: 1px;
       width: 100%;
       max-width: @section-content-max-width;
-      margin: auto;
+      margin: 0px 0px;
+      margin-left: -30px;
       z-index: 10;
       overflow: visible;
 

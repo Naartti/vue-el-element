@@ -40,6 +40,7 @@
   <!-- Modals -->
   <el-modal
     root
+    :pauseBodyScroll="true"
     v-if="model.normal"
     @close="model.normal = false"
     >
@@ -51,6 +52,8 @@
 
   <el-modal
     root
+    :pauseBodyScroll="true"
+    closeButtonAlign="left"
     v-if="model.high"
     @close="model.high = false"
     >

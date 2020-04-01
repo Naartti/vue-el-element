@@ -218,8 +218,8 @@ export default {
   @import '~el-style/variables';
 
  #app, body {
-   display: relative;
-   background-color: @color-background;
+    display: relative;
+    background-color: @color-background;
  }
 
  .el-element-docs {
