@@ -41,6 +41,7 @@
   <el-modal
     root
     :pauseBodyScroll="true"
+    closeButtonAlign="left"
     v-if="model.normal"
     @close="model.normal = false"
     >

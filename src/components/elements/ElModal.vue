@@ -442,6 +442,10 @@ export default {
       z-index: 10;
       overflow: visible;
 
+      @media (max-width: @section-content-max-width) {
+        margin-left: -15px;
+      }
+
       &--wide {
         max-width: @section-content-wide-max-width;
       }
