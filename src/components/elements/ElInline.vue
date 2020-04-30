@@ -58,6 +58,8 @@ export default {
 }
 </script>
 <style scoped lang="less">
+  @import '~el-style/variables.less';
+
   .el-inline {
     position: relative;
     width: auto;
