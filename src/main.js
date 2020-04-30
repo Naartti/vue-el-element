@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import App from './App.vue'
-import VueElElements from './wrapper.js'
+import App from '@/App.vue'
+import VueElElements from '@/wrapper/index.js'
 
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github.css'

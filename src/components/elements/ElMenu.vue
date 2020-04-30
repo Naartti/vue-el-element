@@ -165,7 +165,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
-  @import '~el-style/variables';
+  @import '~el-style/variables.less';
 
   @narrow-width: 700px;
   @center-max-width: @section-content-wide-max-width;

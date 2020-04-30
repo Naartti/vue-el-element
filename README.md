@@ -326,3 +326,9 @@ npm install
 # serve with hot reload at localhost:8080
 npm run serve
 ```
+
+## Rollup upgrade
+|Size|Comment|
+|-|-|
+|498|Vue-cli build|
+|176|Rollup|

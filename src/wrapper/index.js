@@ -1,5 +1,3 @@
-import './util/polyfill'
-
 // Navigators
 import ElMenu from 'elements/ElMenu.vue'
 import ElMenuItem from 'elements/ElMenuItem.vue'

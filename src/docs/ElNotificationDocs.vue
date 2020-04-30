@@ -87,7 +87,7 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-  @import '~el-style/variables';
+  @import '~el-style/variables.less';
 
   .block {
     position: relative;

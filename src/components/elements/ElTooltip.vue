@@ -154,7 +154,7 @@ export default {
 }
 </script>
 <style scoped lang="less">
-  @import '~el-style/variables';
+  @import '~el-style/variables.less';
 
   @tooltip-offset: ~"Calc(100% + 5px)";
   @tooltip-offset-negative: ~"Calc(-100% - 5px)";

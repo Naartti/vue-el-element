@@ -215,7 +215,7 @@ export default {
 }
 </script>
 <style lang="less">
-  @import '~el-style/variables';
+  @import '~el-style/variables.less';
 
  #app, body {
     display: relative;

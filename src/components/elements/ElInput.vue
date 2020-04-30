@@ -81,7 +81,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-  @import '~el-style/variables';
+  @import '~el-style/variables.less';
 
   .el-input {
     position: relative;

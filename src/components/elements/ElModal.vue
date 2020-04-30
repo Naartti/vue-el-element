@@ -291,7 +291,7 @@ export default {
   }
 </style>
 <style scoped lang="less">
-  @import '~el-style/variables';
+  @import '~el-style/variables.less';
 
   .el-modal {
     position: fixed;

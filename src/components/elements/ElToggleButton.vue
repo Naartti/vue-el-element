@@ -54,7 +54,7 @@ export default {
 
 </script>
 <style scoped lang="less">
-  @import '~el-style/variables';
+  @import '~el-style/variables.less';
 
   .el-toggle-button {
     position: relative;
