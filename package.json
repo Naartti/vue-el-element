@@ -17,9 +17,9 @@
     "vue",
     "javascript"
   ],
-  "main": "dist/vue-el-element.common.js",
-  "module": "dist/vue-el-element.esm.js",
-  "unpkg": "dist/vue-el-element.min.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "unpkg": "dist/index.js",
   "files": [
     "dist/*"
   ],
@@ -28,7 +28,6 @@
     "clear:dist": "rimraf dist",
     "build": "npm run clear:dist && NODE_ENV=production rollup -c",
     "build:demo": "vue-cli-service build --dest demo",
-    "build:vue-cli": "vue-cli-service build --target lib --name vue-el-element ./src/wrapper.js",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "watch": "vue-cli-service test:unit --watch",
