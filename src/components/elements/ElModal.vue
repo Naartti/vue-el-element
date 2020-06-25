@@ -352,8 +352,6 @@ export default {
       background-color: @color-background;
       border-radius: @radius-small;
       box-shadow: @shadow-wide;
-      overflow-y: auto;
-      overflow-x: hidden;
       box-sizing: border-box;
       margin: 20px auto;
       padding: 30px 30px;

@@ -9,7 +9,7 @@
     class="el-toggle-button__background el-animation"
     ref="background"
     :class="{
-      'el-toggle-button__background--active': checked
+      'el-toggle-button__background--active': value
     }"
     >
 
@@ -17,7 +17,7 @@
       class="el-toggle-button__dot el-animation"
       ref="dot"
       :class="{
-        'el-toggle-button__dot--active': checked
+        'el-toggle-button__dot--active': value
       }"
       />
   </div>
@@ -34,21 +34,21 @@ export default {
   methods: {
     toggle () {
       if (this.manual === true) {
-        this.$emit('input', this.checked)
+        this.$emit('input', this.value)
       } else {
-        this.$emit('input', !this.checked)
+        this.$emit('input', !this.value)
       }
 
       this.$emit('click')
     }
   },
   props: {
+    value: {
+      type: Boolean,
+      default: false
+    },
     checked: Boolean,
     manual: Boolean
-  },
-  model: {
-    prop: 'checked',
-    event: 'input'
   }
 }
 
